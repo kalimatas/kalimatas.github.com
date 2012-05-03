@@ -1,0 +1,21 @@
+---
+layout: default
+title: Guz Alexander
+---
+
+<ul id="posts">
+    <li>
+        <span>May 4, 2012</span>
+        <a href="/">Hello blog post</a>
+    </li>
+    <li>
+        <span>May 5, 2012</span>
+        <a href="/">Another blog post</a>
+    </li>
+    {% for post in site.posts %}
+        <li>
+            <span>{{ post.date | date_to_string }}</span>
+            <a href="{{ post.url }}">{{ post.title }}</a>
+        </li>
+    {% endfor %}
+</ul>
