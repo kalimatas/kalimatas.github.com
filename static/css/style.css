@@ -20,6 +20,7 @@ body {
     padding: 0 0 0 20px;
 }
 
+
 #wrapper {
     margin: 50px 0 0 20px;
     width: 670px;
@@ -33,14 +34,49 @@ body {
     color: #999;
 }
 
+h2 {
+    color: #333;
+}
+
+p.date {
+    margin: 0;
+    padding: 3px 0;
+    color: #999;
+}
+
 a {
-    color: #0000E0;
+    color: #2A5685;
+}
+
+a:hover {
+    color: #c61a1a;
+    text-decoration: underline;
+}
+
+#top a.ext {
+    text-decoration: none;
+    font-size: 9pt;
+    padding: 2px 0 3px 18px;
+}
+
+#top a.ext:hover {
+    text-decoration: underline;
+}
+
+a#feed {
+    background: url('/static/img/feed.png') no-repeat 0 50%;
+}
+
+a#github {
+    background: url('/static/img/github.png') no-repeat 0 50%;
 }
 
 a#home {
     font-weight: bold;
     text-decoration: none;
     color: black;
+    font-size: 12pt;
+    font-variant: small-caps;
 }
 
 ul#posts  {
@@ -60,4 +96,8 @@ ul#posts li span {
 
 ul#posts li a {
     text-decoration: none;
+}
+
+ul#posts li a:hover {
+    text-decoration: underline;
 }
