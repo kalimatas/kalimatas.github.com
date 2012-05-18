@@ -13,13 +13,13 @@ body {
     width: 670px;
     padding: 6px 0;
     color: white;
+    background-color: white;
 }
 
 #top span {
     float: right;
     padding: 0 0 0 20px;
 }
-
 
 #wrapper {
     margin: 50px 0 0 20px;
@@ -28,6 +28,7 @@ body {
 
 #footer {
     margin-top: 30px;
+    margin-bottom: 30px;
     border-top: 1px solid #999;
     padding-top: 10px;
     font-size: 8pt;
@@ -100,4 +101,9 @@ ul#posts li a {
 
 ul#posts li a:hover {
     text-decoration: underline;
+}
+
+div.highlight {
+    background-color: #fafafa;
+    padding: 2px 10px;
 }
