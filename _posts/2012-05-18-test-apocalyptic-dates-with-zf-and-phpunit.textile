@@ -95,3 +95,5 @@ $ phpunit application/controllers/IndexControllerTest.php
 {% endhighlight %}
 
 That's it. Code itself is the best narrator :))
+
+You can discuss this post at "HackerNews.":http://hackerne.ws/item?id=3999428
