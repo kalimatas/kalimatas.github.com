@@ -32,3 +32,6 @@ That's too far away from my initial task as you understand. So what happened?
 When I started to read about Flask it turned out that I don't want to use it until I get a deeper understanding of its underlying mechanisms. The same about Werkzeug and Jinja.  Don't know whether I should cry or laugh. On the one hand this will for deep knowledge serves me well - after spending some hours/days/weeks/months of reading and trying I feel like a pro in the subject. But on the other hand I spent my time learning and not doing something really useful.  
 
 Remember the beginning of the post? 
+
+
+You can discuss this post at "HackerNews.":http://hackerne.ws/item?id=4042320
