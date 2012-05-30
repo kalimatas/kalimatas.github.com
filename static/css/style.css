@@ -39,6 +39,10 @@ h2 {
     color: #333;
 }
 
+p {
+    line-height: 1.2em;
+}
+
 p.date {
     margin: 0;
     padding: 3px 0;
