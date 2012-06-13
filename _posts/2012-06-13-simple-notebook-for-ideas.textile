@@ -14,3 +14,5 @@ Just a simple notebook for ideas. Runs of Google App Engine. You may use it :)) 
 "http://writedownyouridea.appspot.com":http://writedownyouridea.appspot.com
 
 !/static/img/writedown.jpg!
+
+You can discuss this post at "HackerNews.":http://hackerne.ws/item?id=4105992
