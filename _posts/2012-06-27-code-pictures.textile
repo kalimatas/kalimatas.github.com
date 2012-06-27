@@ -1,0 +1,63 @@
+---
+layout: post
+title: Code pictures
+---
+
+h2. {{ page.title }}
+
+p(date). 27 June, 2012
+
+Reading different books/articles/journals about programming you can see a recommendation like "write beautiful code". But what does it mean? Format your code? Name your variables like *beautifulIndexOfALoop*? Perhaps. 
+
+But let's imagine people who gave your such a recommendation were thinking of something like this:
+
+{% highlight php %}
+                        <?php $y=42;
+                    echo "hello pacman";    
+                 echo "you are good -----";
+               echo "hello pacman!";echo "!";
+            for ($ind = 1; $ind < 20; $ind++) {
+         $do = true; $then = '###'; $do=$then;
+       foreach (array('old', 'good') as $wo){
+       print('something is wrong with p');
+      print($wo); print('mouth');
+      $z = 13443 >> 433433;
+      } $insidePacman = true; 
+       } $goOutside = 'aha!!!!!';
+       while (!$insidePacman&&1) {
+         $getTheHellOutOfHere = 4242;
+           print('it looks terrible!');
+             $insdiePacman = false; $x = 11;
+               } list($x, $y) = array(13, 22,1);
+                 $noWayItsTheEnd = 'it was f';
+                   echo "good buy!!!!!";
+                        echo "haha";
+{% endhighlight; %}
+
+or like this:
+
+{% highlight php %}
+      <?php $x=1111;           $rightSide=13;
+      $ts='someval';           $column='0231';
+      $i=($x==2)+1-1;          echo 'print s';
+        for(;$i<8;$i++){       while($column){
+         print('left row');    $column -=100;    
+          $y = abs(-$x);$z=2;  break;} // end
+            $isTogether = true;$haha = 'join';  
+              }$chikiBrik=gettype($x)=='null';
+                $theEndIsNear=false; $tries=1;
+                  do {$f=function()use($tries)
+                    { echo 'inside function!';
+                        $tries++;if($tries>9){
+                         $theEndIsNear=true;}};
+                         }while($theEndIsNear);
+                         str_repeat('fun', 42);
+                         $dontKnowWhatTodo=13;
+                         $h=0xff; $h>>2;if(1){
+                         $stopItPlease='ok!!';
+                         } $done = true;print(
+                         'this was...'.PHP_EOL
+                         );str_repeat('ts',2);
+{% endhighlight; %}
+
+It's completely unreadable, but can cheer you up. And of course you can run it!
