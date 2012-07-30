@@ -46,7 +46,7 @@ a:hover {
     text-transform: uppercase;
 }
 #sidebar #home_container {
-    margin: 0;
+    margin: 2px 0 0 0;
     padding: 0 0 0 13px;
 }
 #links ul {
@@ -105,9 +105,11 @@ ul#posts  {
 }
 ul#posts li {
     list-style-type: none;
+    margin-bottom: 62px;
 }
 ul#posts li .post li{
     list-style-type: disc;
+    margin-bottom: 0;
 }
 ul#posts li h2 {
     margin: 0;
