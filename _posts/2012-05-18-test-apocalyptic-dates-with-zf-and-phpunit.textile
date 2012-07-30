@@ -3,11 +3,7 @@ layout: post
 title: Testing apocalyptic dates with ZF and PHPUnit
 ---
 
-h2. {{ page.title }}
-
-p(date).  18 May, 2012
-
-Have you ever thought why there are so many apocalyptic dates but we are still alive? Because no one had ever tested these dates! Maybe some centuries ago people didn't have any appropriate instrument for testing, but we have. Yep, it's unit testing. Today we're going to create a Zend Framework application which will list some apocalyptic dates and write some code to test its functionality.  
+Have you ever thought why there are so many apocalyptic dates but we are still alive? Because no one had ever tested these dates! Maybe some centuries ago people didn't have any appropriate instrument for testing, but we have. Yep, it's unit testing. Today we're going to create a Zend Framework application which will list some apocalyptic dates and write some code to test its functionality.
 
 h3. The application and testing environment
 

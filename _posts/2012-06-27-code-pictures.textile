@@ -3,11 +3,7 @@ layout: post
 title: Code pictures
 ---
 
-h2. {{ page.title }}
-
-p(date). 27 June, 2012
-
-Reading different books/articles/journals about programming you can see a recommendation like "write beautiful code". But what does it mean? Format your code? Name your variables like *beautifulIndexOfALoop*? Perhaps. 
+Reading different books/articles/journals about programming you can see a recommendation like "write beautiful code". But what does it mean? Format your code? Name your variables like *beautifulIndexOfALoop*? Perhaps.
 
 But let's imagine people who gave your such a recommendation were thinking of something like this:
 

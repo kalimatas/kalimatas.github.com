@@ -6,8 +6,9 @@ title: Guz Alexander
 <ul id="posts">
     {% for post in paginator.posts %}
         <li>
-            <span>{{ post.date | date_to_string }}</span>
-            <a href="{{ post.url }}">{{ post.title }}</a>
+            <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+            <div class="date">{{ post.date | date_to_string }}</div>
+            <div class="post">{{post.content}}</div>
         </li>
     {% endfor %}
 </ul>
@@ -15,12 +16,13 @@ title: Guz Alexander
 <div id="pagination">
     {% if paginator.previous_page %}
         {% if paginator.previous_page == 1 %}
-            <a href="/" class="previous">&larr; older entries</a>
+            <a href="/" class="previous">newer entries &rarr;</a>
         {% else %}
-            <a href="/page{{paginator.previous_page}}" class="previous">&larr; older entries</a>
+            <a href="/page{{paginator.previous_page}}" class="previous">newer entries &rarr;</a>
         {% endif %}
     {% endif %}
     {% if paginator.next_page %}
-        <a href="/page{{paginator.next_page}}" class="next ">newer entries &rarr;</a>
+        <a href="/page{{paginator.next_page}}" class="next ">&larr; older entries</a>
     {% endif %}
+    <div class="clear"></div>
 </div>

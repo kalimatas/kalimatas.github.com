@@ -6,110 +6,130 @@ body {
     text-align: left;
     color: #333333;
 }
-
-#top {
-    position: fixed;
-    top: 0;
-    left: 20px;
-    width: 670px;
-    padding: 6px 0;
-    color: white;
-    background-color: white;
-}
-
-#top span {
-    float: right;
-    padding: 0 0 0 20px;
-}
-
-#wrapper {
-    margin: 50px 0 0 20px;
-    width: 670px;
-}
-
-#footer {
-    margin-top: 30px;
-    margin-bottom: 30px;
-    border-top: 1px solid #999;
-    padding-top: 10px;
-    font-size: 8pt;
-    color: #999;
-}
-
 h2 {
     color: #333;
     font-size: 2em;
-    font-family: Trebuchet MS, Helvetica;
+    font-family: Arial, sans-serif;
 }
-
 p {
     line-height: 1.2em;
 }
-
 p.date {
     margin: 0;
     padding: 3px 0;
     color: #999;
+    text-transform: uppercase;
 }
-
+.previous {
+    float: right;
+}
+.next {
+    float: left;
+}
+.clear {
+    clear: both;
+}
 a {
     color: #2A5685;
+    text-decoration: none;
 }
-
 a:hover {
     color: #c61a1a;
     text-decoration: underline;
 }
 
-#top a.ext {
-    text-decoration: none;
-    font-size: 9pt;
-    padding: 2px 0 3px 18px;
+#sidebar {
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 235px;
+    padding: 30px 0;
+    text-transform: uppercase;
+    font-family: Arial, sans-serif;
 }
-
-#top a.ext:hover {
-    text-decoration: underline;
+#sidebar #home_container {
+    margin: 0;
+    padding: 0;
 }
-
-a#feed {
-    background: url('/static/img/feed.png') no-repeat 0 50%;
-}
-
-a#github {
-    background: url('/static/img/github.png') no-repeat 0 50%;
-}
-
 a#home {
     font-weight: bold;
     text-decoration: none;
     color: black;
-    font-size: 12pt;
+    font-size: 25pt;
+    text-transform: none;
     font-variant: small-caps;
+}
+#content {
+    padding: 20px 30px 0 230px;
+}
+#footer {
+    text-align: center;
+    margin: 60px 20px 30px 30px;
+    font-size: 8pt;
+    color: #999;
+}
+#sidebar a.ext {
+    text-decoration: none;
+    font-size: 9pt;
+    padding: 2px 0 3px 18px;
+}
+#sidebar a.ext:hover {
+    text-decoration: underline;
+}
+a#feed {
+    background: url('/static/img/feed.png') no-repeat 0 50%;
+}
+a#github {
+    background: url('/static/img/github.png') no-repeat 0 50%;
 }
 
 ul#posts  {
-    padding-left: 0;
+    padding: 0;
+    margin: 0;
 }
-
 ul#posts li {
     list-style-type: none;
-    padding: 3px 0;
 }
-
-ul#posts li span {
-    float: right;
-    color: #2A2E4D;
-    font-size: 9pt;
+ul#posts li h2 {
+    margin: 0;
+    padding: 0;
+    line-height: 80%;
+    float: left;
+    font-size: 28pt;
+    text-transform: uppercase;
+    text-align: right;
+    width: 222px;
+    font-family: Arial, sans-serif;
 }
-
-ul#posts li a {
+ul#posts li h2 a:hover{
     text-decoration: none;
 }
-
-ul#posts li a:hover {
-    text-decoration: underline;
+ul#posts li .date {
+    padding-top: 3px;
+    clear: both;
+    float: left;
+    text-align: right;
+    text-transform: uppercase;
+    width: 222px;
 }
-
+ul#posts li .post {
+    padding-left: 242px;
+}
+#post_title {
+    margin: 20px 0 0 0;
+    padding: 0;
+    line-height: 80%;
+    font-size: 28pt;
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+}
+#pagination {
+    font-size: 11pt;
+    margin-top: 42px;
+    padding-left: 242px;
+    text-transform: uppercase;
+}
 div.highlight {
     background-color: #fafafa;
     padding: 2px 10px;

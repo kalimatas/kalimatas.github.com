@@ -3,10 +3,6 @@ layout: post
 title: Simple notebook for ideas
 ---
 
-h2. {{ page.title }}
-
-p(date).  13 June, 2012
-
 Sometimes I have an idea. Aha, that happenes. Even if it's not a very good idea I'm writing it down for future. There are a lot of variants to do this - from real paper and pencil to super-huge-cool-web-applications. I decided to reinvent the wheel and make my own.
 
 Just a simple notebook for ideas. Runs of Google App Engine. You may use it :)) Wishes accepted.

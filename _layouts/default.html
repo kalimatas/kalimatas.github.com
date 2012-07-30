@@ -9,22 +9,30 @@
 </head>
 <body>
 
-<div id="top">
-    <span><a target="_blank" class="ext" id="feed" href="http://feeds.feedburner.com/GuzAlexander">feed</a></span> 
-    <span><a target="_blank" class="ext" id="github" href="https://github.com/kalimatas">github</a></span>
-    <a id="home" href="/">Guz Alexander</a>
-    <a href="/archive.html">Archive</a>
+<div id="sidebar">
+    <h1 id="home_container">
+        <a id="home" href="/">guz alexander</a>
+    </h1>
+    <div id="links">
+        <ul>
+            <li><a href="/">home</a></li>
+            <li><a href="/">archive</a></li>
+            <li><a href="/">about</a></li>
+            <li>
+                <a target="_blank" class="ext" id="feed" href="http://feeds.feedburner.com/GuzAlexander">feed</a>
+                <a target="_blank" class="ext" id="github" href="https://github.com/kalimatas">github</a>
+            </li>
+        </ul>
+    </div>
 </div>
 
-<div id="wrapper">
-    <div id="content">
-        {{ content }}
-    </div>
+<div id="content">
+    {{ content }}
+</div>
 
-    <div id="footer">
-        This blog is built with <a target="_blank" href="https://github.com/mojombo/jekyll">Jekyll</a>.
-        You can find it's source code <a target="_blank" href="https://github.com/kalimatas/kalimatas.github.com">here</a>.
-    </div>
+<div id="footer">
+    This blog is built with <a target="_blank" href="https://github.com/mojombo/jekyll">Jekyll</a>.
+    You can find it's source code <a target="_blank" href="https://github.com/kalimatas/kalimatas.github.com">here</a>.
 </div>
 
 <script type="text/javascript">
