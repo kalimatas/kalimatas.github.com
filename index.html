@@ -4,20 +4,23 @@ title: Guz Alexander
 ---
 
 <ul id="posts">
-    <!-- 
-    <li>
-        <span>May 4, 2012</span>
-        <a href="/">Hello blog post</a>
-    </li>
-    <li>
-        <span>May 5, 2012</span>
-        <a href="/">Another blog post</a>
-    </li>
-    -->
-    {% for post in site.posts %}
+    {% for post in paginator.posts %}
         <li>
             <span>{{ post.date | date_to_string }}</span>
             <a href="{{ post.url }}">{{ post.title }}</a>
         </li>
     {% endfor %}
 </ul>
+
+<div id="pagination">
+    {% if paginator.previous_page %}
+        {% if paginator.previous_page == 1 %}
+            <a href="/" class="previous">&larr; older entries</a>
+        {% else %}
+            <a href="/page{{paginator.previous_page}}" class="previous">&larr; older entries</a>
+        {% endif %}
+    {% endif %}
+    {% if paginator.next_page %}
+        <a href="/page{{paginator.next_page}}" class="next ">newer entries &rarr;</a>
+    {% endif %}
+</div>
