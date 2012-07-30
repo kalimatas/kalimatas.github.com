@@ -3,8 +3,8 @@ layout: default
 title: Guz Alexander - Archive
 ---
 
-<h2>Archive</h2>
-<ul>
+<h2 id="post_title">Archive</h2>
+<ul class="archive_list">
     {% for post in site.posts %}
         {% unless post.next %}
             <h3>{{ post.date | date: '%Y' }}</h3>

@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Verdana, Helvetica, sans-serif;
+    font-family: Arial, sans-serif;
     font-size: 10pt;
     text-align: left;
     color: #333333;
@@ -9,7 +9,6 @@ body {
 h2 {
     color: #333;
     font-size: 2em;
-    font-family: Arial, sans-serif;
 }
 p {
     line-height: 1.2em;
@@ -17,7 +16,6 @@ p {
 p.date {
     margin: 0;
     padding: 3px 0;
-    color: #999;
     text-transform: uppercase;
 }
 .previous {
@@ -46,11 +44,28 @@ a:hover {
     width: 235px;
     padding: 30px 0;
     text-transform: uppercase;
-    font-family: Arial, sans-serif;
 }
 #sidebar #home_container {
     margin: 0;
-    padding: 0;
+    padding: 0 0 0 13px;
+}
+#links ul {
+    margin: 0;
+    padding: 10px 0 0 13px;
+}
+#links ul li {
+    list-style-type: none;
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 21px;
+    letter-spacing: -1px;
+}
+#links a {
+    color: #000000;
+}
+#links a:hover {
+    text-decoration: none;
+    color: #c61a1a;
 }
 a#home {
     font-weight: bold;
@@ -91,16 +106,18 @@ ul#posts  {
 ul#posts li {
     list-style-type: none;
 }
+ul#posts li .post li{
+    list-style-type: disc;
+}
 ul#posts li h2 {
     margin: 0;
     padding: 0;
     line-height: 80%;
     float: left;
-    font-size: 28pt;
+    font-size: 24pt;
     text-transform: uppercase;
     text-align: right;
     width: 222px;
-    font-family: Arial, sans-serif;
 }
 ul#posts li h2 a:hover{
     text-decoration: none;
@@ -120,8 +137,23 @@ ul#posts li .post {
     margin: 20px 0 0 0;
     padding: 0;
     line-height: 80%;
-    font-size: 28pt;
-    font-family: Arial, sans-serif;
+    font-size: 24pt;
+    text-transform: uppercase;
+}
+.archive_list {
+    margin-left: 0;
+    padding-left: 0;
+}
+.archive_list li {
+    list-style-type: none;
+    line-height: 120%;
+    font-size: 12pt;
+}
+.archive_list h3 {
+    margin: 15px 0;
+    padding: 0;
+    line-height: 80%;
+    font-size: 17pt;
     text-transform: uppercase;
 }
 #pagination {
@@ -133,4 +165,7 @@ ul#posts li .post {
 div.highlight {
     background-color: #fafafa;
     padding: 2px 10px;
+}
+.post, #post {
+    font-family: Verdana, Helvetica, sans-serif;
 }
