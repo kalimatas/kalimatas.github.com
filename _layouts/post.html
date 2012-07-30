@@ -7,4 +7,8 @@ layout: default
 
 <div id="post">
     {{ content }}
+
+    {% if page.hhlink %}
+        You can discuss this post on <a target="_blank" href="{{page.hhlink}}">Hacker News</a>
+    {% endif %}
 </div>

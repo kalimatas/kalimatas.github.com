@@ -162,6 +162,9 @@ ul#posts li .post {
     padding-left: 242px;
     text-transform: uppercase;
 }
+.hhlink {
+    padding-left: 242px;
+}
 div.highlight {
     background-color: #fafafa;
     padding: 2px 10px;
