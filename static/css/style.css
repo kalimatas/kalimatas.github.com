@@ -144,15 +144,15 @@ ul#posts li .post {
 }
 .archive_list {
     margin-left: 0;
-    padding-left: 0;
+    padding-left: 42px;
 }
 .archive_list li {
     list-style-type: none;
     line-height: 120%;
     font-size: 12pt;
 }
-.archive_list h3 {
-    margin: 15px 0;
+.archive_list h2 {
+    margin: 20px 0;
     padding: 0;
     line-height: 80%;
     font-size: 17pt;
