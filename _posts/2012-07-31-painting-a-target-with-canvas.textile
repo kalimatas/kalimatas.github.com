@@ -2,6 +2,7 @@
 layout: post
 title: Painting a target with canvas
 date: 31 JUL 2012
+hhlink: http://hackerne.ws/item?id=4318178
 ---
 
 After playing with "canvas":http://en.wikipedia.org/wiki/Canvas_element for some time I gave a birth to this small
