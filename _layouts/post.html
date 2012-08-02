@@ -2,6 +2,7 @@
 layout: default
 ---
 
+<div id="post_wrapper">
 <h2 id="post_title">{{ page.title }}</h2>
 <p class="date">{{ page.date | date_to_string }}</p>
 
@@ -11,4 +12,6 @@ layout: default
     {% if page.hhlink %}
         You can discuss this post on <a target="_blank" href="{{page.hhlink}}">Hacker News</a>
     {% endif %}
+</div>
+
 </div>

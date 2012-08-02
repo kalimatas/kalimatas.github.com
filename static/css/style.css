@@ -1,3 +1,13 @@
+@font-face {
+    font-family: Roboto;
+    src: url('fonts/Roboto/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: RobotoCondensed;
+    src: url('fonts/Roboto/Roboto-Condensed.ttf');
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -9,6 +19,9 @@ body {
 h2 {
     color: #333;
     font-size: 2em;
+    font-family: Roboto, sans-serif;
+    font-weight: normal;
+    letter-spacing: -1px;
 }
 p {
     line-height: 1.2em;
@@ -76,13 +89,14 @@ a#home {
     font-variant: small-caps;
 }
 #content {
-    padding: 20px 30px 0 230px;
+    padding: 28px 30px 0 230px;
 }
 #footer {
     text-align: center;
     margin: 60px 20px 30px 30px;
     font-size: 8pt;
     color: #999;
+    font-family: Roboto, sans-serif;
 }
 #sidebar a.ext {
     text-decoration: none;
@@ -136,11 +150,14 @@ ul#posts li .post {
     padding-left: 242px;
 }
 #post_title {
-    margin: 20px 0 0 0;
+    margin: 12px 0 0 0;
     padding: 0;
     line-height: 80%;
-    font-size: 24pt;
+    font-size: 30px;
     text-transform: uppercase;
+}
+#post_wrapper {
+    padding-left: 30px;
 }
 .archive_list {
     margin-left: 0;
@@ -150,6 +167,7 @@ ul#posts li .post {
     list-style-type: none;
     line-height: 120%;
     font-size: 12pt;
+    font-family: Roboto, sans-serif;
 }
 .archive_list h2 {
     margin: 20px 0;
