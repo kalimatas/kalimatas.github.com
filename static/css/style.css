@@ -186,8 +186,12 @@ ul#posts li .post {
     padding-left: 242px;
 }
 div.highlight {
-    background-color: #fafafa;
+    background-color: #f5f5f5;
     padding: 2px 10px;
+    border-radius: 4px;
+    border: 1px solid #eee;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
 }
 .post, #post {
     font-family: Verdana, Helvetica, sans-serif;

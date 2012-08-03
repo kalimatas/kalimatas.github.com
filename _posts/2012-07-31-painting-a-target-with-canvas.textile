@@ -5,15 +5,9 @@ date: 31 JUL 2012
 hhlink: http://hackerne.ws/item?id=4318178
 ---
 
-After playing with "canvas":http://en.wikipedia.org/wiki/Canvas_element for some time I gave a birth to this small
-piece of... code. If you don't have any idea what it is I'll give you a hint. It's a gradually appearing target
-created with the help of HTML5 canvas element. 5 elements actually.
+After playing with "canvas":http://en.wikipedia.org/wiki/Canvas_element for some time I gave a birth to this small piece of... code. If you don't have any idea what it is I'll give you a hint. It's a gradually appearing target created with the help of HTML5 canvas element. 5 elements actually.
 
-The idea is simple: create several canvas elements with different radius values and absolutely position them at the
-same point.
-
-Step by step drawing is archived by repeatedly calling a *drawCircle* function with different values of radius
-property until it reaches *Math.PI * 2*.
+The idea is simple: create several canvas elements with different radius values and absolutely position them at the same point. Step by step drawing is archived by repeatedly calling a *drawCircle* function with different values of radius property until it reaches *Math.PI * 2*.
 
 <div style="position: relative;">
 <div id="can_div" style="width: 300px; height: 300px;"></div>
