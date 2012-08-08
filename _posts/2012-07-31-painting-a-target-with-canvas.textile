@@ -28,7 +28,7 @@ function createElements() {
         elements[i] = {
             'radius': (i+1) * 20,
             'style': colors[i],
-            'size': 600,
+            'size': 300,
             'circle': null
         };
     }
