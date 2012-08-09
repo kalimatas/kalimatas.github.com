@@ -9,31 +9,29 @@
 </head>
 <body>
 
-<div id="sidebar">
-    <h1 id="home_container">
-        <a id="home" href="/"><img src="/static/img/logo.png" /></a>
-    </h1>
-    <div id="links">
-        <ul>
-            <li><a href="/">home</a></li>
-            <li><a href="/archive.html">archive</a></li>
-            <li>
-                <a target="_blank" href="http://www.facebook.com/alexander.guz.3"><img src="/static/img/facebook.png" /></a>
-                <a target="_blank" href="https://github.com/kalimatas"><img src="/static/img/github.png" /></a>
-                <a target="_blank" href="http://feeds.feedburner.com/GuzAlexander"><img src="/static/img/feed.png" /></a>
-            </li>
-        </ul>
+<header class="header">
+    <div class="wrapper">
+        <div class="avatar">
+            <a class="avatar-link" href="/"></a>
+        </div>
+        <div class="header-text">
+            <h2 class="header-name">
+                <a class="home-link" href="/">Guz Alexander</a>
+            </h2>
+        </div>
+        <div class="social-links">
+            <ul class="social-links-icons">
+                <li><a target="_blank" class="facebook" href="http://www.facebook.com/alexander.guz.3"></a></li>
+                <li><a target="_blank" class="github" href="https://github.com/kalimatas"></a></li>
+                <li><a target="_blank" class="feed" href="http://feeds.feedburner.com/GuzAlexander"></a></li>
+            </ul>
+        </div>
     </div>
-</div>
+</header>
 
-<div id="content">
+<section class="main">
     {{ content }}
-</div>
-
-<div id="footer">
-    This blog is built with <a target="_blank" href="https://github.com/mojombo/jekyll">Jekyll</a>.
-    You can find it's source code <a target="_blank" href="https://github.com/kalimatas/kalimatas.github.com">here</a>.
-</div>
+</section>
 
 <script type="text/javascript">
   var _gaq = _gaq || [];

@@ -10,5 +10,3 @@ Sometimes I have an idea. Aha, that happens. Even if it's not a very good idea I
 Just a simple notebook for ideas. Runs of Google App Engine. You may use it :)) Wishes accepted.
 
 "http://writedownyouridea.appspot.com":http://writedownyouridea.appspot.com
-
-!/static/img/writedown.jpg!
