@@ -18,8 +18,8 @@ You can download full source of our application at this "github page":https://gi
 * create database and tables from _sql/apocalypticdates.sql_;
 * create testing database by running _bin/create_test_db.sh_.
 
-Here I'm not going to provide full instructions of how to install these soft and to make this
-application working - that's boring and not related to this post. Also if you want to learn all available methods of PHPUnit this is a wrong place to start - you'd better read "official documentation":http://www.phpunit.de/manual/3.4/en/. So, I assume you already have working application at your localhost.  
+Here I'm not going to provide full instructions of how to install these soft and to make this application working -
+that's boring and not related to this post. Also if you want to learn all available methods of PHPUnit this is a wrong place to start - you'd better read "official documentation":http://www.phpunit.de/manual/3.4/en/. So, I assume you already have working application at your localhost.
 
 What features does our application have? To be honest, not much: you can see the list of available dates on the main page and create a new one by accessing */index/new/* url and providing necessary data via POST. Nevertheless this is quite enough to create different kind of tests: simple functions (or methods) tests, controllers tests and database (in our case models) tests.  
 
@@ -29,8 +29,7 @@ In this application I'm using two basic classes by extending which we'll get all
 
 h3. Testing controllers
 
-We extend _PHPUnit_ControllerTestCase_ class for testing parts specific for ZF like, for example,
-routing, error processing, security system, etc. Here is an example test from _IndexControllerTest_: 
+We extend _PHPUnit_ControllerTestCase_ class for testing parts specific for ZF like, for example, routing, error processing, security system, etc. Here is an example test from _IndexControllerTest_:
 
 {% highlight php %}
 <?php

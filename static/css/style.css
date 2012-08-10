@@ -11,7 +11,7 @@
 }
 body {
     background-color: white;
-    font-family: Roboto, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
     color: #333333;
@@ -63,6 +63,7 @@ a {
 }
 .header-text .header-name .home-link {
     color: inherit;
+    font-family: Roboto, sans-serif;
 }
 .social-links .social-links-icons {
     text-align: center;
@@ -115,7 +116,7 @@ a.github {
     font-weight: 600;
     margin: 0;
     font-size: 1.5em;
-    line-height: 1.3em;
+    line-height: 1.4em;
 }
 .article-title .article-link {
     color: inherit;
@@ -127,6 +128,9 @@ a.github {
     display: block;
     color: #999;
     font-size: 0.8em;
+}
+.article-body {
+    color: #222;
 }
 .article-body, .article-footer {
     margin-top: 2em;
@@ -142,10 +146,9 @@ a.github {
     text-decoration: underline
 }
 .article-body h3 {
-    font-size: 23px;
+    font-size: 24px;
     font-weight: 300;
-    line-height: 27px;
-    font-family: 'Open Sans', sans-serif;
+    line-height: 29px;
 }
 .highlight {
     background-color: #f5f5f5;
