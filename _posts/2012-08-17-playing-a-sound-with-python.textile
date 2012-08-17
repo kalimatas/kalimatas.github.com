@@ -2,6 +2,7 @@
 layout: post
 title: Playing music with Python
 date: 17 AUG 2012
+hhlink: http://hackerne.ws/item?id=4398570
 ---
 
 Wand to play a sound in Python but don't know how? -It's your problem- No problems. I'll show you some ways. Here is the list of popular Python libraries used to make noise with short descriptions and usage examples.
