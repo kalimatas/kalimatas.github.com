@@ -2,6 +2,7 @@
 layout: post
 title: Abandoning VIM
 date: 8 SEP 2012
+hhlink: http://hackerne.ws/item?id=4493623
 ---
 
 Since I touched the keyboard for the first time when I was thirteen I never stop self-cultivating myself in the area. I even became a programmer and doomed myself on reading endless docs, tutorials and books. In one these books, called "The Pragmatic Programmer":http://www.amazon.com/The-Pragmatic-Programmer-Journeyman-Master/dp/020161622X, there was a chapter about tools used by programmers where the opinion was told that *"... it is better to know one editor very well, and use it for all editing tasks..."*. I agreed and decided to follow this advice. The only difficulty was to pick up the right editor, but since I wanted to be super/mega cool programmer the variants were obvious: "VIM":http://www.vim.org or "Emacs":http://www.gnu.org/software/emacs/. I chose VIM, to be honest, for one reason: because of horrible (in my opinion) Emacs key bindings.
