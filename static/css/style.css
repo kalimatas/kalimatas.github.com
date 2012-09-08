@@ -132,11 +132,15 @@ a.github {
 .article-body {
     color: #222;
 }
+.article-body p {
+    text-indent: 20px;
+    text-align: justify;
+}
 .article-body, .article-footer {
     margin-top: 2em;
     font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
-    line-height: 19px;
+    font-size: 15px;
+    line-height: 22px;
 }
 .article-footer {
     font-size: 12px;
