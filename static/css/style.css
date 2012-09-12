@@ -15,7 +15,7 @@
 }
 body {
     background-color: white;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Lucida Grande', sans-serif;
     margin: 0;
     padding: 0;
     color: #333333;
@@ -150,9 +150,9 @@ a.github {
     text-decoration: underline
 }
 .article-body h3 {
-    font-size: 24px;
-    font-weight: 300;
-    line-height: 29px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19px;
 }
 .highlight {
     font-size: 12px;
