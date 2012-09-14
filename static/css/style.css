@@ -15,7 +15,7 @@
 }
 body {
     background-color: white;
-    font-family: 'Lucida Grande', sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
     color: #333333;
@@ -117,10 +117,13 @@ a.github {
     min-width: 400px;
 }
 .article-title {
-    font-weight: 600;
+    font-weight: normal;
     margin: 0;
     font-size: 1.5em;
     line-height: 1.4em;
+}
+.posts .article-title {
+    font-size: 1.3em;
 }
 .article-title .article-link {
     color: inherit;
@@ -138,9 +141,9 @@ a.github {
 }
 .article-body, .article-footer {
     margin-top: 2em;
-    font-family: 'Lucida Grande', sans-serif;
-    font-size: 15px;
-    line-height: 20px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
 }
 .article-footer {
     font-size: 12px;
