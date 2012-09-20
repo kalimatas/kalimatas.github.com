@@ -50,9 +50,9 @@ import gobject
 import os
 
 mainloop = gobject.MainLoop()
-player = gst.element_factory_make("playbin", "player")
-player.set_property('uri', 'file://' + os.path.abspath('thesong.ogg'))
-player.set_state(gst.STATE_PLAYING)
+pl = gst.element_factory_make("playbin", "player")
+pl.set_property('uri','file://'+os.path.abspath('thesong.ogg'))
+pl.set_state(gst.STATE_PLAYING)
 mainloop.run()
 {% endhighlight %}
 
@@ -73,10 +73,11 @@ chunk = 1024
 wf = wave.open('thesong.wav', 'rb')
 p = pyaudio.PyAudio()
 
-stream = p.open(format = p.get_format_from_width(wf.getsampwidth()),
-                channels = wf.getnchannels(),
-                rate = wf.getframerate(),
-                output = True)
+stream = p.open(
+    format = p.get_format_from_width(wf.getsampwidth()),
+    channels = wf.getnchannels(),
+    rate = wf.getframerate(),
+    output = True)
 data = wf.readframes(chunk)
 
 while data != '':
@@ -112,7 +113,10 @@ while len(s):
             r = dec.decode(fr[1])
             if r and r.data:
                 if snd == None:
-                    snd = sound.Output(int(r.sample_rate), r.channels, sound.AFMT_S16_LE)
+                    snd = sound.Output(
+                        int(r.sample_rate),
+                        r.channels,
+                        sound.AFMT_S16_LE)
                 data = r.data
                 snd.play(data)
     s = f.read(512)
