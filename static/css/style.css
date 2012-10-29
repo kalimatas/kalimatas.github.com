@@ -1,16 +1,12 @@
-@font-face {
-    font-family: Roboto;
-    src: url('fonts/Roboto/Roboto-Regular.ttf');
-}
 * {
     box-sizing: border-box;
 }
 body {
-    background-color: white;
-    font-family: 'Arial', sans-serif;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    color: #333333;
+    color: black;
 }
 a {
     text-decoration: none;
@@ -54,12 +50,15 @@ a {
 }
 .header-text .header-name {
     text-transform: uppercase;
-    font-weight: 700;
-    font-size: 1em;
+    padding-left: 20px;
+    text-align: left;
+    font-weight: normal;
+    margin: 10px 0;
+    font-size: 24px;
+    letter-spacing: -2px;
 }
 .header-text .header-name .home-link {
     color: inherit;
-    font-family: Roboto, sans-serif;
 }
 .social-links .social-links-icons {
     text-align: center;
@@ -104,19 +103,17 @@ a.github {
 }
 .article {
     display: block;
-    padding: 0 1em 1em 0;
+    padding: 0 1em 1.2em 0;
     width: 550px;
 }
 .article-title {
-    font-family: 'Rosario', sans-serif;
     font-weight: normal;
     margin: 0;
-    font-size: 21px;
+    font-size: 29px;
 }
 .posts .article-title {
-    font-size: 18px;
+    font-size: 23px;
     font-weight: normal;
-    font-family: 'Rosario', sans-serif;
 }
 .article-title .article-link {
     color: inherit;
@@ -127,15 +124,15 @@ a.github {
 .article-header .article-date {
     display: block;
     color: #999;
-    font-size: 15px;
-    font-family: 'Rosario', sans-serif;
+    font-size: 11px;
 }
 .article-body {
     color: #222;
+    line-height: normal;
 }
 .article-body, .article-footer {
     margin-top: 2em;
-    font-family: 'Verdana', sans-serif;
+    font-family: Verdana, sans-serif;
     font-size: 13px;
 }
 .article-footer {
@@ -146,9 +143,9 @@ a.github {
     text-decoration: underline
 }
 .article-body h3 {
-    font-size: 17px;
-    font-weight: 400;
-    font-family: 'Rosario', sans-serif;
+    font-size: 19px;
+    font-weight: normal;
+    font-family: Arial, sans-serif;
 }
 .highlight {
     font-size: 12px;
