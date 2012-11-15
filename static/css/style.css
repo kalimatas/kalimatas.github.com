@@ -128,12 +128,12 @@ a.github {
 }
 .article-body {
     color: #222;
-    line-height: normal;
+    line-height: 16px;
 }
 .article-body, .article-footer {
     margin-top: 2em;
     font-family: Verdana, sans-serif;
-    font-size: 13px;
+    font-size: 12px;
 }
 .article-footer {
     font-size: 12px;
@@ -148,8 +148,8 @@ a.github {
     font-family: Arial, sans-serif;
 }
 .highlight {
-    font-size: 12px;
-    line-height: 15px;
+    font-size: 13px;
+    line-height: 16px;
     background-color: #f5f5f5;
     padding: 2px 10px;
     border-radius: 4px;
