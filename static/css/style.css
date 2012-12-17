@@ -13,6 +13,11 @@ a {
     outline: none;
     color: #2A5685;
 }
+blockquote {
+    text-align: right;
+    font-style: italic;
+    margin-bottom: 25px;
+}
 .main {
     padding-left: 190px;
     margin-top: 2em;
