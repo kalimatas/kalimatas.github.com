@@ -2,7 +2,7 @@
 layout: post
 title: Thinking is a drug
 date: 17 DEC 2012
-hhlink: 
+hhlink: http://news.ycombinator.com/item?id=4933306 
 ---
 
 bq. "Thinking is the hardest work there is, which is the probable 
