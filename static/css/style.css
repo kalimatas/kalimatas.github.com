@@ -3,16 +3,20 @@
 }
 body {
     background-color: #fff;
-    font-family: Arial, sans-serif;
+    font-family: 'PT serif', Georgia, Arial, Verdana;
     margin: 0;
     padding: 0;
     color: black;
 }
 a {
-    text-decoration: none;
     outline: none;
     color: #2A5685;
 }
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    text-decoration: none;
+}
+
 blockquote {
     text-align: right;
     font-style: italic;
@@ -60,7 +64,7 @@ blockquote {
     font-weight: normal;
     margin: 10px 0;
     font-size: 24px;
-    letter-spacing: -2px;
+    letter-spacing: -1px;
 }
 .header-text .header-name .home-link {
     color: inherit;
@@ -109,15 +113,20 @@ a.github {
 .article {
     display: block;
     padding: 0 1em 1.2em 0;
-    width: 550px;
+    width: 700px;
 }
+
+li .article {
+    padding-bottom: 0.6em;
+}
+
 .article-title {
     font-weight: normal;
     margin: 0;
     font-size: 29px;
 }
 .posts .article-title {
-    font-size: 23px;
+    font-size: 24px;
     font-weight: normal;
 }
 .article-title .article-link {
@@ -129,28 +138,25 @@ a.github {
 .article-header .article-date {
     display: block;
     color: #999;
-    font-size: 11px;
+    font-size: 12px;
+    font-family: Helvetica, sans-serif;
 }
 .article-body {
     color: #222;
-    line-height: 16px;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 300;
 }
 .article-body, .article-footer {
     margin-top: 2em;
-    font-family: Verdana, sans-serif;
-    font-size: 12px;
 }
 .article-footer {
-    font-size: 12px;
+    font-size: 14px;
     color: #999;
-}
-.article-body a:hover, .article-footer a:hover{
-    text-decoration: underline
 }
 .article-body h3 {
     font-size: 19px;
     font-weight: normal;
-    font-family: Arial, sans-serif;
 }
 .highlight {
     font-size: 13px;
@@ -164,4 +170,15 @@ a.github {
 }
 .pre {
     font-family: 'Courier New', sans-serif;
+}
+
+code {
+    font-size: 13px;
+    background-color: #f5f5f5;
+    padding: 2px;
+    border: 1px solid #eee;
+}
+
+pre code {
+    border: none;
 }

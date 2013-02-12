@@ -1,10 +1,10 @@
 ---
 layout: post
 title: Code pictures
-date: 27 JUN 2012
+date: 2012-06-27 13:00
 ---
 
-Reading different books/articles/journals about programming you can see a recommendation like "write beautiful code". But what does it mean? Format your code? Name your variables like *beautifulIndexOfALoop*? Perhaps.
+Reading different books/articles/journals about programming you can see a recommendation like "write beautiful code". But what does it mean? Format your code? Name your variables like **beautifulIndexOfALoop**? Perhaps.
 
 But let's imagine people who gave your such a recommendation were thinking of something like this:
 
@@ -29,7 +29,7 @@ But let's imagine people who gave your such a recommendation were thinking of so
                  $noWayItsTheEnd = 'it was f';
                    echo "good buy!!!!!";
                         echo "haha";
-{% endhighlight; %}
+{% endhighlight %}
 
 or like this:
 
@@ -55,6 +55,6 @@ or like this:
                          } $done = true;print(
                          'this was...'.PHP_EOL
                          );str_repeat('ts',2);
-{% endhighlight; %}
+{% endhighlight %}
 
 It's completely unreadable, but can cheer you up. And of course you can run it!

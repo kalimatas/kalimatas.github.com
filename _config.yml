@@ -1,1 +1,4 @@
 pygments: true
+markdown: rdiscount 
+kramdown: 
+    use_coderay: false

@@ -1,15 +1,15 @@
 ---
 layout: post
 title: Playing music with Python
-date: 17 AUG 2012
-hhlink: http://hackerne.ws/item?id=4398570
+date: 2012-08-17
+hhlink: http://news.ycombinator.com/item?id=4398570
 ---
 
-Wand to play a sound in Python but don't know how? -It's your problem- No problems. I'll show you some ways. Here is the list of popular Python libraries used to make noise with short descriptions and usage examples.
+Wand to play a sound in Python but don't know how? <strike>It's your problem</strike> No problems. I'll show you some ways. Here is the list of popular Python libraries used to make noise with short descriptions and usage examples.
 
-h3. "Pyglet":http://www.pyglet.org/
+### [Pyglet](http://www.pyglet.org/)
 
-A cross-platform windowing and multimedia library for Python. Among it's features: no external dependencies or installation requirements; can optionally use "AVbin":http://code.google.com/p/avbin/ to play back audio formats such as MP3, OGG/Vorbis and WMA. Distributed under BSD open-source license.
+A cross-platform windowing and multimedia library for Python. Among it's features: no external dependencies or installation requirements; can optionally use [AVbin](http://code.google.com/p/avbin/) to play back audio formats such as MP3, OGG/Vorbis and WMA. Distributed under BSD open-source license.
 
 {% highlight python %}
 #!/usr/bin/env python
@@ -19,9 +19,9 @@ song.play()
 pyglet.app.run()
 {% endhighlight %}
 
-h3. "Pygame":http://www.pygame.org
+### [Pygame](http://www.pygame.org)
 
-Pygame is a set of Python modules designed for writing games. Pygame adds functionality on top of the excellent "SDL":http://www.libsdl.org/ library. This allows you to create fully featured games and multimedia programs in the python language. Pygame is highly portable and runs on nearly every platform and operating system. Pygame itself has been downloaded millions of times, and has had millions of visits to its website. Distributed under GPL.
+Pygame is a set of Python modules designed for writing games. Pygame adds functionality on top of the excellent [SDL](http://www.libsdl.org/) library. This allows you to create fully featured games and multimedia programs in the python language. Pygame is highly portable and runs on nearly every platform and operating system. Pygame itself has been downloaded millions of times, and has had millions of visits to its website. Distributed under GPL.
 
 {% highlight python %}
 #!/usr/bin/env python
@@ -35,9 +35,9 @@ while True:
 pygame.quit()
 {% endhighlight %}
 
-h3. "GStreamer Python Bindings":http://pygstdocs.berlios.de/
+### [GStreamer Python Bindings](http://pygstdocs.berlios.de/)
 
-GStreamer is a pipeline-based multimedia framework written in the C programming language with the type system based on "GObject":http://en.wikipedia.org/wiki/GObject.
+GStreamer is a pipeline-based multimedia framework written in the C programming language with the type system based on [GObject](http://en.wikipedia.org/wiki/GObject).
 
 GStreamer allows a programmer to create a variety of media-handling components, including simple audio playback, audio and video playback, recording, streaming and editing. The pipeline design serves as a base to create many types of multimedia applications such asvideo editors, streaming media broadcasters and media players. Distributed under LGPL.
 
@@ -56,9 +56,9 @@ pl.set_state(gst.STATE_PLAYING)
 mainloop.run()
 {% endhighlight %}
 
-h3. "PyAudio":http://people.csail.mit.edu/hubert/pyaudio/
+### [PyAudio](http://people.csail.mit.edu/hubert/pyaudio/)
 
-PyAudio provides Python bindings for "PortAudio":http://www.portaudio.com/, the cross-platform audio I/O library. With PyAudio, you can easily use Python to play and record audio on a variety of platforms.
+PyAudio provides Python bindings for [PortAudio](http://www.portaudio.com/), the cross-platform audio I/O library. With PyAudio, you can easily use Python to play and record audio on a variety of platforms.
 
 PyAudio is still super-duper alpha quality. It has run on GNU/Linux 2.6, Microsoft Windows 7/XP, and Apple Mac OS X 10.5+—but it could use more testing.
 
@@ -88,7 +88,7 @@ stream.close()
 p.terminate()
 {% endhighlight %}
 
-h3. "PyMedia":http://pymedia.org/tut/
+### [PyMedia](http://pymedia.org/tut/)
 
 PyMedia is a Python module for wav, mp3, ogg, avi, divx, dvd, cdda etc files manipulations. It allows you to parse, demutiplex, multiplex, decode and encode all supported formats. It can be compiled for Windows, Linux and cygwin.
 
