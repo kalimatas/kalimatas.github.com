@@ -3,7 +3,7 @@
 }
 body {
     background-color: #fff;
-    font-family: 'PT serif', Georgia, Arial, Verdana;
+    font-family: 'PT serif', Georgia, Arial, Verdana, serif;
     margin: 0;
     padding: 0;
     color: black;
@@ -61,9 +61,11 @@ blockquote {
     text-transform: uppercase;
     padding-left: 20px;
     text-align: left;
-    font-weight: normal;
+    font-weight: 500;
     margin: 10px 0;
-    font-size: 24px;
+    font-size: 25px;
+    line-height: 27px;
+    font-family: 'PT Sans', sans-serif;
     letter-spacing: -1px;
 }
 .header-text .header-name .home-link {
@@ -126,20 +128,21 @@ li .article {
     font-size: 29px;
 }
 .posts .article-title {
-    font-size: 24px;
-    font-weight: normal;
+    font-size: 26px;
+    font-weight: 300;
 }
 .article-title .article-link {
     color: inherit;
 }
 .article-title .article-link:hover {
+    text-decoration: underline;
     color: #2A5685;
 }
 .article-header .article-date {
     display: block;
     color: #999;
-    font-size: 12px;
-    font-family: Helvetica, sans-serif;
+    font-size: 14px;
+    font-family: 'PT Sans', sans-serif;
 }
 .article-body {
     color: #222;
