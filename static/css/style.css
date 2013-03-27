@@ -158,8 +158,10 @@ li .article {
     color: #999;
 }
 .article-body h3 {
-    font-size: 19px;
-    font-weight: normal;
+    font-size: 20px;
+}
+.article-body h4 {
+    font-size: 17px;
 }
 .highlight {
     font-size: 13px;
