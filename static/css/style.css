@@ -2,8 +2,8 @@
     box-sizing: border-box;
 }
 body {
-    background-color: #fff;
-    font-family: 'PT serif', Georgia, Arial, Verdana, serif;
+    background-color: #fefbfe;
+    font-family: 'lucida grande', Verdana, sans-serif;
     margin: 0;
     padding: 0;
     color: black;
@@ -114,8 +114,8 @@ a.github {
 }
 .article {
     display: block;
-    padding: 0 1em 1.2em 0;
-    width: 700px;
+    padding: 0 0 1.2em 0;
+    width: 520px;
 }
 
 li .article {
@@ -125,10 +125,10 @@ li .article {
 .article-title {
     font-weight: normal;
     margin: 0;
-    font-size: 29px;
+    font-size: 19px;
 }
 .posts .article-title {
-    font-size: 26px;
+    font-size: 18px;
     font-weight: 300;
 }
 .article-title .article-link {
@@ -141,49 +141,51 @@ li .article {
 .article-header .article-date {
     display: block;
     color: #999;
-    font-size: 14px;
-    font-family: 'PT Sans', sans-serif;
+    font-size: 11px;
 }
 .article-body {
     color: #222;
-    font-size: 16px;
-    line-height: 22px;
-    font-weight: 300;
+    font-size: 13px;
+    line-height: 18px;
+}
+.article-body a {
+    text-decoration: none;
+}
+.article-body a:hover {
+    text-decoration: underline;
 }
 .article-body, .article-footer {
     margin-top: 2em;
 }
 .article-footer {
-    font-size: 14px;
+    font-size: 12px;
     color: #999;
 }
-.article-body h3 {
-    font-size: 20px;
+.article-body h3, .article-body h4 {
+    font-size: 14px;
+    line-height: 22px;
+    color: #333;
 }
-.article-body h4 {
-    font-size: 17px;
-}
-.highlight {
-    font-size: 13px;
-    line-height: 16px;
-    background-color: #f5f5f5;
-    padding: 2px 10px;
-    border-radius: 4px;
-    border: 1px solid #eee;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-}
-.pre {
-    font-family: 'Courier New', sans-serif;
+pre {
+    font-size: 12px;
+    padding: 8px;
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #F5F5F5;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
 }
 
 code {
-    font-size: 13px;
-    background-color: #f5f5f5;
-    padding: 2px;
-    border: 1px solid #eee;
+    font-family: "Bitstream Vera Sans Mono", Menlo, Monaco, "Courier New", sans-serif;
+    font-size: 12px;
+    border: none;
+    color: green;
 }
 
 pre code {
-    border: none;
+    font-size: 11px;
+    color: #000;
+    line-height: 14px;
 }

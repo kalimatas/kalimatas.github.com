@@ -16,10 +16,7 @@ Pinba accumulates data in a set of read-only MySQL tables which are of two types
 * raw data tables; using these tables makes it possible to generate custom reports, but keep in mind that accessing the raw data is relatively slow for there may be a great number of records with **no** indexes except primary keys;
 * reports; already aggregated data, updates on-the-fly as new request data arrives.
 
-And the most valuable in my opinion part of Pinba is the ability to measure particular parts of code using timers with arbitrary tags. More about them later.
-
-### Installation
-The Pinba working stack consists of two parts: Pinba engine and PHP extension. I forgot to mention I'm working on `Mac OS X 10.8.2`.
+And the most valuable in my opinion part of Pinba is the ability to measure particular parts of code using timers with arbitrary tags. More about them later. The Pinba working stack consists of two parts: Pinba engine and PHP extension. I forgot to mention I'm working on Mac OS X 10.8.2.
 
 #### Pinba engine
 Pinba engine requires at least `5.1` version of MySQL (both sources and installation) since it's the first version to support pluggable storage engine. Among other requirements [Google Protocol Buffers](http://code.google.com/p/protobuf) and [libevent](http://monkey.org/~provos/libevent/) (chances are it is already installed in your system). You can use [Hoard memory allocator](http://www.hoard.org) as an option to reduce memory consumption, but I won't cover this option in this tutorial. 
@@ -132,7 +129,10 @@ To use timers you'll basically need only two functions `pinba_timer_start` and `
 {% highlight php %}
 <?php
 
-$timer = pinba_timer_start(array("server" => "ap1", "operation" => "concatenate"));
+$timer = pinba_timer_start(array(
+    "server" => "ap1",
+    "operation" => "concatenate"
+));
 $result = '';
 for ($i = 0; $i <= 10; $i++) {
     $result .= (string)$i;
