@@ -1,5 +1,6 @@
 ---
 title: "Golang channels tutorial"
+tags: golang
 date: 2013-12-06 11:00
 ---
 
