@@ -1,4 +1,10 @@
-pygments: true
-markdown: rdiscount 
-kramdown: 
-    use_coderay: false
+author: Guz Alexander
+url: http://guzalexander.com
+markdown: rdiscount
+
+defaults:
+  -
+    scope:
+      type: "posts"
+    values:
+      layout: "post"

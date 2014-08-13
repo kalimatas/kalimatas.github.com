@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Pinba - statistic/monitoring server for PHP on Mac OS X"
 date: 2013-03-27 13:00
 ---

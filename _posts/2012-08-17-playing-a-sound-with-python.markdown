@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Playing music with Python
 date: 2012-08-17
 hhlink: http://news.ycombinator.com/item?id=4398570

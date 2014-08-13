@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "My first hackathon (AngelHack, Moscow)"
 date: 2013-05-24 13:42
 ---

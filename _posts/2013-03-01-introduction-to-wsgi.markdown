@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Introduction to WSGI
 date: 2013-03-01
 ---

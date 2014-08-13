@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Abandoning VIM
 date: 2012-09-08
 hhlink: http://news.ycombinator.com/item?id=4493623
