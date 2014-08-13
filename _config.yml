@@ -1,6 +1,7 @@
 author: Guz Alexander
 url: http://guzalexander.com
 markdown: rdiscount
+pygments: true
 
 defaults:
   -
