@@ -5,16 +5,30 @@
 */
 
 .highlight {
-    white-space: pre;
     overflow: auto;
     word-wrap: normal; /* horizontal scrolling */
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     border-radius: 3px;
-    padding: 20px;
+    padding: 10px;
     background: #343642;
     color: #C1C2C3;
 }
+
+.highlight pre {
+    margin: 0;
+}
+
+.highlight code {
+    font-family: Monaco, 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Lucida Console', monospace;
+    font-size: 12px;
+    line-height: 16px;
+    border: none;
+    -moz-tab-size: 4;
+    -o-tab-size:   4;
+    tab-size: 4;
+}
+
 .highlight .hll { background-color: #ffc; }
 .highlight .gd { color: #2e3436; background-color: #0e1416; }
 .highlight .gr { color: #eeeeec; background-color: #c00; }
