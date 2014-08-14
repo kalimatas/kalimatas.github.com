@@ -2,6 +2,7 @@ author: Guz Alexander
 url: http://guzalexander.com
 markdown: rdiscount
 pygments: true
+paginate: 15
 
 defaults:
   -
