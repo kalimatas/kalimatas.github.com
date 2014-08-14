@@ -1,7 +1,6 @@
 ---
 title: Painting a target with canvas
 date: 2012-07-31
-tags: javascript
 hhlink: http://news.ycombinator.com/item?id=4318178
 ---
 

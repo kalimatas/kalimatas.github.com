@@ -1,6 +1,5 @@
 ---
 title: Introduction to WSGI
-tags: python
 date: 2013-03-01
 ---
 

@@ -1,7 +1,6 @@
 ---
 title: "Will for deep knowledge"
 date: 2012-05-30 22:32
-tags: python
 hhlink: http://news.ycombinator.com/item?id=4042320
 ---
 

@@ -1,7 +1,6 @@
 ---
 title: "Testing apocalyptic dates with ZF and PHPUnit"
 date: 2012-05-18 22:45
-tags: php
 hhlink: http://news.ycombinator.com/item?id=3999428
 ---
 
