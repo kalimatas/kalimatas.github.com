@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
 }
+/*
 body {
     background-color: #fefbfe;
     font-family: 'lucida grande', Verdana, sans-serif;
@@ -180,3 +181,18 @@ p > code {
     height: 21px;
     line-height: 21px;
 }
+
+.highlight pre {
+    margin: 0;
+}
+
+.highlight code {
+    font-family: Monaco, 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Lucida Console', monospace;
+    font-size: 12px;
+    line-height: 16px;
+    border: none;
+    -moz-tab-size: 4;
+    -o-tab-size:   4;
+    tab-size: 4;
+}
+*/

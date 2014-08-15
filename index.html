@@ -4,34 +4,26 @@ title: Guz Alexander
 ---
 
 {% for post in paginator.posts %}
-<div>
-	<a class="article-link" href="{{ post.url }}">{{ post.title }}</a>
-	<time class="article-date">{{ post.date | date: "%b %-d, %Y" }}</time>
+<div class="entry">
+	<time>{{ post.date | date: "%b %-d, %Y" }}</time>
+	<a href="{{ post.url }}">{{ post.title }}</a>
 </div>
 {% endfor %}
 
 {% if paginator.total_pages > 1 %}
-<section class="pagination">
+<nav class="pagination">
 	{% if paginator.previous_page %}
-		<a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
+		<a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; prev</a>
 	{% else %}
-		<span>&laquo; Prev</span>
+		<span>&laquo; prev</span>
 	{% endif %}
 
-	{% for page in (1..paginator.total_pages) %}
-		{% if page == paginator.page %}
-			<em>{{ page }}</em>
-		{% elsif page == 1 %}
-			<a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
-		{% else %}
-			<a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
-		{% endif %}
-	{% endfor %}
+	<span class="page">{{ paginator.page }}</span>
 
 	{% if paginator.next_page %}
-		<a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
+		<a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">next &raquo;</a>
 	{% else %}
-		<span>Next &raquo;</span>
+		<span>next &raquo;</span>
 	{% endif %}
-</section>
+</nav>
 {% endif %}

@@ -9,28 +9,21 @@
 </head>
 <body>
 
-<header class="header">
-    <div class="wrapper">
-        <div class="avatar">
-            <a class="avatar-link" href="/"></a>
-        </div>
-        <div class="header-text">
-            <h2 class="header-name">
-                <a class="home-link" href="/">Guz <br />Alexander</a>
-            </h2>
-        </div>
-        <div class="social-links">
-            <ul class="social-links-icons">
-                <li><a target="_blank" class="facebook" href="http://www.facebook.com/kalimatas"></a></li>
-                <li><a target="_blank" class="github" href="https://github.com/kalimatas"></a></li>
-                <li><a target="_blank" class="feed" href="http://feeds.feedburner.com/GuzAlexander"></a></li>
-            </ul>
-        </div>
-    </div>
-</header>
+<section class="container">
+	<nav class="menu">
+		<ul>
+			<li><a href="/archive/">archive</a></li>
+			<li><a href="/projects/">projects</a></li>
+			<li><a href="/about/">about</a></li>
+		</ul>
+	</nav>
+	<header class="title">
+		<a href="/">{{ site.author }}</a>
+	</header>
 
-<section class="main">
-    {{ content }}
+	<section class="main">
+		{{ content }}
+	</section>
 </section>
 
 <script type="text/javascript">
