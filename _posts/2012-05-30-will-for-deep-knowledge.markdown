@@ -1,5 +1,6 @@
 ---
 title: "Will for deep knowledge"
+layout: post
 date: 2012-05-30 22:32
 hhlink: http://news.ycombinator.com/item?id=4042320
 ---

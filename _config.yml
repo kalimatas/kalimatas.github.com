@@ -3,11 +3,3 @@ url: http://guzalexander.com
 markdown: rdiscount
 pygments: true
 paginate: 15
-
-defaults:
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"

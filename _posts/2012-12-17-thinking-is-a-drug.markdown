@@ -1,5 +1,6 @@
 ---
 title: Thinking is a drug
+layout: post
 date: 2012-12-17
 hhlink: http://news.ycombinator.com/item?id=4933306
 ---

@@ -1,5 +1,6 @@
 ---
 title: Painting a target with canvas
+layout: post
 date: 2012-07-31
 hhlink: http://news.ycombinator.com/item?id=4318178
 ---
