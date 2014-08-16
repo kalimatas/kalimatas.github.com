@@ -9,4 +9,4 @@ I started this blog as a place where I can write down some of my thoughts on var
 
 ### Contact me
 
-If you want to contact me, you can write me an [email](mailto:kalimatas@gmail.com) or send me a message on [github](https://github.com/kalimatas).
+If you want to contact me, you can write me an [email](mailto:kalimatas@gmail.com) or reach me on [facebook](https://www.facebook.com/kalimatas).

@@ -1,11 +1,10 @@
 ---
-layout: page
-title: Projects
+layout: projects
 ---
 
 Here you can find various projects I have ever worked on: either created by me or which I joined to. Most of the time I work with PHP, yet there are number of things in Java, Python, Golang or other languages. A number of small things can be found on my [github](https://github.com/kalimatas) profile.
 
-### My projects
+### Projects
 
 <a href="https://github.com/kalimatas/sfmlbook-java" target="_blank">SFML book source code</a> (in progress) - port of the <a href="http://www.packtpub.com/game-development/sfml-game-development" title="SFML book" target="_blank">SFML book</a> <a href="https://github.com/LaurentGomila/SFML-Game-Development-Book" target="_blank">source code</a> from C++ to Java
 

@@ -5,7 +5,7 @@ title: Guz Alexander
 
 {% for post in paginator.posts %}
 <div class="entry">
-	<time>{{ post.date | date: "%b %-d, %Y" }}</time>
+	<time>{{ post.date | date: "%b %d, %Y" }}</time> <span>&raquo;</span>
 	<a href="{{ post.url }}">{{ post.title }}</a>
 </div>
 {% endfor %}
@@ -18,7 +18,7 @@ title: Guz Alexander
 		<span>&laquo; prev</span>
 	{% endif %}
 
-	<span class="page">{{ paginator.page }}</span>
+	<span class="page">&dash; {{ paginator.page }} &dash;</span>
 
 	{% if paginator.next_page %}
 		<a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">next </a><span>&raquo;</span>

@@ -349,7 +349,7 @@ second 3
 first 3
 {% endhighlight %}
 
-### Conclusion.
+### Conclusion
 
 Channels is a very powerful and interesting mechanism in Golang. But in order to use them effectively you have to understand how they work. In this article I tried to explain the very necessary basics. For further learning I recommend you look at the following:
 
