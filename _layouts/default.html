@@ -14,6 +14,7 @@
 		<ul>
 			<li><a href="/archive/">archive</a></li>
 			<li><a href="/projects/">projects</a></li>
+			<li><a href="http://feeds.feedburner.com/GuzAlexander">feed</a></li>
 			<li><a href="/about/">about</a></li>
 		</ul>
 	</nav>
@@ -24,6 +25,13 @@
 	<section class="main">
 		{{ content }}
 	</section>
+
+	<footer>
+		&copy; Copyright {{ site.time | date: '%Y' }} by {{ site.author }}.
+		Contact me via <a href="mailto:kalimatas@gmail.com">email</a>,
+		<a href="https://github.com/kalimatas">github</a>
+		or <a href="https://www.facebook.com/kalimatas">facebook</a>.
+	</footer>
 </section>
 
 <script type="text/javascript">

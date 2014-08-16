@@ -13,7 +13,7 @@ title: Guz Alexander
 {% if paginator.total_pages > 1 %}
 <nav class="pagination">
 	{% if paginator.previous_page %}
-		<a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; prev</a>
+		<span>&laquo;</span><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"> prev</a>
 	{% else %}
 		<span>&laquo; prev</span>
 	{% endif %}
@@ -21,7 +21,7 @@ title: Guz Alexander
 	<span class="page">{{ paginator.page }}</span>
 
 	{% if paginator.next_page %}
-		<a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">next &raquo;</a>
+		<a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">next </a><span>&raquo;</span>
 	{% else %}
 		<span>next &raquo;</span>
 	{% endif %}
