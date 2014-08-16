@@ -1,6 +1,7 @@
 ---
 title: Introduction to WSGI
 layout: post
+description: Python and WSGI example
 date: 2013-03-01
 ---
 

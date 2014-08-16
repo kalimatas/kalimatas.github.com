@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Golang channels tutorial"
+description: Golang channels tutorial
 date: 2013-12-06 11:00
 ---
 
