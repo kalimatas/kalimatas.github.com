@@ -47,14 +47,6 @@ time { font-size: 10pt; color: lightslategray; }
 /* archive */
 ul.list_archive { list-style-type: square; }
 .list_archive h3 { margin-left: -40px; }
-/*
-blockquote {
-    text-align: right;
-    font-style: italic;
-    margin-bottom: 25px;
-}
-
-*/
 
 /* code */
 p > code {
