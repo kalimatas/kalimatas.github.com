@@ -10,8 +10,8 @@ a { color: #00a; }
 a:hover { color: black; }
 
 /* headings */
-h1 { font-size: 14pt; font-weight: 400; }
-h3 { font-size: 12pt; }
+h1 { font-size: 16pt; font-weight: 400; }
+h3 { font-size: 13pt; }
 
 /* layout */
 section.container { padding-top: 15px; margin: 0 auto; width: 680px; }
