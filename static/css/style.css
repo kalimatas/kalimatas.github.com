@@ -30,7 +30,7 @@ nav.menu ul li { display: inline; margin-right: 5px; }
 /* index list */
 .entry > a { font-size: 12pt; }
 .entry > span { display: inline-block; margin: 0 4px; }
-.entry time { font-weight: 300; color: #888a85; font-size: 10pt; font-family: "Bitstream Vera Sans Mono", sans-serif }
+.entry time { font-weight: 300; color: #888a85; font-size: 10pt; font-family: Consolas, "Bitstream Vera Sans Mono", monospace, sans-serif }
 
 /* paginator */
 nav.pagination { margin-top: 20px; }
