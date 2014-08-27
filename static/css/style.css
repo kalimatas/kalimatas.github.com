@@ -30,7 +30,7 @@ nav.menu ul li { display: inline; margin-right: 5px; }
 /* index list */
 .entry > a { font-size: 12pt; }
 .entry > span { display: inline-block; margin: 0 4px; }
-.entry time { font-weight: 300; color: #888a85; font-size: 10pt; font-family: Consolas, "Bitstream Vera Sans Mono", monospace, sans-serif }
+.entry time, .not_found_list time { font-weight: 300; color: #888a85; font-size: 10pt; font-family: Consolas, "Bitstream Vera Sans Mono", monospace, sans-serif }
 
 /* paginator */
 nav.pagination { margin-top: 20px; }
@@ -44,8 +44,8 @@ section.contact { float: right; }
 /* article */
 time { font-size: 10pt; color: lightslategray; }
 
-/* archive */
-ul.list_archive { list-style-type: square; }
+/* archive, not found */
+ul.list_archive, ul.not_found_list { list-style-type: square; }
 .list_archive h3 { margin-left: -40px; }
 
 /* code */
