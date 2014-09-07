@@ -49,7 +49,7 @@ ul.list_archive, ul.not_found_list { list-style-type: square; }
 .list_archive h3 { margin-left: -40px; }
 
 /* code */
-p > code {
+p > code, li > code {
     background-color: #e8f0f8;
     color: #336479;
     padding: 0 4px;

@@ -17,6 +17,8 @@ Here you can find various projects I have ever worked on: either created by me o
 
 <a href="https://github.com/google/go-github" target="_blank">go-github</a> - Go client library for GitHub API (milestone API)
 
+<a href="https://github.com/kalimatas/php-liquid" target="_blank">php-liquid</a> - Liquid template engine for PHP
+
 ### Small things
 
 <a href="https://github.com/kalimatas/pythongames" target="_blank">Python games</a> - a collection of games in Python from <a href="http://inventwithpython.com/" target="_blank">Making games with Python</a> book
