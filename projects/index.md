@@ -1,5 +1,6 @@
 ---
 layout: projects
+title: Projects
 ---
 
 Here you can find various projects I have ever worked on: either created by me or which I joined to. Most of the time I work with PHP, yet there are number of things in Java, Python, Golang or other languages. A number of small things can be found on my [github](https://github.com/kalimatas) profile.
