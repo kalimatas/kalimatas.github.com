@@ -3,13 +3,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  
- <title>Guz Alexander</title>
+ <title>Alexander Guz</title>
  <link href="http://guzalexander.com/atom.xml" rel="self"/>
  <link href="http://guzalexander.com/"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
  <id>http://guzalexander.com/</id>
  <author>
-   <name>Guz Alexander</name>
+   <name>Alexander Guz</name>
    <email>kalimatas@gmail.com</email>
  </author>
 
