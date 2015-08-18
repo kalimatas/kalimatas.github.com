@@ -3,13 +3,13 @@ layout: projects
 title: Projects
 ---
 
-Here you can find various projects I have ever worked on: either created by me or which I joined to. Most of the time I work with PHP, yet there are number of things in Java, Python, Golang or other languages. A number of small things can be found on my [github](https://github.com/kalimatas) profile.
+Here you can find various projects I have ever worked on: either created by me or which I joined to. Most of the time I work with PHP, yet there are number of things in Java, Python, Golang or other languages. A number of small things can be found on my [GitHub](https://github.com/kalimatas) profile.
 
 ### Projects
 
 <a href="https://github.com/kalimatas/sfmlbook-java" target="_blank">SFML book source code</a> (in progress) - port of the <a href="http://www.packtpub.com/game-development/sfml-game-development" title="SFML book" target="_blank">SFML book</a> <a href="https://github.com/LaurentGomila/SFML-Game-Development-Book" target="_blank">source code</a> from C++ to Java
 
-<a href="https://github.com/kalimatas/githubissues" target="_blank">GitHub issues</a> - generate HTML for issues from GiHub tracker, written in Golang
+<a href="https://github.com/kalimatas/githubissues" target="_blank">GitHub issues</a> - generate HTML for issues from GitHub tracker, written in Golang
 
 <a href="https://github.com/kalimatas/gitdiff" target="_blank">gitdiff</a> - send email with git diff on GitHub PUSH notification, Heroku application written in Python (<a href="http://flask.pocoo.org/" target="_blank">Flask</a>)
 
