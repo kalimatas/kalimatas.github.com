@@ -1,5 +1,6 @@
 author: Alexander Guz
 url: http://guzalexander.com
-markdown: rdiscount
-pygments: true
+markdown: kramdown
+highlighter: pygments
 paginate: 15
+gems: [jekyll-paginate]

@@ -61,6 +61,14 @@ p > code, li > code {
     height: 21px;
     line-height: 21px;
 }
+
+figure {
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+}
+
 .highlight pre { margin: 0; }
 .highlight code {
     font-family: Monaco, 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Lucida Console', monospace;
