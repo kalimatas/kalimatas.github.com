@@ -18,6 +18,7 @@ section.container { padding-top: 15px; margin: 0 auto; width: 680px; }
 section.main { clear: both; margin-top: 45px; }
 footer { margin: 30px 0 25px 0; }
 .clear { clear: both; }
+.center { text-align: center; }
 
 /* menu */
 header.title > a { color: firebrick; }
@@ -52,14 +53,16 @@ ul.list_archive, ul.not_found_list { list-style-type: square; }
 p > code, li > code {
     background-color: #e8f0f8;
     color: #336479;
-    padding: 0 4px;
+    padding: 0 3px;
+    margin: 0 1px;
+    border-radius: 2px;
     display: inline-block;
     vertical-align: middle;
     white-space: nowrap;
     font-size: 12px;
-    font-family: Monaco, 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Lucida Console', monospace;
-    height: 21px;
-    line-height: 21px;
+    font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Lucida Console', monospace;
+    height: 20px;
+    line-height: 20px;
 }
 
 figure {
@@ -71,9 +74,9 @@ figure {
 
 .highlight pre { margin: 0; }
 .highlight code {
-    font-family: Monaco, 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Lucida Console', monospace;
+    font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Lucida Console', monospace;
     font-size: 12px;
-    line-height: 16px;
+    /*line-height: 0.9;*/
     border: none;
     -moz-tab-size: 4;
     -o-tab-size:   4;
