@@ -1,5 +1,5 @@
 author: Alexander Guz
 url: http://guzalexander.com
 markdown: rdiscount
-pygments: true
+highlighter: pygments
 paginate: 15
