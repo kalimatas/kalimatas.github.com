@@ -1,6 +1,6 @@
 author: Alexander Guz
 url: http://guzalexander.com
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 paginate: 15
 gems: [jekyll-paginate]
