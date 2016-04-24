@@ -1,5 +1,6 @@
 author: Alexander Guz
 url: http://guzalexander.com
+encoding: UTF-8
 markdown: kramdown
 highlighter: rouge
 paginate: 15
