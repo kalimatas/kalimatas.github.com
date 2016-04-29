@@ -85,6 +85,7 @@ BEGIN {
     if (chunk_limit_is_hit && prev != $2) {
         chunk_number++
         records_currently_in_chunk = 0
+        chunk_limit_is_hit = 0
     }
 
     # Write line to a chunk
