@@ -2,7 +2,7 @@
 
 /* general */
 * { box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; }
-body { font-family: "Open Sans", sans-serif; font-size: 11pt; margin: 0; padding: 0; color: black; }
+body { font-family: "Open Sans", sans-serif; font-size: 11pt; margin: 0; padding: 0; color: #333333; }
 strong { font-weight: 600; }
 
 /* links */
@@ -10,8 +10,9 @@ a { color: #00a; }
 a:hover { color: black; }
 
 /* headings */
+h1, h3 { color: black; }
 h1 { font-size: 16pt; font-weight: 400; }
-h3 { font-size: 13pt; }
+h3 { font-size: 15px; margin-top: 20px; margin-bottom: 20px; }
 
 /* layout */
 section.container { padding-top: 15px; margin: 0 auto; width: 680px; }
@@ -70,8 +71,7 @@ p > code, li > code {
 figure {
     -webkit-margin-before: 0;
     -webkit-margin-after: 0;
-    -webkit-margin-start: 0;
-    -webkit-margin-end: 0;
+    margin: 0;
 }
 
 .highlight pre { margin: 0; }
