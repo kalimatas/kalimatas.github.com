@@ -2,7 +2,7 @@
 
 /* general */
 * { box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; }
-body { font-family: "Open Sans", sans-serif; font-size: 11pt; margin: 0; padding: 0; color: #333333; }
+body { font-family: Helvetica, "Open Sans", sans-serif; font-size: 15px; line-height: 1.35em; margin: 0; padding: 0; color: #333333; }
 strong { font-weight: 600; }
 
 /* links */
@@ -65,7 +65,6 @@ p > code, li > code {
     font-size: 12px;
     font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Lucida Console', monospace;
     height: 20px;
-    line-height: 20px;
 }
 
 figure {
@@ -74,11 +73,10 @@ figure {
     margin: 0;
 }
 
-.highlight pre { margin: 0; }
+.highlight pre { margin: 0; line-height: 1.1em; }
 .highlight code {
     font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Lucida Console', monospace;
     font-size: 12px;
-    /*line-height: 0.9;*/
     border: none;
     -moz-tab-size: 4;
     -o-tab-size:   4;
