@@ -2,7 +2,7 @@
 
 /* general */
 * { box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; }
-body { font-family: Helvetica, "Open Sans", sans-serif; font-size: 15px; line-height: 1.35em; margin: 0; padding: 0; color: #333333; }
+body { font-family: Arial, "Open Sans", sans-serif; font-size: 15px; line-height: 1.35em; margin: 0; padding: 0; color: #333333; }
 strong { font-weight: 600; }
 
 /* links */
@@ -15,7 +15,7 @@ h1 { font-size: 16pt; font-weight: 400; }
 h3 { font-size: 15px; margin-top: 20px; margin-bottom: 20px; }
 
 /* layout */
-section.container { padding-top: 15px; margin: 0 auto; width: 680px; }
+section.container { padding-top: 15px; margin: 0 auto; width: 660px; text-align: justify; }
 section.main { clear: both; margin-top: 45px; }
 footer { margin: 30px 0 25px 0; }
 .clear { clear: both; }
