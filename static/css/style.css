@@ -2,8 +2,7 @@
 
 /* general */
 * { box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; }
-body { font-family: Arial, "Open Sans", sans-serif; font-size: 15px; line-height: 1.35em; margin: 0; padding: 0; color: #333333; }
-strong { font-weight: 600; }
+body { font-family: sans-serif; font-size: 14px; line-height: 1.5em; margin: 0; padding: 0; color: #252525; }
 
 /* links */
 a { color: #00a; }
@@ -44,9 +43,9 @@ section.copyright { float: left; }
 section.contact { float: right; }
 
 /* article */
-time { font-size: 10pt; color: lightslategray; }
+time { font-size: 10pt; color: #888a85; }
 
-blockquote { color: #758fa3; font-style: italic; }
+blockquote { font-style: italic; }
 
 /* archive, not found */
 ul.list_archive, ul.not_found_list { list-style-type: square; }
@@ -54,11 +53,7 @@ ul.list_archive, ul.not_found_list { list-style-type: square; }
 
 /* code */
 p > code, li > code {
-    background-color: #e8f0f8;
-    color: #336479;
-    padding: 0 3px;
-    margin: 0 1px;
-    border-radius: 2px;
+    color: firebrick;
     display: inline-block;
     vertical-align: middle;
     white-space: nowrap;
@@ -79,6 +74,6 @@ figure {
     font-size: 12px;
     border: none;
     -moz-tab-size: 4;
-    -o-tab-size:   4;
+    -o-tab-size: 4;
     tab-size: 4;
 }
