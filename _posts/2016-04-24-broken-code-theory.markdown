@@ -19,6 +19,6 @@ I think the same theory can be applied to software development - writing “bad�
 1. The code is clean and there no dirty hack.
 2. There are dirty hacks.
 
-Guess when will you be more tempted to add "just another small hack, that no one will notice”? Exactly. In the second case. After all, you have deadlines. But you’ll definitely feel uncomfortable, if you need to do that in the first case, just because there seem to be is an established norm of clean lode, that you don’t want to break.
+Guess when will you be more tempted to add "just another small hack, that no one will notice”? Exactly. In the second case. After all, you have deadlines. But you’ll definitely feel uncomfortable, if you need to do that in the first case, just because there seem to be is an established norm of clean code, that you don’t want to break.
 
 In ideal world, the code is always perfect, but in real world it tends to become over the time a collection of small (sometimes not so small) fixes. To prevent that, like with an ordinal vandalism, the hacks should be removed/replaces as soon as possible. By adding another **small fix** you not only making an obvious poor design decision, but also send the other the message “Go, add more of them!”.
