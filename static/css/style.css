@@ -46,7 +46,7 @@ time { font-size: 10pt; color: #888a85; }
 
 blockquote { font-style: italic; }
 
-article ul { padding-left: 25px; }
+article ul, ol { padding-left: 25px; }
 
 /* archive, not found */
 ul.list_archive, ul.not_found_list { list-style-type: square; padding-left: 40px; }
