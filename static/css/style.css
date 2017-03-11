@@ -1,6 +1,6 @@
 /* general */
 * { box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; }
-body { font-family: Times, serif; font-size: 15px; margin: 0; padding: 0; color: #252525; }
+body { font-family: Georgia, "Times New Roman", serif; font-size: 15px; line-height: 1.35em; margin: 0; padding: 0; color: #252525; }
 
 /* links */
 a { color: #00a; }
@@ -27,7 +27,6 @@ nav.menu ul { list-style: none outside none; padding: 0; margin: 0; }
 nav.menu ul li { display: inline; margin-right: 5px; }
 
 /* index list */
-.entry { margin: 3px 0; }
 .entry > a { font-size: 12pt; }
 .entry > span { display: inline-block; margin: 0 4px; }
 .entry time, .not_found_list time { font-weight: 300; color: #888a85; font-size: 11px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Lucida Console', monospace; }
@@ -66,7 +65,7 @@ figure {
     margin: 0;
 }
 
-.highlight pre { margin: 0; line-height: 1em; }
+.highlight pre { margin: 0; line-height: 1.1em; }
 .highlight code {
     font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Lucida Console', monospace;
     font-size: 12px;
