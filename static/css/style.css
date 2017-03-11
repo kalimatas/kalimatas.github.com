@@ -1,8 +1,6 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,600,300italic,600italic,400,400italic);
-
 /* general */
 * { box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; }
-body { font-family: sans-serif; font-size: 14px; line-height: 1.5em; margin: 0; padding: 0; color: #252525; }
+body { font-family: Times, serif; font-size: 15px; margin: 0; padding: 0; color: #252525; }
 
 /* links */
 a { color: #00a; }
@@ -11,17 +9,17 @@ a:hover { color: black; }
 /* headings */
 h1, h3 { color: black; }
 h1 { font-size: 16pt; font-weight: 400; }
-h3 { font-size: 15px; margin-top: 20px; margin-bottom: 20px; }
+h3 { font-size: 13pt; margin-top: 20px; margin-bottom: 20px; }
 
 /* layout */
-section.container { padding-top: 15px; margin: 0 auto; width: 660px; text-align: justify; }
+section.container { padding-top: 15px; margin: 0 0 0 25px; width: 600px; }
 section.main { clear: both; margin-top: 45px; }
 footer { margin: 30px 0 25px 0; }
 .clear { clear: both; }
 .center { text-align: center; }
 
 /* menu */
-header.title > a { color: firebrick; }
+header.title > a { color: firebrick; font-family: sans-serif; font-size: 14px; }
 header.title > a:hover { color: black; }
 nav.menu { float: right; }
 header.title { float: left; }
@@ -29,9 +27,10 @@ nav.menu ul { list-style: none outside none; padding: 0; margin: 0; }
 nav.menu ul li { display: inline; margin-right: 5px; }
 
 /* index list */
+.entry { margin: 3px 0; }
 .entry > a { font-size: 12pt; }
 .entry > span { display: inline-block; margin: 0 4px; }
-.entry time, .not_found_list time { font-weight: 300; color: #888a85; font-size: 10pt; font-family: Consolas, "Bitstream Vera Sans Mono", monospace, sans-serif }
+.entry time, .not_found_list time { font-weight: 300; color: #888a85; font-size: 11px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Lucida Console', monospace; }
 
 /* paginator */
 nav.pagination { margin-top: 20px; }
@@ -47,19 +46,18 @@ time { font-size: 10pt; color: #888a85; }
 
 blockquote { font-style: italic; }
 
+article ul { padding-left: 25px; }
+
 /* archive, not found */
-ul.list_archive, ul.not_found_list { list-style-type: square; }
+ul.list_archive, ul.not_found_list { list-style-type: square; padding-left: 40px; }
 .list_archive h3 { margin-left: -40px; }
 
 /* code */
 p > code, li > code {
     color: firebrick;
-    display: inline-block;
-    vertical-align: middle;
     white-space: nowrap;
-    font-size: 12px;
+    font-size: 11px;
     font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Lucida Console', monospace;
-    height: 20px;
 }
 
 figure {
@@ -68,7 +66,7 @@ figure {
     margin: 0;
 }
 
-.highlight pre { margin: 0; line-height: 1.1em; }
+.highlight pre { margin: 0; line-height: 1em; }
 .highlight code {
     font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Lucida Console', monospace;
     font-size: 12px;
