@@ -19,7 +19,7 @@ namespace some\package {
     interface Exception {}
 
     // In PHP 7 you can extend it from Throwable
-    //interface Exception extends \Throwable {}
+    // interface Exception extends \Throwable {}
 
     class InvalidArgumentException extends \InvalidArgumentException
         implements Exception {}
