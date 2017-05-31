@@ -1,6 +1,6 @@
 /* general */
 * { box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; }
-body { font-family: Helvetica, sans-serif; font-size: 13.5px; line-height: 20px; margin: 0; padding: 0; color: black; }
+body { font-family: Helvetica, sans-serif; font-size: 13.5px; line-height: 22px; margin: 0; padding: 0; color: black; }
 
 /* links */
 a { color: #00a; }
@@ -9,10 +9,10 @@ a:hover { color: black; }
 /* headings */
 h1, h3 { color: black; }
 h1 { font-size: 16pt; font-weight: 400; }
-h3 { font-size: 13pt; margin-top: 20px; margin-bottom: 20px; font-weight: 500; }
+h3 { font-size: 13.5pt; margin-top: 23px; margin-bottom: 23px; font-weight: 500; }
 
 /* layout */
-section.container { padding-top: 15px; margin: 0 0 0 25px; width: 600px; }
+section.container { padding-top: 15px; margin: 0 0 0 25px; width: 660px; }
 section.main { clear: both; margin-top: 45px; }
 footer { margin: 30px 0 25px 0; }
 .clear { clear: both; }
