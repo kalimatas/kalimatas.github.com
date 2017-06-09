@@ -1,6 +1,6 @@
 /* general */
 * { box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; }
-body { font-family: Helvetica, sans-serif; font-size: 13.5px; line-height: 22px; margin: 0; padding: 0; color: black; }
+body { font-family: Helvetica, sans-serif; font-size: 14px; line-height: 22px; margin: 0; padding: 0; color: black; }
 
 /* links */
 a { color: #00a; }
@@ -8,8 +8,8 @@ a:hover { color: black; }
 
 /* headings */
 h1, h3 { color: black; }
-h1 { font-size: 16pt; font-weight: 400; }
-h3 { font-size: 13.5pt; margin-top: 23px; margin-bottom: 23px; font-weight: 500; }
+h1 { font-size: 17pt; font-weight: 500; }
+h3 { font-size: 13.5pt; margin-top: 24px; margin-bottom: 24px; font-weight: 500; }
 
 /* layout */
 section.container { padding-top: 15px; margin: 0 0 0 25px; width: 660px; }
@@ -41,11 +41,10 @@ section.copyright { float: left; }
 section.contact { float: right; }
 
 /* article */
-time { font-size: 11px; color: #888a85; }
-
+time { font-size: 12px; color: #888a85; }
 blockquote { font-style: italic; }
-
 article ul, ol { padding-left: 25px; }
+article h4.notes { margin-top: 60px; }
 
 /* archive, not found */
 ul.list_archive, ul.not_found_list { list-style-type: disc; padding-left: 40px; }

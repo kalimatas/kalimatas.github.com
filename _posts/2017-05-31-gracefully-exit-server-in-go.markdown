@@ -280,7 +280,6 @@ func main() {
 }
 {% endhighlight %}
 
+<h4 class="notes">Notes</h4>
 
-**Notes**:
-
-1.<a name="1"></a> [Channel Axioms](https://dave.cheney.net/2014/03/19/channel-axioms)
+[1] <a name="1"></a> [Channel Axioms](https://dave.cheney.net/2014/03/19/channel-axioms)

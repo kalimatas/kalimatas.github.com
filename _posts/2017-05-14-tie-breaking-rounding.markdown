@@ -60,10 +60,10 @@ Go 1.8 doesn't have built-in round function at all <sup>[[3]](#3)</sup>, you hav
 
 Well, beware of different rules in different programming languages!
 
-**Notes**:
+<h4 class="notes">Notes</h4>
 
-1.<a name="1"></a> [The key differences between Python 2.7.x and Python 3.x with examples](http://sebastianraschka.com/Articles/2014_python_2_3_key_diff.html#bankers-rounding)
+[1] <a name="1"></a> [The key differences between Python 2.7.x and Python 3.x with examples](http://sebastianraschka.com/Articles/2014_python_2_3_key_diff.html#bankers-rounding) 
 
-2.<a name="2"></a> On Wikipedia you can find [more information](https://en.wikipedia.org/wiki/Rounding#Tie-breaking) about the rules.
+[2] <a name="2"></a> On Wikipedia you can find [more information](https://en.wikipedia.org/wiki/Rounding#Tie-breaking) about the rules.
 
-3.<a name="3"></a> [Suggestion](https://github.com/golang/go/issues/4594) to add `Round` function.
+[3] <a name="3"></a> [Suggestion](https://github.com/golang/go/issues/4594) to add `Round` function.
