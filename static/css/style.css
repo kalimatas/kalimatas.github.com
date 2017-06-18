@@ -1,4 +1,6 @@
 /* general */
+@import url('https://fonts.googleapis.com/css?family=Lora:700,700i');
+
 * { box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; }
 body { font-family: Helvetica, sans-serif; font-size: 14px; line-height: 22px; margin: 0; padding: 0; color: black; }
 
@@ -7,9 +9,9 @@ a { color: #00a; }
 a:hover { color: black; }
 
 /* headings */
-h1, h3 { color: black; }
-h1 { font-size: 17pt; font-weight: 500; }
-h3 { font-size: 13.5pt; margin-top: 24px; margin-bottom: 24px; font-weight: 500; }
+h1, h3 { color: black; font-family: 'Lora', serif; }
+h1 { font-size: 17pt; }
+h3 { font-size: 14pt; margin-top: 24px; margin-bottom: 24px; }
 
 /* layout */
 section.container { padding-top: 15px; margin: 0 0 0 25px; width: 660px; }
@@ -29,7 +31,7 @@ nav.menu ul li { display: inline; margin-right: 5px; }
 /* index list */
 /*.entry > a { font-size: 12pt; }*/
 .entry > span { display: inline-block; margin: 0 4px; }
-.entry time, .not_found_list time { color: #444; font-size: 11px; font-family: Menlo, 'Bitstream Vera Sans Mono', 'Lucida Console', monospace; }
+.entry time, .not_found_list time { color: #24292e; font-size: 11px; font-family: Menlo, 'Bitstream Vera Sans Mono', 'Lucida Console', monospace; }
 
 /* paginator */
 nav.pagination { margin-top: 20px; }
