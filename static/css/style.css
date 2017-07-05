@@ -36,6 +36,9 @@ nav.menu ul li { display: inline; margin-right: 5px; }
 /* paginator */
 nav.pagination { margin-top: 20px; }
 
+/* disqus */
+#disqus_thread { margin-top: 42px; }
+
 /* footer */
 footer { font-size: 11px; color: #888a85; }
 footer a { color: #888a85; }

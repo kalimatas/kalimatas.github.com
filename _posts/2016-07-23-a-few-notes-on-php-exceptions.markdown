@@ -16,10 +16,7 @@ Here is an example wth usage:
 <?php
 namespace some\package {
     // Common package level exception
-    interface Exception {}
-
-    // In PHP 7 you can extend it from Throwable
-    // interface Exception extends \Throwable {}
+    interface Exception extends \Throwable {}
 
     class InvalidArgumentException extends \InvalidArgumentException
         implements Exception {}

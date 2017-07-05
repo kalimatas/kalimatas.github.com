@@ -5,3 +5,10 @@ markdown: kramdown
 highlighter: rouge
 paginate: 30
 gems: [jekyll-paginate]
+
+defaults:
+  -
+    scope:
+      type: "posts"
+    values:
+      comments: true
