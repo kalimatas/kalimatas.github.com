@@ -86,7 +86,76 @@ Pay attention here to the `Request URL`: this is the URL provided us by ngrok fr
 
 ### <a name="code"></a> Source code overview
 
-Source code
+Finally. It's time for source code. In essence, our application is just a wrapper around `cowsay` utility with HTTP interface. It accepts POST requests and returns formatted text back. Full source code can be found in [the GitHub repository](https://github.com/kalimatas/slack-cowbot). 
+
+Let's review the startup procedure:
+
+{% highlight go %}
+var (
+	port  string = "80"
+	token string
+)
+
+func init() {
+	token = os.Getenv("COWSAY_TOKEN")
+	if "" == token {
+		panic("COWSAY_TOKEN is not set!")
+	}
+
+	if "" != os.Getenv("PORT") {
+		port = os.Getenv("PORT")
+	}
+}
+
+func main() {
+	http.HandleFunc("/", cowHandler)
+	log.Fatalln(http.ListenAndServe(":"+port, nil))
+}
+{% endhighlight %}
+
+By default, the server will listen on port 80, but it can be changed by setting the `PORT` environment variable. The name of the variable is not random - this is a [requirement](https://devcenter.heroku.com/articles/container-registry-and-runtime#dockerfile-commands-and-runtime) from Heroku. The `COWSAY_TOKEN` must be set. This is a `Verification Token` from the [Slack application and command](#slack-app) step. It's a secret value, that's why we don't put it to any configuration file. The alternative would be to pass it as an argument, but keeping secrets in environmental variables is a [common practice](https://12factor.net/config).
+
+Now, let's have a look at the `cowHandler` function:
+
+{% highlight go %}
+func cowHandler(w http.ResponseWriter, r *http.Request) {
+	if r.Method != "POST" {
+		http.Error(w, http.StatusText(http.StatusMethodNotAllowed), http.StatusMethodNotAllowed)
+		return
+	}
+
+	if token != r.FormValue("token") {
+		http.Error(w, http.StatusText(http.StatusUnauthorized), http.StatusUnauthorized)
+		return
+	}
+
+	text := strings.Replace(r.FormValue("text"), "\r", "", -1)
+	balloonWithCow, err := sc.Cowsay(text)
+	if err != nil {
+		log.Println(err)
+		http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
+		return
+	}
+
+	jsonResp, _ := json.Marshal(struct {
+		Type string `json:"response_type"`
+		Text string `json:"text"`
+	}{
+		Type: "in_channel",
+		Text: fmt.Sprintf("```%s```", balloonWithCow),
+	})
+
+	w.Header().Add("Content-Type", "application/json")
+	fmt.Fprintf(w, string(jsonResp))
+}
+{% endhighlight %}
+
+Here is what's going on:
+
+1. We allow only POST requests. Everything else will result in 405 HTTP error.
+2. We validate that requests come from Slack by checking the `token`. It must be equal to what we set in `COWSAY_TOKEN`.
+3. The main job is done by `sc.Cowsay(text)`: it wraps the text from the request with `cowsay` utility. We'll get to it later.
+4. We prepare the response and return it as a JSON string. The response object in our case has two keys: `response_type` and `text`. The `text` is, well, the response text. The `response_type: "in_channel"` tells a Slack client to show the response from the command to everyone in the channel. Otherwise, only the one who issued the command would see the response (it's called *Ephemeral* response). Read more about it [here](https://api.slack.com/slash-commands#responding_to_a_command).
 
 ### <a name="docker"></a> Running the app with Docker
 
