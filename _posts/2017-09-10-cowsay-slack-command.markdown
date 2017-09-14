@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Building a Slack command with Go"
+title: Building a Slack command with Go
 description: A step by step tutorial on how to create a Slack command with Go and deploy it to Heroku
 date: 2017-09-10 17:06
 ---
@@ -183,7 +183,7 @@ It just executes `cowsay` and passes the text (the message we entered in the Sla
 
 ### <a name="docker"></a> Running the app with Docker
 
-If you're not familiar with Docker, then I suggest to read first [the introduction article](https://docs.docker.com/get-started/) - here I'm not going into the internals. So, the Dockerfile:
+If you're not familiar with Docker, then I suggest to read first [an introduction article](https://docs.docker.com/get-started/) - here I'm not going into the internals. So, the Dockerfile:
 
 {% highlight docker %}
 FROM golang:1.9
@@ -199,18 +199,18 @@ CMD ["/go/bin/cowbot"]
 
 Here we:
 1. Install `cowsay`. It will then be under `/usr/games/cowsay`.
-2. Coy the source from the current directory to `/go/src/github.com/kalimatas/slack-cowbot`.
+2. Copy the source from the current directory to `/go/src/github.com/kalimatas/slack-cowbot`.
 3. Install the binary to `/go/bin/cowbot`.
 4. Tell the Docker to use this binary (our server) as a command to start the container.
 
-Let's build the image. Execute this in the source directory of our application. Keep in mind that you'll need to use another namespace, not `kalimatas`, because it's mine :)
+To build the image execute this command in the source directory of our application. Keep in mind that you'll need to use another namespace, not `kalimatas`, because it's mine :)
 
 {% highlight bash %}
 $ docker build -t kalimatas/cowbot .
 // ... some Docker output
 {% endhighlight %}
 
-At this point we have our image with the `latest` tag, and we can finally run the application locally:
+Now we have our image with the `latest` tag, and we can finally run the application locally:
 
 {% highlight bash %}
 $ docker run -it --rm --name cowbot -p 8080:80 -e COWSAY_TOKEN=<your_validation_token> kalimatas/cowbot:latest
@@ -218,17 +218,17 @@ $ docker run -it --rm --name cowbot -p 8080:80 -e COWSAY_TOKEN=<your_validation_
 
 A few things to pay attention to:
 
-1. `-p 8080:80` tells to proxy the port `80`, which is the default for our application, to `8080` of the local machine. You can use a different port locally, but make sure, that this is the same port you specify when run `ngrok http 8080`.
+1. `-p 8080:80` tells Docker to proxy the port `80`, which is the default for our application, to `8080` of the local machine. You can use a different port locally, but make sure, that this is the same port you specify when run `ngrok http 8080`.
 2. `-e COWSAY_TOKEN=<your_validation_token>` sets the environment variable that will be read by our application later with `token = os.Getenv("COWSAY_TOKEN")`.
 
-Now we have our application running and available on our local machine at port `8080`. Let's validate:
+Now the application is running and available on our local machine on port `8080`. Let's validate:
 
 {% highlight bash %}
 $ curl -XPOST https://502a662f.ngrok.io -d 'token=<your_validation_token>&text=Hello, cow!'
 {"response_type":"in_channel","text":"``` _____________\n\u003c Hello, cow! \u003e\n -------------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||\n```"}
 {% endhighlight %}
 
-Notice what URL we used here - `https://502a662f.ngrok.io`. This is the publicly available URL provided to us by ngrok. It means, that our application is actually available on the Internet, and you can even test it the command in your Slack client!
+Notice the URL we used here - `https://502a662f.ngrok.io`. This is the publicly available URL provided to us by ngrok. It means, that our application is actually available on the Internet, and you can even test the command in your Slack client!
 
 But the magic will work only until we stop ngrok, or docker container, or just shutdown the computer. We need our application to be permanently available, that's why we're going to deploy it to Heroku.
 
