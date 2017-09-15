@@ -234,4 +234,46 @@ But the magic will work only until we stop ngrok, or docker container, or just s
 
 ### <a name="heroku"></a> Deploying the app to Heroku
 
-Heroku
+First, [create](https://signup.heroku.com/dc) a free account, then [install](https://devcenter.heroku.com/articles/heroku-cli) Heroku CLI utility.
+
+Log in with your account:
+
+{% highlight bash %}
+$ heroku login
+Enter your Heroku credentials:
+Email: kalimatas@gmail.com
+Password: *********************
+Logged in as kalimatas@gmail.com
+{% endhighlight %}
+
+Now we're ready to continue. [Here](https://devcenter.heroku.com/articles/container-registry-and-runtime) you can find the documentation on how to deploy Docker-based app to Heroku. The plan is: create a Heroku app, tag our Docker image and push it to Container Registry.
+
+Log in to Container Registry:
+
+{% highlight bash %}
+$ heroku container:login
+WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+Login Succeeded
+{% endhighlight %}
+
+Create a new application:
+{% highlight bash %}
+$ heroku apps:create
+Creating app... done, ⬢ guarded-island-34484
+https://guarded-island-34484.herokuapp.com/ | https://git.heroku.com/guarded-island-34484.git
+{% endhighlight %}
+
+Here `guarded-island-34484` is a randomly chosen name, and `https://guarded-island-34484.herokuapp.com/` is the URL where the application will be available. As you might have guessed, we'll need to update our Slack command settings, in particular `Request URL`, and set this URL. Check [Slack application and command](#slack-app) section for details.
+
+Now we need to push our image to Heroku's Container Registry. Heroku requires some spefic tag format, i.e. `registry.heroku.com/<app>/<process-type>`, where `<app>` is the application name, and `<process-type>` is, in our case, `web`. For more information check out [this page](https://devcenter.heroku.com/articles/procfile#process-types-as-templates).
+
+Let's tag and push our already existing `kalimatas/cowbot:latest` (it is probably different for you, if you have chosen another namespace) Docker image with a required tag:
+
+{% highlight bash %}
+$ docker tag kalimatas/cowbot registry.heroku.com/guarded-island-34484/web
+$ docker push registry.heroku.com/guarded-island-34484/web
+The push refers to a repository [registry.heroku.com/guarded-island-34484/web]
+// ... other Docker output
+{% endhighlight %}
+
+
