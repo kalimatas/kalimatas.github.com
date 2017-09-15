@@ -2,7 +2,7 @@
 layout: post
 title: Building a Slack command with Go
 description: A step by step tutorial on how to create a Slack command with Go and deploy it to Heroku
-date: 2017-09-10 17:06
+date: 2017-09-15 17:06
 ---
 
 This post is a step by step tutorial on how to build a simple Slack command with Go.
@@ -26,11 +26,20 @@ By the end of the tutorial, we'll have `cowsay <message>` command, that formats 
 
 Before going into the implementation, let's have a look at how Slack commands work, what we need to implement, and how all the parts will communicate with each other.
 
-*todo: diagram of communication* 
+{: .center}
+![Slack command communication](/static/img/posts/slack_command_anatomy.png "Slack command communication")
+
+I know, I know. My drawing skills are awesome. But back to the diagram. Nothing fancy here:
+1. A Slack client sends a command, in our case `/cowsay Some text here`.
+2. Slack servers accept the command and do their magic. We care only that they then prepare a request in a defined format and send it to our application server.
+3. This is where we come into play - we basically need to write the application server, that will process requests from Slack servers.
+4. And respond back to Slack servers.
+5. Slack servers proxy our response from the application server back to the client, which...
+6. ... displays the result to the user.
 
 ### <a name="local-dev"></a> Local development with ngrok
 
-As you can see from the diagram above, in order for our command to operate, Slack needs to send a POST HTTP request to some endpoint, which means that our application should be available on the Internet. This is not a problem once the application is deployed somewhere. But during the development phase we need our local instance be available for Slack. This can be done with [ngrok](https://ngrok.com). It let's you expose a local server to the Internet. Once started, it will provide you with a publicly available URL of your local server.
+As you can see from the diagram above, in order for our command to operate, Slack needs to send a HTTP request to some endpoint, which means that our application should be available on the Internet. This is not a problem once the application is deployed somewhere. But during the development phase we need our local instance be available for Slack. This can be done with [ngrok](https://ngrok.com). It lets you expose a local server to the Internet. Once started, it will provide you with a publicly available URL of your local server.
 
 So, [download and install](https://ngrok.com/download) ngrok first. Then run it:
 
@@ -86,7 +95,7 @@ Pay attention here to the `Request URL`: this is the URL provided us by ngrok fr
 
 ### <a name="code"></a> Source code overview
 
-Finally. It's time for source code. In essence, our application is just a wrapper around `cowsay` utility with HTTP interface. It accepts POST requests and returns formatted text back. Full source code can be found in [the GitHub repository](https://github.com/kalimatas/slack-cowbot). 
+At last. It's time for source code. In essence, our application is just a wrapper around `cowsay` utility with HTTP interface. It accepts POST requests and returns formatted text back. Full source code can be found in [the GitHub repository](https://github.com/kalimatas/slack-cowbot). 
 
 Let's review the startup procedure:
 
@@ -213,18 +222,18 @@ $ docker build -t kalimatas/cowbot .
 Now we have our image with the `latest` tag, and we can finally run the application locally:
 
 {% highlight bash %}
-$ docker run -it --rm --name cowbot -p 8080:80 -e COWSAY_TOKEN=<your_validation_token> kalimatas/cowbot:latest
+$ docker run -it --rm --name cowbot -p 8080:80 -e COWSAY_TOKEN=<your_verification_token> kalimatas/cowbot:latest
 {% endhighlight %}
 
 A few things to pay attention to:
 
 1. `-p 8080:80` tells Docker to proxy the port `80`, which is the default for our application, to `8080` of the local machine. You can use a different port locally, but make sure, that this is the same port you specify when run `ngrok http 8080`.
-2. `-e COWSAY_TOKEN=<your_validation_token>` sets the environment variable that will be read by our application later with `token = os.Getenv("COWSAY_TOKEN")`.
+2. `-e COWSAY_TOKEN=<your_verification_token>` sets the environment variable that will be read by our application later with `token = os.Getenv("COWSAY_TOKEN")`.
 
 Now the application is running and available on our local machine on port `8080`. Let's validate:
 
 {% highlight bash %}
-$ curl -XPOST https://502a662f.ngrok.io -d 'token=<your_validation_token>&text=Hello, cow!'
+$ curl -XPOST https://502a662f.ngrok.io -d 'token=<your_verification_token>&text=Hello, cow!'
 {"response_type":"in_channel","text":"``` _____________\n\u003c Hello, cow! \u003e\n -------------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||\n```"}
 {% endhighlight %}
 
@@ -276,4 +285,45 @@ The push refers to a repository [registry.heroku.com/guarded-island-34484/web]
 // ... other Docker output
 {% endhighlight %}
 
+If you open the application's URL now in browser, it will not work:
 
+{% highlight bash %}
+$ heroku open -a guarded-island-34484
+{% endhighlight %}
+
+This will open a new browser tab and you will see an error message `Application error` there. It happens, because our application requires the `COWSAY_TOKEN` environment variable to be set: check the `init()` function from [Source code overview](#code) section. And we can prove it by reading the application's logs:
+
+{% highlight bash %}
+$ heroku logs -a guarded-island-34484 | grep COWSAY_TOKEN
+2017-09-15T06:56:37.477909+00:00 app[web.1]: panic: COWSAY_TOKEN is not set!
+// ... other output
+{% endhighlight %}
+
+Obviously, we don't have in Heroku by default - we need to set it. This is done via application's configuration:
+
+{% highlight bash %}
+$ heroku config:set -a guarded-island-34484 COWSAY_TOKEN=<your_verification_token>
+Setting COWSAY_TOKEN and restarting ⬢ guarded-island-34484... done, v4
+COWSAY_TOKEN: <your_verification_token>
+{% endhighlight %}
+
+If you open the application now with `heroku open -a guarded-island-34484`, you will see another error `Method Not Allowed`, but this is expected, because we only allow POST requests.
+
+Let's validate, that the app is available by its public URL:
+
+{% highlight bash %}
+curl -XPOST https://guarded-island-34484.herokuapp.com/ -d 'token=<your_verification_token>&text=Hello, cow!'
+{"response_type":"in_channel","text":"``` _____________\n\u003c Hello, cow! \u003e\n -------------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||\n```"}
+{% endhighlight %}
+
+Amazing! Now **don't forget** to set this URL in `Request URL` in your slash command's settings in Slack admin interface!
+
+Finally, open a Slack client, log in with your account, and start typing the name of the command - you will see a hint:
+
+{: .center}
+![slash command hint](/static/img/posts/cowsay_slack_hint.png "slash command hint")
+
+And the result:
+
+{: .center}
+![Example message](/static/img/posts/cowsay_final_result.png "Example message")
