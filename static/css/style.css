@@ -1,20 +1,18 @@
 /* general */
-@import url('https://fonts.googleapis.com/css?family=Lora:700,700i');
-
 * { box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; }
-body { font-family: Helvetica, sans-serif; font-size: 14px; line-height: 22px; margin: 0; padding: 0; color: black; }
+body { font-family: Helvetica, sans-serif; font-size: 14px; line-height: 21px; margin: 0; padding: 0; color: rgb(20, 23, 26); }
 
 /* links */
-a { color: #00a; }
 a:hover { color: black; }
+a:visited { color: rgb(0, 0, 238); }
 
 /* headings */
-h1, h3 { color: black; font-family: 'Lora', serif; }
+h1, h3 { color: black; }
 h1 { font-size: 17pt; }
 h3 { font-size: 14pt; margin-top: 24px; margin-bottom: 24px; }
 
 /* layout */
-section.container { padding-top: 15px; margin: 0 0 0 25px; width: 660px; }
+section.container { padding-top: 15px; margin: 0 auto; width: 660px; }
 section.main { clear: both; margin-top: 45px; }
 footer { margin: 30px 0 25px 0; }
 .clear { clear: both; }
@@ -48,9 +46,10 @@ section.contact { float: right; }
 /* article */
 time { font-size: 12px; color: #888a85; }
 blockquote { font-style: italic; }
-article ul, ol { padding-left: 25px; }
+article ul, ol { padding-left: 30px; }
 article h4.notes { margin-top: 60px; }
 article img.left-image { margin-right: 7px; }
+.center img { margin-top: 15px; margin-bottom: 15px; }
 
 /* archive, not found */
 ul.list_archive, ul.not_found_list { list-style-type: disc; padding-left: 40px; }
@@ -58,9 +57,10 @@ ul.list_archive, ul.not_found_list { list-style-type: disc; padding-left: 40px; 
 
 /* code */
 p > code, li > code {
-    color: firebrick;
+    color: black;
     white-space: nowrap;
-    font-size: 11px;
+    font-size: 12px;
+    font-weight: bold;
     font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Lucida Console', monospace;
 }
 

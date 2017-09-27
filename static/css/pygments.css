@@ -12,7 +12,7 @@
     border-radius: 2px;
     padding: 10px;
     background: #fbfbfb;
-    border-left: 4px solid #558abb;
+    /*border: 1px solid #e3e3e3;*/
 }
 
 .highlight .hll { background-color: #ffc; }
