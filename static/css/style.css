@@ -46,7 +46,7 @@ section.contact { float: right; }
 /* article */
 time { font-size: 12px; color: #888a85; }
 blockquote { font-style: italic; }
-article ul, ol { padding-left: 30px; }
+li { margin-top: 10px; }
 article h4.notes { margin-top: 60px; }
 article img.left-image { margin-right: 7px; }
 .center img { margin-top: 15px; margin-bottom: 15px; }
@@ -54,6 +54,7 @@ article img.left-image { margin-right: 7px; }
 /* archive, not found */
 ul.list_archive, ul.not_found_list { list-style-type: disc; padding-left: 40px; }
 .list_archive h3 { margin-left: -40px; }
+.list_archive li { margin-top: 7px; }
 
 /* code */
 p > code, li > code {
