@@ -8,7 +8,7 @@ hhlink: http://news.ycombinator.com/item?id=3999428
 
 Have you ever thought why there are so many apocalyptic dates but we are still alive? Because no one had ever tested these dates! Maybe some centuries ago people didn't have any appropriate instrument for testing, but we have. Yep, it's unit testing. Today we're going to create a Zend Framework application which will list some apocalyptic dates and write some code to test its functionality.
 
-### The application and testing environment
+## The application and testing environment
 
 You can download full source of our application at this [github page](https://github.com/kalimatas/apocalypticdates). Before you can actually run any tests you need to do something:
 
@@ -24,11 +24,11 @@ that's boring and not related to this post. Also if you want to learn all availa
 
 What features does our application have? To be honest, not much: you can see the list of available dates on the main page and create a new one by accessing `/index/new/` url and providing necessary data via POST. Nevertheless this is quite enough to create different kind of tests: simple functions (or methods) tests, controllers tests and database (in our case models) tests.  
 
-### Basic classes
+## Basic classes
 
 In this application I'm using two basic classes by extending which we'll get all necessary functionality for actually writing something useful (I mean not this stuff you've already bored from). You can find these classes in `library/PHPUnit` directory. Let's look at them closely.
 
-### Testing controllers
+## Testing controllers
 
 We extend `PHPUnit_ControllerTestCase` class for testing parts specific for ZF like, for example, routing, error processing, security system, etc. Here is an example test from `IndexControllerTest`:
 
@@ -53,7 +53,7 @@ public function testCreateFailAction()
 
 In case you need to test some action which needs database interaction, just implement `setUpDatabase` method in your test class as in our example test class. This method is called before every test method (actually in setUp), so you'll have your tables truncated and populated from fixtures you provide before each test.
 
-### Testing database
+## Testing database
 
 First, insure you've created testing database with  `bin/create_test_db.sh` script and set right database name in configuration for testing environment. Why? Because you'll die. Just kidding. Because every time you run a test which requires working with database your tables will be truncated, and I suppose you don't want your production base be truncated.
 
@@ -78,7 +78,7 @@ public function testWhetherHasNotHappened()
 Here `$this->_table` refers to `Apoc_Model_Date_Table` model so we can use all it's functionality.
 Quite simple.
 
-### Running tests
+## Running tests
 
 Examples of running tests of this application:
 

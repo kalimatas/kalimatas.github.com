@@ -7,22 +7,22 @@ date: 2017-09-15 17:06
 
 This post is a step by step tutorial on how to build a simple Slack command with Go.
 
-* [So, what are we going to build?](#intro)
-* [Anatomy of a Slack command](#overview)
-* [Local development with ngrok](#local-dev)
-* [Slack application and command](#slack-app)
-* [Source code overview](#code)
-* [Running the app with Docker](#docker)
-* [Deploying the app to Heroku](#heroku)
+1. [So, what are we going to build?](#intro)
+1. [Anatomy of a Slack command](#overview)
+1. [Local development with ngrok](#local-dev)
+1. [Slack application and command](#slack-app)
+1. [Source code overview](#code)
+1. [Running the app with Docker](#docker)
+1. [Deploying the app to Heroku](#heroku)
 
-### <a name="intro"></a> <a name="overview"></a> So, what are we going to build?
+## <a name="intro"></a> <a name="overview"></a> So, what are we going to build?
 
 By the end of the tutorial, we'll have `cowsay <message>` command, that formats the message in the same way as it's Linux counterpart. It actually uses the Linux's utility to do the job, so it basically just a wrapper with HTTP interface. The final result will look like that:
 
 {: .center}
 ![Example message](/static/img/posts/cowsay_final_result.png "Example message")
 
-### <a name="overview"></a> Anatomy of a Slack command
+## <a name="overview"></a> Anatomy of a Slack command
 
 Before going into the implementation, let's have a look at how Slack commands work, what we need to implement, and how all the parts will communicate with each other.
 
@@ -37,7 +37,7 @@ I know, I know. My drawing skills are awesome. But back to the diagram. Nothing 
 5. Slack servers proxy our response from the application server back to the client, which...
 6. ... displays the result to the user.
 
-### <a name="local-dev"></a> Local development with ngrok
+## <a name="local-dev"></a> Local development with ngrok
 
 As you can see from the diagram above, in order for our command to operate, Slack needs to send a HTTP request to some endpoint, which means that our application should be available on the Internet. This is not a problem once the application is deployed somewhere. But during the development phase we need our local instance be available for Slack. This can be done with [ngrok](https://ngrok.com). It lets you expose a local server to the Internet. Once started, it will provide you with a publicly available URL of your local server.
 
@@ -70,7 +70,7 @@ Pay attention to the URL, `https://502a662f.ngrok.io`, in `Forwarding` section: 
 
 Also, this URL is temporary, meaning that if you stop ngrok now (or close a terminal window, for example), on the next start you'll get another URL. So, leave a terminal window with ngrok open for the duration of the tutorial.
 
-### <a name="slack-app"></a> Slack application and command
+## <a name="slack-app"></a> Slack application and command
 
 It's time to do some clicky-clicky thingy: we need to create in Slack a workspace, an application, and a command. Go to [create](https://slack.com/create) page and follow the instruction to register and create a new workspace.
 
@@ -93,7 +93,7 @@ The final step in Slack administration interface is to create a slash command. W
 
 Pay attention here to the `Request URL`: this is the URL provided us by ngrok from [Local development with ngrok](#local-dev) step.
 
-### <a name="code"></a> Source code overview
+## <a name="code"></a> Source code overview
 
 At last. It's time for source code. In essence, our application is just a wrapper around `cowsay` utility with HTTP interface. It accepts POST requests and returns formatted text back. Full source code can be found in [the GitHub repository](https://github.com/kalimatas/slack-cowbot). 
 
@@ -190,7 +190,7 @@ func Cowsay(text string) (string, error) {
 
 It just executes `cowsay` and passes the text (the message we entered in the Slack client) to its standard input, and returns the formatted text back. Notice that we specify the full path to the executable `/usr/games/cowsay`. It we wanted to run this locally, we would need to make sure, that this binary existed under this path, but it's hard to distribute our program then across computers, because the `cowsay` binary must be under the same full path. This is exactly why we're going to distribute our application as a Docker container, where can provide predictable and fully reproducible environment.
 
-### <a name="docker"></a> Running the app with Docker
+## <a name="docker"></a> Running the app with Docker
 
 If you're not familiar with Docker, then I suggest to read first [an introduction article](https://docs.docker.com/get-started/) - here I'm not going into the internals. So, the Dockerfile:
 
@@ -241,7 +241,7 @@ Notice the URL we used here - `https://502a662f.ngrok.io`. This is the publicly 
 
 But the magic will work only until we stop ngrok, or docker container, or just shutdown the computer. We need our application to be permanently available, that's why we're going to deploy it to Heroku.
 
-### <a name="heroku"></a> Deploying the app to Heroku
+## <a name="heroku"></a> Deploying the app to Heroku
 
 First, [create](https://signup.heroku.com/dc) a free account, then [install](https://devcenter.heroku.com/articles/heroku-cli) Heroku CLI utility.
 

@@ -13,6 +13,7 @@ Though there was a small problem: only 3 days left to the event and I had neithe
 
 So I opened Skype and half-jokingly wrote to my friends something like "there is a hackathon this weekend. any ideas?". Of course they had. We spent the whole evening trying to chose something we'd be able to develop and that seemed to suit the format of hackathon. But as we were babes and sucklings in this sphere and none of us could clearly define what on earth was "the format of hackathon", we did not choose anything.
 
+{: .center}
 ![I have no idea](/static/img/posts/no-idea-dog.jpg "I have no idea what i'm doing")
  
 Nevertheless we were set to participate - if not with our project than as a part of other team. I should tell I felt myself quite uncomfortable going there without a prepared project. I thought we would look stupid among those cool guys with MacBooks discussing their great ideas while drinking coffee. I was pleasantly surprised I was wrong.

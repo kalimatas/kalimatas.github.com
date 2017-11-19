@@ -90,7 +90,7 @@ exit status 1
 
 Well, except that we see our message instead of a default one, nothing changed.
 
-### Graceful exit
+## Graceful exit
 
 There is a pattern for a graceful exit, that utilises a channel.
 
@@ -163,7 +163,7 @@ $ go run main.go
 
 This works. Despite that we got an interrupt signal, the currently running `handle()` finished printing. 
 
-### Waiting for a goroutine to finish
+## Waiting for a goroutine to finish
 
 But there is a tricky part. This works, because `task.Run()` is called from the main goroutine, and handling of an interrupt signal happens in another. When the signal is caught, and the `task.Stop()` is called, this another goroutine dies, while the main goroutine continues to execute the `select` in `Run()`, receives a value from `t.closed` channel and returns.
 

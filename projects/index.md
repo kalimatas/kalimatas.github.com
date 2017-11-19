@@ -5,7 +5,7 @@ title: Projects
 
 Here you can find various projects I have worked on: either created by me or which I contributed to. Most of the time I work with PHP, yet there are number of things in Java, Python, Go or other languages. A number of small things can be found on my [GitHub](https://github.com/kalimatas) profile.
 
-### Projects
+## Projects
 
 <a href="https://github.com/kalimatas/sfmlbook-java" target="_blank">SFML book source code</a> (kinda done) - port of the <a href="http://www.packtpub.com/game-development/sfml-game-development" title="SFML book" target="_blank">SFML book</a> <a href="https://github.com/LaurentGomila/SFML-Game-Development-Book" target="_blank">source code</a> from C++ to Java.
 
@@ -19,14 +19,13 @@ Here you can find various projects I have worked on: either created by me or whi
 
 <a href="https://github.com/kalimatas/unicodeviewer" target="_blank">unicodeviewer</a> - a utility to prints various information about Unicode code points, written in Go.
 
-
-### Contributions
+## Contributions
 
 <a href="https://github.com/google/go-github" target="_blank">go-github</a> - Go client library for GitHub API (milestone API).
 
 <a href="https://github.com/kalimatas/php-liquid" target="_blank">php-liquid</a> - Liquid template engine for PHP.
 
-### Small things
+## Small things
 
 <a href="https://github.com/kalimatas/pythongames" target="_blank">Python games</a> - a collection of games in Python from <a href="http://inventwithpython.com/" target="_blank">Making games with Python</a> book.
 

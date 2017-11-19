@@ -21,7 +21,7 @@ This program will print `main function message` and **possibly** `goroutine mess
 
 As you understand there must be some way to avoid such situations. And for that there are **channels** in Golang.
 
-### Channels basics
+## Channels basics
 
 Channels serve to synchronize execution of concurrently running functions and to provide a mechanism for their communication by passing a value of a specified type. Channels have several characteristics: the type of element you can send through a channel, capacity (or buffer size) and direction of communication specified by a `<-` operator. You can allocate a channel using the built-in function [make](http://golang.org/ref/spec#Making_slices_maps_and_channels):
 
@@ -136,7 +136,7 @@ message 3
 
 Here we see that all writing operations are performed without waiting for the first read for the buffer of the channel allows to store all three messages. By changing channels capacity we can control the amount of information being processed thus limiting throughput of a system.
 
-### Deadlock
+## Deadlock
 
 Now let's get back to our not working example with read/write operations.
 
@@ -180,7 +180,7 @@ func main() {
 }
 {% endhighlight %}
 
-### Range channels and closing
+## Range channels and closing
 
 In one of the previous examples we sent several messages to a channel and then read them. The receiving part of code was:
 
@@ -274,7 +274,7 @@ func main() {
 
 As we close the channel in the goroutine the reading operation does not block and the main function continues to run.
 
-### Multiple channels and select
+## Multiple channels and select
 
 In real programs you'll probably need more than one goroutine and one channel. The more independent parts are - the more need for effective synchronization. Let's look at more complex example:
 
@@ -351,7 +351,7 @@ second 3
 first 3
 {% endhighlight %}
 
-### Conclusion
+## Conclusion
 
 Channels is a very powerful and interesting mechanism in Golang. But in order to use them effectively you have to understand how they work. In this article I tried to explain the very necessary basics. For further learning I recommend you look at the following:
 

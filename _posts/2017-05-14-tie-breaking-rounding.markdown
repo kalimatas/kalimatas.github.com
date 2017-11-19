@@ -24,7 +24,7 @@ And these are some *not so normal*:
 1. **Stochastic rounding**. The choice of the result is... *random*!.
 2. **Alternating tie-breaking**. This just alternate round up and round down for.
 
-### Rounding in programming languages
+## Rounding in programming languages
 
 Just out of curiousity I checked how rounding works in a few popular programming languages. It seems like most of them use **Round half away from zero** rule, the most logical for me, since I was taught it as school. So, this is what you'll get in C, PHP 7, Python 2, Ruby 2:
 
@@ -56,7 +56,7 @@ System.out.printf("%.1f -> %d, %.1f -> %d, %.1f -> %d, %.1f -> %d\n",
 
 Go 1.8 doesn't have built-in round function at all <sup>[[3]](#3)</sup>, you have to choose from [math.Ceil](https://golang.org/pkg/math/#Ceil) or [math.Floor](https://golang.org/pkg/math/#Floor) yourself.
 
-### Conclusion
+## Conclusion
 
 Well, beware of different rules in different programming languages!
 

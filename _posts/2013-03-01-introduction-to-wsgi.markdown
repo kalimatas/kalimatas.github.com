@@ -13,7 +13,7 @@ I highly recommend reading [PEP333](http://www.python.org/dev/peps/pep-0333/) wi
 * WSGI application is a callable object (a function, method, class, or an instance with a `__call__` method) that accepts two **positional** arguments: WSGI environment variables and a callable with two required positional arguments which starts the response;
 * the server side invokes the callable object which returns response.
 
-### Basic example
+## Basic example
 Here is a simple example.
 
 {% highlight python %}
@@ -47,7 +47,7 @@ $ python wsgi.py
 1.0.0.127.in-addr.arpa - - [01/Mar/2013 21:36:40] "GET /?name=Jonh HTTP/1.1" 200 15
 {% endhighlight %}
 
-### What is a middleware?
+## What is a middleware?
 Middleware applications play the role of a server for their contained applications and, at the same time, look like an application to their containing server. They can be used to:
 
 * routing to a different URL based on `environ` parameters;
@@ -90,5 +90,5 @@ if __name__ == "__main__":
     httpd.serve_forever()
 {% endhighlight %}
 
-### Conclusion 
+## Conclusion 
 WSGI is no doubt a great piece of technology which brings some standardization to a zoo of existing technologies in Python web area. But as it is rightly mentioned in PEP333 WSGI is a tool for frameworks and server developers, and is not intended to directly support application developers. Thus consider using existing libraries and frameworks with WSGI support for your applications. Have a look at [Werkzeug](http://werkzeug.pocoo.org/) and [Flask](http://flask.pocoo.org/), it's a good point to start from (or maybe stop at).
