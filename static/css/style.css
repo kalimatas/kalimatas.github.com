@@ -1,6 +1,6 @@
 /* general */
 * { box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; }
-body { font-family: Helvetica, sans-serif; font-size: 14px; line-height: 1.45em; margin: 0; padding: 0; color: rgb(20, 23, 26); }
+body { font-family: Helvetica, sans-serif; font-size: 15px; line-height: 1.45em; margin: 0; padding: 0; color: rgb(20, 23, 26); }
 ul { list-style-type: square; }
 
 /* links */
