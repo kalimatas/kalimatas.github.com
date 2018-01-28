@@ -1,29 +1,26 @@
 /* general */
 * { box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; }
-body { font-family: Helvetica, sans-serif; font-size: 15px; line-height: 1.45em; margin: 0; padding: 0; color: rgb(20, 23, 26); }
-ul { list-style-type: square; }
+body { font-family: Helvetica, sans-serif; font-size: 15px; line-height: 1.25em; margin: 0; padding: 0; color: rgb(20, 23, 26); text-align: justify; }
 
 /* links */
-a:link { text-decoration: none; border-bottom: 1px solid black; }
-a:link, a:active, a:visited { color: rgb(20, 23, 26); }
-a:hover { text-decoration: none; border-bottom: none; }
+a:link { text-decoration: none; }
+a:link, a:active, a:visited { color: rgb(0, 0, 227); }
+a:hover { color: firebrick; text-decoration: underline; }
 
 /* headings */
-h1 { font-size: 2.5em; line-height: 1em; font-weight: 400; margin-bottom: 25px; letter-spacing: -1px; }
-h2 { font-size: 1.5em; font-weight: 400; margin-top: 30px; }
-h3 { font-size: 1.3em; font-weight: 400; margin-top: 24px; margin-bottom: 24px; }
+h1, h2, h3 { font-weight: 400; margin-top: 28px; margin-bottom: 28px; }
+h1 { font-size: 2em; line-height: 1em; }
 
 /* layout */
-section.container { padding-top: 15px; margin: 0 auto; width: 660px; }
+section.container { padding-top: 15px; margin: 0 auto; width: 650px; }
 section.main { clear: both; margin-top: 25px; }
 footer { margin: 30px 0 25px 0; }
 .clear { clear: both; }
 .center { text-align: center; }
 
 /* menu */
-header.title > a { font-family: "Arial", sans-serif; font-weight: bold; text-transform: uppercase; color: firebrick; font-size: 12px; border-bottom: none; }
-nav.menu a { border-bottom: none; font-family: Verdana, Helvetica, sans-serif; font-weight: 600; text-transform: uppercase; color: firebrick; font-size: 12px; border-bottom: none; }
-header.title { float: right; }
+nav.menu a { border-bottom: none; font-family: Verdana, Helvetica, sans-serif; font-weight: 600; text-transform: uppercase; color: firebrick; font-size: 0.8em; text-decoration: none; }
+nav.menu a:hover { text-decoration: underline; }
 nav.menu ul { list-style: none outside none; padding: 0; margin: 0; }
 nav.menu ul li { display: inline; margin-right: 6px; }
 
@@ -39,13 +36,18 @@ nav.pagination { margin-top: 20px; }
 #disqus_thread { margin-top: 42px; }
 
 /* footer */
-footer { font-size: 11px; color: #888a85; }
+footer { font-size: 0.6em; color: #888a85; }
 footer a { color: #888a85; }
 section.copyright { float: left; }
 section.contact { float: right; }
 
+/* notes */
+ul#notes { list-style-type: none; display: table-row; }
+ul#notes li .col-1 { display: table-cell; text-align: right; }
+ul#notes li .col-2 { display: table-cell; padding-left: 10px; }
+
 /* article */
-time { font-size: 12px; color: #888a85; }
+time { font-size: 0.9em; color: #888a85; }
 blockquote { font-style: italic; }
 article ul, ol { padding-left: 30px; }
 ul.list_archive li { margin-bottom: 6px; }
@@ -62,9 +64,9 @@ ul.list_archive li { margin-bottom: 6px; }
 p > code, li > code {
     color: black;
     white-space: nowrap;
-    font-size: 12px;
+    font-size: 0.8em;
     font-weight: bold;
-    font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Lucida Console', monospace;
+    font-family: Menlo, 'Lucida Console', monospace;
 }
 
 figure {
@@ -75,8 +77,8 @@ figure {
 
 .highlight pre { margin: 0; line-height: 1.15em; }
 .highlight code {
-    font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Lucida Console', monospace;
-    font-size: 12px;
+    font-family: Menlo, 'Lucida Console', monospace;
+    font-size: 0.8em;
     border: none;
     -moz-tab-size: 4;
     -o-tab-size: 4;
