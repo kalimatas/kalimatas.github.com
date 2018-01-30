@@ -282,7 +282,7 @@ func main() {
 
 *__Update__*: [Ahmet Alp Balkan](https://github.com/ahmetb) pointed out, that the pattern used in this post is more error-prone and, probably, should not be used in favor of a pattern with [context](https://golang.org/pkg/context/) package. For details, read [Make Ctrl+C cancel the context.Context](https://medium.com/@matryer/make-ctrl-c-cancel-the-context-context-bd006a8ad6ff).
 
-## Notes
+## References
 
 <ul id="notes">
 <li>

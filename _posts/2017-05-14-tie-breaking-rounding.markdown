@@ -66,7 +66,7 @@ Go 1.8 doesn't have built-in round function at all [[3]](#3), you have to choose
 
 Well, beware of different rules in different programming languages!
 
-## Notes
+## References
 
 <ul id="notes">
 <li>

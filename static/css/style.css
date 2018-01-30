@@ -1,6 +1,6 @@
 /* general */
 * { box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; }
-body { font-family: Helvetica, sans-serif; font-size: 15px; line-height: 1.25em; margin: 0; padding: 0; color: rgb(20, 23, 26); text-align: justify; }
+body { font-family: Georgia, serif; font-size: 16px; line-height: 1.3em; margin: 0; padding: 0; color: rgb(20, 23, 26); text-align: justify; }
 
 /* links */
 a:link { text-decoration: none; }
@@ -33,10 +33,10 @@ nav.menu ul li { display: inline; margin-right: 6px; }
 nav.pagination { margin-top: 20px; }
 
 /* disqus */
-#disqus_thread { margin-top: 42px; }
+#disqus_thread { margin-top: 52px; }
 
 /* footer */
-footer { font-size: 0.6em; color: #888a85; }
+footer { font-size: 0.6em; color: #888a85; font-family: Helvetica, sans-serif; }
 footer a { color: #888a85; }
 section.copyright { float: left; }
 section.contact { float: right; }
