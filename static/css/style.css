@@ -1,6 +1,6 @@
 /* general */
-* { box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; }
-body { font-family: Georgia, serif; font-size: 16px; line-height: 1.3em; margin: 0; padding: 0; color: rgb(20, 23, 26); text-align: justify; }
+@import url('https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&subset=cyrillic,cyrillic-ext,latin-ext');
+body { font-family: Lora, Georgia, serif; font-size: 16px; line-height: 1.4em; margin: 0; padding: 0; color: rgb(20, 23, 26); text-align: justify; }
 
 /* links */
 a:link { text-decoration: none; }
@@ -9,7 +9,7 @@ a:hover { color: firebrick; text-decoration: underline; }
 
 /* headings */
 h1, h2, h3 { font-weight: 400; margin-top: 28px; margin-bottom: 28px; }
-h1 { font-size: 2em; line-height: 1em; }
+h1 { font-size: 2em; line-height: 1.3em; }
 
 /* layout */
 section.container { padding-top: 15px; margin: 0 auto; width: 650px; }
