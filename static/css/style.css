@@ -11,6 +11,37 @@ a:hover { color: firebrick; text-decoration: underline; }
 h1, h2, h3 { font-family: Lora, Georgia, serif; font-weight: 400; margin-top: 28px; margin-bottom: 28px; }
 h1 { font-size: 2em; line-height: 1.3em; }
 
+/* anchors */
+.fa {
+    display: inline-block;
+    font-family: Georgia, serif;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.fa-link:before {
+    content: "§";
+}
+
+.header-link {
+    position: relative;
+    left: 0.5em;
+    opacity: 0;
+
+    -webkit-transition: opacity 0.2s ease-in-out 0.1s;
+    -moz-transition: opacity 0.2s ease-in-out 0.1s;
+    -ms-transition: opacity 0.2s ease-in-out 0.1s;
+}
+h2:hover .header-link,
+h3:hover .header-link,
+h4:hover .header-link,
+h5:hover .header-link,
+h6:hover .header-link {
+    opacity: 1;
+    color: rgb(0, 0, 227);
+}
+
 /* layout */
 section.container { padding-top: 15px; margin: 0 auto; width: 650px; }
 section.main { clear: both; margin-top: 25px; }
