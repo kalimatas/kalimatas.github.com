@@ -289,3 +289,4 @@ func main() {
 	<span class="col-1">[1] <a name="1"></a></span>
 	<span class="col-2"><a href="https://dave.cheney.net/2014/03/19/channel-axioms">Channel Axioms</a></span>
 </li>
+</ul>
