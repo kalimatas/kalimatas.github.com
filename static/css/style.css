@@ -1,22 +1,21 @@
 /* general */
-@import url('https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&subset=cyrillic,cyrillic-ext,latin-ext');
-body { font-family: Georgia, serif; font-size: 16px; line-height: 1.4em; margin: 0; padding: 0; color: black; text-align: justify; }
+body { font-family: "Times New Roman", serif; font-size: 17px; line-height: 1.2em; margin: 0; padding: 0; color: black; text-align: justify; }
 
 /* links */
 a:link { text-decoration: none; }
 a:link, a:active, a:visited { color: rgb(0, 0, 227); }
 a:hover { color: firebrick; text-decoration: underline; }
+a[href^="#"] { color: black; background: lightgoldenrodyellow; }
 
 /* headings */
-h1, h2, h3 { font-family: Lora, Georgia, serif; font-weight: 400; margin-top: 28px; margin-bottom: 28px; }
-h1 { font-size: 2em; line-height: 1.3em; }
+h1 { font-size: 1.7em; line-height: 1.2em; }
 
 /* anchors */
 .fa {
     display: inline-block;
-    font-family: Georgia, serif;
     font-weight: normal;
     line-height: 1;
+    background: white;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -50,7 +49,7 @@ footer { margin: 30px 0 25px 0; }
 .center { text-align: center; }
 
 /* menu */
-nav.menu a { border-bottom: none; font-family: Verdana, Helvetica, sans-serif; font-weight: 600; text-transform: uppercase; color: firebrick; font-size: 0.8em; text-decoration: none; }
+nav.menu a { border-bottom: none; font-family: Verdana, Helvetica, sans-serif; font-weight: 600; text-transform: uppercase; color: firebrick; font-size: 0.7em; text-decoration: none; }
 nav.menu a:hover { text-decoration: underline; }
 nav.menu ul { list-style: none outside none; padding: 0; margin: 0; }
 nav.menu ul li { display: inline; margin-right: 6px; }
@@ -74,7 +73,8 @@ section.contact { float: right; }
 
 /* notes */
 ul#notes { list-style-type: none; display: table-row; }
-ul#notes li .col-1 { display: table-cell; text-align: right; }
+ul#notes li { margin-bottom: 2px; }
+ul#notes li .col-1 { display: table-cell; text-align: right; background: lightgoldenrodyellow; }
 ul#notes li .col-2 { display: table-cell; padding-left: 10px; }
 
 /* article */
@@ -95,7 +95,7 @@ ul.list_archive li { margin-bottom: 6px; }
 p > code, li > code {
     color: black;
     white-space: nowrap;
-    font-size: 0.8em;
+    font-size: 0.75em;
     font-weight: bold;
     font-family: Menlo, 'Lucida Console', monospace;
 }
@@ -109,7 +109,7 @@ figure {
 .highlight pre { margin: 0; line-height: 1.15em; }
 .highlight code {
     font-family: Menlo, 'Lucida Console', monospace;
-    font-size: 0.8em;
+    font-size: 0.7em;
     border: none;
     -moz-tab-size: 4;
     -o-tab-size: 4;
