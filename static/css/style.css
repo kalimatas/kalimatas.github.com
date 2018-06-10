@@ -1,5 +1,6 @@
 /* general */
-body { font-family: "Times New Roman", serif; font-size: 17px; line-height: 1.2em; margin: 0; padding: 0; color: black; text-align: justify; }
+@import url('https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&subset=cyrillic');
+body { font-family: "PT Serif", Georgia, serif; font-size: 16px; line-height: 24px; margin: 0; padding: 0; color: black; }
 
 /* links */
 a:link { text-decoration: none; }
