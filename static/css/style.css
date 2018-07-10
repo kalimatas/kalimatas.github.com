@@ -10,6 +10,7 @@ a[href^="#"] { color: black; background: lightgoldenrodyellow; }
 
 /* headings */
 h1 { font-size: 1.7em; line-height: 1.2em; }
+h1 > a[href^="#"], h2 > a[href^="#"], h3 > a[href^="#"] { background: white; }
 
 /* anchors */
 .fa {
