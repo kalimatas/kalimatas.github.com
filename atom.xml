@@ -4,21 +4,21 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
  
  <title>Alexander Guz</title>
- <link href="http://guzalexander.com/atom.xml" rel="self"/>
- <link href="http://guzalexander.com/"/>
+ <link href="https://guzalexander.com/atom.xml" rel="self"/>
+ <link href="https://guzalexander.com/"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>http://guzalexander.com/</id>
+ <id>https://guzalexander.com/</id>
  <author>
    <name>Alexander Guz</name>
-   <email>kalimatas@gmail.com</email>
+   <email>guz@kalimatas.com</email>
  </author>
 
  {% for post in site.posts %}
  <entry>
    <title>{{ post.title }}</title>
-   <link href="http://guzalexander.com{{ post.url }}"/>
+   <link href="https://guzalexander.com{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
-   <id>http://guzalexander.com{{ post.id }}</id>
+   <id>https://guzalexander.com{{ post.id }}</id>
    <content type="html">{{ post.content | xml_escape }}</content>
  </entry>
  {% endfor %}
