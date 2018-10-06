@@ -17,7 +17,7 @@ func main() {
 }
 {% endhighlight %}
 
-This program will print `main function message` and **possibly** `goroutine message`. I say **possibly** because spawning a goroutine has some peculiarities. When you start a goroutine the calling code (in our case it is the `main` function) doesn't wait for a goroutine to finish, but continues running further. After calling a `println` the main  function ends its execution and in Golang it means stopping of execution of the whole program with all spawned goroutines. But before it happens our goroutine could possibly finish executing its code and print the `goroutine message` string. 
+This program will print `main function message` and *possibly* `goroutine message`. I say *possibly* because spawning a goroutine has some peculiarities. When you start a goroutine the calling code (in our case it is the `main` function) doesn't wait for a goroutine to finish, but continues running further. After calling a `println` the main  function ends its execution and in Golang it means stopping of execution of the whole program with all spawned goroutines. But before it happens our goroutine could possibly finish executing its code and print the `goroutine message` string. 
 
 As you understand there must be some way to avoid such situations. And for that there are **channels** in Golang.
 

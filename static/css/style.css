@@ -1,6 +1,6 @@
 /* general */
 @import url('https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&subset=cyrillic');
-body { font-family: "PT Serif", Georgia, serif; font-size: 16px; line-height: 24px; margin: 0; padding: 0; color: black; }
+body { font-family: Helvetica, sans-serif; font-size: 13.6px; line-height: 21px; margin: 0; padding: 0; color: black; }
 
 /* links */
 a:link { text-decoration: none; }
@@ -9,9 +9,11 @@ a:hover { color: firebrick; text-decoration: underline; }
 a[href^="#"] { color: black; background: lightgoldenrodyellow; }
 
 /* headings */
-h1 { font-size: 1.7em; line-height: 1.2em; }
+h1 { font-size: 1.7em; line-height: 1.3em; }
 h1 > a[href^="#"], h2 > a[href^="#"], h3 > a[href^="#"] { background: white; }
-h2, h3, h4 {
+h1, h2, h3, h4 {
+    font-family: "PT Serif", Georgia, serif;
+    font-weight: normal;
     margin-top: 30px;
     margin-bottom: 30px;
 }
@@ -63,7 +65,7 @@ nav.menu ul li { display: inline; margin-right: 6px; }
 /* index list */
 .entry > span { display: inline-block; margin: 0 5px; }
 .entry { margin-bottom: 2px; }
-.entry time, .not_found_list time { color: #24292e; font-size: 11px; font-family: Menlo, 'Bitstream Vera Sans Mono', 'Lucida Console', monospace; }
+.entry > time, .not_found_list time { color: #24292e; font-size: 11px; font-family: Menlo, 'Bitstream Vera Sans Mono', 'Lucida Console', monospace; }
 
 /* paginator */
 nav.pagination { margin-top: 20px; }
@@ -84,7 +86,7 @@ ul#notes li .col-1 { display: table-cell; text-align: right; background: lightgo
 ul#notes li .col-2 { display: table-cell; padding-left: 10px; }
 
 /* article */
-time { font-size: 0.9em; color: #888a85; }
+.main > time { font-size: 0.9em; color: black; font-style: italic; }
 blockquote { font-style: italic; }
 article ul, ol { padding-left: 30px; }
 ul.list_archive li { margin-bottom: 6px; }
@@ -101,9 +103,10 @@ ul.list_archive li { margin-bottom: 6px; }
 p > code, li > code {
     color: black;
     white-space: nowrap;
-    font-size: 0.80em;
-    /*font-weight: bold;*/
-    font-family: Menlo, 'Lucida Console', monospace;
+    /*font-size: 0.80em;*/
+    font-weight: bold;
+    font-family: Helvetica, sans-serif;
+    /*font-family: Menlo, 'Lucida Console', monospace;*/
 }
 
 figure {
@@ -112,7 +115,7 @@ figure {
     margin: 0;
 }
 
-.highlight pre { margin: 0; line-height: 1.15em; }
+.highlight pre { margin: 0; line-height: 1.3em; }
 .highlight code {
     font-family: Menlo, 'Lucida Console', monospace;
     font-size: 0.7em;
