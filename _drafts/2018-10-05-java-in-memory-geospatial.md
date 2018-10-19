@@ -9,7 +9,7 @@ One of my recent tasks included searching for objects withing some radius based 
 
 So I decided to make a short description of some Java in-memory geospatial indices I've discovered during my research with code examples and benchmarks done with [jmh](http://openjdk.java.net/projects/code-tools/jmh/).
 
-Again, the task at hand: given a geo point, find all objects within a given radius from this object using in-memory data structures. As an additional requirement, we would like to have arbitrary data attached to the objects stored in this data structures. The reason is that, in most cases, these object are not merely geo points, they are rather some domain entities, and we would build our business logic based on them.
+Again, the task at hand: given a geo point, find all objects within a given radius from this object using in-memory data structures. As an additional requirement, we would like to have arbitrary data attached to the objects stored in this data structures. The reason is that, in most cases, these object are not merely geo points, they are rather some domain entities, and we would build our business logic based on them. In our case, the arbitrary data will be just an integer ID, and we pretend we can later fetch required entity from some repository by this ID.
 
 // picture?
 
@@ -62,9 +62,12 @@ https://github.com/jchambers/jeospatial
 
 The main element behind this data structure is a minimum bounding rectangle . The "R" in R-tree stands for rectangle.  Each rectangle describes a single object, and nearby rectangles are then grouped in another rectangle on a higher level. [ref https://en.wikipedia.org/wiki/Minimum_bounding_rectangle]
 
+// meme Rectangles
+
 {code block for jsi}
 
 // explanation on code block; usage of anonymous/lambda 
+// confusion with degrees, which is probably described in the paper
 
 Examples repository https://github.com/aled/jsi-examples.
 
@@ -76,7 +79,13 @@ In preparation step, we create 3000 random geo points and store them in the inde
 
 {results of benchmark}
 
+{: .center}
+![JMH benchmark results](/static/img/posts/geospatial-benchmark-jmh.png "JMH benchmark results")
+
 To be honest, I was kind of surprised to find out, that Lucene  performed so bad. My guess - some misconfiguration, though I could not figure out what was wrong. I even asked it on StackOverflow [link https://stackoverflow.com/questions/52302394/poor-lucene-in-memory-spatial-index-performance], but so far no answers.
+
+Visualization benchmarks https://github.com/jzillmann/jmh-visualizer
+http://jmh.morethan.io/
 
 // conclusion: Jeospatial, because performance and ease of use.
 
