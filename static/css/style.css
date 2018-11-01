@@ -115,6 +115,15 @@ figure {
     margin: 0;
 }
 
+figure.img {
+    /* -webkit-margin-before: 0; */
+    /* -webkit-margin-after: 0; */
+    /* margin: 0; */
+    text-align: center;
+    font-style: italic;
+    font-size: small;
+}
+
 .highlight pre { margin: 0; line-height: 1.3em; }
 .highlight code {
     font-family: Menlo, 'Lucida Console', monospace;

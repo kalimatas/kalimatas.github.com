@@ -13,36 +13,89 @@ Again, the task at hand: given a geo point, find all objects within a given radi
 
 {: .center}
 ![Geo circle](/static/img/posts/geo_circle.jpg "Geo circle")
-<figure>Figure 1. </figure>
+<figure class="img">Figure 1. We need to find all green points within the radius of D km from the source point S.</figure>
 
 ## Lucene spatial extras
 
-I learned about Lucene while using Elasticsearch, because it's based on it [ref https://en.wikipedia.org/wiki/Elasticsearch]. I thought: well, Elasticsearch has Geo queries made with Lucene, which means Lucene has support for it, which, maybe, also has support for in-memory geospatial index. And I was right. Lucene project has Spatial-Extras module [link https://lucene.apache.org/core/7_4_0/spatial-extras/index.html], that "encapsulates an approach to indexing and searching based on shapes".
+I learned about Lucene while using Elasticsearch, because it's based on it [[1]](#1). I thought: well, Elasticsearch has Geo queries made with Lucene, which means Lucene has support for it, which, maybe, also has support for in-memory geospatial index. And I was right. Lucene project has [Spatial-Extras module](https://lucene.apache.org/core/7_4_0/spatial-extras/index.html), that *encapsulates an approach to indexing and searching based on shapes*.
 
-Using this module turned out to be a non-trivial task. Except JavaDocs and source code, I could only find an example of its usage in Apache Solr + Lucene repository [link https://github.com/apache/lucene-solr/blob/master/lucene/spatial-extras/src/test/org/apache/lucene/spatial/SpatialExample.java], and made my implementation based on it.
+Using this module turned out to be a non-trivial task. Except JavaDocs and source code, I could only find an example of its usage in [Apache Solr + Lucene repository](https://github.com/apache/lucene-solr/blob/master/lucene/spatial-extras/src/test/org/apache/lucene/spatial/SpatialExample.java), and made my implementation based on it.
 
-Lucene provides generalised approach to indexing and searching different types of data, and geospatial index is just one of the flavours. There are n steps involved:
-1. Create an index. At this step you can choose where to store the index. For our use case, there is a RAMDirectory [link ], which is essentially in-memory storage.
-2. Index some documents. To make our index support geospatial queries we need to have a column with a type [todo type with a link].
-3. Run a geo query against created index.
+Lucene provides generalised approach to indexing and searching different types of data, and geospatial index is just one of the flavours. 
 
-Let's have a look at those actions in code.
+Let's have a look at the example.
 
-{code block for Lucene with comments}
+{%highlight java%}
+final SpatialContext spatialCxt = SpatialContext.GEO;
+final ShapeFactory shapeFactory = spatialCxt.getShapeFactory();
+final SpatialStrategy coordinatesStrategy =
+	new RecursivePrefixTreeStrategy(new GeohashPrefixTree(spatialCxt, 5), "coordinates");
 
-// explanation on code block
+// Create an index ①
+final Directory directory = new RAMDirectory();
+IndexWriterConfig iwConfig = new IndexWriterConfig();
+IndexWriter indexWriter = new IndexWriter(directory, iwConfig);
+
+// Index some documents ②
+var r = new Random();
+for (int i = 0; i < 3000; i++) {
+	double latitude = ThreadLocalRandom.current().nextDouble(50.4D, 51.4D);
+	double longitude = ThreadLocalRandom.current().nextDouble(8.2D, 11.2D);
+
+	Document doc = new Document();
+	doc.add(new StoredField("id", r.nextInt()));
+	var point = shapeFactory.pointXY(longitude, latitude);
+	for (var field : coordinatesStrategy.createIndexableFields(point)) {
+		doc.add(field);
+	}
+	doc.add(new StoredField(coordinatesStrategy.getFieldName(), latitude + ":" + longitude));
+	indexWriter.addDocument(doc);
+}
+indexWriter.forceMerge(1);
+indexWriter.close();
+
+// Query the index ③
+final IndexReader indexReader = DirectoryReader.open(directory);
+IndexSearcher indexSearcher = new IndexSearcher(indexReader);
+
+double latitude = ThreadLocalRandom.current().nextDouble(50.4D, 51.4D);
+double longitude = ThreadLocalRandom.current().nextDouble(8.2D, 11.2D);
+final double NEARBY_RADIUS_DEGREE = DistanceUtils.dist2Degrees(100, DistanceUtils.EARTH_MEAN_RADIUS_KM);
+final var spatialArgs = new SpatialArgs(SpatialOperation.IsWithin,
+										shapeFactory.circle(longitude, latitude, NEARBY_RADIUS_DEGREE));
+final Query q = coordinatesStrategy.makeQuery(spatialArgs);
+try {
+	final TopDocs topDocs = indexSearcher.search(q, 1);
+	if (topDocs.totalHits == 0) {
+		return;
+	}
+	var doc = indexSearcher.doc(topDocs.scoreDocs[0].doc);
+	var id = doc.getField("id").numericValue();
+} catch (IOException e) {
+	e.printStackTrace();
+}
+{%endhighlight%}
+
+In order to use it we need:
+1. **Create an index**. At this step you can choose where to store the index. For our use case, there is a [RAMDirectory](https://github.com/apache/lucene-solr/blob/master/lucene/core/src/java/org/apache/lucene/store/RAMDirectory.java), which is essentially in-memory storage.
+2. **Index some documents**. To make our index support geospatial queries we need to have a field of type [Point](https://github.com/locationtech/spatial4j/blob/master/src/main/java/org/locationtech/spatial4j/shape/Point.java) in our document.
+3. **Query the index**. Perform a spatial operation agains the index.
 
 As you would expect, Lucene indices are the most flexible: 
 * you can put any data to the indexed document along with its geo point;
-* different types of geo queries [todo find in documentation, based on radius, rectangle, etc.]
-* km, miles, radiants
+* various types of geo queries;
+* km, miles, radiants;
+* and much more. todo here
+
 Though, it all comes at a cost of readability and ease of use.
 
 ## Jeospatial
 
-Jeospatial [link https://jchambers.github.io/jeospatial/] is a geospatial library that provides "a set of tools for solving the k-nearest-neighbor problem on the earth's surface". It is implemented using Vantage-point trees [link https://en.wikipedia.org/wiki/Vantage-point_tree], and claims to have O(n log(n)) time complexity for indexing operations and O(log(n)) - for searching. A great visual explanation of how Vantage-point trees are constructed with examples can be found in [link https://fribbels.github.io/vptree/writeup].
+[Jeospatial](https://jchambers.github.io/jeospatial/) is a geospatial library that provides *a set of tools for solving the k-nearest-neighbor problem on the earth's surface*. It is implemented using [Vantage-point trees](https://en.wikipedia.org/wiki/Vantage-point_tree), and claims to have O(n log(n)) time complexity for indexing operations and O(log(n)) - for searching. A great visual explanation of how Vantage-point trees are constructed with examples can be found in this [article](https://fribbels.github.io/vptree/writeup).
 
-// picture of VP Tree 
+{: .center}
+![Vantage-point tree](/static/img/posts/vp_tree.png "Vantage-point tree")
+<figure class="img">Figure 2. An illustration of a Vantage-point tree.</figure>
 
 The library is pretty easy and straightforward to use.
 
@@ -96,6 +149,6 @@ http://jmh.morethan.io/
 <ul id="notes">
 <li>
 	<span class="col-1">[1] <a name="1"></a></span>
-	<span class="col-2"><a href="https://www.slf4j.org/legacy.html">Bridging legacy APIs with Logback</a></span>
+	<span class="col-2"><a href="https://en.wikipedia.org/wiki/Elasticsearch">Elasticsearch on Wikipedia</a></span>
 </li>
 </ul>
