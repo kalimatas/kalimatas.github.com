@@ -11,7 +11,9 @@ So I decided to make a short description of some Java in-memory geospatial indic
 
 Again, the task at hand: given a geo point, find all objects within a given radius from this object using in-memory data structures. As an additional requirement, we would like to have arbitrary data attached to the objects stored in this data structures. The reason is that, in most cases, these object are not merely geo points, they are rather some domain entities, and we would build our business logic based on them. In our case, the arbitrary data will be just an integer ID, and we pretend we can later fetch required entity from some repository by this ID.
 
-// picture?
+{: .center}
+![Geo circle](/static/img/posts/geo_circle.jpg "Geo circle")
+<figure>Figure 1. </figure>
 
 ## Lucene spatial extras
 
