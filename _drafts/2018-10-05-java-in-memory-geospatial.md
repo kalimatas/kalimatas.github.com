@@ -99,15 +99,40 @@ Though, it all comes at a cost of readability and ease of use.
 
 The library is pretty easy and straightforward to use.
 
-{code block for Jeospatial}
+{%highlight java%}
+// Create a custom class to hold an ID
+class MyGeospatialPoint extends SimpleGeospatialPoint {
+    private int id;
 
-// explanation on code block
+    MyGeospatialPoint(double lat, double lon) {
+        super(lat, lon);
+    }
 
-As VPTree can hold only objects of GeospatialPoint type, to attach additional data to objects stored in the index we need to create another class that extends its only implementation SimpleGeospatialPoint and holds required data.
+    int getId() {
+        return id;
+    }
+}
 
-{code for extended class}
+private SimpleGeospatialPoint createRandomPoint() {
+	final double latitude = ThreadLocalRandom.current().nextDouble(50.4D, 51.4D);
+	final double longitude = ThreadLocalRandom.current().nextDouble(8.2D, 11.2D);
+	return new MyGeospatialPoint(latitude, longitude);
+}
 
-https://github.com/jchambers/jeospatial
+// Init Vantage-point tree and elements to it
+VPTree<SimpleGeospatialPoint> jeospatialPoints = new VPTree<>();
+for (int i = 0; i < 3000; i++) {
+	jeospatialPoints.add(createRandomPoint());
+}
+
+// Get the neareset neighbor for a given point
+var neighbor = (MyGeospatialPoint) jeospatialPoints.getNearestNeighbor(createRandomPoint(), 100 * 1000);
+var id = neighbor.getId();
+{%endhighlight%}
+
+It is much more clear than the Lucene's example: init a `VPTree`, add points, perform a query. As VPTree can hold only objects of GeospatialPoint type, to attach additional data to objects stored in the index we need to create another class that extends its only implementation SimpleGeospatialPoint and holds required data. Pay attention that `getNearestNeighbor` accepts as a second argument the distance in meters.
+
+More info can be found in the official [GitHub repository](https://github.com/jchambers/jeospatial).
 
 ## The Java Spatial Index
 
