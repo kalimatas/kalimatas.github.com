@@ -213,11 +213,11 @@ To be honest, I was kind of surprised to find out, that Lucene  performed so bad
 	<span class="col-2"><a href="https://en.wikipedia.org/wiki/Elasticsearch">Elasticsearch on Wikipedia.</a></span>
 </li>
 <li>
-	<span class="col-1">[2] <a name="1"></a></span>
+	<span class="col-1">[2] <a name="2"></a></span>
 	<span class="col-2"><a href="https://dl.acm.org/citation.cfm?id=602266">"R-trees: A Dynamic Index Structure for Spatial Searching" by Antonin Guttman.</a></span>
 </li>
 <li>
-	<span class="col-1">[3] <a name="1"></a></span>
+	<span class="col-1">[3] <a name="3"></a></span>
 	<span class="col-2"><a href="https://en.wikipedia.org/wiki/Minimum_bounding_rectangle">Minimum bounding rectangle on Wikipedia.</a></span>
 </li>
 </ul>

@@ -1,18 +1,18 @@
 /* general */
-@import url('https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&subset=cyrillic');
-body { font-family: Helvetica, sans-serif; font-size: 13.6px; line-height: 21px; margin: 0; padding: 0; color: black; background-color: aliceblue;}
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,400i,700,700i&subset=cyrillic,cyrillic-ext,latin-ext');
+body { font-family: Merriweather, serif; font-size: 15px; line-height: 26.5px; margin: 0; padding: 0; color: black; /*background-color: aliceblue;*/}
 
 /* links */
-a:link { text-decoration: none; }
+/*a:link { text-decoration: none; }*/
 a:link, a:active, a:visited { color: rgb(0, 0, 227); }
-a:hover { color: firebrick; text-decoration: underline; }
-a[href^="#"] { color: black; background: lightgoldenrodyellow; }
+a:hover { color: firebrick; text-decoration: none; }
+a[href^="#"] { color: black; background: cornsilk; }
 
 /* headings */
 h1 { font-size: 1.7em; line-height: 1.3em; }
 h1 > a[href^="#"], h2 > a[href^="#"], h3 > a[href^="#"] { background: white; }
 h1, h2, h3, h4 {
-    font-family: "PT Serif", Georgia, serif;
+    font-family: "Merriweather", Georgia, serif;
     font-weight: normal;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -36,6 +36,7 @@ h1, h2, h3, h4 {
     left: 0.5em;
     opacity: 0;
 
+    transition: opacity 0.2s ease-in-out 0.1s;
     -webkit-transition: opacity 0.2s ease-in-out 0.1s;
     -moz-transition: opacity 0.2s ease-in-out 0.1s;
     -ms-transition: opacity 0.2s ease-in-out 0.1s;
@@ -82,7 +83,7 @@ section.contact { float: right; }
 /* notes */
 ul#notes { list-style-type: none; display: table-row; }
 ul#notes li { margin-bottom: 2px; }
-ul#notes li .col-1 { display: table-cell; text-align: right; background: lightgoldenrodyellow; }
+ul#notes li .col-1 { display: table-cell; text-align: right; background: cornsilk; }
 ul#notes li .col-2 { display: table-cell; padding-left: 10px; }
 
 /* article */
@@ -102,11 +103,15 @@ ul.list_archive li { margin-bottom: 6px; }
 /* code */
 p > code, li > code {
     color: black;
+    background-color: cornsilk;
     white-space: nowrap;
+    padding: 2px;
+    border-radius: 3px;
     /*font-size: 0.80em;*/
-    font-weight: bold;
-    font-family: Helvetica, sans-serif;
-    /*font-family: Menlo, 'Lucida Console', monospace;*/
+    /*font-weight: bold;*/
+
+    /*font-family: Helvetica, sans-serif;*/
+    font-family: Consolas, Menlo, 'Lucida Console', monospace;
 }
 
 figure {
