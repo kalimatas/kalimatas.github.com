@@ -1,6 +1,6 @@
 /* general */
 @import url('https://fonts.googleapis.com/css?family=Merriweather:400,400i,700,700i&subset=cyrillic,cyrillic-ext,latin-ext');
-body { font-family: Merriweather, serif; font-size: 15px; line-height: 26.5px; margin: 0; padding: 0; color: black; /*background-color: aliceblue;*/}
+body { font-family: Merriweather, serif; font-size: 14px; line-height: 26px; margin: 0; padding: 0; color: black; /*background-color: aliceblue;*/}
 
 /* links */
 /*a:link { text-decoration: none; }*/
