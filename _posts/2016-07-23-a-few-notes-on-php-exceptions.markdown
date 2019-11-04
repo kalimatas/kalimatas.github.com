@@ -6,7 +6,7 @@ date: 2016-07-23 20:30
 
 There are several practices, that I found myself using over and over again while working with PHP exceptions. Here they are.
 
-## Package/component level exception interface
+#### Package/component level exception interface
 
 Create an interface that represents the top level of exceptions hierarchy for your package/component/module. This interface is known as a [Marker interface](https://en.wikipedia.org/wiki/Marker_interface_pattern). This approach has several advantages. First, it allows clients of your code to distinguish these component specific exceptions from others. Second, as PHP doesn't support multiple inheritance, using an interface allows the exceptions to extends from other exceptions. e.g. [SPL exceptions](https://secure.php.net/manual/en/spl.exceptions.php).
 
@@ -33,7 +33,7 @@ namespace {
 }
 {% endhighlight %}
 
-## Factory methods to create exceptions
+#### Factory methods to create exceptions
 
 It is quite often, that exception's message is long and contains some placeholders. Generating this message, especially if you throw it in different places, is not very convenient. In this case a factory method will hide this complexity. Imaging, you are doing something like this:
 
@@ -71,7 +71,7 @@ if (!($c instanceof SomeInterface)) {
 }
 {% endhighlight %}
 
-## Extended exceptions with additional details
+#### Extended exceptions with additional details
 
 There are cases, when we need to perform additional actions in `catch` block. For that we often need to know the details about the original arguments, that caused the exception. For instance, you're catching a `DuplicatedAccountException`, and want to know the e-mail, that was passed to a registration service. It might be quite easy, if the call to a service and the `catch` block are in the same context:
 
