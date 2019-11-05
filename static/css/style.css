@@ -1,6 +1,6 @@
 /* general */
 @import url('https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap&subset=cyrillic');
-body { font-family: "PT Serif", serif; font-size: 15px; line-height: 25px; text-align: justify; margin: 0; padding: 0; color: black; /*background-color: aliceblue;*/}
+body { font-family: "PT Serif", serif; font-size: 15px; line-height: 25px; margin: 0; padding: 0; color: black; /*background-color: aliceblue;*/}
 
 /* links */
 /*a:link { text-decoration: none; }*/
@@ -15,9 +15,6 @@ h1, h2, h3 {
     font-weight: normal;
     margin-top: 30px;
     margin-bottom: 30px;
-}
-h1, h2, h3, h4, h5, h6 {
-    text-align: left;
 }
 article h4 {
     font-weight: bold;
@@ -98,9 +95,18 @@ ul#notes li .col-1 { display: table-cell; text-align: right; background: cornsil
 ul#notes li .col-2 { display: table-cell; padding-left: 10px; }
 
 /* article */
+article { text-align: justify; }
 .main > time { font-size: 0.9em; color: black; font-style: italic; }
 blockquote { font-style: italic; }
 article ul, ol { padding-left: 30px; }
+/* article ul { list-style-type: square; } */
+/* article ul li::before {
+    content: "\25A0";
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}*/
 ul.list_archive li { margin-bottom: 6px; }
 article li { margin-bottom: 10px; }
 article h4.notes { margin-top: 60px; }
