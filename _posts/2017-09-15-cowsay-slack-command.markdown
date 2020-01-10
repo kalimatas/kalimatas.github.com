@@ -15,7 +15,7 @@ This post is a step by step tutorial on how to build a simple Slack command with
 1. [Running the app with Docker](#docker)
 1. [Deploying the app to Heroku](#heroku)
 
-## <a name="intro"></a> <a name="overview"></a> So, what are we going to build?
+## <a name="intro"></a> So, what are we going to build?
 
 By the end of the tutorial, we'll have `cowsay <message>` command, that formats the message in the same way as it's Linux counterpart. It actually uses the Linux's utility to do the job, so it basically just a wrapper with HTTP interface. The final result will look like that:
 
