@@ -5,7 +5,7 @@ description: "Missing code review advice"
 date: 2018-07-10 14:54
 ---
 
-We all know that code reviews are important and have a lot of value. There is plenty of "best practices" articles telling you how you should do a code review, when, at which pace, on which Moon cycle, which SMARTass criterias to prepare, etc. [[1]](#1) and [[2]](#2).
+We all know that code reviews are important and have a lot of value. There is plenty of "best practices" articles telling you how you should do a code review, when, at which pace, on which Moon cycle, which SMARTass criterias to prepare, etc. [[1]]({{ page.url }}#1) and [[2]]({{ page.url }}#2).
 
 But I believe they miss one piece of advice.
 

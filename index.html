@@ -6,25 +6,24 @@ description: Alexander Guz's personal blog, place to share thoughts
 
 {% for post in paginator.posts %}
 <div class="entry">
-	<time>{{ post.date | date: "%b %d, %Y" }}</time> <span>&raquo;</span>
-	<a href="{{ post.url }}">{{ post.title }}</a>
+	<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+	<div>
+		{{ post.excerpt }}
+	</div>
+	<section class="bottom">
+		<time>{{ post.date | date: "%b %d, %Y" }}</time>
+	</section>
 </div>
 {% endfor %}
 
 {% if paginator.total_pages > 1 %}
 <nav class="pagination">
 	{% if paginator.previous_page %}
-		<span>&laquo;</span><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"> prev</a>
-	{% else %}
-		<span>&laquo; prev</span>
+		<a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; prev</a>
 	{% endif %}
 
-	<span class="page">&dash; {{ paginator.page }} &dash;</span>
-
 	{% if paginator.next_page %}
-		<a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">next </a><span>&raquo;</span>
-	{% else %}
-		<span>next &raquo;</span>
+		<a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">next &raquo;</a>
 	{% endif %}
 </nav>
 {% endif %}

@@ -4,7 +4,7 @@ title: "Tie-breaking rounding"
 date: 2017-05-14 16:14
 ---
 
-So I was reading an article about differences between Python 2 and Python 3 [[1]](#1), and there was a statement:
+So I was reading an article about differences between Python 2 and Python 3 [[1]]({{ page.url }}#1), and there was a statement:
 
 > Python 3 adopted the now standard way of rounding decimals when it results in a tie (.5) at the last significant digits. Now, in Python 3, decimals are rounded to the nearest even number.
 

@@ -6,11 +6,11 @@ date: 2020-02-04 09:00
 ---
 
 Whenever I hear "covariant return type", I have to pause and engage my 
-System 2 [[1]](#1) thoroughly in order to understand what I have just heard. 
+System 2 [[1]]({{ page.url }}#1) thoroughly in order to understand what I have just heard. 
 And even then, I cannot bet I will answer properly what it means. So this serves
- as a memo for me of the concept of variance [[2]](#2) in programming.
+ as a memo for me of the concept of variance [[2]]({{ page.url }}#2) in programming.
 
-The notion of variance is related to the topic of subtyping [[3]](#3) in 
+The notion of variance is related to the topic of subtyping [[3]]({{ page.url }}#3) in 
 programming language theory. It deals with rules of what is allowed or not with 
 regards to function arguments and return types. 
 

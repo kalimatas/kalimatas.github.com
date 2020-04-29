@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
 <head>
 	<meta charset="UTF-8" />
 	<title>{{ page.title }} | Alexander Guz's blog</title>
@@ -9,62 +10,67 @@
 	<link rel="stylesheet" href="/static/css/style.css" type="text/css" />
 	<link rel="stylesheet" href="/static/css/pygments.css" type="text/css" />
 </head>
+
 <body>
 
-<section class="container">
-	<nav class="menu">
-		<ul>
-			<li><a href="/">home</a></li>
-			<li><a href="/archive/">archive</a></li>
-			<li><a href="/projects/">projects</a></li>
-			<li><a href="http://feeds.feedburner.com/GuzAlexander">feed</a></li>
-			<li><a href="/about/">about</a></li>
-		</ul>
-	</nav>
+	<section class="container">
+		<nav class="menu">
+			<ul>
+				<li><a href="/">home</a></li>
+				<li><a href="/thingies/">thingies</a></li>
+				<li><a href="/archive/">archive</a></li>
+				<li><a href="/me/">me</a></li>
+				<li><a class="icon" target="_blank" href="http://feeds.feedburner.com/GuzAlexander"><img width="20" height="20" title="RSS" src="/static/img/rss.svg" /></a></li>
+				<li><a class="icon" target="_blank" href="https://github.com/kalimatas"><img width="20" height="20" title="GitHub" src="/static/img/github.svg" /></a></li>
+				<li><a class="icon" target="_blank" href="https://linkedin.com/in/kalimatas"><img width="20" height="20" title="LinkedIn" src="/static/img/linkedin.svg" /></a></li>
+			</ul>
+		</nav>
 
-	<section class="main">
-		{{ content }}
+		<section class="main-wrapper">
+			<section class="main">
+				{{ content }}
+			</section>
+
+			{% if page.comments %}
+			<div id="disqus_thread"></div>
+			<script>
+				var disqus_config = function () {
+					this.page.url = '{{ site.url }}{{ page.url }}';
+					this.page.identifier = '{{ page.id }}';
+				};
+				(function () { // DON'T EDIT BELOW THIS LINE
+					var d = document, s = d.createElement('script');
+					s.src = 'https://kalimatas.disqus.com/embed.js';
+					s.setAttribute('data-timestamp', +new Date());
+					(d.head || d.body).appendChild(s);
+				})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
+					by Disqus.</a></noscript>
+			{% endif %}
+
+			<footer class="main-footer">
+				<section class="copyright">&copy; Copyright {{ site.time | date: '%Y' }} by {{ site.author }}</section>
+				<section class="theme">
+					Theme <s>copied</s> from <a href=http://blog.fogus.me"" target="_blank">http://blog.fogus.me</a>
+				</section>
+			</footer>
+		</section>
 	</section>
 
-	{% if page.comments %}
-	<!--<h2>Comments</h2>-->
-	<div id="disqus_thread"></div>
-	<script>
-		var disqus_config = function () {
-			this.page.url = '{{ site.url }}{{ page.url }}';
-			this.page.identifier = '{{ page.id }}';
-		};
-		(function() { // DON'T EDIT BELOW THIS LINE
-			var d = document, s = d.createElement('script');
-			s.src = 'https://kalimatas.disqus.com/embed.js';
-			s.setAttribute('data-timestamp', +new Date());
-			(d.head || d.body).appendChild(s);
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-31916607-1']);
+		_gaq.push(['_setDomainName', 'guzalexander.com']);
+		_gaq.push(['_trackPageview']);
+
+		(function () {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		})();
 	</script>
-	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-	{% endif %}
-
-	<footer>
-		<section class="copyright">&copy; Copyright {{ site.time | date: '%Y' }} by {{ site.author }}</section>
-		<section class="contact">
-			Contact me via <a href="mailto:guz@kalimatas.com">email</a>
-		</section>
-		<div class="clear"></div>
-	</footer>
-</section>
-
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-31916607-1']);
-  _gaq.push(['_setDomainName', 'guzalexander.com']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
 
 </body>
+
 </html>

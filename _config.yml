@@ -3,12 +3,24 @@ url: https://guzalexander.com
 encoding: UTF-8
 markdown: kramdown
 highlighter: rouge
-paginate: 30
+paginate: 6
 plugins: [jekyll-paginate]
+
+collections:
+  projects:
+    output: true
+    sort_by: "weight"
 
 defaults:
   -
     scope:
       type: "posts"
     values:
+      layout: post
+      comments: true
+  -
+    scope:
+      type: "projects"
+    values:
+      layout: page
       comments: true
