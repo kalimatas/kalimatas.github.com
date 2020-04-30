@@ -54,9 +54,15 @@ section.main h1:first-of-type {
 
 /* layout */
 section.container { 
-    width: 500px;
-    padding: 0;
+    width: 540px;
+    padding: 0 20px;
     margin: 25px auto; 
+}
+@media screen and (max-width: 600px) {
+    section.container { 
+        width: 100%;
+        margin: 0 auto; 
+    }
 }
 section.main-wrapper {
     display: flex;
@@ -186,7 +192,7 @@ blockquote {
 /* article h4.notes { margin-top: 60px; } */
 /* article img.left-image { margin-right: 7px; } */
 article img {
-    max-width: 500px;
+    max-width: 100%;
 }
 /* .center img { margin-top: 25px; margin-bottom: 25px; } */
 
