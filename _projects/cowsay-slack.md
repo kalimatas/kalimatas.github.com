@@ -1,6 +1,7 @@
 ---
 title: Slack command "cowsay"
 permalink: /cowsay-slack
+weight: 1
 ---
 
 <a href="https://github.com/kalimatas/slack-cowbot" target="_blank">"cowsay" as a Slack command</a> - a Slack command, that formats any text as a Linux `cowsay` utility does, written in Go.

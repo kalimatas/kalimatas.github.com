@@ -5,7 +5,9 @@ date: 2012-12-17
 hhlink: http://news.ycombinator.com/item?id=4933306
 ---
 
-> Thinking is the hardest work there is, which is the probable reason why so few engage in it. Henry Ford
+> “Thinking is the hardest work there is, which is the probable reason why so few engage in it.”
+>
+> Henry Ford
 
 When someone mentions addiction there is always something negative about it. But I think not every kind of addiction deserve to be censured, moreover possessing some particular psychological addiction is almost necessary for a programmer. I'm talking about **thinking**. 
 
