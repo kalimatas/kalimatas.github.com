@@ -6,9 +6,9 @@ description: Alexander Guz's personal blog, place to share thoughts
 
 {% for post in paginator.posts %}
 <div class="entry">
-	<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+	<h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
 	<div>
-		{{ post.excerpt }}
+		{{ post.content }}
 	</div>
 	<section class="bottom">
 		<time>{{ post.date | date: "%b %d, %Y" }}</time>

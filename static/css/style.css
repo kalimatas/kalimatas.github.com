@@ -136,23 +136,33 @@ nav.menu a.icon:hover {
 
 /* index list */
 .entry {
-    margin-bottom: 60px;
+    margin-bottom: 50px;
+}
+.entry::after {
+    content: "..........";
+    display: block;
+    padding-top: 25px;
+    font-size: 42px;
+    text-align: center;
+}
+.entry:last-of-type::after {
+    content: none;
 }
 .entry .bottom {
-    display: block;
+    display: flex;
+    font-size: 0.8em;
+    margin-top: 25px;
 }
 /* .entry > span { display: inline-block; margin: 0 5px; } */
 /* .entry { margin-bottom: 2px; } */
 /* .entry > time, .not_found_list time { color: #24292e; font-size: 11px; font-family: Menlo, 'Bitstream Vera Sans Mono', 'Lucida Console', monospace; } */
 
-.entry h3 a {
+.entry h1 a, .entry h3 a {
     border: none;
 }
 
 .entry .bottom time {
-    font-size: 0.8em;
     display: block;
-    margin-top: 25px;
     color: rgb(104, 103, 103);
 }
 .entry .bottom .til {
