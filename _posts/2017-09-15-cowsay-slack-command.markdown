@@ -19,15 +19,13 @@ This post is a step by step tutorial on how to build a simple Slack command with
 
 By the end of the tutorial, we'll have `cowsay <message>` command, that formats the message in the same way as it's Linux counterpart. It actually uses the Linux's utility to do the job, so it basically just a wrapper with HTTP interface. The final result will look like that:
 
-{: .center}
-![Example message](/static/img/posts/cowsay_final_result.png "Example message")
+{% include image.html url="/static/img/posts/cowsay_final_result.png" %}
 
 ## <a name="overview"></a> Anatomy of a Slack command
 
 Before going into the implementation, let's have a look at how Slack commands work, what we need to implement, and how all the parts will communicate with each other.
 
-{: .center}
-![Slack command communication](/static/img/posts/slack_command_anatomy.png "Slack command communication")
+{% include image.html url="/static/img/posts/slack_command_anatomy.png" %}
 
 I know, I know. My drawing skills are awesome. But back to the diagram. Nothing fancy here:
 1. A Slack client sends a command, in our case `/cowsay Some text here`.
@@ -76,20 +74,17 @@ It's time to do some clicky-clicky thingy: we need to create in Slack a workspac
 
 After you're done, go to [the list of your applications](https://api.slack.com/apps) and hit `Create New App`. There you have to specify your app name (doesn't really matter) and select, which development workspace this app should be created in. ~~Choose wisely!~~ Choose your newly created workspace. For me it looks like this:
 
-{: .center}
-![Create a Slack app](/static/img/posts/create_a_slack_app.png "Create a Slack app")
+{% include image.html url="/static/img/posts/create_a_slack_app.png" %}
 
 Now go to the application settings. Here you can configure all aspects of the application, for example, change icon under `Display information`. For us, the most interested part now is under `App Credentials`, where you can find a `Verification Token`:
 
-{: .center}
-![App credentials](/static/img/posts/app_credentials.png "App credentials")
+{% include image.html url="/static/img/posts/app_credentials.png" %}
 
 This token is used to verify, that HTTP requests to our server are actually coming from Slack. We'll use it later in our source code.
 
 The final step in Slack administration interface is to create a slash command. While you're in the application setting, hit the `Slash Commands` in the left menu and then `Create New Command`. Here is what we need to enter:
 
-{: .center}
-![Create a slash command](/static/img/posts/create_slash_command.png "Create a slash command")
+{% include image.html url="/static/img/posts/create_slash_command.png" %}
 
 Pay attention here to the `Request URL`: this is the URL provided us by ngrok from [Local development with ngrok](#local-dev) step.
 
@@ -320,10 +315,8 @@ Amazing! Now **don't forget** to set this URL in `Request URL` in your slash com
 
 Finally, open a Slack client, log in with your account, and start typing the name of the command - you will see a hint:
 
-{: .center}
-![slash command hint](/static/img/posts/cowsay_slack_hint.png "slash command hint")
+{% include image.html url="/static/img/posts/cowsay_slack_hint.png" %}
 
 And the result:
 
-{: .center}
-![Example message](/static/img/posts/cowsay_final_result.png "Example message")
+{% include image.html url="/static/img/posts/cowsay_final_result.png" %}

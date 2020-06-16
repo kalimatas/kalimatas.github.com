@@ -11,9 +11,7 @@ So I decided to make a short description of some Java in-memory geospatial indic
 
 Again, the task at hand: given a geo point, find the nearest to it object within a given radius using in-memory data structures. As an extra requirement, we would like to have arbitrary data attached to the objects stored in this data structures. The reason is that, in most cases, these objects are not merely geo points, they are rather some domain entities, and we would build our business logic based on them. In our case, the arbitrary data will be just an integer ID, and we pretend we can later fetch required entity from some repository by this ID.
 
-{: .center}
-![Geo circle](/static/img/posts/geo_circle.jpg "Geo circle")
-<figure class="img">Figure 1. We need to find all green points within the radius of D km from the source point S.</figure>
+{% include image.html url="/static/img/posts/geo_circle.jpg" description="Figure 1. We need to find all green points within the radius of D km from the source point S." %}
 
 ## Lucene spatial extras
 
@@ -89,9 +87,7 @@ Oh my gosh! That's a good deal of classes to consider! That is definitely not th
 
 [Jeospatial](https://jchambers.github.io/jeospatial/) is a geospatial library that provides *a set of tools for solving the k-nearest-neighbor problem on the earth's surface*. It is implemented using [Vantage-point trees](https://en.wikipedia.org/wiki/Vantage-point_tree), and claims to have O(n log(n)) time complexity for indexing operations and O(log(n)) - for searching. A great visual explanation of how Vantage-point trees are constructed with examples can be found in this [article](https://fribbels.github.io/vptree/writeup).
 
-{: .center}
-![Vantage-point tree](/static/img/posts/vp_tree.png "Vantage-point tree")
-<figure class="img">Figure 2. An illustration of a Vantage-point tree.</figure>
+{% include image.html url="/static/img/posts/vp_tree.png" description="Figure 2. An illustration of a Vantage-point tree." %}
 
 The library is pretty easy and straightforward to use.
 
@@ -134,14 +130,11 @@ More info can be found in the official [GitHub repository](https://github.com/jc
 
 [The Java Spatial Index](https://github.com/aled/jsi) is a Java version of the R-tree spatial indexing algorithm as described in the 1984 paper "R-trees: A Dynamic Index Structure for Spatial Searching" by Antonin Guttman [[2]](#2). 
 
-{: .center}
-![R-tree](/static/img/posts/560px-R-tree.svg.png "R-tree")
-<figure class="img">Figure 3. An example of an R-tree for 2D rectangles. Image courtesy of Wikipedia.</figure>
+{% include image.html url="/static/img/posts/560px-R-tree.svg.png" description="Figure 3. An example of an R-tree for 2D rectangles. Image courtesy of Wikipedia." %}
 
 The main element behind this data structure is a minimum bounding rectangle . The "R" in R-tree stands for rectangle. Each rectangle describes a single object, and nearby rectangles are then grouped in another rectangle on a higher level [[3]](#3). That's a lot of rectangles in one sentence!
 
-{: .center}
-![Yo dawg](/static/img/posts/yo_dawg_rectangles.jpg "Yo dawg")
+{% include image.html url="/static/img/posts/yo_dawg_rectangles.jpg" %}
 
 Alright, enough jokes, let's have a look at the code example:
 
@@ -200,8 +193,7 @@ MyBenchmark.benchLucene      thrpt    3    1199,864 ±   1199,138  ops/s
 
 And visual representation.
 
-{: .center}
-![JMH benchmark results](/static/img/posts/geospatial-benchmark-jmh.png "JMH benchmark results")
+{% include image.html url="/static/img/posts/geospatial-benchmark-jmh.png" %}
 
 To be honest, I was kind of surprised to find out, that Lucene  performed so badly. It could be because a) its RAMDirectory is just slow or b) I cannot cook it. My guess - some misconfiguration, though I could not figure out what was wrong. I asked a [question on StackOverflow](https://stackoverflow.com/questions/52302394/poor-lucene-in-memory-spatial-index-performance), but so far no answers.
 
