@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Missing code review advice"
-description: "Missing code review advice"
+description: "Can we make code reviews better?"
 date: 2018-07-10 14:54
 ---
 

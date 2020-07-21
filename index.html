@@ -6,13 +6,11 @@ description: Alexander Guz's personal blog, place to share thoughts
 
 {% for post in paginator.posts %}
 <div class="entry">
+	<time>{{ post.date | date: "%b %d, %Y" }}</time>
 	<h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
 	<div>
-		{{ post.content }}
+		{{ post.description }}
 	</div>
-	<section class="bottom">
-		<time>{{ post.date | date: "%b %d, %Y" }}</time>
-	</section>
 </div>
 {% endfor %}
 

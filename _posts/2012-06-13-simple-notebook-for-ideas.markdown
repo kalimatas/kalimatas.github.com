@@ -1,7 +1,7 @@
 ---
 title: Simple notebook for ideas
 layout: post
-description: Google App Engine application
+description: Google App Engine application.
 date: 2012-06-13 13:00
 hhlink: http://news.ycombinator.com/item?id=4105992
 ---

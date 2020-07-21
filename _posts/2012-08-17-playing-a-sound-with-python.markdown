@@ -1,7 +1,7 @@
 ---
 title: Playing music with Python
 layout: post
-description: Python, music
+description: Python, music.
 date: 2012-08-17
 hhlink: http://news.ycombinator.com/item?id=4398570
 ---

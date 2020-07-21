@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Liquid engine for PHP"
-description: Liquid engine for PHP, fork improvements
+description: Liquid engine for PHP, fork improvements.
 date: 2014-09-07 21:00
 ---
 

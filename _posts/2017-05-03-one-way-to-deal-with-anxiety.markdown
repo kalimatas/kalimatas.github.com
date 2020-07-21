@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "One way to deal with anxiety"
+description: My way of relaxing.
 date: 2017-05-03 17:47
 ---
 

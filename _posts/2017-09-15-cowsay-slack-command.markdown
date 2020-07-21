@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Building a Slack command with Go
-description: A step by step tutorial on how to create a Slack command with Go and deploy it to Heroku
+description: A step by step tutorial on how to create a Slack command with Go and deploy it to Heroku.
 date: 2017-09-15 17:06
 ---
 

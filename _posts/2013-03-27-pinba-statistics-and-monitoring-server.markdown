@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Pinba - statistic/monitoring server for PHP on Mac OS X"
-description: PHP monitoring with Pinba
+description: PHP monitoring with Pinba.
 date: 2013-03-27 13:00
 ---
 

@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Enabling trace logging for Elasticsearch REST Client with Logback"
-description: "Enabling trace logging for Elasticsearch REST Client with Logback"
 date: 2018-09-30 15:12
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Golang channels tutorial"
-description: Golang channels tutorial
+description: Bastic introduction to Golang channels.
 date: 2013-12-06 11:00
 ---
 
