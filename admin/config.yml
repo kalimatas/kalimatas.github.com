@@ -1,6 +1,6 @@
 backend:
-  name: git-gateway
-  branch: master
+  name: github
+  repo: kalimatas/kalimatas.github.com
 
 media_folder: 'static/img/posts'
 
