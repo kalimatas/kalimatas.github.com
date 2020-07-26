@@ -72,7 +72,7 @@ section.container {
     /*margin: 25px auto;*/
 }
 section.main-wrapper {
-    padding: 15px 0 15px 25px;
+    padding: 15px 25px 15px 25px;
     /*display: flex;*/
     /*flex-direction: column;*/
 }
@@ -303,6 +303,9 @@ figure.highlight pre {
     section.container {
         grid-template-columns: none;
         grid-template-rows: 30px 1fr;
+    }
+    section.main-wrapper {
+        width: 100vw;
     }
     nav.menu {
         display: flex;
