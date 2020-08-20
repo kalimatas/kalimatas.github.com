@@ -4,7 +4,7 @@ encoding: UTF-8
 markdown: kramdown
 highlighter: rouge
 paginate: 15
-plugins: [jekyll-paginate, jekyll-admin]
+plugins: [jekyll-paginate]
 
 collections:
   projects:
