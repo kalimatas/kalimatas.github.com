@@ -112,7 +112,8 @@ footer .theme {
     /*right: -50%;*/
 }
 .img-wrapper img {
-    max-width: 550px;
+    /* max-width: 550px; */
+    max-width: 100%;
 }
 figcaption {
     /*clear: both;*/
