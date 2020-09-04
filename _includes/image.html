@@ -1,6 +1,10 @@
 <div class="img-wrapper">
 	<figure>
-		<img src="{{ include.url }}" alt="{{ include.description | default: '' }}">
+		{% if include.enlarge %}
+			<a href="{{ include.url }}" target="_blank"><img src="{{ include.url }}" alt="{{ include.description | default: '' }}"></a>
+		{% else %}
+			<img src="{{ include.url }}" alt="{{ include.description | default: '' }}">
+		{% endif %}
 	</figure>
 </div>
 {% if include.description %}
