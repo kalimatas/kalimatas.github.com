@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "There are too many note-taking applications!"
+title: "RemNote – great note-taking app nobody is talking about"
 description: "I spent endless hours on choosing the best note taking app and found RemNote.
 			 But is it the final choice?"
 date: 2020-09-11 21:30
