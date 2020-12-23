@@ -6,11 +6,11 @@ date: 2020-02-04 09:00
 ---
 
 Whenever I hear "covariant return type", I have to pause and engage my 
-System 2 [[1]]({{ page.url }}#1) thoroughly in order to understand what I have just heard. 
+System 2 [^1] thoroughly in order to understand what I have just heard. 
 And even then, I cannot bet I will answer properly what it means. So this serves
- as a memo for me of the concept of variance [[2]]({{ page.url }}#2) in programming.
+ as a memo for me of the concept of variance [^2] in programming.
 
-The notion of variance is related to the topic of subtyping [[3]]({{ page.url }}#3) in 
+The notion of variance is related to the topic of subtyping [^3] in 
 programming language theory. It deals with rules of what is allowed or not with 
 regards to function arguments and return types. 
 
@@ -125,19 +125,8 @@ Though it looks counterintuitive, this is a perfectly valid case.
 `MotorVehicle` is a type of `Vehicle`, users of `drive` still can pass any 
 instance of `MotorVehicle`.
 
-## References
+## Notes
 
-<ul id="notes">
-<li>
-	<span class="col-1">[1] <a name="1"></a></span>
-	<span class="col-2"><a href="https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow#Two_systems">The concept of System 2 is from the book "Thinking, Fast and Slow"</a></span>
-</li>
-<li>
-	<span class="col-1">[2] <a name="2"></a></span>
-	<span class="col-2"><a href="https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)">Covariance and contravariance</a></span>
-</li>
-<li>
-	<span class="col-1">[3] <a name="3"></a></span>
-	<span class="col-2"><a href="https://en.wikipedia.org/wiki/Subtyping">Subtyping</a></span>
-</li>
-</ul>
+[^1]: <a href="https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow#Two_systems">The concept of System 2 is from the book "Thinking, Fast and Slow"</a>
+[^2]: <a href="https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)">Covariance and contravariance</a>
+[^3]: <a href="https://en.wikipedia.org/wiki/Subtyping">Subtyping</a>

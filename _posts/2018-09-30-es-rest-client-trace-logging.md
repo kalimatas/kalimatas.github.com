@@ -21,7 +21,8 @@ private static final Log tracer = LogFactory.getLog("tracer");
 
 As you can see, enabling this logger with <code>TRACE</code> level in Logback is not enough, because, again, the client uses Apache Commons Logging.
 
-Luckily, Logback was designed with this use case in mind, and provides a set of bridging modules [[1]](#1). They allow us to use Logback even with other dependencies that rely on other logging API. In particular, we're looking for [jcl-over-slf4j.jar](https://www.slf4j.org/legacy.html#jclOverSLF4J).
+Luckily, Logback was designed with this use case in mind, and provides a set of bridging modules [^1]. They 
+allow us to use Logback even with other dependencies that rely on other logging API. In particular, we're looking for [jcl-over-slf4j.jar](https://www.slf4j.org/legacy.html#jclOverSLF4J).
 
 So, here are the steps.
 
@@ -69,11 +70,6 @@ dependencies {
 
 Voilà! Enjoy your debugging session!
 
-## References
+## Notes
 
-<ul id="notes">
-<li>
-	<span class="col-1">[1] <a name="1"></a></span>
-	<span class="col-2"><a href="https://www.slf4j.org/legacy.html">Bridging legacy APIs with Logback</a></span>
-</li>
-</ul>
+[^1]: <a href="https://www.slf4j.org/legacy.html">Bridging legacy APIs with Logback</a>

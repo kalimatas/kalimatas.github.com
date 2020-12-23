@@ -120,7 +120,9 @@ func (t *Task) Run() {
 
 If we receive a value from `closed` channel, then we simply exit from `Run()` with `return`.
 
-To express the intention to terminate the task we need to send some value to the channel. But we can do better. Since a receive from a closed channel returns the zero value immediately <sup>[[1]](#1)</sup>, we can just close the channel.
+To express the intention to terminate the task we need to send some value to the channel. But we can do 
+better. Since a receive from a closed channel returns the zero value immediately [^1], we can just close the 
+channel.
 
 {% highlight go %}
 func (t *Task) Stop() {
@@ -282,11 +284,6 @@ func main() {
 
 *__Update__*: [Ahmet Alp Balkan](https://github.com/ahmetb) pointed out, that the pattern used in this post is more error-prone and, probably, should not be used in favor of a pattern with [context](https://golang.org/pkg/context/) package. For details, read [Make Ctrl+C cancel the context.Context](https://medium.com/@matryer/make-ctrl-c-cancel-the-context-context-bd006a8ad6ff).
 
-## References
+## Notes
 
-<ul id="notes">
-<li>
-	<span class="col-1">[1] <a name="1"></a></span>
-	<span class="col-2"><a href="https://dave.cheney.net/2014/03/19/channel-axioms">Channel Axioms</a></span>
-</li>
-</ul>
+[^1]: <a href="https://dave.cheney.net/2014/03/19/channel-axioms">Channel Axioms</a>

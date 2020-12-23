@@ -21,13 +21,15 @@ I asked some guys to call the company's hotline. They did, but the phone number 
 
 I was pressing all the buttons on the scooter in hope there was some hidden combination to manually stop the rent, when another guy approached me and asked if I had any problems.
 
-It turned out that the guys was also a software engineer. Though, no surprise here: if you see a young guy with a backpack in Berlin, chances are really high he is a developer. Though, I guess not as high as in Bay Area, but we're getting there. Especially in rent prices [[1]](#1).
+It turned out that the guys was also a software engineer. Though, no surprise here: if you see a young guy 
+with a backpack in Berlin, chances are really high he is a developer. Though, I guess not as high as in 
+Bay Area, but we're getting there. Especially in rent prices [^1].
 
 He also previously worked for the company which scooter I was using. Unfortunately, he did not know any special tricks, and we started to think logically together.
 
 He suggested to install an app on his phone, so I could sign in and end the rent.
 
-Very nice of him, but I did not know my password, because I am using 1Password [[2]](#2).
+Very nice of him, but I did not know my password, because I am using 1Password [^2].
 
 He suggested to reset a password via e-mail. 
 
@@ -39,16 +41,7 @@ The company behaved well later: they charged me only the standard price and even
 
 The result of the evening? Next day I bought a power bank and printed out my one-time passwords for e-mail account. I do not want to experience this helplessness anymore.
 
-## References
+## Notes
 
-<ul id="notes">
-<li>
-	<span class="col-1">[1] <a name="1"></a></span>
-	<span class="col-2"><a href="https://www.theguardian.com/world/2018/apr/10/berlin-world-fastest-rising-property-prices">Berlin tops the world as city with the fastest rising property prices </a></span>
-</li>
-<li>
-	<span class="col-1">[2] <a name="2"></a></span>
-	<span class="col-2"><a href="https://1password.com/">1Password password manager</a></span>
-</li>
-</ul>
-
+[^1]: <a href="https://www.theguardian.com/world/2018/apr/10/berlin-world-fastest-rising-property-prices">Berlin tops the world as city with the fastest rising property prices </a>
+[^2]: <a href="https://1password.com/">1Password password manager</a>

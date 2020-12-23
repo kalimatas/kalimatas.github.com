@@ -9,6 +9,24 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="/static/css/style.css" type="text/css" />
 	<link rel="stylesheet" href="/static/css/pygments.css" type="text/css" />
+
+	<meta property="og:site_name" content="Alexander Guz" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:title" content="{{ page.title | strip_html | strip_newlines | truncate: 160 }} | Alexander Guz's blog">
+	<meta property="og:description" content="{{ page.description | strip_html | strip_newlines | truncate: 160 }}">
+	<meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
+
+	<meta name="twitter:site" content="@kalimatas" />
+	<meta name="twitter:description" content="{{ page.description | strip_html | strip_newlines | truncate: 160 }}" />
+
+	{% if page.is_post %}
+		<meta property="og:type" content="article" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="{{page.title}}" />
+	{% else %}
+		<meta property="og:type" content="website" />
+		<meta name="twitter:card" content="summary" />
+	{% endif %}
 </head>
 
 <body>
@@ -21,10 +39,16 @@
 				<li><a href="/archive/">Archive</a></li>
 				<li><a href="/me/">Me</a></li>
 			</ul>
-			<section class="icons">
-				<a class="icon" target="_blank" href="http://feeds.feedburner.com/GuzAlexander"><img width="20" height="20" title="RSS" src="/static/img/rss.svg" /></a>
-				<a class="icon" target="_blank" href="https://github.com/kalimatas"><img width="20" height="20" title="GitHub" src="/static/img/github.svg" /></a>
-				<a class="icon" target="_blank" href="https://linkedin.com/in/kalimatas"><img width="20" height="20" title="LinkedIn" src="/static/img/linkedin.svg" /></a>
+			<section id="author">
+				<img src="/static/img/avatar.jpg" alt="me" title="Haha, it's me!" />
+				<h3>Hi, I'm Alexander!</h3>
+				<p>In this blog, I share my thoughts and ideas on various topics. Check out more about me <a href="/me">here</a>.</p>
+			</section>
+			<section id="icons">
+				<a class="icon" target="_blank" href="https://github.com/kalimatas"><img width="20" height="20" title="GitHub" src="/static/img/github_square.svg" /></a>
+				<a class="icon" target="_blank" href="https://linkedin.com/in/kalimatas"><img width="20" height="20" title="LinkedIn" src="/static/img/linkedin_square.svg" /></a>
+				<a class="icon" target="_blank" href="https://twitter.com/kalimatas"><img width="20" height="20" title="Twitter" src="/static/img/twitter_square.svg" /></a>
+				<a class="icon" target="_blank" href="/feed.xml"><img width="20" height="20" title="RSS" src="/static/img/rss_square.svg" /></a>
 			</section>
 		</nav>
 
@@ -36,13 +60,13 @@
 			{% if page.comments %}
 			<div id="disqus_thread"></div>
 			<script>
-				var disqus_config = function () {
-					this.page.url = '{{ site.url }}{{ page.url }}';
-					this.page.identifier = '{{ page.id }}';
-				};
-				(function () { // DON'T EDIT BELOW THIS LINE
-					var d = document, s = d.createElement('script');
-					s.src = 'https://kalimatas.disqus.com/embed.js';
+                var disqus_config = function () {
+                    this.page.url = '{{ site.url }}{{ page.url }}';
+                    this.page.identifier = '{{ page.id }}';
+                };
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://kalimatas.disqus.com/embed.js';
 					s.setAttribute('data-timestamp', +new Date());
 					(d.head || d.body).appendChild(s);
 				})();
@@ -58,15 +82,15 @@
 	</section>
 
 	<script type="text/javascript">
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-31916607-1']);
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-31916607-1']);
 		_gaq.push(['_setDomainName', 'guzalexander.com']);
 		_gaq.push(['_trackPageview']);
 
 		(function () {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            var ga = document.createElement('script');ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga, s);
 		})();
 	</script>
 

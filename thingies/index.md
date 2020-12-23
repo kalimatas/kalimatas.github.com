@@ -3,6 +3,8 @@ layout: projects
 title: Projects
 ---
 
+# Thingies
+
 Here you can find various things I have worked on, either created by me or which I contributed to. 
 Check out my [GitHub](https://github.com/kalimatas) profile for code.
 

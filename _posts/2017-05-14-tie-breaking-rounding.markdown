@@ -4,7 +4,7 @@ title: "Tie-breaking rounding"
 date: 2017-05-14 16:14
 ---
 
-So I was reading an article about differences between Python 2 and Python 3 [[1]]({{ page.url }}#1), and there was a statement:
+So I was reading an article about differences between Python 2 and Python 3 [^1], and there was a statement:
 
 > Python 3 adopted the now standard way of rounding decimals when it results in a tie (.5) at the last significant digits. Now, in Python 3, decimals are rounded to the nearest even number.
 
@@ -14,7 +14,7 @@ But, as it often happens with school program, they didn't tell us all the truth.
 
 There are actually six more or less normal ways and two not so normal, thus leaving us with eight (eight, Carl!) rules of rounding. 
 
-These are the *normal* rules [[2]](#2):
+These are the *normal* rules [^2]:
 
 * Round half down (or towards negative infinity): 13.5 rounds to 13, -13.5 rounds to -14.
 * Round half up (or towards positive infinity): 13.5 rounds to 14, -13.5 rounds to -13.
@@ -60,25 +60,15 @@ System.out.printf("%.1f -> %d, %.1f -> %d, %.1f -> %d, %.1f -> %d\n",
 // output: 13.5 -> 14, 14.5 -> 15, -14.5 -> -14, -13.5 -> -13
 {% endhighlight %}
 
-Go 1.8 doesn't have built-in round function at all [[3]](#3), you have to choose from [math.Ceil](https://golang.org/pkg/math/#Ceil) or [math.Floor](https://golang.org/pkg/math/#Floor) yourself.
+Go 1.8 doesn't have built-in round function at all [^3], you have to choose from [math.Ceil](https://golang.
+org/pkg/math/#Ceil) or [math.Floor](https://golang.org/pkg/math/#Floor) yourself.
 
 ## Conclusion
 
 Well, beware of different rules in different programming languages!
 
-## References
+## Notes
 
-<ul id="notes">
-<li>
-	<span class="col-1">[1] <a name="1"></a></span>
-	<span class="col-2"><a href="http://sebastianraschka.com/Articles/2014_python_2_3_key_diff.html#bankers-rounding">The key differences between Python 2.7.x and Python 3.x with examples</a></span>
-</li>
-<li>
-	<span class="col-1">[2] <a name="2"></a></span>
-	<span class="col-2">On Wikipedia you can find <a href="https://en.wikipedia.org/wiki/Rounding#Tie-breaking">more information</a> about the rules.</span>
-</li>
-<li>
-	<span class="col-1">[3] <a name="3"></a></span>
-	<span class="col-2"><a href="https://github.com/golang/go/issues/4594">Suggestion</a> to add `Round` function.</span>
-</li> 
-</ul>
+[^1]: <a href="http://sebastianraschka.com/Articles/2014_python_2_3_key_diff.html#bankers-rounding">The key differences between Python 2.7.x and Python 3.x with examples</a>
+[^2]: On Wikipedia you can find <a href="https://en.wikipedia.org/wiki/Rounding#Tie-breaking">more information</a> about the rules.
+[^3]: <a href="https://github.com/golang/go/issues/4594">Suggestion</a> to add `Round` function.
