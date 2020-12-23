@@ -6,10 +6,6 @@ description: "I spent endless hours on choosing the best note taking app and fou
 date: 2020-09-11 21:30
 ---
 
-I loved this app because it showed me every detail, *every* little space I can walk through, *every* water 
-fountain, I even used it to find trashcans in foreign cities. The ability to edit the map and contribute 
-back to the lovely OpenStreetMap community is also nowhere to be found.
-
 I have been using Evernote for quite some years now as my go-to application for 
 notes, bookmarks, sketches, etc. Indeed, it is not a bad choice: clients for all platforms
 you can imagine, synchronization between devices, good enough editor with formatting,
