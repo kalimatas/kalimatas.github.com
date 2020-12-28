@@ -6,12 +6,11 @@ layout: default
 	<h1>{{ page.title }}</h1>
 	<section class="post-meta">
 		{% assign words=content | number_of_words %}
-		<time>{{ page.date | date: "%B %-d, %Y" }}</time> • {% include read_time.html words=words %}
+		<time>{{ page.date | date: "%B %-d, %Y" }}</time> • {% include read_time.html words=words %} {% include share.html %}
 	</section>
 	<section id="article-content">
 		{{ content }}
 	</section>
-	{% include share.html %}
 
 	<div class="post-nav">
 		<p>

@@ -22,7 +22,8 @@ digits from both pieces.
 
 This video has a nice visual explanation of the outsize date mechanism.
 
-<iframe width="500" height="315" src="https://www.youtube-nocookie.com/embed/YouzFPSD77o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe class="video-player" height="340" src="https://www.youtube-nocookie.com/embed/YouzFPSD77o" 
+frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 So why does my wife's watch show 32? Well, it actually goes up to 39! It seems that in some "cheap" implementations of
 the oversize date mechanism, the tens cross and the unit disc do not have proper synchronization. After the tens cross

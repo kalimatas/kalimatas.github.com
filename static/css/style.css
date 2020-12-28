@@ -153,15 +153,17 @@ nav.menu a.icon img {
     font-size: 0.8em;
     font-family:  'Helvetica Neue', sans-serif;
     margin-top: 5px;
+    display: flex;
+    column-gap: 5px;
 }
 
 /* Share button */
 #share-page {
-    margin-top: 40px;
-    line-height: 22px;
     color: #6c6c6a;
     font-family:  'Helvetica Neue', sans-serif;
-    font-size: 0.8em;
+    text-align: right;
+    display: inline-block;
+    flex-grow: 1;
 }
 #share-page img {
     vertical-align: middle;
@@ -220,6 +222,10 @@ blockquote {
 
 .left-image {
     margin-right: 10px;
+}
+
+.video-player {
+    width: 100%;
 }
 
 /* archive, not found */
