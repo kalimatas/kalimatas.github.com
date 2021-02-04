@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Tie-breaking rounding"
+title: "Tie-breaking Rounding"
 date: 2017-05-14 16:14
 ---
 

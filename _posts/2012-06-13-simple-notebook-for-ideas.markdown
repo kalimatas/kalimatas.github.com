@@ -1,5 +1,5 @@
 ---
-title: Simple notebook for ideas
+title: Simple Notebook for Ideas
 layout: post
 description: Google App Engine application.
 date: 2012-06-13 13:00

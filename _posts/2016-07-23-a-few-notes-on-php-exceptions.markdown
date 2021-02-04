@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "A few notes on PHP exceptions"
+title: "A Few Notes on PHP Exceptions"
 date: 2016-07-23 20:30
 ---
 

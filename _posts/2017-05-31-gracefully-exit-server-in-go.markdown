@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Gracefully terminate a program in Go"
+title: "Gracefully Terminate a Program in Go"
 description: "A description of an approach how to gracefully terminate a program in Go."
 date: 2017-05-31 18:26
 ---

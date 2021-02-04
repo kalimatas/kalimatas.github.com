@@ -1,5 +1,5 @@
 ---
-title: Playing music with Python
+title: Playing Music with Python
 layout: post
 description: Python, music.
 date: 2012-08-17

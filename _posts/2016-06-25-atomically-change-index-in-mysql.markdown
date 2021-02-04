@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Atomic change of an index in MySQL"
+title: "Atomic Change of an Index in MySQL"
 date: 2016-06-25 15:52
 ---
 

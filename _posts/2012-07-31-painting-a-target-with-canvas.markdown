@@ -1,5 +1,5 @@
 ---
-title: Painting a target with canvas
+title: Painting a Target with Canvas
 layout: post
 description: JavaScript canvas example.
 date: 2012-07-31

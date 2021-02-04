@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Bedtime ideas"
+title: "Bedtime Ideas"
 description: Why we get a lot of crazy ideas before falling asleep.
 date: 2017-06-24 21:20
 excerpt_separator: <!--more-->

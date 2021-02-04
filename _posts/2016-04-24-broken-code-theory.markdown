@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Broken code theory"
+title: "Broken Code Theory"
 date: 2016-04-24 23:45
 ---
 

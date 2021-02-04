@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "On being a backbone software developer"
+title: "On Being a Backbone Software Developer"
 description: "Ace developers are magicians, but are they a good fit for a routine work?"
 date: 2020-08-26 21:00
 ---

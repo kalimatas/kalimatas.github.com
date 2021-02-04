@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Covariance and contravariance in programming"
+title: "Covariance and Contravariance in Programming"
 description: "Short intro to variance in type systems."
 date: 2020-02-04 09:00
 ---

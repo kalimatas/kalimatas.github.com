@@ -1,5 +1,5 @@
 ---
-title: "Will for deep knowledge"
+title: "Will for Deep Knowledge"
 layout: post
 date: 2012-05-30 22:32
 hhlink: http://news.ycombinator.com/item?id=4042320

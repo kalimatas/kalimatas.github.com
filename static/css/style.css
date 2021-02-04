@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Sansita:ital@0;1&display=swap');*/
 
 /* general */
 :root {
@@ -16,18 +18,18 @@ html {
     background: #eef;
 }
 body {
-    font-family: Lora, Georgia, serif;
-    font-size: 17px;
-    line-height: 1.67;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-    color: rgba(0,0,0,0.8);
+    color: rgb(42, 42, 42);
     background-color: white;
 }
 
 /* links */
 a:link, a:active, a:visited {
-    color: rgba(0,0,0,0.8);
+    color: rgb(42, 42, 42);
 }
 a:hover {
     text-decoration: none;
@@ -35,11 +37,12 @@ a:hover {
 
 /* headings */
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 600;
+    font-weight: 400;
+    font-family: 'Oswald', sans-serif;
 }
 article h1:first-of-type {
     margin: 0 0 15px 0;
-    font-size: 1.6em;
+    font-size: 1.8em;
 }
 #article-content > p:first-of-type:first-letter {
     /*color: #903;*/
@@ -105,7 +108,7 @@ nav.menu li a {
     font-size: 0.75em;
 }
 nav.menu ul li a:hover {
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgb(42, 42, 42);
     color: white;
 }
 nav.menu section#author {
@@ -138,14 +141,14 @@ nav.menu a.icon img {
     margin-bottom: 30px;
 }
 .entry h1, .entry h3 {
-    font-size: 1.3em;
+    font-size: 1.6em;
     margin: 0;
     padding: 0;
 }
 
 .entry h1 a, .entry h3 a {
     text-decoration: none;
-    color: black;
+    color: rgb(42, 42, 42);
 }
 
 .post-meta {
@@ -201,6 +204,7 @@ nav.menu a.icon img {
 footer {
     color: #6c6c6a;
     font-size: 0.9em;
+    font-family: 'Helvetica Neue', sans-serif;
     margin-top: 30px;
 }
 

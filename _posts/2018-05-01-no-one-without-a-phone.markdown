@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Sometimes you are no one without your phone"
+title: "Sometimes You Are No One without your Phone"
 description: "We depend too much on modern technology. Yours, Captain."
 date: 2018-05-01 10:54
 ---

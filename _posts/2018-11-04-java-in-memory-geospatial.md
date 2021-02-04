@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Java geospatial in-memory index"
+title: "Java Geospatial In-memory Index"
 description: "Copmarison of several in-memory geospatial indices for Java."
 date: 2018-11-04 19:12
 ---

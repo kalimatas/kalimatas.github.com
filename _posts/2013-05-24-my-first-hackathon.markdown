@@ -1,5 +1,5 @@
 ---
-title: "My first hackathon (AngelHack, Moscow)"
+title: "My First Hackathon (AngelHack, Moscow)"
 layout: post
 description: Hackathon, AngelHack, Moscow.
 date: 2013-05-24 13:42

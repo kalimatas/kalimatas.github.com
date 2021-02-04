@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Split file in chunks without breaking the sequence with GAWK"
+title: "Split File in Chunks without Breaking the Sequence with GAWK"
 date: 2016-04-26 23:01
 ---
 
