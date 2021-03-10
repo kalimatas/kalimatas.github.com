@@ -1,6 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&display=swap');
-/*@import url('https://fonts.googleapis.com/css2?family=Sansita:ital@0;1&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Sansita:ital@0;1&display=swap');
+
+@font-face {
+    font-family: 'Charter';
+    src: local('Charter'), url('/static/font/charter_regular.woff') format('woff');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Charter';
+    src: local('Charter Italic'), url('/static/font/charter_italic.woff') format('woff');
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Charter';
+    src: local('Charter Bold'), url('/static/font/charter_bold.woff') format('woff');
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Charter';
+    src: local('Charter Bold Italic'), url('/static/font/charter_bold_italic.woff') format('woff');
+    font-style: italic;
+    font-weight: 700;
+    font-display: swap;
+}
 
 /* general */
 :root {
@@ -18,9 +50,9 @@ html {
     background: #eef;
 }
 body {
-    font-family: Georgia, serif;
-    font-size: 19px;
-    line-height: 1.65;
+    font-family: Charter, Georgia, serif;
+    font-size: 18px;
+    line-height: 1.5;
     margin: 0;
     padding: 0;
     color: rgb(42, 42, 42);
@@ -38,7 +70,7 @@ a:hover {
 /* headings */
 h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
-    font-family: 'Oswald', sans-serif;
+    font-family: Sansita, sans-serif;
 }
 article h1:first-of-type {
     margin: 0 0 15px 0;
