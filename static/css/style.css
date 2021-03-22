@@ -271,7 +271,9 @@ blockquote {
 .video-player {
     width: 100%;
 }
-
+article p {
+    margin-bottom: 24px;
+}
 /* archive, not found */
 .list_archive {
     padding: 0;
