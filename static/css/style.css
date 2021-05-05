@@ -338,11 +338,6 @@ nav.menu a.icon img {
     text-decoration: none;
 }
 
-/* disqus */
-#disqus_thread {
-    margin-top: 50px;
-}
-
 /* footer */
 footer {
     color: #6c6c6a;
@@ -378,6 +373,9 @@ article p {
     margin-bottom: 24px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: auto;
+}
+.footnotes p {
+    margin-bottom: 0;
 }
 /* archive, not found */
 .list_archive {

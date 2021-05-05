@@ -17,7 +17,6 @@ defaults:
       type: "posts"
     values:
       layout: post
-      comments: true
       is_post: true
   -
     scope:
