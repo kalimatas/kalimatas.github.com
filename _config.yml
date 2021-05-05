@@ -6,11 +6,6 @@ highlighter: rouge
 paginate: 15
 plugins: [jekyll-paginate, jekyll-feed]
 
-collections:
-  projects:
-    output: true
-    sort_by: "weight"
-
 defaults:
   -
     scope:
@@ -18,9 +13,3 @@ defaults:
     values:
       layout: post
       is_post: true
-  -
-    scope:
-      type: "projects"
-    values:
-      layout: page
-      comments: true
