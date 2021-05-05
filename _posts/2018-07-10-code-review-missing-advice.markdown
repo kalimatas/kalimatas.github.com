@@ -30,5 +30,4 @@ someone else's code - it is **your** code also. You may be the one to fix a bug 
 ## Notes
 
 [^1]: <a href="https://medium.com/palantir/code-review-best-practices-19e02780015f">Code Review Best Practices</a>
-[^2]: <a href="https://smartbear.com/learn/code-review/best-practices-for-peer-code-review/">These 10 tips
-will guide you toward effective peer code review</a>
+[^2]: <a href="https://smartbear.com/learn/code-review/best-practices-for-peer-code-review/">These 10 tips will guide you toward effective peer code review</a>
