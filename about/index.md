@@ -15,5 +15,5 @@ Moreover, this blog is a good way to advance my English.
 
 ## Contact me
 
-If you want to contact me, write me an [email](mailto:guz@kalimatas.com) or reach
-me on [GitHub](https://github.com/kalimatas).
+If you want to contact me, write me an [e-mail](mailto:guz@kalimatas.com), connect on 
+[LinkedIn](https://linkedin.com/in/kalimatas), or reach me on [GitHub](https://github.com/kalimatas).
