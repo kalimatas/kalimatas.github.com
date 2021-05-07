@@ -34,16 +34,53 @@
 	<section class="container">
 		<nav class="menu">
 			<ul>
-				<li><a href="/">Home</a></li>
-				<li><a href="/archive/">Archive</a></li>
-				<li><a href="/about/">About</a></li>
+				<li><a class="nav-link fancy-hover" href="/"><span>Home</span></a></li>
+				<li><a class="nav-link fancy-hover" href="/archive/"><span>Archive</span></a></li>
+				<li><a class="nav-link fancy-hover" href="/about/"><span>About</span></a></li>
 			</ul>
-			<section id="icons">
-				<a class="icon" target="_blank" href="https://github.com/kalimatas"><img width="20" height="20" title="GitHub" src="/static/img/github_square.svg" /></a>
-				<a class="icon" target="_blank" href="https://linkedin.com/in/kalimatas"><img width="20" height="20" title="LinkedIn" src="/static/img/linkedin_square.svg" /></a>
-				<a class="icon" target="_blank" href="https://twitter.com/kalimatas"><img width="20" height="20" title="Twitter" src="/static/img/twitter_square.svg" /></a>
-				<a class="icon" target="_blank" href="/feed.xml"><img width="20" height="20" title="RSS" src="/static/img/rss_square.svg" /></a>
-			</section>
+			<ul>
+				<li>
+					<a class="nav-link fancy-hover" href="https://twitter.com/kalimatas" target="_blank" >
+						<span>
+							<img alt="Twitter" width="18" height="18" title="Twitter" src="/static/img/twitter_new.svg" />
+						</span>
+					</a>
+				</li>
+				<li>
+					<a class="nav-link fancy-hover" href="https://twitter.com/kalimatas" target="_blank">
+						<span>
+							<img alt="GitHUb" width="18" height="18" title="GitHub" src="/static/img/github_new.svg" />
+						</span>
+					</a>
+				</li>
+				<li>
+					<a class="nav-link fancy-hover" href="https://linkedin.com/in/kalimatas" target="_blank" >
+						<span>
+							<img alt="LinkedIn" width="18" height="18" title="LinkedIn" src="/static/img/linkedin_new.svg" />
+						</span>
+					</a>
+				</li>
+<!--				<li><a class="nav-link fancy-hover" href="https://github.com/kalimatas" target="_blank" ><span>GitHub</span></a></li>-->
+<!--				<li>-->
+<!--					<a href="#" class="nav-link-writing">-->
+<!--						<span>Writings</span>-->
+<!--						<svg class="link__graphic link__graphic&#45;&#45;stroke link__graphic&#45;&#45;scribble" width="100%" height="9" viewBox="0 0 101 9"><path d="M.426 1.973C4.144 1.567 17.77-.514 21.443 1.48 24.296 3.026 24.844 4.627 27.5 7c3.075 2.748 6.642-4.141 10.066-4.688 7.517-1.2 13.237 5.425 17.59 2.745C58.5 3 60.464-1.786 66 2c1.996 1.365 3.174 3.737 5.286 4.41 5.423 1.727 25.34-7.981 29.14-1.294" pathLength="1" stroke-width="2" stroke="black"/></svg>-->
+<!--					</a>-->
+<!--				</li>-->
+<!--				<li>-->
+<!--					<a href="#" class="link link&#45;&#45;eirene"><span>Contact</span></a>-->
+<!--				</li>-->
+<!--				<li class="rolling-text">-->
+<!--					<a href="#"><span data-hover="Blog">Blog</span></a>-->
+<!--				</li>-->
+			</ul>
+<!--			<span class="twitter-link"><a href="https://twitter.com/kalimatas" target="_blank">@kalimatas</a></span>-->
+<!--			<section id="icons">-->
+<!--				<a class="icon" target="_blank" href="https://github.com/kalimatas"><img width="20" height="20" title="GitHub" src="/static/img/github_square.svg" /></a>-->
+<!--				<a class="icon" target="_blank" href="https://linkedin.com/in/kalimatas"><img width="20" height="20" title="LinkedIn" src="/static/img/linkedin_square.svg" /></a>-->
+<!--				<a class="icon" target="_blank" href="https://twitter.com/kalimatas"><img width="20" height="20" title="Twitter" src="/static/img/twitter_square.svg" /></a>-->
+<!--				<a class="icon" target="_blank" href="/feed.xml"><img width="20" height="20" title="RSS" src="/static/img/rss_square.svg" /></a>-->
+<!--			</section>-->
 		</nav>
 
 		<section class="main-wrapper">
@@ -52,7 +89,7 @@
 			</section>
 
 			<footer class="main-footer">
-				<section class="copyright">&copy; Copyright {{ site.time | date: '%Y' }} by {{ site.author }}</section>
+				<section class="copyright">&copy; Copyright {{ site.time | date: '%Y' }} by {{ site.author }} • <a target="_blank" href="/feed.xml">RSS</a></section>
 			</footer>
 		</section>
 	</section>

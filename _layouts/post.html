@@ -3,27 +3,14 @@ layout: default
 ---
 
 <article>
-	<h1>{{ page.title }}</h1>
+	<h1><span>{{ page.title }}</span></h1>
 	<section class="post-meta">
 		{% assign words=content | number_of_words %}
-		<time>{{ page.date | date: "%B %-d, %Y" }}</time> • {% include read_time.html words=words %} {% include share.html %}
+		<time>{{ page.date | date: "%B %-d, %Y" }}</time> • {% include read_time.html words=words %}
 	</section>
 	<section id="article-content">
 		{{ content }}
 	</section>
-
-	<div class="post-nav">
-		<p>
-			{% if page.previous.url %}
-			<a href="{{page.previous.url}}">&laquo;&nbsp;{{page.previous.title}}</a>
-			{% endif %}
-		</p>
-		<p>
-			{% if page.next.url %}
-			<a href="{{page.next.url}}">{{page.next.title}}&nbsp;&raquo;</a>
-			{% endif %}
-		</p>
-	</div>
-
+	{% include share.html %}
 </article>
 

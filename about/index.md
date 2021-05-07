@@ -3,7 +3,7 @@ layout: page
 title: About
 ---
 
-<img src="/static/img/avatar.jpg" align="left" style="margin-right: 10px;" title="Haha, it's me!">
+[comment]: <> (<img src="/static/img/avatar.jpg" align="left" style="margin-right: 10px;" title="Haha, it's me!">)
 
 Hello there! My name is Alexander Guz. I'm a software developer currently living
 in Berlin, Germany. My passion lies in programming in general. Also, I really
