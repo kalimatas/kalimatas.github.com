@@ -4,6 +4,10 @@ workflow:
     rules:
         -   if: '$CI_COMMIT_BRANCH'
 
+cache:
+    paths:
+        - vendor/
+
 pages:
     script:
         - gem install bundler
