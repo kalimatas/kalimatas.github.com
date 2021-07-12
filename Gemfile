@@ -11,3 +11,5 @@ gem "jekyll-paginate", "~> 1.1"
 gem "jekyll", "~> 4.1"
 
 gem 'jekyll-feed'
+
+gem 'jekyll_picture_tag', '~> 2.0'
