@@ -62,6 +62,7 @@ article h2, article h3, article h4 {
 section.container {
     width: 700px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 .center {
     text-align: center;
