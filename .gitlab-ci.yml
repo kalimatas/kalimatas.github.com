@@ -1,4 +1,4 @@
-image: ruby:2.7
+image: registry.gitlab.com/kalimatas/kalimatas.gitlab.io
 
 workflow:
     rules:

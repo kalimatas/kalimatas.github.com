@@ -155,10 +155,12 @@ nav.menu li a {
 /* index list */
 .entry {
     margin-bottom: 45px;
+    display: flex;
 }
 .entry h1, .entry h3 {
     font-size: 1.4em;
     margin-bottom: 3px;
+    margin-top: 0;
     line-height: 1.3em;
 }
 .entry:first-of-type h1 {
@@ -171,12 +173,27 @@ nav.menu li a {
     text-decoration: underline;
     text-underline-offset: 4px;
 }
+.entry .thumbnail {
+    margin-right: 20px;
+}
+.entry .thumbnail img {
+    object-fit: cover;
+    width: 220px;
+}
+.entry .entry-content {
+    width: 100%;
+}
 
 .post-meta {
     color: #6c6c6a;
     font-size: 0.8em;
     display: flex;
     column-gap: 5px;
+}
+.post-meta + picture {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
 }
 
 /* Share button */
@@ -231,6 +248,9 @@ blockquote {
 article p {
     margin-bottom: 24px;
 }
+article .post-meta {
+    margin-bottom: 24px;
+}
 .pagination {
     display: flex;
     column-gap: 20px;
@@ -273,7 +293,13 @@ figure.highlight pre {
 /**/
 @media screen and (max-width: 600px) {
     section.container {
-        padding: 0 20px;
         width: 100vw;
+    }
+    .entry {
+        display: block;
+    }
+    .entry .thumbnail img {
+        width: 100%;
+        height: 150px;
     }
 }
