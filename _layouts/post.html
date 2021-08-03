@@ -8,9 +8,9 @@ layout: default
 		{% assign words=content | number_of_words %}
 		<time>{{ page.date | date: "%B %-d, %Y" }}</time> • {% include read_time.html words=words %}
 	</section>
-	{% if page.picture %}
+	{% if page.image %}
 		<div class="img-wrapper">
-			{% picture "{{ page.picture }}" 3:2 entropy %}
+			{% picture "{{ page.image }}" 3:2 entropy %}
 		</div>
 	{% endif %}
 	<section id="article-content">

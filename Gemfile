@@ -13,3 +13,5 @@ gem "jekyll", "~> 4.1"
 gem 'jekyll-feed'
 
 gem 'jekyll_picture_tag', '~> 2.0'
+
+gem 'jekyll-seo-tag'
