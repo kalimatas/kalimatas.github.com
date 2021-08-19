@@ -1,7 +1,0 @@
-media_queries:
-    mobile: 'max-width: 600px'
-
-presets:
-    default:
-        formats: [webp, original]
-        widths: [400, 600, 700]

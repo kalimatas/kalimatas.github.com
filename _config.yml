@@ -9,13 +9,12 @@ paginate: 15
 plugins:
   - jekyll-paginate
   - jekyll-feed
-#  - jekyll_picture_tag
   - jekyll-responsive-image
   - jekyll-seo-tag
 
 responsive_image:
   template: _includes/responsive-image.html
-  default_quality: 100
+  default_quality: 90
   save_to_source: false
   sizes:
     - width: 220
