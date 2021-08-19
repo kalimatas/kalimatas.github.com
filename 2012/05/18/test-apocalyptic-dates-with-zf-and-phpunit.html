@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/static/css/style.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/pygments.css" type="text/css" />
+	<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Testing Apocalyptic Dates with ZF and PHPUnit | Alexander Guz’s blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Testing Apocalyptic Dates with ZF and PHPUnit" />
+<meta name="author" content="Alexander Guz" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="PHPUnit with Zend Framework." />
+<meta property="og:description" content="PHPUnit with Zend Framework." />
+<link rel="canonical" href="https://guzalexander.com/2012/05/18/test-apocalyptic-dates-with-zf-and-phpunit.html" />
+<meta property="og:url" content="https://guzalexander.com/2012/05/18/test-apocalyptic-dates-with-zf-and-phpunit.html" />
+<meta property="og:site_name" content="Alexander Guz’s blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2012-05-18T22:45:00+02:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Testing Apocalyptic Dates with ZF and PHPUnit" />
+<meta name="twitter:site" content="@kalimatas" />
+<meta name="twitter:creator" content="@Alexander Guz" />
+<script type="application/ld+json">
+{"headline":"Testing Apocalyptic Dates with ZF and PHPUnit","dateModified":"2012-05-18T22:45:00+02:00","datePublished":"2012-05-18T22:45:00+02:00","url":"https://guzalexander.com/2012/05/18/test-apocalyptic-dates-with-zf-and-phpunit.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://guzalexander.com/2012/05/18/test-apocalyptic-dates-with-zf-and-phpunit.html"},"author":{"@type":"Person","name":"Alexander Guz"},"description":"PHPUnit with Zend Framework.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+
+	<section class="container">
+		<nav class="menu">
+			<ul>
+				<li><a class="nav-link fancy-hover" href="/"><span>Home</span></a></li>
+				<li><a class="nav-link fancy-hover" href="/archive/"><span>Archive</span></a></li>
+				<li><a class="nav-link fancy-hover" href="/about/"><span>About</span></a></li>
+			</ul>
+			<ul>
+				<li>
+					<a class="nav-link fancy-hover" href="https://twitter.com/kalimatas" target="_blank" >
+						<span>
+							<img alt="Twitter" width="18" height="18" title="Twitter" src="/static/img/twitter_new.svg" />
+						</span>
+					</a>
+				</li>
+				<li>
+					<a class="nav-link fancy-hover" href="https://github.com/kalimatas" target="_blank">
+						<span>
+							<img alt="GitHub" width="18" height="18" title="GitHub" src="/static/img/github_new.svg" />
+						</span>
+					</a>
+				</li>
+				<li>
+					<a class="nav-link fancy-hover" href="https://linkedin.com/in/kalimatas" target="_blank" >
+						<span>
+							<img alt="LinkedIn" width="18" height="18" title="LinkedIn" src="/static/img/linkedin_new.svg" />
+						</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+
+		<section class="main-wrapper">
+			<section class="main">
+				<article>
+	
+	<h1><span>Testing Apocalyptic Dates with ZF and PHPUnit</span></h1>
+	<section class="post-meta">
+		
+		<time>May 18, 2012</time> • <span class="reading-time" title="Estimated read time">
+  
+  
+    4 mins read
+  
+</span>
+
+	</section>
+	
+	<section class="description">
+		PHPUnit with Zend Framework.
+	</section>
+	
+	<section id="article-content">
+		<p>Have you ever thought why there are so many apocalyptic dates but we are still alive? Because no one had ever tested these dates! Maybe some centuries ago people didn’t have any appropriate instrument for testing, but we have. Yep, it’s unit testing. Today we’re going to create a Zend Framework application which will list some apocalyptic dates and write some code to test its functionality.</p>
+
+<h2 id="the-application-and-testing-environment">The application and testing environment</h2>
+
+<p>You can download full source of our application at this <a href="https://github.com/kalimatas/apocalypticdates">github page</a>. Before you can actually run any tests you need to do something:</p>
+
+<ul>
+  <li>install Zend Framework itself, I used 1.11.11 version;</li>
+  <li>install <a href="https://pear.php.net/">PEAR</a> for installing listed below packages;</li>
+  <li>install PHPUnit <strong>3.4.15</strong> (you need exactly this version, not higher, because this is the latest version of PHPUnit supported by ZF; if you use higher version you’ll get an error about not implemented methods while using functionality of Zend_Test_PHPUnit_DatabaseTestCase);</li>
+  <li>install DBUnit 1.0.3 for testing models;</li>
+  <li>create database and tables from <a href="https://github.com/kalimatas/apocalypticdates/blob/master/sql/apocalypticdates.sql">sql/apocalypticdates.sql</a>;</li>
+  <li>create testing database by running <a href="https://github.com/kalimatas/apocalypticdates/blob/master/bin/create_test_db.sh">bin/create_test_db.sh</a>.</li>
+</ul>
+
+<p>Here I’m not going to provide full instructions of how to install these soft and to make this application working -
+that’s boring and not related to this post. Also if you want to learn all available methods of PHPUnit this is a wrong place to start - you’d better read <a href="http://www.phpunit.de/manual/3.4/en/">official documentation</a>. So, I assume you already have working application at your localhost.</p>
+
+<p>What features does our application have? To be honest, not much: you can see the list of available dates on the main page and create a new one by accessing <code class="language-plaintext highlighter-rouge">/index/new/</code> url and providing necessary data via POST. Nevertheless this is quite enough to create different kind of tests: simple functions (or methods) tests, controllers tests and database (in our case models) tests.</p>
+
+<h2 id="basic-classes">Basic classes</h2>
+
+<p>In this application I’m using two basic classes by extending which we’ll get all necessary functionality for actually writing something useful (I mean not this stuff you’ve already bored from). You can find these classes in <code class="language-plaintext highlighter-rouge">library/PHPUnit</code> directory. Let’s look at them closely.</p>
+
+<h2 id="testing-controllers">Testing controllers</h2>
+
+<p>We extend <code class="language-plaintext highlighter-rouge">PHPUnit_ControllerTestCase</code> class for testing parts specific for ZF like, for example, routing, error processing, security system, etc. Here is an example test from <code class="language-plaintext highlighter-rouge">IndexControllerTest</code>:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="k">public</span> <span class="k">function</span> <span class="n">testCreateFailAction</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">dispatch</span><span class="p">(</span><span class="s1">'/index/new/'</span><span class="p">);</span>
+
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">assertModule</span><span class="p">(</span><span class="s1">'default'</span><span class="p">);</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">assertController</span><span class="p">(</span><span class="s1">'error'</span><span class="p">);</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">assertAction</span><span class="p">(</span><span class="s1">'error'</span><span class="p">);</span>
+    
+    <span class="c1">// we must see an error message</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">assertQueryContentContains</span><span class="p">(</span>
+        <span class="s2">"div#content h3"</span><span class="p">,</span> <span class="s2">"No data given for new date."</span>
+    <span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><code class="language-plaintext highlighter-rouge">PHPUnit_ControllerTestCase</code> in its turn is extended from <code class="language-plaintext highlighter-rouge">Zend_Test_PHPUnit_ControllerTestCase</code>, it means that we can use specific for Zend Framework assertions like, for example, <code class="language-plaintext highlighter-rouge">assertModule</code>.</p>
+
+<p>In case you need to test some action which needs database interaction, just implement <code class="language-plaintext highlighter-rouge">setUpDatabase</code> method in your test class as in our example test class. This method is called before every test method (actually in setUp), so you’ll have your tables truncated and populated from fixtures you provide before each test.</p>
+
+<h2 id="testing-database">Testing database</h2>
+
+<p>First, insure you’ve created testing database with  <code class="language-plaintext highlighter-rouge">bin/create_test_db.sh</code> script and set right database name in configuration for testing environment. Why? Because you’ll die. Just kidding. Because every time you run a test which requires working with database your tables will be truncated, and I suppose you don’t want your production base be truncated.</p>
+
+<p>For testing models we extend our test classes from <code class="language-plaintext highlighter-rouge">PHPUnit_DatabaseTestCase</code>.  In this case we <strong>must</strong> implement <code class="language-plaintext highlighter-rouge">getDataSet</code> method which acts like previously described <code class="language-plaintext highlighter-rouge">setUpDatabase</code> method. Look at the example.</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="cd">/**
+ * Should pass :))
+ */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="n">testWhetherHasNotHappened</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nv">$happenedDates</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">_table</span><span class="o">-&gt;</span><span class="nf">fetchAll</span><span class="p">(</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">_table</span><span class="o">-&gt;</span><span class="nf">select</span><span class="p">()</span>
+            <span class="o">-&gt;</span><span class="nf">where</span><span class="p">(</span><span class="s1">'happened = ?'</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="p">);</span>
+
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">assertEquals</span><span class="p">(</span><span class="nv">$happenedDates</span><span class="o">-&gt;</span><span class="nb">count</span><span class="p">(),</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Here <code class="language-plaintext highlighter-rouge">$this-&gt;_table</code> refers to <code class="language-plaintext highlighter-rouge">Apoc_Model_Date_Table</code> model so we can use all it’s functionality.
+Quite simple.</p>
+
+<h2 id="running-tests">Running tests</h2>
+
+<p>Examples of running tests of this application:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">cd </span>tests
+<span class="c"># run all tests</span>
+<span class="nv">$ </span>phpunit <span class="nb">.</span> 
+<span class="c"># run tests from specific directory</span>
+<span class="nv">$ </span>phpunit application/controllers
+<span class="c"># run tests from file</span>
+<span class="nv">$ </span>phpunit application/controllers/IndexControllerTest.php</code></pre></figure>
+
+<p>That’s it. Code itself is the best narrator :))</p>
+
+	</section>
+	<section id="share-page">
+	<span>Share this page on</span>
+	<a href="https://twitter.com/intent/tweet?text=Testing Apocalyptic Dates with ZF and PHPUnit&url=https://guzalexander.com/2012/05/18/test-apocalyptic-dates-with-zf-and-phpunit.html&via=&related=" rel="nofollow" target="_blank" title="Share on Twitter">Twitter</a> or
+	<a href="https://www.reddit.com/submit?url=https://guzalexander.com/2012/05/18/test-apocalyptic-dates-with-zf-and-phpunit.html&title=Testing Apocalyptic Dates with ZF and PHPUnit" rel="nofollow" target="_blank" title="Share on Reddit">Reddit</a>
+</section>
+
+</article>
+
+
+			</section>
+
+			<footer class="main-footer">
+				<section class="copyright">&copy; Copyright 2021 by Alexander Guz • <a target="_blank" href="/feed.xml">RSS</a></section>
+				<section>Built with <a target="_blank" href="https://jekyllrb.com/">Jekyll</a></section>
+			</footer>
+		</section>
+	</section>
+
+	<script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-31916607-1']);
+		_gaq.push(['_setDomainName', 'guzalexander.com']);
+		_gaq.push(['_trackPageview']);
+
+		(function () {
+            var ga = document.createElement('script');ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/static/css/style.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/pygments.css" type="text/css" />
+	<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Will for Deep Knowledge | Alexander Guz’s blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Will for Deep Knowledge" />
+<meta name="author" content="Alexander Guz" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I’d like to do something useful. No kidding. Something I or someone else could use. When I come up with some idea I start to think about details and about what technologies I should use for its implementation. Speaking about technology I want to say that I prefer using something I’ve never used before. And here lies the rub. When I start to learn something I start with the idea of getting some satisfactory level of deep knowledge of the subject, not only some basic understanding enough only for “hello world”." />
+<meta property="og:description" content="I’d like to do something useful. No kidding. Something I or someone else could use. When I come up with some idea I start to think about details and about what technologies I should use for its implementation. Speaking about technology I want to say that I prefer using something I’ve never used before. And here lies the rub. When I start to learn something I start with the idea of getting some satisfactory level of deep knowledge of the subject, not only some basic understanding enough only for “hello world”." />
+<link rel="canonical" href="https://guzalexander.com/2012/05/30/will-for-deep-knowledge.html" />
+<meta property="og:url" content="https://guzalexander.com/2012/05/30/will-for-deep-knowledge.html" />
+<meta property="og:site_name" content="Alexander Guz’s blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2012-05-30T22:32:00+02:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Will for Deep Knowledge" />
+<meta name="twitter:site" content="@kalimatas" />
+<meta name="twitter:creator" content="@Alexander Guz" />
+<script type="application/ld+json">
+{"headline":"Will for Deep Knowledge","dateModified":"2012-05-30T22:32:00+02:00","datePublished":"2012-05-30T22:32:00+02:00","url":"https://guzalexander.com/2012/05/30/will-for-deep-knowledge.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://guzalexander.com/2012/05/30/will-for-deep-knowledge.html"},"author":{"@type":"Person","name":"Alexander Guz"},"description":"I’d like to do something useful. No kidding. Something I or someone else could use. When I come up with some idea I start to think about details and about what technologies I should use for its implementation. Speaking about technology I want to say that I prefer using something I’ve never used before. And here lies the rub. When I start to learn something I start with the idea of getting some satisfactory level of deep knowledge of the subject, not only some basic understanding enough only for “hello world”.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+
+	<section class="container">
+		<nav class="menu">
+			<ul>
+				<li><a class="nav-link fancy-hover" href="/"><span>Home</span></a></li>
+				<li><a class="nav-link fancy-hover" href="/archive/"><span>Archive</span></a></li>
+				<li><a class="nav-link fancy-hover" href="/about/"><span>About</span></a></li>
+			</ul>
+			<ul>
+				<li>
+					<a class="nav-link fancy-hover" href="https://twitter.com/kalimatas" target="_blank" >
+						<span>
+							<img alt="Twitter" width="18" height="18" title="Twitter" src="/static/img/twitter_new.svg" />
+						</span>
+					</a>
+				</li>
+				<li>
+					<a class="nav-link fancy-hover" href="https://github.com/kalimatas" target="_blank">
+						<span>
+							<img alt="GitHub" width="18" height="18" title="GitHub" src="/static/img/github_new.svg" />
+						</span>
+					</a>
+				</li>
+				<li>
+					<a class="nav-link fancy-hover" href="https://linkedin.com/in/kalimatas" target="_blank" >
+						<span>
+							<img alt="LinkedIn" width="18" height="18" title="LinkedIn" src="/static/img/linkedin_new.svg" />
+						</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+
+		<section class="main-wrapper">
+			<section class="main">
+				<article>
+	
+	<h1><span>Will for Deep Knowledge</span></h1>
+	<section class="post-meta">
+		
+		<time>May 30, 2012</time> • <span class="reading-time" title="Estimated read time">
+  
+  
+    1 min read
+  
+</span>
+
+	</section>
+	
+	<section id="article-content">
+		<p>I’d like to do something useful. No kidding. Something I or someone else could use. When I come up with some idea I start to think about details and about what technologies I should use for its implementation. Speaking about technology I want to say that I prefer using something I’ve never used before. And here lies the rub. When I start to learn something I start with the idea of getting some satisfactory level of deep knowledge of the subject, not only some basic understanding enough only for “hello world”.</p>
+
+<p>For example, I wanted to create a small web app which will help me to send POST request (need for my current job project). I’ve chosen Python and <a href="http://flask.pocoo.org">Flask</a> as technologies, mostly because I’m learning Python now. Ok, let’s read what Flask is. Hm, it’s based on Werkzeug and Jinja2. Well, let us a look at them. WSGI? What’s that?</p>
+
+<p>After some time I found myself sitting in front of my computer with VIM opened and a few lines of code there:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1">#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+</span>
+<span class="kn">from</span> <span class="nn">wsgiref.simple_server</span> <span class="kn">import</span> <span class="n">make_server</span>
+
+<span class="k">def</span> <span class="nf">app</span><span class="p">(</span><span class="n">environ</span><span class="p">,</span> <span class="n">start_response</span><span class="p">):</span>
+    <span class="n">start_response</span><span class="p">(</span><span class="s">'200 Ok'</span><span class="p">,</span> <span class="p">[(</span><span class="s">'Content-type'</span><span class="p">,</span> <span class="s">'text/html'</span><span class="p">)])</span>
+    <span class="k">return</span> <span class="p">[</span><span class="s">'Hello from wsgi!'</span><span class="p">]</span>
+
+<span class="n">httpd</span> <span class="o">=</span> <span class="n">make_server</span><span class="p">(</span><span class="s">''</span><span class="p">,</span> <span class="mi">8005</span><span class="p">,</span> <span class="n">app</span><span class="p">)</span>
+<span class="n">httpd</span><span class="p">.</span><span class="n">serve_forever</span><span class="p">()</span></code></pre></figure>
+
+<p>That’s too far away from my initial task as you understand. So what happened?</p>
+
+<p>When I started to read about Flask it turned out that I don’t want to use it until I get a deeper understanding of its underlying mechanisms. The same about Werkzeug and Jinja.  Don’t know whether I should cry or laugh. On the one hand this will for deep knowledge serves me well - after spending some hours/days/weeks/months of reading and trying I feel like a pro in the subject. But on the other hand I spent my time learning and not doing something really useful.</p>
+
+<p>Remember the beginning of the post?</p>
+
+
+	</section>
+	<section id="share-page">
+	<span>Share this page on</span>
+	<a href="https://twitter.com/intent/tweet?text=Will for Deep Knowledge&url=https://guzalexander.com/2012/05/30/will-for-deep-knowledge.html&via=&related=" rel="nofollow" target="_blank" title="Share on Twitter">Twitter</a> or
+	<a href="https://www.reddit.com/submit?url=https://guzalexander.com/2012/05/30/will-for-deep-knowledge.html&title=Will for Deep Knowledge" rel="nofollow" target="_blank" title="Share on Reddit">Reddit</a>
+</section>
+
+</article>
+
+
+			</section>
+
+			<footer class="main-footer">
+				<section class="copyright">&copy; Copyright 2021 by Alexander Guz • <a target="_blank" href="/feed.xml">RSS</a></section>
+				<section>Built with <a target="_blank" href="https://jekyllrb.com/">Jekyll</a></section>
+			</footer>
+		</section>
+	</section>
+
+	<script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-31916607-1']);
+		_gaq.push(['_setDomainName', 'guzalexander.com']);
+		_gaq.push(['_trackPageview']);
+
+		(function () {
+            var ga = document.createElement('script');ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+</body>
+
+</html>

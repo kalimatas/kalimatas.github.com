@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/static/css/style.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/pygments.css" type="text/css" />
+	<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Pinba — Statistic/monitoring Server for PHP on Mac OS X | Alexander Guz’s blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Pinba — Statistic/monitoring Server for PHP on Mac OS X" />
+<meta name="author" content="Alexander Guz" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="PHP monitoring with Pinba." />
+<meta property="og:description" content="PHP monitoring with Pinba." />
+<link rel="canonical" href="https://guzalexander.com/2013/03/27/pinba-statistics-and-monitoring-server.html" />
+<meta property="og:url" content="https://guzalexander.com/2013/03/27/pinba-statistics-and-monitoring-server.html" />
+<meta property="og:site_name" content="Alexander Guz’s blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2013-03-27T13:00:00+01:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Pinba — Statistic/monitoring Server for PHP on Mac OS X" />
+<meta name="twitter:site" content="@kalimatas" />
+<meta name="twitter:creator" content="@Alexander Guz" />
+<script type="application/ld+json">
+{"headline":"Pinba — Statistic/monitoring Server for PHP on Mac OS X","dateModified":"2013-03-27T13:00:00+01:00","datePublished":"2013-03-27T13:00:00+01:00","url":"https://guzalexander.com/2013/03/27/pinba-statistics-and-monitoring-server.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://guzalexander.com/2013/03/27/pinba-statistics-and-monitoring-server.html"},"author":{"@type":"Person","name":"Alexander Guz"},"description":"PHP monitoring with Pinba.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+
+	<section class="container">
+		<nav class="menu">
+			<ul>
+				<li><a class="nav-link fancy-hover" href="/"><span>Home</span></a></li>
+				<li><a class="nav-link fancy-hover" href="/archive/"><span>Archive</span></a></li>
+				<li><a class="nav-link fancy-hover" href="/about/"><span>About</span></a></li>
+			</ul>
+			<ul>
+				<li>
+					<a class="nav-link fancy-hover" href="https://twitter.com/kalimatas" target="_blank" >
+						<span>
+							<img alt="Twitter" width="18" height="18" title="Twitter" src="/static/img/twitter_new.svg" />
+						</span>
+					</a>
+				</li>
+				<li>
+					<a class="nav-link fancy-hover" href="https://github.com/kalimatas" target="_blank">
+						<span>
+							<img alt="GitHub" width="18" height="18" title="GitHub" src="/static/img/github_new.svg" />
+						</span>
+					</a>
+				</li>
+				<li>
+					<a class="nav-link fancy-hover" href="https://linkedin.com/in/kalimatas" target="_blank" >
+						<span>
+							<img alt="LinkedIn" width="18" height="18" title="LinkedIn" src="/static/img/linkedin_new.svg" />
+						</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+
+		<section class="main-wrapper">
+			<section class="main">
+				<article>
+	
+	<h1><span>Pinba — Statistic/monitoring Server for PHP on Mac OS X</span></h1>
+	<section class="post-meta">
+		
+		<time>March 27, 2013</time> • <span class="reading-time" title="Estimated read time">
+  
+  
+    7 mins read
+  
+</span>
+
+	</section>
+	
+	<section class="description">
+		PHP monitoring with Pinba.
+	</section>
+	
+	<section id="article-content">
+		<p>When it comes to performance developers are limited with a choice of a suitable tool for measuring it. For PHP programmers there is a good one - <a href="http://pinba.org">Pinba</a>, and since there is no much articles about it in English I decided to write one.</p>
+
+<h2 id="overview">Overview</h2>
+<p>Pinba is a MySQL <a href="http://dev.mysql.com/doc/refman/5.1/en/pluggable-storage.html">pluggable storage engine</a> that acts as a realtime monitoring/statistics server for PHP using MySQL as a read-only interface. It collects data sent by PHP extension which generates a data packet on <a href="http://devzone.zend.com/303/extension-writing-part-i-introduction-to-php-and-zend/#Heading3">request shutdown</a> and sends it over <a href="http://en.wikipedia.org/wiki/User_Datagram_Protocol">UDP</a>. Using UDP protocol means there is no need to establish connection and allows not to affect performance of PHP scripts on production servers.</p>
+
+<div class="img-wrapper">
+	<figure>
+		
+			<img src="/static/img/posts/pinba.gif" alt="" />
+		
+	</figure>
+</div>
+
+<p>Pinba accumulates data in a set of read-only MySQL tables which are of two types:</p>
+
+<ul>
+  <li>raw data tables; using these tables makes it possible to generate custom reports, but keep in mind that accessing the raw data is relatively slow for there may be a great number of records with <strong>no</strong> indexes except primary keys;</li>
+  <li>reports; already aggregated data, updates on-the-fly as new request data arrives.</li>
+</ul>
+
+<p>And the most valuable in my opinion part of Pinba is the ability to measure particular parts of code using timers with arbitrary tags. More about them later. The Pinba working stack consists of two parts: Pinba engine and PHP extension. I forgot to mention I’m working on Mac OS X 10.8.2.</p>
+
+<h3 id="pinba-engine">Pinba engine</h3>
+<p>Pinba engine requires at least <code class="language-plaintext highlighter-rouge">5.1</code> version of MySQL (both sources and installation) since it’s the first version to support pluggable storage engine. Among other requirements <a href="http://code.google.com/p/protobuf">Google Protocol Buffers</a> and <a href="http://monkey.org/~provos/libevent/">libevent</a> (chances are it is already installed in your system). You can use <a href="http://www.hoard.org">Hoard memory allocator</a> as an option to reduce memory consumption, but I won’t cover this option in this tutorial.</p>
+
+<p>So, let’s start. Get and install <code class="language-plaintext highlighter-rouge">Google Protocol Buffers</code>.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">cd</span> /tmp
+<span class="nv">$ </span>wget http://protobuf.googlecode.com/files/protobuf-2.5.0.tar.bz2
+<span class="nv">$ </span><span class="nb">tar</span> <span class="nt">-xjf</span> protobuf-2.5.0.tar.bz2
+<span class="nv">$ </span><span class="nb">cd </span>protobuf-2.5.0
+<span class="nv">$ </span>./configure <span class="nt">--prefix</span><span class="o">=</span>/usr/local
+<span class="nv">$ </span>make
+<span class="nv">$ </span><span class="nb">sudo </span>make <span class="nb">install</span></code></pre></figure>
+
+<p>You’ll need MySQL <strong>sources</strong> in order to build Pinba engine. Notice that I had MySQL 5.5.28 installed on my machine and I got errors during engine installation. Finally I just upgraded to 5.6.10. More about it <a href="https://github.com/tony2001/pinba_engine/issues/13">here</a>. Pay attention to <code class="language-plaintext highlighter-rouge">-DBUILD_CONFIG=mysql_release</code> option (read <a href="http://dev.mysql.com/doc/mysql-sourcebuild-excerpt/5.5/en/source-configuration-options.html#cmake-general-options">here</a>).</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">cd</span> /tmp
+<span class="nv">$ </span>wget <span class="nt">-O</span> mysql-5.6.10.tar.gz <span class="se">\</span>
+http://dev.mysql.com/get/Downloads/MySQL-5.6/mysql-5.6.10.tar.gz/from/http://cdn.mysql.com/
+<span class="nv">$ </span><span class="nb">tar</span> <span class="nt">-xjf</span> mysql-5.6.10.tar.gz
+<span class="nv">$ </span><span class="nb">cd </span>mysql-5.6.10
+<span class="nv">$ </span>cmake <span class="nt">-DBUILD_CONFIG</span><span class="o">=</span>mysql_release
+<span class="nv">$ </span><span class="nb">cd </span>include <span class="o">&amp;&amp;</span> make</code></pre></figure>
+
+<p>For building Pinba engine you’ll also need <code class="language-plaintext highlighter-rouge">libevent</code> and <code class="language-plaintext highlighter-rouge">judy</code>. I used <a href="http://mxcl.github.com/homebrew/">brew</a> to install them.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>brew <span class="nb">install </span>libevent
+<span class="nv">$ </span>brew <span class="nb">install </span>judy</code></pre></figure>
+
+<p>Finally, get and install Pinba engine.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">cd</span> /tmp
+<span class="nv">$ </span>wget http://pinba.org/files/pinba_engine-1.0.0.tar.gz
+<span class="nv">$ </span><span class="nb">tar</span> <span class="nt">-xjf</span> pinba_engine-1.0.0.tar.gz
+<span class="nv">$ </span><span class="nb">cd </span>pinba_engine-1.0.0
+<span class="nv">$ </span>./configure <span class="se">\</span>
+<span class="nt">--libdir</span><span class="o">=</span>/usr/local/mysql/lib/plugin <span class="se">\</span>
+<span class="nt">--with-protobuf</span><span class="o">=</span>/usr/local <span class="se">\</span>
+<span class="nt">--with-mysql</span><span class="o">=</span>/tmp/mysql-5.6.10 <span class="se">\</span>
+<span class="nt">--with-event</span><span class="o">=</span>/usr/local/Cellar/libevent/2.0.21 <span class="se">\</span>
+<span class="nt">--with-judy</span><span class="o">=</span>/usr/local/Cellar/judy/1.0.5
+<span class="nv">$ </span>make
+<span class="nv">$ </span><span class="nb">sudo </span>make <span class="nb">install</span></code></pre></figure>
+
+<p>After that make sure you’ve got <code class="language-plaintext highlighter-rouge">libpinba_engine.so</code> in <code class="language-plaintext highlighter-rouge">/usr/local/mysql/lib/plugin</code>. Now that you have the plugin you need to enable it in MySQL.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># login to MySQL and install plugin</span>
+mysql <span class="o">&gt;</span> <span class="nb">install </span>plugin PINBA soname <span class="s1">'libpinba_engine.so'</span><span class="p">;</span>
+<span class="c"># create a separate database</span>
+mysql <span class="o">&gt;</span> CREATE DATABASE pinba<span class="p">;</span>
+<span class="c"># create default tables</span>
+<span class="nv">$ </span>mysql <span class="nt">-D</span> pinba &lt; default_tables.sql</code></pre></figure>
+
+<h3 id="php-extension">PHP extension</h3>
+<p>Now let’s build and install PHP extension. It requires previously installed <code class="language-plaintext highlighter-rouge">Google Protocol Buffers</code> and PHP development package.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">cd</span> /tmp
+<span class="nv">$ </span>git clone git://github.com/tony2001/pinba_extension.git
+<span class="nv">$ </span><span class="nb">cd </span>pinba_extension
+<span class="nv">$ </span>phpize
+<span class="nv">$ </span>./configure
+<span class="nv">$ </span>make
+<span class="nv">$ </span><span class="nb">sudo </span>make <span class="nb">install</span></code></pre></figure>
+
+<p>Now <strong>enable</strong> the extension in <code class="language-plaintext highlighter-rouge">php.ini</code> by adding <code class="language-plaintext highlighter-rouge">pinba.so</code> and setting option <code class="language-plaintext highlighter-rouge">pinba.enabled=1</code>.</p>
+
+<h2 id="configuration">Configuration</h2>
+<p>Now as you have everything installed you may want to configure Pinba engine or PHP extension. I’m just fine with default options but <code class="language-plaintext highlighter-rouge">port</code> option. By default Pinba engine and PHP extension have <code class="language-plaintext highlighter-rouge">30002</code> port number in their configs, but I failed to gather any statistics with this configuration may be due to some permission problems. So I changed the default port to <code class="language-plaintext highlighter-rouge">50002</code> in <code class="language-plaintext highlighter-rouge">my.cnf</code> and <code class="language-plaintext highlighter-rouge">php.ini</code>:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># my.cnf in [mysqld] section</span>
+pinba_port <span class="o">=</span> 50002
+<span class="c"># php.ini</span>
+pinba.server <span class="o">=</span> 127.0.0.1:50002
+<span class="c"># dont't forget to restart Apache and MySQL</span>
+<span class="nv">$ </span><span class="nb">sudo </span>apachectl reload
+<span class="nv">$ </span><span class="nb">sudo</span> /Library/StartupItems/MySQLCOM/MySQLCOM restart</code></pre></figure>
+
+<p>If you are interested in more options here are official descriptions for <a href="https://github.com/tony2001/pinba_engine/wiki/Configuration">engine</a> and <a href="https://github.com/tony2001/pinba_engine/wiki/PHP-extension">extension</a>.</p>
+
+<h2 id="what-now">What now?</h2>
+<p>Running any PHP script, no matter CLI or via web server, causes PHP extension to send gathered statistics to Pinba engine. It accumulates in a set of MySQL tables which you can use to build any kind of reports. By the way, developers already made some work for us and created basic report tables. These tables have names starting with <code class="language-plaintext highlighter-rouge">report_</code>. Here I will not focus on detailed description of each table and the data it stores for it is rather straitforward. For any explanation you’d better follow official documentation.</p>
+
+<p>The real power is hidden in timers.</p>
+
+<h2 id="timers">Timers</h2>
+<p>This mechanism allows to measure particular parts of code by integrating timers in you code by means of a set of functions provided by PHP extension. Moreover you can <em>tag</em> timers with special marks which are called, as you may guessed, tags. They are used to group timers information in tag reports.</p>
+
+<p>Each timer consists of:</p>
+
+<ul>
+  <li>float <em>value</em> - time between timer start and stop</li>
+  <li>int <em>hit_count</em> - number of timer starts</li>
+  <li>array of tags</li>
+</ul>
+
+<p>To use timers you’ll basically need only two functions <code class="language-plaintext highlighter-rouge">pinba_timer_start</code> and <code class="language-plaintext highlighter-rouge">pinba_timer_stop</code>. Let’s look at the example:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="nv">$timer</span> <span class="o">=</span> <span class="nf">pinba_timer_start</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+    <span class="s2">"server"</span> <span class="o">=&gt;</span> <span class="s2">"ap1"</span><span class="p">,</span>
+    <span class="s2">"operation"</span> <span class="o">=&gt;</span> <span class="s2">"concatenate"</span>
+<span class="p">));</span>
+<span class="nv">$result</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$result</span> <span class="mf">.</span><span class="o">=</span> <span class="p">(</span><span class="n">string</span><span class="p">)</span><span class="nv">$i</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nf">pinba_timer_stop</span><span class="p">(</span><span class="nv">$timer</span><span class="p">);</span></code></pre></figure>
+
+<p>After running this script you’ll have some data in tags tables: <code class="language-plaintext highlighter-rouge">tag</code> table stores all tags used, <code class="language-plaintext highlighter-rouge">timertag</code> stores tag values.</p>
+
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">tag</span><span class="p">;</span>
+<span class="o">+</span><span class="c1">----+-----------+</span>
+<span class="o">|</span> <span class="n">id</span> <span class="o">|</span> <span class="n">name</span>      <span class="o">|</span>
+<span class="o">+</span><span class="c1">----+-----------+</span>
+<span class="o">|</span>  <span class="mi">0</span> <span class="o">|</span> <span class="k">operation</span> <span class="o">|</span>
+<span class="o">|</span>  <span class="mi">1</span> <span class="o">|</span> <span class="n">server</span>    <span class="o">|</span>
+<span class="o">+</span><span class="c1">----+-----------+</span>
+
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">timertag</span><span class="p">;</span>
+<span class="o">+</span><span class="c1">----------+--------+-------------+</span>
+<span class="o">|</span> <span class="n">timer_id</span> <span class="o">|</span> <span class="n">tag_id</span> <span class="o">|</span> <span class="n">value</span>       <span class="o">|</span>
+<span class="o">+</span><span class="c1">----------+--------+-------------+</span>
+<span class="o">|</span>        <span class="mi">0</span> <span class="o">|</span>      <span class="mi">0</span> <span class="o">|</span> <span class="n">concatenate</span> <span class="o">|</span>
+<span class="o">|</span>        <span class="mi">0</span> <span class="o">|</span>      <span class="mi">1</span> <span class="o">|</span> <span class="n">ap1</span>         <span class="o">|</span>
+<span class="o">+</span><span class="c1">----------+--------+-------------+</span></code></pre></figure>
+
+<p>Having these tags you can count how often each operations runs on each server. To be honest this is quite useless example but I hope you got the idea.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>Short theses:</p>
+
+<ul>
+  <li>UPD doesn’t affect application performance</li>
+  <li>raw data access</li>
+  <li>basic reports</li>
+  <li>grouping by tags</li>
+</ul>
+
+<p>Here I described the process of installation of the PHP extension but Pinba engine API allows using any other languages and there already clients for Python, Ruby and Node.js.</p>
+
+
+	</section>
+	<section id="share-page">
+	<span>Share this page on</span>
+	<a href="https://twitter.com/intent/tweet?text=Pinba — Statistic/monitoring Server for PHP on Mac OS X&url=https://guzalexander.com/2013/03/27/pinba-statistics-and-monitoring-server.html&via=&related=" rel="nofollow" target="_blank" title="Share on Twitter">Twitter</a> or
+	<a href="https://www.reddit.com/submit?url=https://guzalexander.com/2013/03/27/pinba-statistics-and-monitoring-server.html&title=Pinba — Statistic/monitoring Server for PHP on Mac OS X" rel="nofollow" target="_blank" title="Share on Reddit">Reddit</a>
+</section>
+
+</article>
+
+
+			</section>
+
+			<footer class="main-footer">
+				<section class="copyright">&copy; Copyright 2021 by Alexander Guz • <a target="_blank" href="/feed.xml">RSS</a></section>
+				<section>Built with <a target="_blank" href="https://jekyllrb.com/">Jekyll</a></section>
+			</footer>
+		</section>
+	</section>
+
+	<script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-31916607-1']);
+		_gaq.push(['_setDomainName', 'guzalexander.com']);
+		_gaq.push(['_trackPageview']);
+
+		(function () {
+            var ga = document.createElement('script');ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+</body>
+
+</html>

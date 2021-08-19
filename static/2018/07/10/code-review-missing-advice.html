@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/static/css/style.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/pygments.css" type="text/css" />
+	<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Missing Code Review Advice | Alexander Guz’s blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Missing Code Review Advice" />
+<meta name="author" content="Alexander Guz" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Can we make code reviews better?" />
+<meta property="og:description" content="Can we make code reviews better?" />
+<link rel="canonical" href="https://guzalexander.com/2018/07/10/code-review-missing-advice.html" />
+<meta property="og:url" content="https://guzalexander.com/2018/07/10/code-review-missing-advice.html" />
+<meta property="og:site_name" content="Alexander Guz’s blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-07-10T14:54:00+02:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Missing Code Review Advice" />
+<meta name="twitter:site" content="@kalimatas" />
+<meta name="twitter:creator" content="@Alexander Guz" />
+<script type="application/ld+json">
+{"headline":"Missing Code Review Advice","dateModified":"2018-07-10T14:54:00+02:00","datePublished":"2018-07-10T14:54:00+02:00","url":"https://guzalexander.com/2018/07/10/code-review-missing-advice.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://guzalexander.com/2018/07/10/code-review-missing-advice.html"},"author":{"@type":"Person","name":"Alexander Guz"},"description":"Can we make code reviews better?","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+
+	<section class="container">
+		<nav class="menu">
+			<ul>
+				<li><a class="nav-link fancy-hover" href="/"><span>Home</span></a></li>
+				<li><a class="nav-link fancy-hover" href="/archive/"><span>Archive</span></a></li>
+				<li><a class="nav-link fancy-hover" href="/about/"><span>About</span></a></li>
+			</ul>
+			<ul>
+				<li>
+					<a class="nav-link fancy-hover" href="https://twitter.com/kalimatas" target="_blank" >
+						<span>
+							<img alt="Twitter" width="18" height="18" title="Twitter" src="/static/img/twitter_new.svg" />
+						</span>
+					</a>
+				</li>
+				<li>
+					<a class="nav-link fancy-hover" href="https://github.com/kalimatas" target="_blank">
+						<span>
+							<img alt="GitHub" width="18" height="18" title="GitHub" src="/static/img/github_new.svg" />
+						</span>
+					</a>
+				</li>
+				<li>
+					<a class="nav-link fancy-hover" href="https://linkedin.com/in/kalimatas" target="_blank" >
+						<span>
+							<img alt="LinkedIn" width="18" height="18" title="LinkedIn" src="/static/img/linkedin_new.svg" />
+						</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+
+		<section class="main-wrapper">
+			<section class="main">
+				<article>
+	
+	<h1><span>Missing Code Review Advice</span></h1>
+	<section class="post-meta">
+		
+		<time>July 10, 2018</time> • <span class="reading-time" title="Estimated read time">
+  
+  
+    1 min read
+  
+</span>
+
+	</section>
+	
+	<section class="description">
+		Can we make code reviews better?
+	</section>
+	
+	<section id="article-content">
+		<p>We all know that code reviews are important and have a lot of value. There is plenty of “best practices”
+articles telling you how you should do a code review, when, at which pace, on which Moon cycle, which SMARTass
+criterias to prepare, etc. <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup><sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup></p>
+
+<p>I believe they miss one piece of advice.</p>
+
+<p>There are two types of changes you as a code reviewer can propose to do: the ones that involve some huge
+effort, and the ones that do not. The examples of the former are architectural changes, missing functionality,
+wrong interpretation of requirements, etc. Among the latter are code style issues, typos, redundant comments,
+missing type hints, obvious small bugs, etc.</p>
+
+<p>Whenever you see these small issues, instead of writing a comment to fix it,
+<strong>just switch to the branch, fix it yourself and push to the repository</strong>.</p>
+
+<p>This approach has several benefits. First, you save a lot of time for both of you: the developer who submitted
+a merge request does not need to be distracted by another notification, and you do not need to re-check the
+change later in the next round.</p>
+
+<p>Second, it reduces the amount of those ping-pong code review rounds.</p>
+
+<p>Third, you immediately feel responsibility for this code, which is good, because in the end it is <strong>not</strong>
+someone else’s code - it is <strong>your</strong> code also. You may be the one to fix a bug in it next week.</p>
+
+<h2 id="notes">Notes</h2>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p><a href="https://medium.com/palantir/code-review-best-practices-19e02780015f">Code Review Best Practices</a> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p><a href="https://smartbear.com/learn/code-review/best-practices-for-peer-code-review/">These 10 tips will guide you toward effective peer code review</a> <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+	</section>
+	<section id="share-page">
+	<span>Share this page on</span>
+	<a href="https://twitter.com/intent/tweet?text=Missing Code Review Advice&url=https://guzalexander.com/2018/07/10/code-review-missing-advice.html&via=&related=" rel="nofollow" target="_blank" title="Share on Twitter">Twitter</a> or
+	<a href="https://www.reddit.com/submit?url=https://guzalexander.com/2018/07/10/code-review-missing-advice.html&title=Missing Code Review Advice" rel="nofollow" target="_blank" title="Share on Reddit">Reddit</a>
+</section>
+
+</article>
+
+
+			</section>
+
+			<footer class="main-footer">
+				<section class="copyright">&copy; Copyright 2021 by Alexander Guz • <a target="_blank" href="/feed.xml">RSS</a></section>
+				<section>Built with <a target="_blank" href="https://jekyllrb.com/">Jekyll</a></section>
+			</footer>
+		</section>
+	</section>
+
+	<script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-31916607-1']);
+		_gaq.push(['_setDomainName', 'guzalexander.com']);
+		_gaq.push(['_trackPageview']);
+
+		(function () {
+            var ga = document.createElement('script');ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/static/css/style.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/pygments.css" type="text/css" />
+	<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Building a Slack Command with Go | Alexander Guz’s blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Building a Slack Command with Go" />
+<meta name="author" content="Alexander Guz" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A step by step tutorial on how to create a Slack command with Go and deploy it to Heroku." />
+<meta property="og:description" content="A step by step tutorial on how to create a Slack command with Go and deploy it to Heroku." />
+<link rel="canonical" href="https://guzalexander.com/2017/09/15/cowsay-slack-command.html" />
+<meta property="og:url" content="https://guzalexander.com/2017/09/15/cowsay-slack-command.html" />
+<meta property="og:site_name" content="Alexander Guz’s blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-09-15T17:06:00+02:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Building a Slack Command with Go" />
+<meta name="twitter:site" content="@kalimatas" />
+<meta name="twitter:creator" content="@Alexander Guz" />
+<script type="application/ld+json">
+{"headline":"Building a Slack Command with Go","dateModified":"2017-09-15T17:06:00+02:00","datePublished":"2017-09-15T17:06:00+02:00","url":"https://guzalexander.com/2017/09/15/cowsay-slack-command.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://guzalexander.com/2017/09/15/cowsay-slack-command.html"},"author":{"@type":"Person","name":"Alexander Guz"},"description":"A step by step tutorial on how to create a Slack command with Go and deploy it to Heroku.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+
+	<section class="container">
+		<nav class="menu">
+			<ul>
+				<li><a class="nav-link fancy-hover" href="/"><span>Home</span></a></li>
+				<li><a class="nav-link fancy-hover" href="/archive/"><span>Archive</span></a></li>
+				<li><a class="nav-link fancy-hover" href="/about/"><span>About</span></a></li>
+			</ul>
+			<ul>
+				<li>
+					<a class="nav-link fancy-hover" href="https://twitter.com/kalimatas" target="_blank" >
+						<span>
+							<img alt="Twitter" width="18" height="18" title="Twitter" src="/static/img/twitter_new.svg" />
+						</span>
+					</a>
+				</li>
+				<li>
+					<a class="nav-link fancy-hover" href="https://github.com/kalimatas" target="_blank">
+						<span>
+							<img alt="GitHub" width="18" height="18" title="GitHub" src="/static/img/github_new.svg" />
+						</span>
+					</a>
+				</li>
+				<li>
+					<a class="nav-link fancy-hover" href="https://linkedin.com/in/kalimatas" target="_blank" >
+						<span>
+							<img alt="LinkedIn" width="18" height="18" title="LinkedIn" src="/static/img/linkedin_new.svg" />
+						</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+
+		<section class="main-wrapper">
+			<section class="main">
+				<article>
+	
+	<h1><span>Building a Slack Command with Go</span></h1>
+	<section class="post-meta">
+		
+		<time>September 15, 2017</time> • <span class="reading-time" title="Estimated read time">
+  
+  
+    15 mins read
+  
+</span>
+
+	</section>
+	
+	<section class="description">
+		A step by step tutorial on how to create a Slack command with Go and deploy it to Heroku.
+	</section>
+	
+	<section id="article-content">
+		<p>This post is a step by step tutorial on how to build a simple Slack command with Go.</p>
+
+<ol>
+  <li><a href="#intro">So, what are we going to build?</a></li>
+  <li><a href="#overview">Anatomy of a Slack command</a></li>
+  <li><a href="#local-dev">Local development with ngrok</a></li>
+  <li><a href="#slack-app">Slack application and command</a></li>
+  <li><a href="#code">Source code overview</a></li>
+  <li><a href="#docker">Running the app with Docker</a></li>
+  <li><a href="#heroku">Deploying the app to Heroku</a></li>
+</ol>
+
+<h2 id="-so-what-are-we-going-to-build"><a name="intro"></a> So, what are we going to build?</h2>
+
+<p>By the end of the tutorial, we’ll have <code class="language-plaintext highlighter-rouge">cowsay &lt;message&gt;</code> command, that formats the message in the same way as it’s Linux counterpart. It actually uses the Linux’s utility to do the job, so it basically just a wrapper with HTTP interface. The final result will look like that:</p>
+
+<div class="img-wrapper">
+	<figure>
+		
+			<img src="/static/img/posts/cowsay_final_result.png" alt="" />
+		
+	</figure>
+</div>
+
+<h2 id="-anatomy-of-a-slack-command"><a name="overview"></a> Anatomy of a Slack command</h2>
+
+<p>Before going into the implementation, let’s have a look at how Slack commands work, what we need to implement, and how all the parts will communicate with each other.</p>
+
+<div class="img-wrapper">
+	<figure>
+		
+			<img src="/static/img/posts/slack_command_anatomy.png" alt="" />
+		
+	</figure>
+</div>
+
+<p>I know, I know. My drawing skills are awesome. But back to the diagram. Nothing fancy here:</p>
+<ol>
+  <li>A Slack client sends a command, in our case <code class="language-plaintext highlighter-rouge">/cowsay Some text here</code>.</li>
+  <li>Slack servers accept the command and do their magic. We care only that they then prepare a request in a defined format and send it to our application server.</li>
+  <li>This is where we come into play - we basically need to write the application server, that will process requests from Slack servers.</li>
+  <li>And respond back to Slack servers.</li>
+  <li>Slack servers proxy our response from the application server back to the client, which…</li>
+  <li>… displays the result to the user.</li>
+</ol>
+
+<h2 id="-local-development-with-ngrok"><a name="local-dev"></a> Local development with ngrok</h2>
+
+<p>As you can see from the diagram above, in order for our command to operate, Slack needs to send a HTTP request to some endpoint, which means that our application should be available on the Internet. This is not a problem once the application is deployed somewhere. But during the development phase we need our local instance be available for Slack. This can be done with <a href="https://ngrok.com">ngrok</a>. It lets you expose a local server to the Internet. Once started, it will provide you with a publicly available URL of your local server.</p>
+
+<p>So, <a href="https://ngrok.com/download">download and install</a> ngrok first. Then run it:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>ngrok http 8080</code></pre></figure>
+
+<p>Here we tell ngrok, that our server is running on port <code class="language-plaintext highlighter-rouge">8080</code> (not yet actually, but it will). If everything is OK, you’ll see a similar output:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">ngrok by @inconshreveable                                 <span class="o">(</span>Ctrl+C to quit<span class="o">)</span>
+
+Session Status                online
+Version                       2.2.8
+Region                        United States <span class="o">(</span>us<span class="o">)</span>
+Web Interface                 http://127.0.0.1:4040
+Forwarding                    http://502a662f.ngrok.io -&gt; localhost:8080
+Forwarding                    https://502a662f.ngrok.io -&gt; localhost:8080
+
+Connections                   ttl     opn     rt1     rt5     p50     p90
+                              1       0       0.00    0.00    0.42    0.42
+
+HTTP Requests
+<span class="nt">-------------</span></code></pre></figure>
+
+<p>Pay attention to the URL, <code class="language-plaintext highlighter-rouge">https://502a662f.ngrok.io</code>, in <code class="language-plaintext highlighter-rouge">Forwarding</code> section: we’ll need to specify it in our Slack command configuration interface later.</p>
+
+<p>Also, this URL is temporary, meaning that if you stop ngrok now (or close a terminal window, for example), on the next start you’ll get another URL. So, leave a terminal window with ngrok open for the duration of the tutorial.</p>
+
+<h2 id="-slack-application-and-command"><a name="slack-app"></a> Slack application and command</h2>
+
+<p>It’s time to do some clicky-clicky thingy: we need to create in Slack a workspace, an application, and a command. Go to <a href="https://slack.com/create">create</a> page and follow the instruction to register and create a new workspace.</p>
+
+<p>After you’re done, go to <a href="https://api.slack.com/apps">the list of your applications</a> and hit <code class="language-plaintext highlighter-rouge">Create New App</code>. There you have to specify your app name (doesn’t really matter) and select, which development workspace this app should be created in. <del>Choose wisely!</del> Choose your newly created workspace. For me it looks like this:</p>
+
+<div class="img-wrapper">
+	<figure>
+		
+			<img src="/static/img/posts/create_a_slack_app.png" alt="" />
+		
+	</figure>
+</div>
+
+<p>Now go to the application settings. Here you can configure all aspects of the application, for example, change icon under <code class="language-plaintext highlighter-rouge">Display information</code>. For us, the most interested part now is under <code class="language-plaintext highlighter-rouge">App Credentials</code>, where you can find a <code class="language-plaintext highlighter-rouge">Verification Token</code>:</p>
+
+<div class="img-wrapper">
+	<figure>
+		
+			<img src="/static/img/posts/app_credentials.png" alt="" />
+		
+	</figure>
+</div>
+
+<p>This token is used to verify, that HTTP requests to our server are actually coming from Slack. We’ll use it later in our source code.</p>
+
+<p>The final step in Slack administration interface is to create a slash command. While you’re in the application setting, hit the <code class="language-plaintext highlighter-rouge">Slash Commands</code> in the left menu and then <code class="language-plaintext highlighter-rouge">Create New Command</code>. Here is what we need to enter:</p>
+
+<div class="img-wrapper">
+	<figure>
+		
+			<img src="/static/img/posts/create_slash_command.png" alt="" />
+		
+	</figure>
+</div>
+
+<p>Pay attention here to the <code class="language-plaintext highlighter-rouge">Request URL</code>: this is the URL provided us by ngrok from <a href="#local-dev">Local development with ngrok</a> step.</p>
+
+<h2 id="-source-code-overview"><a name="code"></a> Source code overview</h2>
+
+<p>At last. It’s time for source code. In essence, our application is just a wrapper around <code class="language-plaintext highlighter-rouge">cowsay</code> utility with HTTP interface. It accepts POST requests and returns formatted text back. Full source code can be found in <a href="https://github.com/kalimatas/slack-cowbot">the GitHub repository</a>.</p>
+
+<p>Let’s review the startup procedure:</p>
+
+<figure class="highlight"><pre><code class="language-go" data-lang="go"><span class="k">var</span> <span class="p">(</span>
+	<span class="n">port</span>  <span class="kt">string</span> <span class="o">=</span> <span class="s">"80"</span>
+	<span class="n">token</span> <span class="kt">string</span>
+<span class="p">)</span>
+
+<span class="k">func</span> <span class="n">init</span><span class="p">()</span> <span class="p">{</span>
+	<span class="n">token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">Getenv</span><span class="p">(</span><span class="s">"COWSAY_TOKEN"</span><span class="p">)</span>
+	<span class="k">if</span> <span class="s">""</span> <span class="o">==</span> <span class="n">token</span> <span class="p">{</span>
+		<span class="nb">panic</span><span class="p">(</span><span class="s">"COWSAY_TOKEN is not set!"</span><span class="p">)</span>
+	<span class="p">}</span>
+
+	<span class="k">if</span> <span class="s">""</span> <span class="o">!=</span> <span class="n">os</span><span class="o">.</span><span class="n">Getenv</span><span class="p">(</span><span class="s">"PORT"</span><span class="p">)</span> <span class="p">{</span>
+		<span class="n">port</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">Getenv</span><span class="p">(</span><span class="s">"PORT"</span><span class="p">)</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="n">http</span><span class="o">.</span><span class="n">HandleFunc</span><span class="p">(</span><span class="s">"/"</span><span class="p">,</span> <span class="n">cowHandler</span><span class="p">)</span>
+	<span class="n">log</span><span class="o">.</span><span class="n">Fatalln</span><span class="p">(</span><span class="n">http</span><span class="o">.</span><span class="n">ListenAndServe</span><span class="p">(</span><span class="s">":"</span><span class="o">+</span><span class="n">port</span><span class="p">,</span> <span class="no">nil</span><span class="p">))</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>By default, the server will listen on port 80, but it can be changed by setting the <code class="language-plaintext highlighter-rouge">PORT</code> environment variable. The name of the variable is not random - this is a <a href="https://devcenter.heroku.com/articles/container-registry-and-runtime#dockerfile-commands-and-runtime">requirement</a> from Heroku. The <code class="language-plaintext highlighter-rouge">COWSAY_TOKEN</code> must be set. This is a <code class="language-plaintext highlighter-rouge">Verification Token</code> from the <a href="#slack-app">Slack application and command</a> step. It’s a secret value, that’s why we don’t put it to any configuration file. The alternative would be to pass it as an argument, but keeping secrets in environmental variables is a <a href="https://12factor.net/config">common practice</a>.</p>
+
+<p>Now, let’s have a look at the <code class="language-plaintext highlighter-rouge">cowHandler</code> function:</p>
+
+<figure class="highlight"><pre><code class="language-go" data-lang="go"><span class="k">func</span> <span class="n">cowHandler</span><span class="p">(</span><span class="n">w</span> <span class="n">http</span><span class="o">.</span><span class="n">ResponseWriter</span><span class="p">,</span> <span class="n">r</span> <span class="o">*</span><span class="n">http</span><span class="o">.</span><span class="n">Request</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">Method</span> <span class="o">!=</span> <span class="s">"POST"</span> <span class="p">{</span>
+		<span class="n">http</span><span class="o">.</span><span class="n">Error</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">http</span><span class="o">.</span><span class="n">StatusText</span><span class="p">(</span><span class="n">http</span><span class="o">.</span><span class="n">StatusMethodNotAllowed</span><span class="p">),</span> <span class="n">http</span><span class="o">.</span><span class="n">StatusMethodNotAllowed</span><span class="p">)</span>
+		<span class="k">return</span>
+	<span class="p">}</span>
+
+	<span class="k">if</span> <span class="n">token</span> <span class="o">!=</span> <span class="n">r</span><span class="o">.</span><span class="n">FormValue</span><span class="p">(</span><span class="s">"token"</span><span class="p">)</span> <span class="p">{</span>
+		<span class="n">http</span><span class="o">.</span><span class="n">Error</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">http</span><span class="o">.</span><span class="n">StatusText</span><span class="p">(</span><span class="n">http</span><span class="o">.</span><span class="n">StatusUnauthorized</span><span class="p">),</span> <span class="n">http</span><span class="o">.</span><span class="n">StatusUnauthorized</span><span class="p">)</span>
+		<span class="k">return</span>
+	<span class="p">}</span>
+
+	<span class="n">text</span> <span class="o">:=</span> <span class="n">strings</span><span class="o">.</span><span class="n">Replace</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">FormValue</span><span class="p">(</span><span class="s">"text"</span><span class="p">),</span> <span class="s">"</span><span class="se">\r</span><span class="s">"</span><span class="p">,</span> <span class="s">""</span><span class="p">,</span> <span class="o">-</span><span class="m">1</span><span class="p">)</span>
+	<span class="n">balloonWithCow</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">sc</span><span class="o">.</span><span class="n">Cowsay</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+		<span class="n">log</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+		<span class="n">http</span><span class="o">.</span><span class="n">Error</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">http</span><span class="o">.</span><span class="n">StatusText</span><span class="p">(</span><span class="n">http</span><span class="o">.</span><span class="n">StatusInternalServerError</span><span class="p">),</span> <span class="n">http</span><span class="o">.</span><span class="n">StatusInternalServerError</span><span class="p">)</span>
+		<span class="k">return</span>
+	<span class="p">}</span>
+
+	<span class="n">jsonResp</span><span class="p">,</span> <span class="n">_</span> <span class="o">:=</span> <span class="n">json</span><span class="o">.</span><span class="n">Marshal</span><span class="p">(</span><span class="k">struct</span> <span class="p">{</span>
+		<span class="n">Type</span> <span class="kt">string</span> <span class="s">`json:"response_type"`</span>
+		<span class="n">Text</span> <span class="kt">string</span> <span class="s">`json:"text"`</span>
+	<span class="p">}{</span>
+		<span class="n">Type</span><span class="o">:</span> <span class="s">"in_channel"</span><span class="p">,</span>
+		<span class="n">Text</span><span class="o">:</span> <span class="n">fmt</span><span class="o">.</span><span class="n">Sprintf</span><span class="p">(</span><span class="s">"```%s```"</span><span class="p">,</span> <span class="n">balloonWithCow</span><span class="p">),</span>
+	<span class="p">})</span>
+
+	<span class="n">w</span><span class="o">.</span><span class="n">Header</span><span class="p">()</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="s">"Content-Type"</span><span class="p">,</span> <span class="s">"application/json"</span><span class="p">)</span>
+	<span class="n">fmt</span><span class="o">.</span><span class="n">Fprintf</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="kt">string</span><span class="p">(</span><span class="n">jsonResp</span><span class="p">))</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Here is what’s going on:</p>
+
+<ol>
+  <li>We allow only POST requests. Everything else will result in 405 HTTP error.</li>
+  <li>We validate that requests come from Slack by checking the <code class="language-plaintext highlighter-rouge">token</code>. It must be equal to what we set in <code class="language-plaintext highlighter-rouge">COWSAY_TOKEN</code>.</li>
+  <li>The main job is done by <code class="language-plaintext highlighter-rouge">sc.Cowsay(text)</code>: it wraps the text from the request with <code class="language-plaintext highlighter-rouge">cowsay</code> utility. We’ll get to it later.</li>
+  <li>We prepare the response and return it as a JSON string. The response object in our case has two keys: <code class="language-plaintext highlighter-rouge">response_type</code> and <code class="language-plaintext highlighter-rouge">text</code>. The <code class="language-plaintext highlighter-rouge">text</code> is, well, the response text. The <code class="language-plaintext highlighter-rouge">response_type: "in_channel"</code> tells a Slack client to show the response from the command to everyone in the channel. Otherwise, only the one who issued the command would see the response (it’s called <em>Ephemeral</em> response). Read more about it <a href="https://api.slack.com/slash-commands#responding_to_a_command">here</a>.</li>
+</ol>
+
+<p>Now let’s see how <code class="language-plaintext highlighter-rouge">sc.Cowsay(text)</code> works:</p>
+
+<figure class="highlight"><pre><code class="language-go" data-lang="go"><span class="k">func</span> <span class="n">Cowsay</span><span class="p">(</span><span class="n">text</span> <span class="kt">string</span><span class="p">)</span> <span class="p">(</span><span class="kt">string</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+	<span class="n">cmd</span> <span class="o">:=</span> <span class="n">exec</span><span class="o">.</span><span class="n">Command</span><span class="p">(</span><span class="s">"/usr/games/cowsay"</span><span class="p">,</span> <span class="s">"-n"</span><span class="p">)</span>
+	<span class="n">stdin</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">cmd</span><span class="o">.</span><span class="n">StdinPipe</span><span class="p">()</span>
+	<span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="s">""</span><span class="p">,</span> <span class="n">err</span>
+	<span class="p">}</span>
+
+	<span class="n">io</span><span class="o">.</span><span class="n">WriteString</span><span class="p">(</span><span class="n">stdin</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+	<span class="n">stdin</span><span class="o">.</span><span class="n">Close</span><span class="p">()</span>
+
+	<span class="n">out</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">cmd</span><span class="o">.</span><span class="n">CombinedOutput</span><span class="p">()</span>
+	<span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="s">""</span><span class="p">,</span> <span class="n">err</span>
+	<span class="p">}</span>
+
+	<span class="k">return</span> <span class="kt">string</span><span class="p">(</span><span class="n">out</span><span class="p">),</span> <span class="no">nil</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>It just executes <code class="language-plaintext highlighter-rouge">cowsay</code> and passes the text (the message we entered in the Slack client) to its standard input, and returns the formatted text back. Notice that we specify the full path to the executable <code class="language-plaintext highlighter-rouge">/usr/games/cowsay</code>. It we wanted to run this locally, we would need to make sure, that this binary existed under this path, but it’s hard to distribute our program then across computers, because the <code class="language-plaintext highlighter-rouge">cowsay</code> binary must be under the same full path. This is exactly why we’re going to distribute our application as a Docker container, where can provide predictable and fully reproducible environment.</p>
+
+<h2 id="-running-the-app-with-docker"><a name="docker"></a> Running the app with Docker</h2>
+
+<p>If you’re not familiar with Docker, then I suggest to read first <a href="https://docs.docker.com/get-started/">an introduction article</a> - here I’m not going into the internals. So, the Dockerfile:</p>
+
+<figure class="highlight"><pre><code class="language-docker" data-lang="docker"><span class="k">FROM</span><span class="s"> golang:1.9</span>
+
+<span class="k">RUN </span>apt-get update <span class="o">&amp;&amp;</span> apt-get <span class="nb">install</span> <span class="nt">-y</span> cowsay
+
+<span class="k">ADD</span><span class="s"> . /go/src/github.com/kalimatas/slack-cowbot</span>
+
+<span class="k">RUN </span>go <span class="nb">install </span>github.com/kalimatas/slack-cowbot/cmd/cowbot
+
+<span class="k">CMD</span><span class="s"> ["/go/bin/cowbot"]</span></code></pre></figure>
+
+<p>Here we:</p>
+<ol>
+  <li>Install <code class="language-plaintext highlighter-rouge">cowsay</code>. It will then be under <code class="language-plaintext highlighter-rouge">/usr/games/cowsay</code>.</li>
+  <li>Copy the source from the current directory to <code class="language-plaintext highlighter-rouge">/go/src/github.com/kalimatas/slack-cowbot</code>.</li>
+  <li>Install the binary to <code class="language-plaintext highlighter-rouge">/go/bin/cowbot</code>.</li>
+  <li>Tell the Docker to use this binary (our server) as a command to start the container.</li>
+</ol>
+
+<p>To build the image execute this command in the source directory of our application. Keep in mind that you’ll need to use another namespace, not <code class="language-plaintext highlighter-rouge">kalimatas</code>, because it’s mine :)</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>docker build <span class="nt">-t</span> kalimatas/cowbot <span class="nb">.</span>
+// ... some Docker output</code></pre></figure>
+
+<p>Now we have our image with the <code class="language-plaintext highlighter-rouge">latest</code> tag, and we can finally run the application locally:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>docker run <span class="nt">-it</span> <span class="nt">--rm</span> <span class="nt">--name</span> cowbot <span class="nt">-p</span> 8080:80 <span class="nt">-e</span> <span class="nv">COWSAY_TOKEN</span><span class="o">=</span>&lt;your_verification_token&gt; kalimatas/cowbot:latest</code></pre></figure>
+
+<p>A few things to pay attention to:</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">-p 8080:80</code> tells Docker to proxy the port <code class="language-plaintext highlighter-rouge">80</code>, which is the default for our application, to <code class="language-plaintext highlighter-rouge">8080</code> of the local machine. You can use a different port locally, but make sure, that this is the same port you specify when run <code class="language-plaintext highlighter-rouge">ngrok http 8080</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">-e COWSAY_TOKEN=&lt;your_verification_token&gt;</code> sets the environment variable that will be read by our application later with <code class="language-plaintext highlighter-rouge">token = os.Getenv("COWSAY_TOKEN")</code>.</li>
+</ol>
+
+<p>Now the application is running and available on our local machine on port <code class="language-plaintext highlighter-rouge">8080</code>. Let’s validate:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>curl <span class="nt">-XPOST</span> https://502a662f.ngrok.io <span class="nt">-d</span> <span class="s1">'token=&lt;your_verification_token&gt;&amp;text=Hello, cow!'</span>
+<span class="o">{</span><span class="s2">"response_type"</span>:<span class="s2">"in_channel"</span>,<span class="s2">"text"</span>:<span class="s2">"</span><span class="sb">```</span> _____________<span class="se">\n\u</span>003c Hello, cow! <span class="se">\u</span>003e<span class="se">\n</span> <span class="nt">-------------</span><span class="se">\n</span>        <span class="se">\\</span>   ^__^<span class="se">\n</span>         <span class="se">\\</span>  <span class="o">(</span>oo<span class="o">)</span><span class="se">\\</span>_______<span class="se">\n</span>            <span class="o">(</span>__<span class="o">)</span><span class="se">\\</span>       <span class="o">)</span><span class="se">\\</span>/<span class="se">\\\n</span>                <span class="o">||</span><span class="nt">----w</span> |<span class="se">\n</span>                <span class="o">||</span>     <span class="o">||</span><span class="se">\n</span><span class="sb">```</span><span class="s2">"</span><span class="o">}</span></code></pre></figure>
+
+<p>Notice the URL we used here - <code class="language-plaintext highlighter-rouge">https://502a662f.ngrok.io</code>. This is the publicly available URL provided to us by ngrok. It means, that our application is actually available on the Internet, and you can even test the command in your Slack client!</p>
+
+<p>But the magic will work only until we stop ngrok, or docker container, or just shutdown the computer. We need our application to be permanently available, that’s why we’re going to deploy it to Heroku.</p>
+
+<h2 id="-deploying-the-app-to-heroku"><a name="heroku"></a> Deploying the app to Heroku</h2>
+
+<p>First, <a href="https://signup.heroku.com/dc">create</a> a free account, then <a href="https://devcenter.heroku.com/articles/heroku-cli">install</a> Heroku CLI utility.</p>
+
+<p>Log in with your account:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>heroku login
+Enter your Heroku credentials:
+Email: kalimatas@gmail.com
+Password: <span class="k">*********************</span>
+Logged <span class="k">in </span>as kalimatas@gmail.com</code></pre></figure>
+
+<p>Now we’re ready to continue. <a href="https://devcenter.heroku.com/articles/container-registry-and-runtime">Here</a> you can find the documentation on how to deploy Docker-based app to Heroku. The plan is: create a Heroku app, tag our Docker image and push it to Container Registry.</p>
+
+<p>Log in to Container Registry:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>heroku container:login
+WARNING! Using <span class="nt">--password</span> via the CLI is insecure. Use <span class="nt">--password-stdin</span><span class="nb">.</span>
+Login Succeeded</code></pre></figure>
+
+<p>Create a new application:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>heroku apps:create
+Creating app... <span class="k">done</span>, ⬢ guarded-island-34484
+https://guarded-island-34484.herokuapp.com/ | https://git.heroku.com/guarded-island-34484.git</code></pre></figure>
+
+<p>Here <code class="language-plaintext highlighter-rouge">guarded-island-34484</code> is a randomly chosen name, and <code class="language-plaintext highlighter-rouge">https://guarded-island-34484.herokuapp.com/</code> is the URL where the application will be available. As you might have guessed, we’ll need to update our Slack command settings, in particular <code class="language-plaintext highlighter-rouge">Request URL</code>, and set this URL. Check <a href="#slack-app">Slack application and command</a> section for details.</p>
+
+<p>Now we need to push our image to Heroku’s Container Registry. Heroku requires some spefic tag format, i.e. <code class="language-plaintext highlighter-rouge">registry.heroku.com/&lt;app&gt;/&lt;process-type&gt;</code>, where <code class="language-plaintext highlighter-rouge">&lt;app&gt;</code> is the application name, and <code class="language-plaintext highlighter-rouge">&lt;process-type&gt;</code> is, in our case, <code class="language-plaintext highlighter-rouge">web</code>. For more information check out <a href="https://devcenter.heroku.com/articles/procfile#process-types-as-templates">this page</a>.</p>
+
+<p>Let’s tag and push our already existing <code class="language-plaintext highlighter-rouge">kalimatas/cowbot:latest</code> (it is probably different for you, if you have chosen another namespace) Docker image with a required tag:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>docker tag kalimatas/cowbot registry.heroku.com/guarded-island-34484/web
+<span class="nv">$ </span>docker push registry.heroku.com/guarded-island-34484/web
+The push refers to a repository <span class="o">[</span>registry.heroku.com/guarded-island-34484/web]
+// ... other Docker output</code></pre></figure>
+
+<p>If you open the application’s URL now in browser, it will not work:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>heroku open <span class="nt">-a</span> guarded-island-34484</code></pre></figure>
+
+<p>This will open a new browser tab and you will see an error message <code class="language-plaintext highlighter-rouge">Application error</code> there. It happens, because our application requires the <code class="language-plaintext highlighter-rouge">COWSAY_TOKEN</code> environment variable to be set: check the <code class="language-plaintext highlighter-rouge">init()</code> function from <a href="#code">Source code overview</a> section. And we can prove it by reading the application’s logs:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>heroku logs <span class="nt">-a</span> guarded-island-34484 | <span class="nb">grep </span>COWSAY_TOKEN
+2017-09-15T06:56:37.477909+00:00 app[web.1]: panic: COWSAY_TOKEN is not <span class="nb">set</span><span class="o">!</span>
+// ... other output</code></pre></figure>
+
+<p>Obviously, we don’t have in Heroku by default - we need to set it. This is done via application’s configuration:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>heroku config:set <span class="nt">-a</span> guarded-island-34484 <span class="nv">COWSAY_TOKEN</span><span class="o">=</span>&lt;your_verification_token&gt;
+Setting COWSAY_TOKEN and restarting ⬢ guarded-island-34484... <span class="k">done</span>, v4
+COWSAY_TOKEN: &lt;your_verification_token&gt;</code></pre></figure>
+
+<p>If you open the application now with <code class="language-plaintext highlighter-rouge">heroku open -a guarded-island-34484</code>, you will see another error <code class="language-plaintext highlighter-rouge">Method Not Allowed</code>, but this is expected, because we only allow POST requests.</p>
+
+<p>Let’s validate, that the app is available by its public URL:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">curl <span class="nt">-XPOST</span> https://guarded-island-34484.herokuapp.com/ <span class="nt">-d</span> <span class="s1">'token=&lt;your_verification_token&gt;&amp;text=Hello, cow!'</span>
+<span class="o">{</span><span class="s2">"response_type"</span>:<span class="s2">"in_channel"</span>,<span class="s2">"text"</span>:<span class="s2">"</span><span class="sb">```</span> _____________<span class="se">\n\u</span>003c Hello, cow! <span class="se">\u</span>003e<span class="se">\n</span> <span class="nt">-------------</span><span class="se">\n</span>        <span class="se">\\</span>   ^__^<span class="se">\n</span>         <span class="se">\\</span>  <span class="o">(</span>oo<span class="o">)</span><span class="se">\\</span>_______<span class="se">\n</span>            <span class="o">(</span>__<span class="o">)</span><span class="se">\\</span>       <span class="o">)</span><span class="se">\\</span>/<span class="se">\\\n</span>                <span class="o">||</span><span class="nt">----w</span> |<span class="se">\n</span>                <span class="o">||</span>     <span class="o">||</span><span class="se">\n</span><span class="sb">```</span><span class="s2">"</span><span class="o">}</span></code></pre></figure>
+
+<p>Amazing! Now <strong>don’t forget</strong> to set this URL in <code class="language-plaintext highlighter-rouge">Request URL</code> in your slash command’s settings in Slack admin interface!</p>
+
+<p>Finally, open a Slack client, log in with your account, and start typing the name of the command - you will see a hint:</p>
+
+<div class="img-wrapper">
+	<figure>
+		
+			<img src="/static/img/posts/cowsay_slack_hint.png" alt="" />
+		
+	</figure>
+</div>
+
+<p>And the result:</p>
+
+<div class="img-wrapper">
+	<figure>
+		
+			<img src="/static/img/posts/cowsay_final_result.png" alt="" />
+		
+	</figure>
+</div>
+
+
+	</section>
+	<section id="share-page">
+	<span>Share this page on</span>
+	<a href="https://twitter.com/intent/tweet?text=Building a Slack Command with Go&url=https://guzalexander.com/2017/09/15/cowsay-slack-command.html&via=&related=" rel="nofollow" target="_blank" title="Share on Twitter">Twitter</a> or
+	<a href="https://www.reddit.com/submit?url=https://guzalexander.com/2017/09/15/cowsay-slack-command.html&title=Building a Slack Command with Go" rel="nofollow" target="_blank" title="Share on Reddit">Reddit</a>
+</section>
+
+</article>
+
+
+			</section>
+
+			<footer class="main-footer">
+				<section class="copyright">&copy; Copyright 2021 by Alexander Guz • <a target="_blank" href="/feed.xml">RSS</a></section>
+				<section>Built with <a target="_blank" href="https://jekyllrb.com/">Jekyll</a></section>
+			</footer>
+		</section>
+	</section>
+
+	<script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-31916607-1']);
+		_gaq.push(['_setDomainName', 'guzalexander.com']);
+		_gaq.push(['_trackPageview']);
+
+		(function () {
+            var ga = document.createElement('script');ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+</body>
+
+</html>

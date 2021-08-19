@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/static/css/style.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/pygments.css" type="text/css" />
+	<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Split File in Chunks without Breaking the Sequence with GAWK | Alexander Guz’s blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Split File in Chunks without Breaking the Sequence with GAWK" />
+<meta name="author" content="Alexander Guz" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Today I came up with a task for myself, mostly for fun, but it also has a useful application. I have a dump of some MySQL table in csv, it’s ~500K records. The data will be loaded into Neo4j, though I want to speed up the load and be able to parallelize the process. Of course, I can make it in any programming language, but I decided to practice with Linux shell commands and to use gawk." />
+<meta property="og:description" content="Today I came up with a task for myself, mostly for fun, but it also has a useful application. I have a dump of some MySQL table in csv, it’s ~500K records. The data will be loaded into Neo4j, though I want to speed up the load and be able to parallelize the process. Of course, I can make it in any programming language, but I decided to practice with Linux shell commands and to use gawk." />
+<link rel="canonical" href="https://guzalexander.com/2016/04/26/split-file-with-awk-not-break-sequence.html" />
+<meta property="og:url" content="https://guzalexander.com/2016/04/26/split-file-with-awk-not-break-sequence.html" />
+<meta property="og:site_name" content="Alexander Guz’s blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-04-26T23:01:00+02:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Split File in Chunks without Breaking the Sequence with GAWK" />
+<meta name="twitter:site" content="@kalimatas" />
+<meta name="twitter:creator" content="@Alexander Guz" />
+<script type="application/ld+json">
+{"headline":"Split File in Chunks without Breaking the Sequence with GAWK","dateModified":"2016-04-26T23:01:00+02:00","datePublished":"2016-04-26T23:01:00+02:00","url":"https://guzalexander.com/2016/04/26/split-file-with-awk-not-break-sequence.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://guzalexander.com/2016/04/26/split-file-with-awk-not-break-sequence.html"},"author":{"@type":"Person","name":"Alexander Guz"},"description":"Today I came up with a task for myself, mostly for fun, but it also has a useful application. I have a dump of some MySQL table in csv, it’s ~500K records. The data will be loaded into Neo4j, though I want to speed up the load and be able to parallelize the process. Of course, I can make it in any programming language, but I decided to practice with Linux shell commands and to use gawk.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+
+	<section class="container">
+		<nav class="menu">
+			<ul>
+				<li><a class="nav-link fancy-hover" href="/"><span>Home</span></a></li>
+				<li><a class="nav-link fancy-hover" href="/archive/"><span>Archive</span></a></li>
+				<li><a class="nav-link fancy-hover" href="/about/"><span>About</span></a></li>
+			</ul>
+			<ul>
+				<li>
+					<a class="nav-link fancy-hover" href="https://twitter.com/kalimatas" target="_blank" >
+						<span>
+							<img alt="Twitter" width="18" height="18" title="Twitter" src="/static/img/twitter_new.svg" />
+						</span>
+					</a>
+				</li>
+				<li>
+					<a class="nav-link fancy-hover" href="https://github.com/kalimatas" target="_blank">
+						<span>
+							<img alt="GitHub" width="18" height="18" title="GitHub" src="/static/img/github_new.svg" />
+						</span>
+					</a>
+				</li>
+				<li>
+					<a class="nav-link fancy-hover" href="https://linkedin.com/in/kalimatas" target="_blank" >
+						<span>
+							<img alt="LinkedIn" width="18" height="18" title="LinkedIn" src="/static/img/linkedin_new.svg" />
+						</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+
+		<section class="main-wrapper">
+			<section class="main">
+				<article>
+	
+	<h1><span>Split File in Chunks without Breaking the Sequence with GAWK</span></h1>
+	<section class="post-meta">
+		
+		<time>April 26, 2016</time> • <span class="reading-time" title="Estimated read time">
+  
+  
+    4 mins read
+  
+</span>
+
+	</section>
+	
+	<section id="article-content">
+		<p>Today I came up with a task for myself, mostly for fun, but it also has a useful application. I have a dump of some MySQL table in <code class="language-plaintext highlighter-rouge">csv</code>, it’s ~500K records. The data will be loaded into Neo4j, though I want to speed up the load and be able to parallelize the process. Of course, I can make it in any programming language, but I decided to practice with Linux shell commands and to use <a href="https://www.gnu.org/software/gawk/">gawk</a>.</p>
+
+<p>The example structure of the file is like this:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">Title,Id,Sequence
+<span class="s2">"eee"</span>,3,2
+<span class="s2">"hhh"</span>,1,2
+<span class="s2">"bbb"</span>,2,1
+<span class="s2">"hhh"</span>,1,3
+<span class="s2">"kkk"</span>,4,1
+<span class="s2">"hhh"</span>,1,1
+<span class="s2">"bbb"</span>,2,2
+<span class="s2">"eee"</span>,3,1
+<span class="s2">"eee"</span>,3,3</code></pre></figure>
+
+<p>There is a requirement: records with the same <code class="language-plaintext highlighter-rouge">Id</code> column must be processed together. Basically, that means, they cannot be in different chunks, even if we exceed the limit of a chunk a little, say, have 1003 records instead of 1000.</p>
+
+<p>The first step would be to sort the file by <code class="language-plaintext highlighter-rouge">Id</code> column. But it will be even easier for my loader to work, if the file is sorted secondary by the <code class="language-plaintext highlighter-rouge">Sequence</code> column. To simplify, let’s get rid of the header too.</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nv">$&gt;</span> <span class="nb">awk</span> <span class="s1">'BEGIN { getline; } { print $0 }'</span> test.csv <span class="o">&gt;</span> test_without_header.csv</code></pre></figure>
+
+<p>A little explanation. AWK’s BEGIN statement is executed only once - before processing the first line. Here <code class="language-plaintext highlighter-rouge">getline;</code> will just read the header line, but it won’t be printed, so the real output with <code class="language-plaintext highlighter-rouge">print $0</code> will start actually from the second line. Now sort:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nv">$&gt;</span> <span class="nb">sort</span> <span class="nt">-k2n</span> <span class="nt">-k3n</span> <span class="nt">--field-separator</span> <span class="s2">","</span> test_without_header.csv <span class="o">&gt;</span> test_sorted.csv</code></pre></figure>
+
+<p><code class="language-plaintext highlighter-rouge">-k2</code> means sort by the column number <code class="language-plaintext highlighter-rouge">2</code> (initial is <code class="language-plaintext highlighter-rouge">1</code>), <code class="language-plaintext highlighter-rouge">n</code> means numerical sort. The same for the secondary sort. In MySQL the same result will be achieved with <code class="language-plaintext highlighter-rouge">ORDER BY Id ASC, Sequence ASC</code>. <code class="language-plaintext highlighter-rouge">--field-separator</code> is necessary, because the default separator is a space, but we have a comma. Now we have this:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="s2">"hhh"</span>,1,1
+<span class="s2">"hhh"</span>,1,2
+<span class="s2">"hhh"</span>,1,3
+<span class="s2">"bbb"</span>,2,1
+<span class="s2">"bbb"</span>,2,2
+<span class="s2">"eee"</span>,3,1
+<span class="s2">"eee"</span>,3,2
+<span class="s2">"eee"</span>,3,3
+<span class="s2">"kkk"</span>,4,1</code></pre></figure>
+
+<p>Let’s assume we want to split the file into chunks by 2 records. The natural approach with <a href="http://pubs.opengroup.org/onlinepubs/9699919799/utilities/split.html">split</a> doesn’t work, because it breaks the sequence. Indeed, if we do like:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nv">$&gt;</span> <span class="nb">split</span> <span class="nt">-l</span> 2 test_sorted.csv
+<span class="nv">$&gt;</span> <span class="nb">cat </span>xaa
+<span class="s2">"hhh"</span>,1,1
+<span class="s2">"hhh"</span>,1,2
+<span class="nv">$&gt;</span> <span class="nb">cat </span>xab
+<span class="s2">"hhh"</span>,1,3
+<span class="s2">"bbb"</span>,2,1</code></pre></figure>
+
+<p>The third record with <code class="language-plaintext highlighter-rouge">Id = 1</code> got to the second chunk, but should be in the first. To solve the problem I played around with AWK a little and wrote the following script:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="c"># split.awk</span>
+<span class="c">#</span>
+<span class="c"># Initialise values.</span>
+<span class="c"># This block will be executed only once before</span>
+<span class="c"># processing the first line.</span>
+BEGIN <span class="o">{</span>
+    records_limit_per_chunk <span class="o">=</span> 2
+    records_currently_in_chunk <span class="o">=</span> 0
+    chunk_number <span class="o">=</span> 1
+    prev <span class="o">=</span> <span class="nt">-1</span>
+    chunk_limit_is_hit <span class="o">=</span> 0
+<span class="o">}</span>
+
+<span class="c"># Process current line</span>
+<span class="o">{</span>
+    <span class="c"># If the limit is hit and we are not</span>
+    <span class="c"># in the middle of a sequence.</span>
+    <span class="c"># $2 means the second column, which is Id in our case.</span>
+    <span class="k">if</span> <span class="o">(</span>chunk_limit_is_hit <span class="o">&amp;&amp;</span> prev <span class="o">!=</span> <span class="nv">$2</span><span class="o">)</span> <span class="o">{</span>
+        chunk_number++
+        records_currently_in_chunk <span class="o">=</span> 0
+        chunk_limit_is_hit <span class="o">=</span> 0
+    <span class="o">}</span>
+
+    <span class="c"># Write line to a chunk</span>
+    file <span class="o">=</span> <span class="s2">"chunk_"</span> chunk_number
+    print <span class="nv">$0</span> <span class="o">&gt;</span> file
+    ++records_currently_in_chunk
+
+    <span class="c"># Test the limit</span>
+    <span class="k">if</span> <span class="o">(</span>records_currently_in_chunk <span class="o">&gt;=</span> records_limit_per_chunk<span class="o">)</span> <span class="o">{</span>
+        chunk_limit_is_hit <span class="o">=</span> 1
+    <span class="o">}</span>
+
+    <span class="c"># Save previous Id value</span>
+    prev <span class="o">=</span> <span class="nv">$2</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>Run the script:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nv">$&gt;</span> gawk <span class="nt">-F</span>, <span class="nt">-f</span> split.awk test_sorted.csv</code></pre></figure>
+
+<p>Pay attention to <code class="language-plaintext highlighter-rouge">-F,</code> argument, which says to use <code class="language-plaintext highlighter-rouge">,</code> as a field separator. <code class="language-plaintext highlighter-rouge">-f split.awk</code> means to load script from file. For our input file it creates 4 chunks with the following content:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nv">$&gt;</span> <span class="nb">cat </span>chunk_1
+<span class="s2">"hhh"</span>,1,1
+<span class="s2">"hhh"</span>,1,2
+<span class="s2">"hhh"</span>,1,3
+<span class="nv">$&gt;</span> <span class="nb">cat </span>chunk_2
+<span class="s2">"bbb"</span>,2,1
+<span class="s2">"bbb"</span>,2,2
+<span class="nv">$&gt;</span> <span class="nb">cat </span>chunk_3
+<span class="s2">"eee"</span>,3,1
+<span class="s2">"eee"</span>,3,2
+<span class="s2">"eee"</span>,3,3
+<span class="nv">$&gt;</span> <span class="nb">cat </span>chunk_4
+<span class="s2">"kkk"</span>,4,1</code></pre></figure>
+
+<p>Exactly what I need: the records with ids <code class="language-plaintext highlighter-rouge">1</code> and <code class="language-plaintext highlighter-rouge">3</code> are in the same chunk, though its size is larger than the limit of 2 records.</p>
+
+	</section>
+	<section id="share-page">
+	<span>Share this page on</span>
+	<a href="https://twitter.com/intent/tweet?text=Split File in Chunks without Breaking the Sequence with GAWK&url=https://guzalexander.com/2016/04/26/split-file-with-awk-not-break-sequence.html&via=&related=" rel="nofollow" target="_blank" title="Share on Twitter">Twitter</a> or
+	<a href="https://www.reddit.com/submit?url=https://guzalexander.com/2016/04/26/split-file-with-awk-not-break-sequence.html&title=Split File in Chunks without Breaking the Sequence with GAWK" rel="nofollow" target="_blank" title="Share on Reddit">Reddit</a>
+</section>
+
+</article>
+
+
+			</section>
+
+			<footer class="main-footer">
+				<section class="copyright">&copy; Copyright 2021 by Alexander Guz • <a target="_blank" href="/feed.xml">RSS</a></section>
+				<section>Built with <a target="_blank" href="https://jekyllrb.com/">Jekyll</a></section>
+			</footer>
+		</section>
+	</section>
+
+	<script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-31916607-1']);
+		_gaq.push(['_setDomainName', 'guzalexander.com']);
+		_gaq.push(['_trackPageview']);
+
+		(function () {
+            var ga = document.createElement('script');ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+</body>
+
+</html>
