@@ -2,6 +2,7 @@
 layout: post
 title: "Java Geospatial In-memory Index"
 description: "Copmarison of several in-memory geospatial indices for Java."
+thumbnail: "static/img/posts/geo_circle.jpg"
 date: 2018-11-04 19:12
 ---
 

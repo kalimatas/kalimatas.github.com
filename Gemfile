@@ -14,4 +14,6 @@ gem 'jekyll-feed'
 
 gem 'jekyll_picture_tag', '~> 2.0'
 
+gem 'jekyll-responsive-image'
+
 gem 'jekyll-seo-tag'

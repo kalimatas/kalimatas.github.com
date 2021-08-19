@@ -8,7 +8,9 @@ description: Alexander Guz's personal blog. A place to share thoughts.
 <div class="entry">
 	{% if post.thumbnail %}
 		<div class="thumbnail">
-			{% picture "{{ post.thumbnail }}" 3:2 entropy mobile: "{{ post.thumbnail }}" 16:9 entropy --link {{ post.url }} %}
+			{% responsive_image_block %}
+				path: {{ post.thumbnail }}
+			{% endresponsive_image_block %}
 		</div>
 	{% endif %}
 	<div class="entry-content">

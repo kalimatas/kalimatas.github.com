@@ -16,5 +16,5 @@ pages:
     artifacts:
         paths:
             - public
-    rules:
-        -   if: '$CI_COMMIT_BRANCH == "master"'
+#    rules:
+#        -   if: '$CI_COMMIT_BRANCH == "master"'
