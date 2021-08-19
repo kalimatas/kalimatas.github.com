@@ -11,3 +11,7 @@ gem "jekyll-paginate", "~> 1.1"
 gem "jekyll", "~> 4.1"
 
 gem 'jekyll-feed'
+
+gem 'jekyll-responsive-image'
+
+gem 'jekyll-seo-tag'
