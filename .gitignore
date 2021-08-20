@@ -2,3 +2,4 @@ _site/
 .idea/
 .vscode/
 .jekyll-cache/
+publish.sh
