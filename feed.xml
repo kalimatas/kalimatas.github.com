@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="https://guzalexander.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://guzalexander.com/" rel="alternate" type="text/html" /><updated>2021-09-22T13:46:56+02:00</updated><id>https://guzalexander.com/feed.xml</id><title type="html">Alexander Guz’s blog</title><author><name>Alexander Guz</name></author><entry><title type="html">RemNote — Great Note-Taking App Nobody is Talking About</title><link href="https://guzalexander.com/2020/09/11/notes-apps-fatigue.html" rel="alternate" type="text/html" title="RemNote — Great Note-Taking App Nobody is Talking About" /><published>2020-09-11T21:30:00+02:00</published><updated>2020-09-11T21:30:00+02:00</updated><id>https://guzalexander.com/2020/09/11/notes-apps-fatigue</id><content type="html" xml:base="https://guzalexander.com/2020/09/11/notes-apps-fatigue.html">&lt;p&gt;I have been using Evernote for quite some years now as my go-to application for 
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="https://guzalexander.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://guzalexander.com/" rel="alternate" type="text/html" /><updated>2022-01-26T22:08:00+01:00</updated><id>https://guzalexander.com/feed.xml</id><title type="html">Alexander Guz’s blog</title><author><name>Alexander Guz</name></author><entry><title type="html">RemNote — Great Note-Taking App Nobody is Talking About</title><link href="https://guzalexander.com/2020/09/11/notes-apps-fatigue.html" rel="alternate" type="text/html" title="RemNote — Great Note-Taking App Nobody is Talking About" /><published>2020-09-11T21:30:00+02:00</published><updated>2020-09-11T21:30:00+02:00</updated><id>https://guzalexander.com/2020/09/11/notes-apps-fatigue</id><content type="html" xml:base="https://guzalexander.com/2020/09/11/notes-apps-fatigue.html">&lt;p&gt;I have been using Evernote for quite some years now as my go-to application for 
 notes, bookmarks, sketches, etc. Indeed, it is not a bad choice: clients for all platforms
 you can imagine, synchronization between devices, good enough editor with formatting,
 typical hierarchical notes organization into notebooks and sub-notebooks, tags, sharing
@@ -267,7 +267,10 @@ digits from both pieces.&lt;/p&gt;
 
 &lt;p&gt;This video has a nice visual explanation of the outsize date mechanism.&lt;/p&gt;
 
-&lt;iframe class=&quot;video-player&quot; height=&quot;340&quot; src=&quot;https://www.youtube-nocookie.com/embed/YouzFPSD77o&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;div class=&quot;embed-responsive embed-responsive-16by9&quot;&gt;
+  &lt;iframe class=&quot;embed-responsive-item&quot; width=&quot;700&quot; height=&quot;415&quot; src=&quot;https://www.youtube.com/embed/YouzFPSD77o&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;
+  &lt;/iframe&gt;
+&lt;/div&gt;
 
 &lt;p&gt;So why does my wife’s watch show 32? Well, it actually goes up to 39! It seems that in some “cheap” implementations of
 the oversize date mechanism, the tens cross and the unit disc do not have proper synchronization. After the tens cross
@@ -349,7 +352,7 @@ but protects you from many possible type errors.&lt;/p&gt;
 
 &lt;p&gt;Covariance allows subtypes or, in other words, more specific types to be used 
 instead of a defined function argument or return type. Let’s start with return 
-types. &lt;strong&gt;Return types are covariant&lt;/strong&gt;. Let’s look at these two functions:&lt;/p&gt;
+types. &lt;em&gt;Return types are covariant&lt;/em&gt;. Let’s look at these two functions:&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func produce(): MotorVehicle &amp;gt; fn overrideProduce(): Bus
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -381,7 +384,7 @@ So function arguments are not covariant. And here we approach contravariance.&lt
 &lt;h2 id=&quot;contravariance&quot;&gt;Contravariance&lt;/h2&gt;
 
 &lt;p&gt;Contravariance allows supertypes or, in other words, more abstract types to be 
-used instead of a defined type. &lt;strong&gt;Function arguments are contravariant&lt;/strong&gt;. 
+used instead of a defined type. &lt;em&gt;Function arguments are contravariant&lt;/em&gt;. 
 Let’s have a look at the example.&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func drive(MotorVehicle) &amp;gt; func overrideDrive(Vehicle)
@@ -446,38 +449,7 @@ instance of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;M
 
 &lt;p&gt;&lt;a href=&quot;https://www.goodreads.com/book/show/7155145-linchpin?ac=1&amp;amp;from_search=true&amp;amp;qid=pCQag4hXGg&amp;amp;rank=2&quot;&gt;Linchpin: Are You Indispensable?&lt;/a&gt; by Seth Godin&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://www.goodreads.com/book/show/25091671-software-architecture-patterns?ac=1&amp;amp;from_search=true&amp;amp;qid=lit3pk38L9&amp;amp;rank=1&quot;&gt;Software Architecture Patterns&lt;/a&gt; by Mark Richards&lt;/p&gt;</content><author><name>Alexander Guz</name></author><summary type="html">2019 is the first year I decided to track books I have read on Goodreads. Here is the list. Though, it might be not complete, because I got this idea only in December and struggled to recall all the books.</summary></entry><entry><title type="html">The Origin of the Word “maintenance”</title><link href="https://guzalexander.com/2019/10/21/maintenance-ahhhh.html" rel="alternate" type="text/html" title="The Origin of the Word “maintenance”" /><published>2019-10-21T21:13:00+02:00</published><updated>2019-10-21T21:13:00+02:00</updated><id>https://guzalexander.com/2019/10/21/maintenance-ahhhh</id><content type="html" xml:base="https://guzalexander.com/2019/10/21/maintenance-ahhhh.html">&lt;p&gt;Oh boy, here I go mistyping the word “maintenance” again! For some reason, this is the most complicated English word for me in terms of spelling. It comes out as “maintanence”, or “maintenence”, or some other variant, but almost never the correct one. Even seemingly complicated to write words like “daughter” are no-brainer for me. But whenever I am done typing “maint”, I already know I am doomed for failure.&lt;/p&gt;
-
-&lt;p&gt;So I decided to look up who came up with this word and when. Just, you know, to thank this person for all the pain and suffering I have endured. Though, something tells me, that would be pretty hard without a time machine. And indeed, the origins of the word “maintenance” go as far as to the 12th century.&lt;/p&gt;
-
-&lt;p class=&quot;center center&quot;&gt;mid-14c., maintenaunce &lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;p class=&quot;center&quot;&gt;⬇︎&lt;/p&gt;
-&lt;p class=&quot;center&quot;&gt;from Old French maintenance “upkeep; shelter, protection”&lt;/p&gt;
-&lt;p class=&quot;center&quot;&gt;⬇︎&lt;/p&gt;
-&lt;p class=&quot;center&quot;&gt;from maintenir “to keep, sustain; persevere in”&lt;/p&gt;
-&lt;p class=&quot;center&quot;&gt;⬇︎︎︎&lt;/p&gt;
-&lt;p class=&quot;center&quot;&gt;c. 1300, maintenen, “to support, uphold, aid;” &lt;sup id=&quot;fnref:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;p class=&quot;center&quot;&gt;⬇︎&lt;/p&gt;
-&lt;p class=&quot;center&quot;&gt;from Anglo-French meintenir (Old French maintenir, 12c.) “persevere in, practice continually”&lt;/p&gt;
-&lt;p class=&quot;center&quot;&gt;⬇︎︎︎︎︎︎︎︎︎︎︎︎︎︎︎︎︎︎︎︎&lt;/p&gt;
-&lt;p class=&quot;center&quot;&gt;from Latin manu tenere “hold in the hand,”︎︎&lt;/p&gt;
-&lt;p class=&quot;center&quot;&gt;︎︎︎︎︎︎︎︎︎⬇︎&lt;/p&gt;
-&lt;p class=&quot;center&quot;&gt;from manu, ablative of manus “hand” + tenere “to hold”&lt;/p&gt;
-
-&lt;p&gt;Now I know. I hope it helps me to finally remember how to spell it.&lt;/p&gt;
-
-&lt;h2 id=&quot;notes&quot;&gt;Notes&lt;/h2&gt;
-
-&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://www.etymonline.com/word/maintenance&quot;&gt;maintenance (n.)&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:2&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://www.etymonline.com/word/maintain&quot;&gt;maintain (v.)&lt;/a&gt; &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Alexander Guz</name></author><summary type="html">Oh boy, here I go mistyping the word “maintenance” again! For some reason, this is the most complicated English word for me in terms of spelling. It comes out as “maintanence”, or “maintenence”, or some other variant, but almost never the correct one. Even seemingly complicated to write words like “daughter” are no-brainer for me. But whenever I am done typing “maint”, I already know I am doomed for failure.</summary></entry><entry><title type="html">Java Geospatial In-memory Index</title><link href="https://guzalexander.com/2018/11/04/java-in-memory-geospatial.html" rel="alternate" type="text/html" title="Java Geospatial In-memory Index" /><published>2018-11-04T19:12:00+01:00</published><updated>2018-11-04T19:12:00+01:00</updated><id>https://guzalexander.com/2018/11/04/java-in-memory-geospatial</id><content type="html" xml:base="https://guzalexander.com/2018/11/04/java-in-memory-geospatial.html">&lt;p&gt;One of my recent tasks included searching for objects within some radius based on their geo coordinates. 
+&lt;p&gt;&lt;a href=&quot;https://www.goodreads.com/book/show/25091671-software-architecture-patterns?ac=1&amp;amp;from_search=true&amp;amp;qid=lit3pk38L9&amp;amp;rank=1&quot;&gt;Software Architecture Patterns&lt;/a&gt; by Mark Richards&lt;/p&gt;</content><author><name>Alexander Guz</name></author><summary type="html">2019 is the first year I decided to track books I have read on Goodreads. Here is the list. Though, it might be not complete, because I got this idea only in December and struggled to recall all the books.</summary></entry><entry><title type="html">Java Geospatial In-memory Index</title><link href="https://guzalexander.com/2018/11/04/java-in-memory-geospatial.html" rel="alternate" type="text/html" title="Java Geospatial In-memory Index" /><published>2018-11-04T19:12:00+01:00</published><updated>2018-11-04T19:12:00+01:00</updated><id>https://guzalexander.com/2018/11/04/java-in-memory-geospatial</id><content type="html" xml:base="https://guzalexander.com/2018/11/04/java-in-memory-geospatial.html">&lt;p&gt;One of my recent tasks included searching for objects within some radius based on their geo coordinates. 
 For various reasons — not relevant to this topic — I wanted to make this work completely in 
 memory. 
 That’s why solutions like &lt;a href=&quot;https://dev.mysql.com/doc/refman/8.0/en/spatial-types.html&quot;&gt;MySQL Spatial Data Types&lt;/a&gt;, &lt;a href=&quot;https://postgis.net/&quot;&gt;PostGIS&lt;/a&gt; or &lt;a href=&quot;https://www.elastic.co/guide/en/elasticsearch/reference/current/geo-queries.html&quot;&gt;Elasticsearch Geo Queries&lt;/a&gt; were not considered. The project is in Java. I started to look for possible options, and, though, I found a few, they all lacked an easy to follow documentation (if at all) and examples.&lt;/p&gt;
@@ -797,4 +769,38 @@ allow us to use Logback even with other dependencies that rely on other logging 
       &lt;p&gt;&lt;a href=&quot;https://www.slf4j.org/legacy.html&quot;&gt;Bridging legacy APIs with Logback&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Alexander Guz</name></author><summary type="html">Recently I had some issues with Elasticsearch - all requests were failing with “bad request” error. In order to understand what was wrong with these requests, I, natually, decided to enable debug/trace logging of for ES REST Client, but couldn’t find out how. Partially, because the official documentation on this topic could have been more informative, to be honest. But mainly, because my project uses Logback and the REST Client package uses Apache Commons Logging.</summary></entry></feed>
+&lt;/div&gt;</content><author><name>Alexander Guz</name></author><summary type="html">Recently I had some issues with Elasticsearch - all requests were failing with “bad request” error. In order to understand what was wrong with these requests, I, natually, decided to enable debug/trace logging of for ES REST Client, but couldn’t find out how. Partially, because the official documentation on this topic could have been more informative, to be honest. But mainly, because my project uses Logback and the REST Client package uses Apache Commons Logging.</summary></entry><entry><title type="html">Missing Code Review Advice</title><link href="https://guzalexander.com/2018/07/10/code-review-missing-advice.html" rel="alternate" type="text/html" title="Missing Code Review Advice" /><published>2018-07-10T14:54:00+02:00</published><updated>2018-07-10T14:54:00+02:00</updated><id>https://guzalexander.com/2018/07/10/code-review-missing-advice</id><content type="html" xml:base="https://guzalexander.com/2018/07/10/code-review-missing-advice.html">&lt;p&gt;We all know that code reviews are important and have a lot of value. There is plenty of “best practices”
+articles telling you how you should do a code review, when, at which pace, on which Moon cycle, which SMARTass
+criterias to prepare, etc. &lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;sup id=&quot;fnref:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;I believe they miss one piece of advice.&lt;/p&gt;
+
+&lt;p&gt;There are two types of changes you as a code reviewer can propose to do: the ones that involve some huge
+effort, and the ones that do not. The examples of the former are architectural changes, missing functionality,
+wrong interpretation of requirements, etc. Among the latter are code style issues, typos, redundant comments,
+missing type hints, obvious small bugs, etc.&lt;/p&gt;
+
+&lt;p&gt;Whenever you see these small issues, instead of writing a comment to fix it,
+&lt;em&gt;just switch to the branch, fix it yourself and push to the repository&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;This approach has several benefits. First, you save a lot of time for both of you: the developer who submitted
+a merge request does not need to be distracted by another notification, and you do not need to re-check the
+change later in the next round.&lt;/p&gt;
+
+&lt;p&gt;Second, it reduces the amount of those ping-pong code review rounds.&lt;/p&gt;
+
+&lt;p&gt;Third, you immediately feel responsibility for this code, which is good, because in the end it is &lt;em&gt;not&lt;/em&gt;
+someone else’s code - it is &lt;em&gt;your&lt;/em&gt; code also. You may be the one to fix a bug in it next week.&lt;/p&gt;
+
+&lt;h2 id=&quot;notes&quot;&gt;Notes&lt;/h2&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://medium.com/palantir/code-review-best-practices-19e02780015f&quot;&gt;Code Review Best Practices&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://smartbear.com/learn/code-review/best-practices-for-peer-code-review/&quot;&gt;These 10 tips will guide you toward effective peer code review&lt;/a&gt; &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Alexander Guz</name></author><summary type="html">We all know that code reviews are important and have a lot of value. There is plenty of “best practices” articles telling you how you should do a code review, when, at which pace, on which Moon cycle, which SMARTass criterias to prepare, etc. 12 Code Review Best Practices &amp;#8617; These 10 tips will guide you toward effective peer code review &amp;#8617;</summary></entry></feed>

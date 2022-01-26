@@ -4,7 +4,7 @@
  <title>Alexander Guz</title>
  <link href="https://guzalexander.com/atom.xml" rel="self"/>
  <link href="https://guzalexander.com/"/>
- <updated>2021-09-22T13:46:56+02:00</updated>
+ <updated>2022-01-26T22:08:00+01:00</updated>
  <id>https://guzalexander.com/</id>
  <author>
    <name>Alexander Guz</name>
@@ -326,7 +326,10 @@ digits from both pieces.&lt;/p&gt;
 
 &lt;p&gt;This video has a nice visual explanation of the outsize date mechanism.&lt;/p&gt;
 
-&lt;iframe class=&quot;video-player&quot; height=&quot;340&quot; src=&quot;https://www.youtube-nocookie.com/embed/YouzFPSD77o&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;div class=&quot;embed-responsive embed-responsive-16by9&quot;&gt;
+  &lt;iframe class=&quot;embed-responsive-item&quot; width=&quot;700&quot; height=&quot;415&quot; src=&quot;https://www.youtube.com/embed/YouzFPSD77o&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;
+  &lt;/iframe&gt;
+&lt;/div&gt;
 
 &lt;p&gt;So why does my wife’s watch show 32? Well, it actually goes up to 39! It seems that in some “cheap” implementations of
 the oversize date mechanism, the tens cross and the unit disc do not have proper synchronization. After the tens cross
@@ -417,7 +420,7 @@ but protects you from many possible type errors.&lt;/p&gt;
 
 &lt;p&gt;Covariance allows subtypes or, in other words, more specific types to be used 
 instead of a defined function argument or return type. Let’s start with return 
-types. &lt;strong&gt;Return types are covariant&lt;/strong&gt;. Let’s look at these two functions:&lt;/p&gt;
+types. &lt;em&gt;Return types are covariant&lt;/em&gt;. Let’s look at these two functions:&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func produce(): MotorVehicle &amp;gt; fn overrideProduce(): Bus
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -449,7 +452,7 @@ So function arguments are not covariant. And here we approach contravariance.&lt
 &lt;h2 id=&quot;contravariance&quot;&gt;Contravariance&lt;/h2&gt;
 
 &lt;p&gt;Contravariance allows supertypes or, in other words, more abstract types to be 
-used instead of a defined type. &lt;strong&gt;Function arguments are contravariant&lt;/strong&gt;. 
+used instead of a defined type. &lt;em&gt;Function arguments are contravariant&lt;/em&gt;. 
 Let’s have a look at the example.&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func drive(MotorVehicle) &amp;gt; func overrideDrive(Vehicle)
@@ -524,46 +527,6 @@ instance of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;M
 &lt;p&gt;&lt;a href=&quot;https://www.goodreads.com/book/show/7155145-linchpin?ac=1&amp;amp;from_search=true&amp;amp;qid=pCQag4hXGg&amp;amp;rank=2&quot;&gt;Linchpin: Are You Indispensable?&lt;/a&gt; by Seth Godin&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://www.goodreads.com/book/show/25091671-software-architecture-patterns?ac=1&amp;amp;from_search=true&amp;amp;qid=lit3pk38L9&amp;amp;rank=1&quot;&gt;Software Architecture Patterns&lt;/a&gt; by Mark Richards&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>The Origin of the Word "maintenance"</title>
-   <link href="https://guzalexander.com/2019/10/21/maintenance-ahhhh.html"/>
-   <updated>2019-10-21T21:13:00+02:00</updated>
-   <id>https://guzalexander.com/2019/10/21/maintenance-ahhhh</id>
-   <content type="html">&lt;p&gt;Oh boy, here I go mistyping the word “maintenance” again! For some reason, this is the most complicated English word for me in terms of spelling. It comes out as “maintanence”, or “maintenence”, or some other variant, but almost never the correct one. Even seemingly complicated to write words like “daughter” are no-brainer for me. But whenever I am done typing “maint”, I already know I am doomed for failure.&lt;/p&gt;
-
-&lt;p&gt;So I decided to look up who came up with this word and when. Just, you know, to thank this person for all the pain and suffering I have endured. Though, something tells me, that would be pretty hard without a time machine. And indeed, the origins of the word “maintenance” go as far as to the 12th century.&lt;/p&gt;
-
-&lt;p class=&quot;center center&quot;&gt;mid-14c., maintenaunce &lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;p class=&quot;center&quot;&gt;⬇︎&lt;/p&gt;
-&lt;p class=&quot;center&quot;&gt;from Old French maintenance “upkeep; shelter, protection”&lt;/p&gt;
-&lt;p class=&quot;center&quot;&gt;⬇︎&lt;/p&gt;
-&lt;p class=&quot;center&quot;&gt;from maintenir “to keep, sustain; persevere in”&lt;/p&gt;
-&lt;p class=&quot;center&quot;&gt;⬇︎︎︎&lt;/p&gt;
-&lt;p class=&quot;center&quot;&gt;c. 1300, maintenen, “to support, uphold, aid;” &lt;sup id=&quot;fnref:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;p class=&quot;center&quot;&gt;⬇︎&lt;/p&gt;
-&lt;p class=&quot;center&quot;&gt;from Anglo-French meintenir (Old French maintenir, 12c.) “persevere in, practice continually”&lt;/p&gt;
-&lt;p class=&quot;center&quot;&gt;⬇︎︎︎︎︎︎︎︎︎︎︎︎︎︎︎︎︎︎︎︎&lt;/p&gt;
-&lt;p class=&quot;center&quot;&gt;from Latin manu tenere “hold in the hand,”︎︎&lt;/p&gt;
-&lt;p class=&quot;center&quot;&gt;︎︎︎︎︎︎︎︎︎⬇︎&lt;/p&gt;
-&lt;p class=&quot;center&quot;&gt;from manu, ablative of manus “hand” + tenere “to hold”&lt;/p&gt;
-
-&lt;p&gt;Now I know. I hope it helps me to finally remember how to spell it.&lt;/p&gt;
-
-&lt;h2 id=&quot;notes&quot;&gt;Notes&lt;/h2&gt;
-
-&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://www.etymonline.com/word/maintenance&quot;&gt;maintenance (n.)&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:2&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://www.etymonline.com/word/maintain&quot;&gt;maintain (v.)&lt;/a&gt; &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;
 </content>
  </entry>
  
@@ -922,7 +885,7 @@ wrong interpretation of requirements, etc. Among the latter are code style issue
 missing type hints, obvious small bugs, etc.&lt;/p&gt;
 
 &lt;p&gt;Whenever you see these small issues, instead of writing a comment to fix it,
-&lt;strong&gt;just switch to the branch, fix it yourself and push to the repository&lt;/strong&gt;.&lt;/p&gt;
+&lt;em&gt;just switch to the branch, fix it yourself and push to the repository&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;This approach has several benefits. First, you save a lot of time for both of you: the developer who submitted
 a merge request does not need to be distracted by another notification, and you do not need to re-check the
@@ -930,8 +893,8 @@ change later in the next round.&lt;/p&gt;
 
 &lt;p&gt;Second, it reduces the amount of those ping-pong code review rounds.&lt;/p&gt;
 
-&lt;p&gt;Third, you immediately feel responsibility for this code, which is good, because in the end it is &lt;strong&gt;not&lt;/strong&gt;
-someone else’s code - it is &lt;strong&gt;your&lt;/strong&gt; code also. You may be the one to fix a bug in it next week.&lt;/p&gt;
+&lt;p&gt;Third, you immediately feel responsibility for this code, which is good, because in the end it is &lt;em&gt;not&lt;/em&gt;
+someone else’s code - it is &lt;em&gt;your&lt;/em&gt; code also. You may be the one to fix a bug in it next week.&lt;/p&gt;
 
 &lt;h2 id=&quot;notes&quot;&gt;Notes&lt;/h2&gt;
 
@@ -2441,7 +2404,7 @@ first 3&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
    <id>https://guzalexander.com/2013/05/24/my-first-hackathon</id>
    <content type="html">&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt; It is inspiring and motivating. And the butler is a killer.&lt;/p&gt;
 
-&lt;p&gt;Last week I received an email with an invitation to a hackathon which was going to happen on weekend. I didn’t know much about these events so far - in my head there were only scrappy pieces of information gathered from different blogs and news sites pell-mell with photos of crowds of programmers sitting in comparatively small rooms and coding, and coding, and coding… Well, of course I’d like to be there.&lt;/p&gt;
+&lt;p&gt;Last week I received an email with an invitation to a hackathon which was going to happen on weekend. I didn’t know much about these events so far — in my head there were only scrappy pieces of information gathered from different blogs and news sites pell-mell with photos of crowds of programmers sitting in comparatively small rooms and coding, and coding, and coding… Well, of course I’d like to be there.&lt;/p&gt;
 
 &lt;p&gt;Though there was a small problem: only 3 days left to the event and I had neither idea nor team. The chances of wining under such circumstances are slightly less than nothing. When I say “no idea” I don’t mean I did not have ideas at lot, on the contrary I had a whole bunch of ideas which (to be honest) I would never implement by myself.&lt;/p&gt;
 
@@ -2455,11 +2418,11 @@ first 3&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 	&lt;/figure&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Nevertheless, we were set to participate - if not with our project than as a part of other team. I should tell I felt myself quite uncomfortable going there without a prepared project. I thought we would look stupid among those cool guys with MacBooks discussing their great ideas while drinking coffee. I was pleasantly surprised I was wrong.&lt;/p&gt;
+&lt;p&gt;Nevertheless, we were set to participate — if not with our project than as a part of other team. I should tell I felt myself quite uncomfortable going there without a prepared project. I thought we would look stupid among those cool guys with MacBooks discussing their great ideas while drinking coffee. I was pleasantly surprised I was wrong.&lt;/p&gt;
 
-&lt;p&gt;Of course there were really prepared teams with thoroughly researched ideas, but about one-third of people were just like us - no concrete plan, no team, just a desire to be a part of an event like this. And it was great! People came there to talk with others, to share there points of views, to learn things and to get inspiration. Wow! I really enjoyed to be a part of that!&lt;/p&gt;
+&lt;p&gt;Of course there were really prepared teams with thoroughly researched ideas, but about one-third of people were just like us — no concrete plan, no team, just a desire to be a part of an event like this. And it was great! People came there to talk with others, to share there points of views, to learn things and to get inspiration. Wow! I really enjoyed to be a part of that!&lt;/p&gt;
 
-&lt;p&gt;What about our results? Well, we failed. No, it’s better say - we did not win, because despite the fact there was a first place price, people came not for that, they came for experience.&lt;/p&gt;
+&lt;p&gt;What about our results? Well, we failed. No, it’s better say — we did not win, because despite the fact there was a first place price, people came not for that, they came for experience.&lt;/p&gt;
 
 </content>
  </entry>
@@ -2734,11 +2697,11 @@ pinba.server &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 127.0.0.1:50002
   &lt;p&gt;Henry Ford&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;When someone mentions addiction there is always something negative about it. But I think not every kind of addiction deserve to be censured, moreover possessing some particular psychological addiction is almost necessary for a programmer. I’m talking about &lt;strong&gt;thinking&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;When someone mentions addiction there is always something negative about it. But I think not every kind of addiction deserve to be censured, moreover possessing some particular psychological addiction is almost necessary for a programmer. I’m talking about &lt;em&gt;thinking&lt;/em&gt;.&lt;/p&gt;
 
-&lt;p&gt;Yes, it may sound strange because &lt;strong&gt;thinking&lt;/strong&gt; is the same part of out lives as, for example, breathing or eating. Though pay attention to the fact that almost in every programmer’s vacancy there is an item in requirements list “desire to learn new things, constant developing”, but no one mentions that you have to like to breathe or to eat. Or did I miss something?&lt;/p&gt;
+&lt;p&gt;Yes, it may sound strange because &lt;em&gt;thinking&lt;/em&gt; is the same part of out lives as, for example, breathing or eating. Though pay attention to the fact that almost in every programmer’s vacancy there is an item in requirements list “desire to learn new things, constant developing”, but no one mentions that you have to like to breathe or to eat. Or did I miss something?&lt;/p&gt;
 
-&lt;p&gt;This point (about desire) to my opinion is not necessary at all. Why not? Try to ask any programmer why he became “this weird silent guy”. May be he will tell you something like “I want a lot of money and a cool car”, but this is not surprising at all - we’re already considered to be a little strange, no need to make it worse and tell the truth. And the truth is simple: permanent process of thinking, solving difficult tasks, learning new things is the best remedy for boredom. We are addicted to &lt;strong&gt;thinking&lt;/strong&gt;. And I like it.&lt;/p&gt;
+&lt;p&gt;This point (about desire) to my opinion is not necessary at all. Why not? Try to ask any programmer why he became “this weird silent guy”. May be he will tell you something like “I want a lot of money and a cool car”, but this is not surprising at all - we’re already considered to be a little strange, no need to make it worse and tell the truth. And the truth is simple: permanent process of thinking, solving difficult tasks, learning new things is the best remedy for boredom. We are addicted to &lt;em&gt;thinking&lt;/em&gt;. And I like it.&lt;/p&gt;
 </content>
  </entry>
  
@@ -3042,21 +3005,6 @@ function drawCircle( can, x, y, radius, style) {
 init();
 &lt;/script&gt;
 
-</content>
- </entry>
- 
- <entry>
-   <title>Simple Notebook for Ideas</title>
-   <link href="https://guzalexander.com/2012/06/13/simple-notebook-for-ideas.html"/>
-   <updated>2012-06-13T13:00:00+02:00</updated>
-   <id>https://guzalexander.com/2012/06/13/simple-notebook-for-ideas</id>
-   <content type="html">&lt;p&gt;Sometimes I have an idea. Aha, that happens. Even if it’s not a very good idea I’m writing it down for future. There are a lot of variants to do this - from real paper and pencil to super-huge-cool-web-applications. I decided to reinvent the wheel and make my own.&lt;/p&gt;
-
-&lt;p&gt;Just a simple notebook for ideas. Runs of Google App Engine. You may use it :))&lt;/p&gt;
-
-&lt;p&gt;Wishes accepted.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://writedownyouridea.appspot.com&quot;&gt;http://writedownyouridea.appspot.com&lt;/a&gt;&lt;/p&gt;
 </content>
  </entry>
  
