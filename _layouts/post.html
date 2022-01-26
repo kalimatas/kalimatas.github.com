@@ -15,11 +15,6 @@ layout: default
 		{% assign words=content | number_of_words %}
 		<time>{{ page.date | date: "%B %-d, %Y" }}</time> • {% include read_time.html words=words %}
 	</section>
-	{% if page.description %}
-	<section class="description">
-		{{ page.description }}
-	</section>
-	{% endif %}
 	<section id="article-content">
 		{{ content }}
 	</section>

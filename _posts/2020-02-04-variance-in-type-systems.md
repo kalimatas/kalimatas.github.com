@@ -78,7 +78,7 @@ but protects you from many possible type errors.
 
 Covariance allows subtypes or, in other words, more specific types to be used 
 instead of a defined function argument or return type. Let's start with return 
-types. **Return types are covariant**. Let's look at these two functions:
+types. _Return types are covariant_. Let's look at these two functions:
 
 ```
 func produce(): MotorVehicle > fn overrideProduce(): Bus
@@ -113,7 +113,7 @@ So function arguments are not covariant. And here we approach contravariance.
 ## Contravariance
 
 Contravariance allows supertypes or, in other words, more abstract types to be 
-used instead of a defined type. **Function arguments are contravariant**. 
+used instead of a defined type. _Function arguments are contravariant_. 
 Let's have a look at the example.
 
 ```

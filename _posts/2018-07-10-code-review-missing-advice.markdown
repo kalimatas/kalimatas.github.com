@@ -16,7 +16,7 @@ wrong interpretation of requirements, etc. Among the latter are code style issue
 missing type hints, obvious small bugs, etc.
 
 Whenever you see these small issues, instead of writing a comment to fix it,
-**just switch to the branch, fix it yourself and push to the repository**.
+_just switch to the branch, fix it yourself and push to the repository_.
 
 This approach has several benefits. First, you save a lot of time for both of you: the developer who submitted
 a merge request does not need to be distracted by another notification, and you do not need to re-check the
@@ -24,8 +24,8 @@ change later in the next round.
 
 Second, it reduces the amount of those ping-pong code review rounds.
 
-Third, you immediately feel responsibility for this code, which is good, because in the end it is **not**
-someone else's code - it is **your** code also. You may be the one to fix a bug in it next week.
+Third, you immediately feel responsibility for this code, which is good, because in the end it is _not_
+someone else's code - it is _your_ code also. You may be the one to fix a bug in it next week.
 
 ## Notes
 
