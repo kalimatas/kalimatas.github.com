@@ -7,14 +7,14 @@
 	<link rel="stylesheet" href="/static/css/style.css" type="text/css" />
 	<link rel="stylesheet" href="/static/css/pygments.css" type="text/css" />
 	<link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFxYUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEREREREREREREREREREREQAAAAAAAAAAEREREREREREAAAAAAAAAABEREREREREREREREREREREAAAAAAAAAABEREREREREREREREREREREREREREREREQAAAAAAAAAAEREREREREREREREREREREREREREREREREREREREREREAAAAAAAAAAP//AAAAAAAA//8AAAAAAAAAAAAA//8AAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAAAAAAA" />
-	<!-- Begin Jekyll SEO tag v2.7.1 -->
+	<!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Tie-breaking Rounding | Alexander Guz’s blog</title>
-<meta name="generator" content="Jekyll v4.1.1" />
+<meta name="generator" content="Jekyll v4.3.1" />
 <meta property="og:title" content="Tie-breaking Rounding" />
 <meta name="author" content="Alexander Guz" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="So I was reading an article about differences between Python 2 and Python 3 1, and there was a statement: The key differences between Python 2.7.x and Python 3.x with examples &#8617;" />
-<meta property="og:description" content="So I was reading an article about differences between Python 2 and Python 3 1, and there was a statement: The key differences between Python 2.7.x and Python 3.x with examples &#8617;" />
+<meta name="description" content="So I was reading an article about differences between Python 2 and Python 3, and there was a statement: Python 3 adopted the now standard way of rounding decimals when it results in a tie (.5) at the last significant digits. Now, in Python 3, decimals are rounded to the nearest even number. At this point, I was like “WTF?!”. At school I was taught a simple rule: if x is exactly half-way between two integers - round to the largest absolute value, i.e. 13.5 becomes 14, and -13.5 becomes -14. No magic with even/odd numbers. It wasn’t even discussed, that there are might be different ways of rounding. But, as it often happens with school program, they didn’t tell us all the truth. There are actually six more or less normal ways and two not so normal, thus leaving us with eight (eight, Carl!) rules of rounding." />
+<meta property="og:description" content="So I was reading an article about differences between Python 2 and Python 3, and there was a statement: Python 3 adopted the now standard way of rounding decimals when it results in a tie (.5) at the last significant digits. Now, in Python 3, decimals are rounded to the nearest even number. At this point, I was like “WTF?!”. At school I was taught a simple rule: if x is exactly half-way between two integers - round to the largest absolute value, i.e. 13.5 becomes 14, and -13.5 becomes -14. No magic with even/odd numbers. It wasn’t even discussed, that there are might be different ways of rounding. But, as it often happens with school program, they didn’t tell us all the truth. There are actually six more or less normal ways and two not so normal, thus leaving us with eight (eight, Carl!) rules of rounding." />
 <link rel="canonical" href="https://guzalexander.com/2017/05/14/tie-breaking-rounding.html" />
 <meta property="og:url" content="https://guzalexander.com/2017/05/14/tie-breaking-rounding.html" />
 <meta property="og:site_name" content="Alexander Guz’s blog" />
@@ -25,7 +25,7 @@
 <meta name="twitter:site" content="@kalimatas" />
 <meta name="twitter:creator" content="@Alexander Guz" />
 <script type="application/ld+json">
-{"headline":"Tie-breaking Rounding","dateModified":"2017-05-14T16:14:00+02:00","url":"https://guzalexander.com/2017/05/14/tie-breaking-rounding.html","datePublished":"2017-05-14T16:14:00+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://guzalexander.com/2017/05/14/tie-breaking-rounding.html"},"author":{"@type":"Person","name":"Alexander Guz"},"description":"So I was reading an article about differences between Python 2 and Python 3 1, and there was a statement: The key differences between Python 2.7.x and Python 3.x with examples &#8617;","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Alexander Guz"},"dateModified":"2017-05-14T16:14:00+02:00","datePublished":"2017-05-14T16:14:00+02:00","description":"So I was reading an article about differences between Python 2 and Python 3, and there was a statement: Python 3 adopted the now standard way of rounding decimals when it results in a tie (.5) at the last significant digits. Now, in Python 3, decimals are rounded to the nearest even number. At this point, I was like “WTF?!”. At school I was taught a simple rule: if x is exactly half-way between two integers - round to the largest absolute value, i.e. 13.5 becomes 14, and -13.5 becomes -14. No magic with even/odd numbers. It wasn’t even discussed, that there are might be different ways of rounding. But, as it often happens with school program, they didn’t tell us all the truth. There are actually six more or less normal ways and two not so normal, thus leaving us with eight (eight, Carl!) rules of rounding.","headline":"Tie-breaking Rounding","mainEntityOfPage":{"@type":"WebPage","@id":"https://guzalexander.com/2017/05/14/tie-breaking-rounding.html"},"url":"https://guzalexander.com/2017/05/14/tie-breaking-rounding.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -33,54 +33,63 @@
 <body>
 
 	<section class="container">
-		<nav class="menu">
-			<ul>
-				<li><a class="nav-link fancy-hover" href="/"><span>Home</span></a></li>
-				<li><a class="nav-link fancy-hover" href="/archive/"><span>Archive</span></a></li>
-				<li><a class="nav-link fancy-hover" href="/about/"><span>About</span></a></li>
-			</ul>
-			<ul>
-				<li>
-					<a class="nav-link fancy-hover" href="https://twitter.com/kalimatas" target="_blank" >
-						<span>
-							<img alt="Twitter" width="18" height="18" title="Twitter" src="/static/img/twitter_new.svg" />
-						</span>
-					</a>
-				</li>
-				<li>
-					<a class="nav-link fancy-hover" href="https://github.com/kalimatas" target="_blank">
-						<span>
-							<img alt="GitHub" width="18" height="18" title="GitHub" src="/static/img/github_new.svg" />
-						</span>
-					</a>
-				</li>
-				<li>
-					<a class="nav-link fancy-hover" href="https://linkedin.com/in/kalimatas" target="_blank" >
-						<span>
-							<img alt="LinkedIn" width="18" height="18" title="LinkedIn" src="/static/img/linkedin_new.svg" />
-						</span>
-					</a>
-				</li>
-			</ul>
-		</nav>
+		<aside id="left-column">
+
+			<nav class="menu">
+				<h3><a href="/"><span>Alexander Guz</span></a></h3>
+
+				<h3><a href="/about">About</a></h3>
+				
+				<h3><a href="https://linkedin.com/in/kalimatas">LinkedIn</a></h3>
+
+				<!--
+				<div id="social-links">
+					<ul>
+						<li>
+							<a href="https://twitter.com/kalimatas" target="_blank" >
+								<span>
+									<img alt="Twitter" width="18" height="18" title="Twitter" src="/static/img/twitter_new.svg" />
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://github.com/kalimatas" target="_blank">
+								<span>
+									<img alt="GitHub" width="18" height="18" title="GitHub" src="/static/img/github_new.svg" />
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://linkedin.com/in/kalimatas" target="_blank" >
+								<span>
+									<img alt="LinkedIn" width="18" height="18" title="LinkedIn" src="/static/img/linkedin_new.svg" />
+								</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				-->
+
+				<h3><a href="/archive/">Archive</a></h3>
+				<!-- todo: links to years -->
+
+				<!-- <ul>
+					<li><a class="nav-link fancy-hover" href="/"><span>Home</span></a></li>
+					<li><a class="nav-link fancy-hover" href="/archive/"><span>Archive</span></a></li>
+					<li><a class="nav-link fancy-hover" href="/about/"><span>About</span></a></li>
+				</ul>
+				-->
+			</nav>
+
+		</aside>
 
 		<section class="main-wrapper">
 			<section class="main">
 				<article>
-	
 	<h1><span>Tie-breaking Rounding</span></h1>
-	<section class="post-meta">
-		
-		<time>May 14, 2017</time> • <span class="reading-time" title="Estimated read time">
-  
-  
-    4 mins read
-  
-</span>
-
-	</section>
+	<time class="post-date">May 14, 2017</time>
 	<section id="article-content">
-		<p>So I was reading an article about differences between Python 2 and Python 3 <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>, and there was a statement:</p>
+		<p>So I was reading an article about <a href="http://sebastianraschka.com/Articles/2014_python_2_3_key_diff.html#bankers-rounding">differences between Python 2 and Python 3</a>, and there was a statement:</p>
 
 <blockquote>
   <p>Python 3 adopted the now standard way of rounding decimals when it results in a tie (.5) at the last significant digits. Now, in Python 3, decimals are rounded to the nearest even number.</p>
@@ -92,7 +101,9 @@
 
 <p>There are actually six more or less normal ways and two not so normal, thus leaving us with eight (eight, Carl!) rules of rounding.</p>
 
-<p>These are the <em>normal</em> rules <sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>:</p>
+<!--more-->
+
+<p>These are the <em>normal</em> <a href="https://en.wikipedia.org/wiki/Rounding#Tie-breaking">rules</a>:</p>
 
 <ul>
   <li>Round half down (or towards negative infinity): 13.5 rounds to 13, -13.5 rounds to -14.</li>
@@ -136,30 +147,16 @@
 
 <span class="c1">// output: 13.5 -&gt; 14, 14.5 -&gt; 15, -14.5 -&gt; -14, -13.5 -&gt; -13</span></code></pre></figure>
 
-<p>Go 1.8 doesn’t have built-in round function at all <sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>, you have to choose from <a href="https://golang.
+<p>Go 1.8 doesn’t have built-in <a href="https://github.com/golang/go/issues/4594">round function</a> at all, you have to choose from <a href="https://golang.
 org/pkg/math/#Ceil">math.Ceil</a> or <a href="https://golang.org/pkg/math/#Floor">math.Floor</a> yourself.</p>
 
 <h2 id="conclusion">Conclusion</h2>
 
 <p>Well, beware of different rules in different programming languages!</p>
 
-<h2 id="notes">Notes</h2>
-
-<div class="footnotes" role="doc-endnotes">
-  <ol>
-    <li id="fn:1" role="doc-endnote">
-      <p><a href="http://sebastianraschka.com/Articles/2014_python_2_3_key_diff.html#bankers-rounding">The key differences between Python 2.7.x and Python 3.x with examples</a> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:2" role="doc-endnote">
-      <p>On Wikipedia you can find <a href="https://en.wikipedia.org/wiki/Rounding#Tie-breaking">more information</a> about the rules. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:3" role="doc-endnote">
-      <p><a href="https://github.com/golang/go/issues/4594">Suggestion</a> to add <code class="language-plaintext highlighter-rouge">Round</code> function. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
 
 	</section>
+	<!-- todo: tags -->
 	<section id="share-page">
 	<span>Share this page on</span>
 	<a href="https://twitter.com/intent/tweet?text=Tie-breaking Rounding&url=https://guzalexander.com/2017/05/14/tie-breaking-rounding.html&via=&related=" rel="nofollow" target="_blank" title="Share on Twitter">Twitter</a> or
@@ -172,7 +169,7 @@ org/pkg/math/#Ceil">math.Ceil</a> or <a href="https://golang.org/pkg/math/#Floor
 			</section>
 
 			<footer class="main-footer">
-				<section class="copyright">&copy; Copyright 2022 by Alexander Guz • <a target="_blank" href="/feed.xml">RSS</a></section>
+				<section class="copyright">&copy; Copyright 2023 by Alexander Guz • <a target="_blank" href="/feed.xml">RSS</a></section>
 			</footer>
 		</section>
 	</section>

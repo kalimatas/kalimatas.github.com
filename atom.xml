@@ -4,7 +4,7 @@
  <title>Alexander Guz</title>
  <link href="https://guzalexander.com/atom.xml" rel="self"/>
  <link href="https://guzalexander.com/"/>
- <updated>2022-01-26T22:08:00+01:00</updated>
+ <updated>2023-04-12T14:09:45+02:00</updated>
  <id>https://guzalexander.com/</id>
  <author>
    <name>Alexander Guz</name>
@@ -24,19 +24,11 @@ typical hierarchical notes organization into notebooks and sub-notebooks, tags, 
 options, etc. I even had a paid version in order to have synchronization on more than two
 devices. And still, I have never felt that I have been using all its potential.&lt;/p&gt;
 
-&lt;div class=&quot;img-wrapper&quot;&gt;
-	&lt;figure&gt;
-		
-			&lt;a href=&quot;/static/img/posts/notes_evernote.png&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;/static/img/posts/notes_evernote.png&quot; alt=&quot;Evernote for macOS&quot; /&gt;&lt;/a&gt;
-		
-	&lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;figcaption&gt;Evernote for macOS&lt;/figcaption&gt;
-
 &lt;p&gt;Eventually, I realized that my notes were lying “dead“ there. Like a pile of useless crap.
 Basically, once something got into Evernote, I just forgot about it. And, probably, never
 open this note again, except for some edge cases. These notes were not helping me.&lt;/p&gt;
+
+&lt;!--more--&gt;
 
 &lt;p&gt;Then I stumbled upon &lt;a href=&quot;https://roamresearch.com/&quot;&gt;Roam Research&lt;/a&gt; – the app on hype now. It had invitation system,
 so I could only check out the &lt;a href=&quot;https://roamresearch.com/#/app/help/page/k5RxbGuJN&quot;&gt;demo page&lt;/a&gt;.
@@ -154,6 +146,8 @@ switched to new color themes that looks similar to each other. Here is
 
 &lt;figcaption&gt;Calm Pastel 4&lt;/figcaption&gt;
 
+&lt;!--more--&gt;
+
 &lt;p&gt;And here is the &lt;a href=&quot;https://plugins.jetbrains.com/plugin/12257-pastel-licious&quot;&gt;Pastel-licious&lt;/a&gt; for IntelliJ IDEA (I love this theme!):&lt;/p&gt;
 
 &lt;div class=&quot;img-wrapper&quot;&gt;
@@ -227,6 +221,8 @@ one of the runs, I looked at the route, and it reminded me of some figure or a d
 And then a thought came to me – what if we draw something  on a map while running using a 
 GPS tracker?! Just imagine: a whole community running and sharing their routes!&lt;/p&gt;
 
+&lt;!--more--&gt;
+
 &lt;p&gt;My first deliberate attempt to draw during running was a letter “M“. It is supposed to be 
 the first letter in either my wife’s name, or in the word “Metallica“. I’m not sure yet.&lt;/p&gt;
 
@@ -288,6 +284,8 @@ regular army. Regular pilots — work horses — serve as a basis for any unit. 
 without frills. Perhaps, they are not that good at air shows, but it doesn’t make them less 
 important.&lt;/p&gt;
 
+&lt;!--more--&gt;
+
 &lt;p&gt;We observe the same situation in software development. Ace pilots are programmers who 
 solve whiteboard puzzles. But are they a good fit for a regular job? Anyone who was hiring 
 at and conducting interviews knows that these whiteboard skills do not automatically mean
@@ -318,8 +316,10 @@ mechanism.&lt;/p&gt;
 and eventually switches to another number. My watch has this mechanism. The “problem” is that this way the window size,
 and thus the size of a number inside, is small, because the ring has to fit into the frame.&lt;/p&gt;
 
-&lt;p&gt;The feature that allows to have a larger “font size” in date windows goes under the name “the oversize 
-date complication” &lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;.
+&lt;!--more--&gt;
+
+&lt;p&gt;The feature that allows to have a larger “font size” in date windows goes under the name 
+&lt;a href=&quot;https://www.tourneau.com/watch-education/watch-complications.html&quot;&gt;the oversize date complication&lt;/a&gt;.
 This feature utilizes two pieces for displaying the date: units disc and tens cross, which are nicely synchronized.
 Tens cross has numbers from 0 to 3, and unit disc - from 0 to 9. The final day of the month is then a combination of two
 digits from both pieces.&lt;/p&gt;
@@ -334,16 +334,6 @@ digits from both pieces.&lt;/p&gt;
 &lt;p&gt;So why does my wife’s watch show 32? Well, it actually goes up to 39! It seems that in some “cheap” implementations of
 the oversize date mechanism, the tens cross and the unit disc do not have proper synchronization. After the tens cross
 switched from 3 to 0, indicating the beginning of a new month, the unit disc just continues to rotate further to 2, 3, 4, etc.&lt;/p&gt;
-
-&lt;h2 id=&quot;notes&quot;&gt;Notes&lt;/h2&gt;
-
-&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;The term “complication” means any other function on a watch other than the display of time. Read more about &lt;a href=&quot;https://www.tourneau.com/watch-education/watch-complications.html&quot;&gt;watch complications&lt;/a&gt;. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;
 </content>
  </entry>
  
@@ -353,11 +343,11 @@ switched from 3 to 0, indicating the beginning of a new month, the unit disc jus
    <updated>2020-02-04T09:00:00+01:00</updated>
    <id>https://guzalexander.com/2020/02/04/variance-in-type-systems</id>
    <content type="html">&lt;p&gt;Whenever I hear “covariant return type”, I have to pause and engage my 
-System 2 &lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; thoroughly in order to understand what I have just heard. 
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow#Two_systems&quot;&gt;System 2&lt;/a&gt; thoroughly in order to understand what I have just heard. 
 And even then, I cannot bet I will answer properly what it means. So this serves
- as a memo for me of the concept of variance &lt;sup id=&quot;fnref:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; in programming.&lt;/p&gt;
+ as a memo for me of the concept of &lt;a href=&quot;https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)&quot;&gt;variance&lt;/a&gt; in programming.&lt;/p&gt;
 
-&lt;p&gt;The notion of variance is related to the topic of subtyping &lt;sup id=&quot;fnref:3&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt; in 
+&lt;p&gt;The notion of variance is related to the topic of &lt;a href=&quot;https://en.wikipedia.org/wiki/Subtyping&quot;&gt;subtyping&lt;/a&gt; in 
 programming language theory. It deals with rules of what is allowed or not with 
 regards to function arguments and return types.&lt;/p&gt;
 
@@ -369,6 +359,8 @@ regards to function arguments and return types.&lt;/p&gt;
   &lt;li&gt;contravariance&lt;/li&gt;
   &lt;li&gt;bivariance (will skip that)&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;!--more--&gt;
 
 &lt;p&gt;Before we dive into explanations, let us agree on pseudo code that I am going 
 to use. The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt; operator shows subtyping. In the example&lt;/p&gt;
@@ -463,21 +455,6 @@ Let’s have a look at the example.&lt;/p&gt;
 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MotorVehicle&lt;/code&gt; is a type of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Vehicle&lt;/code&gt;, users of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;drive&lt;/code&gt; still can pass any 
 instance of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MotorVehicle&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h2 id=&quot;notes&quot;&gt;Notes&lt;/h2&gt;
-
-&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow#Two_systems&quot;&gt;The concept of System 2 is from the book “Thinking, Fast and Slow”&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:2&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)&quot;&gt;Covariance and contravariance&lt;/a&gt; &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:3&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Subtyping&quot;&gt;Subtyping&lt;/a&gt; &lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;
 </content>
  </entry>
  
@@ -489,6 +466,8 @@ instance of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;M
    <content type="html">&lt;p&gt;2019 is the first year I decided to track books I have read on &lt;a href=&quot;https://www.goodreads.com/user/show/106745400-alexander&quot;&gt;Goodreads&lt;/a&gt;. Here is the list. Though, it might be not complete, because I got this idea only in December and struggled to recall all the books.&lt;/p&gt;
 
 &lt;p&gt;Quite clear that fiction prevails. Definitely will spend more time reading more useful books this year.&lt;/p&gt;
+
+&lt;!--more--&gt;
 
 &lt;h2 id=&quot;fiction-12&quot;&gt;Fiction (12)&lt;/h2&gt;
 
@@ -542,6 +521,8 @@ That’s why solutions like &lt;a href=&quot;https://dev.mysql.com/doc/refman/8.
 
 &lt;p&gt;So I decided to make a short description of some Java in-memory geospatial indices I’ve discovered during my research with code examples and benchmarks done with &lt;a href=&quot;http://openjdk.java.net/projects/code-tools/jmh/&quot;&gt;jmh&lt;/a&gt;.&lt;/p&gt;
 
+&lt;!--more--&gt;
+
 &lt;p&gt;Again, the task at hand: given a geo point, find the nearest to it object within a given radius using in-memory data structures. As an extra requirement, we would like to have arbitrary data attached to the objects stored in this data structures. The reason is that, in most cases, these objects are not merely geo points, they are rather some domain entities, and we would build our business logic based on them. In our case, the arbitrary data will be just an integer ID, and we pretend we can later fetch required entity from some repository by this ID.&lt;/p&gt;
 
 &lt;div class=&quot;img-wrapper&quot;&gt;
@@ -556,7 +537,7 @@ That’s why solutions like &lt;a href=&quot;https://dev.mysql.com/doc/refman/8.
 
 &lt;h2 id=&quot;lucene-spatial-extras&quot;&gt;Lucene spatial extras&lt;/h2&gt;
 
-&lt;p&gt;I learned about Lucene while using Elasticsearch, because it’s based on it &lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. I thought: well, 
+&lt;p&gt;I learned about Lucene while using &lt;a href=&quot;https://en.wikipedia.org/wiki/Elasticsearch&quot;&gt;Elasticsearch&lt;/a&gt;, because it’s based on it. I thought: well, 
 Elasticsearch has Geo queries made with Lucene, which means Lucene has support for it, which, maybe, also has support for in-memory geospatial index. And I was right. Lucene project has &lt;a href=&quot;https://lucene.apache.org/core/7_4_0/spatial-extras/index.html&quot;&gt;Spatial-Extras module&lt;/a&gt;, that &lt;em&gt;encapsulates an approach to indexing and searching based on shapes&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;Using this module turned out to be a non-trivial task. Except JavaDocs and source code, I could only find an example of its usage in &lt;a href=&quot;https://github.com/apache/lucene-solr/blob/master/lucene/spatial-extras/src/test/org/apache/lucene/spatial/SpatialExample.java&quot;&gt;Apache Solr + Lucene repository&lt;/a&gt;, and made my implementation based on it. Lucene provides generalised approach to indexing and searching different types of data, and geospatial index is just one of the flavours.&lt;/p&gt;
@@ -682,8 +663,8 @@ time complexity for indexing operations and &lt;code class=&quot;language-plaint
 &lt;h2 id=&quot;the-java-spatial-index&quot;&gt;The Java Spatial Index&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/aled/jsi&quot;&gt;The Java Spatial Index&lt;/a&gt; is a Java version of the R-tree spatial indexing 
-algorithm as described in the 1984 paper “R-trees: A Dynamic Index Structure for Spatial Searching” by 
-Antonin Guttman &lt;sup id=&quot;fnref:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+algorithm as described in the 1984 paper &lt;a href=&quot;https://dl.acm.org/citation.cfm?id=602266&quot;&gt;“R-trees: A Dynamic Index Structure for Spatial Searching”&lt;/a&gt; by 
+Antonin Guttman.&lt;/p&gt;
 
 &lt;div class=&quot;img-wrapper&quot;&gt;
 	&lt;figure&gt;
@@ -697,7 +678,7 @@ Antonin Guttman &lt;sup id=&quot;fnref:2&quot; role=&quot;doc-noteref&quot;&gt;&
 
 &lt;p&gt;The main element behind this data structure is a minimum bounding rectangle . The “R” in R-tree stands for 
 rectangle. Each rectangle describes a single object, and nearby rectangles are then grouped in another 
-rectangle on a higher level &lt;sup id=&quot;fnref:3&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;. That’s a lot of rectangles in one sentence!&lt;/p&gt;
+rectangle on &lt;a href=&quot;https://en.wikipedia.org/wiki/Minimum_bounding_rectangle&quot;&gt;a higher level&lt;/a&gt;. That’s a lot of rectangles in one sentence!&lt;/p&gt;
 
 &lt;div class=&quot;img-wrapper&quot;&gt;
 	&lt;figure&gt;
@@ -772,21 +753,6 @@ MyBenchmark.benchLucene      thrpt    3    1199,864 ±   1199,138  ops/s&lt;/cod
 
 &lt;p&gt;To be honest, I was kind of surprised to find out, that Lucene  performed so badly. It could be because a) its RAMDirectory is just slow or b) I cannot cook it. My guess - some misconfiguration, though I could not figure out what was wrong. I asked a &lt;a href=&quot;https://stackoverflow.com/questions/52302394/poor-lucene-in-memory-spatial-index-performance&quot;&gt;question on StackOverflow&lt;/a&gt;, but so far no answers.&lt;/p&gt;
 
-&lt;h2 id=&quot;notes&quot;&gt;Notes&lt;/h2&gt;
-
-&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Elasticsearch&quot;&gt;Elasticsearch on Wikipedia.&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:2&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://dl.acm.org/citation.cfm?id=602266&quot;&gt;“R-trees: A Dynamic Index Structure for Spatial Searching” by Antonin Guttman.&lt;/a&gt; &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:3&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Minimum_bounding_rectangle&quot;&gt;Minimum bounding rectangle on Wikipedia.&lt;/a&gt; &lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;
 </content>
  </entry>
  
@@ -799,6 +765,8 @@ MyBenchmark.benchLucene      thrpt    3    1199,864 ±   1199,138  ops/s&lt;/cod
 
 &lt;p&gt;This article is a short summary of how I’ve eventually managed to enable tracing with Logback. The patient under inspection is  Elasticsearch 6.3 with its &lt;a href=&quot;https://www.elastic.co/guide/en/elasticsearch/client/java-rest/6.3/java-rest-low.html&quot;&gt;Java Low Level REST Client&lt;/a&gt;.&lt;/p&gt;
 
+&lt;!--more--&gt;
+
 &lt;p&gt;According to the official documentation, we need to enable trace logging for the &lt;code&gt;tracer&lt;/code&gt; package. If you are interested, you can check the source code for &lt;a href=&quot;https://github.com/elastic/elasticsearch/blob/v6.3/client/rest/src/main/java/org/elasticsearch/client/RequestLogger.java#L49&quot;&gt;org.elasticsearch.client.RequestLogger&lt;/a&gt; class, where the logger with this name is defined:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
@@ -810,7 +778,7 @@ MyBenchmark.benchLucene      thrpt    3    1199,864 ±   1199,138  ops/s&lt;/cod
 
 &lt;p&gt;As you can see, enabling this logger with &lt;code&gt;TRACE&lt;/code&gt; level in Logback is not enough, because, again, the client uses Apache Commons Logging.&lt;/p&gt;
 
-&lt;p&gt;Luckily, Logback was designed with this use case in mind, and provides a set of bridging modules &lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. They 
+&lt;p&gt;Luckily, Logback was designed with this use case in mind, and provides a set of &lt;a href=&quot;https://www.slf4j.org/legacy.html&quot;&gt;bridging modules&lt;/a&gt;. They 
 allow us to use Logback even with other dependencies that rely on other logging API. In particular, we’re looking for &lt;a href=&quot;https://www.slf4j.org/legacy.html#jclOverSLF4J&quot;&gt;jcl-over-slf4j.jar&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;So, here are the steps.&lt;/p&gt;
@@ -856,15 +824,6 @@ allow us to use Logback even with other dependencies that rely on other logging 
 
 &lt;p&gt;Voilà! Enjoy your debugging session!&lt;/p&gt;
 
-&lt;h2 id=&quot;notes&quot;&gt;Notes&lt;/h2&gt;
-
-&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://www.slf4j.org/legacy.html&quot;&gt;Bridging legacy APIs with Logback&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;
 </content>
  </entry>
  
@@ -874,8 +833,7 @@ allow us to use Logback even with other dependencies that rely on other logging 
    <updated>2018-07-10T14:54:00+02:00</updated>
    <id>https://guzalexander.com/2018/07/10/code-review-missing-advice</id>
    <content type="html">&lt;p&gt;We all know that code reviews are important and have a lot of value. There is plenty of “best practices”
-articles telling you how you should do a code review, when, at which pace, on which Moon cycle, which SMARTass
-criterias to prepare, etc. &lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;sup id=&quot;fnref:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+articles telling you how you should do a code review, when, at which pace, on which Moon cycle, &lt;a href=&quot;https://medium.com/palantir/code-review-best-practices-19e02780015f&quot;&gt;which&lt;/a&gt; &lt;a href=&quot;https://smartbear.com/learn/code-review/best-practices-for-peer-code-review/&quot;&gt;SMARTass criterias&lt;/a&gt; to prepare, etc.&lt;/p&gt;
 
 &lt;p&gt;I believe they miss one piece of advice.&lt;/p&gt;
 
@@ -883,6 +841,8 @@ criterias to prepare, etc. &lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref
 effort, and the ones that do not. The examples of the former are architectural changes, missing functionality,
 wrong interpretation of requirements, etc. Among the latter are code style issues, typos, redundant comments,
 missing type hints, obvious small bugs, etc.&lt;/p&gt;
+
+&lt;!--more--&gt;
 
 &lt;p&gt;Whenever you see these small issues, instead of writing a comment to fix it,
 &lt;em&gt;just switch to the branch, fix it yourself and push to the repository&lt;/em&gt;.&lt;/p&gt;
@@ -896,18 +856,6 @@ change later in the next round.&lt;/p&gt;
 &lt;p&gt;Third, you immediately feel responsibility for this code, which is good, because in the end it is &lt;em&gt;not&lt;/em&gt;
 someone else’s code - it is &lt;em&gt;your&lt;/em&gt; code also. You may be the one to fix a bug in it next week.&lt;/p&gt;
 
-&lt;h2 id=&quot;notes&quot;&gt;Notes&lt;/h2&gt;
-
-&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://medium.com/palantir/code-review-best-practices-19e02780015f&quot;&gt;Code Review Best Practices&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:2&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://smartbear.com/learn/code-review/best-practices-for-peer-code-review/&quot;&gt;These 10 tips will guide you toward effective peer code review&lt;/a&gt; &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;
 </content>
  </entry>
  
@@ -926,6 +874,8 @@ someone else’s code - it is &lt;em&gt;your&lt;/em&gt; code also. You may be th
 
 &lt;p&gt;For several minutes I was getting a Bluetooth connectivity error and could not stop the rent. And then my phone’s battery just died. One second I had ~20% of a battery, and another - the screen is black.&lt;/p&gt;
 
+&lt;!--more--&gt;
+
 &lt;p&gt;The scooter is still on me. It’s half past nine in the evening, and here in Berlin it means that almost everything is closed, and there is no place to charge a phone. And I also did not have a power bank.&lt;/p&gt;
 
 &lt;p&gt;I asked some guys to call the company’s hotline. They did, but the phone number on there site… did not work. Ha-ha. It turned out they had some problems with the line this day.&lt;/p&gt;
@@ -934,13 +884,13 @@ someone else’s code - it is &lt;em&gt;your&lt;/em&gt; code also. You may be th
 
 &lt;p&gt;It turned out that the guys was also a software engineer. Though, no surprise here: if you see a young guy 
 with a backpack in Berlin, chances are really high he is a developer. Though, I guess not as high as in 
-Bay Area, but we’re getting there. Especially in rent prices &lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+Bay Area, but we’re getting there. Especially in &lt;a href=&quot;https://www.theguardian.com/world/2018/apr/10/berlin-world-fastest-rising-property-prices&quot;&gt;rent prices&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;He also previously worked for the company which scooter I was using. Unfortunately, he did not know any special tricks, and we started to think logically together.&lt;/p&gt;
 
 &lt;p&gt;He suggested to install an app on his phone, so I could sign in and end the rent.&lt;/p&gt;
 
-&lt;p&gt;Very nice of him, but I did not know my password, because I am using 1Password &lt;sup id=&quot;fnref:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;Very nice of him, but I did not know my password, because I am using &lt;a href=&quot;https://1password.com/&quot;&gt;1Password&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;He suggested to reset a password via e-mail.&lt;/p&gt;
 
@@ -952,18 +902,6 @@ Bay Area, but we’re getting there. Especially in rent prices &lt;sup id=&quot;
 
 &lt;p&gt;The result of the evening? Next day I bought a power bank and printed out my one-time passwords for e-mail account. I do not want to experience this helplessness anymore.&lt;/p&gt;
 
-&lt;h2 id=&quot;notes&quot;&gt;Notes&lt;/h2&gt;
-
-&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://www.theguardian.com/world/2018/apr/10/berlin-world-fastest-rising-property-prices&quot;&gt;Berlin tops the world as city with the fastest rising property prices &lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:2&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://1password.com/&quot;&gt;1Password password manager&lt;/a&gt; &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;
 </content>
  </entry>
  
@@ -974,15 +912,18 @@ Bay Area, but we’re getting there. Especially in rent prices &lt;sup id=&quot;
    <id>https://guzalexander.com/2017/09/15/cowsay-slack-command</id>
    <content type="html">&lt;p&gt;This post is a step by step tutorial on how to build a simple Slack command with Go.&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;#intro&quot;&gt;So, what are we going to build?&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#overview&quot;&gt;Anatomy of a Slack command&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#local-dev&quot;&gt;Local development with ngrok&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#slack-app&quot;&gt;Slack application and command&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#code&quot;&gt;Source code overview&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#docker&quot;&gt;Running the app with Docker&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#heroku&quot;&gt;Deploying the app to Heroku&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;!--more--&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#-so-what-are-we-going-to-build&quot;&gt; So, what are we going to build?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#-anatomy-of-a-slack-command&quot;&gt; Anatomy of a Slack command&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#-local-development-with-ngrok&quot;&gt; Local development with ngrok&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#http-requests&quot;&gt;HTTP Requests&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#-slack-application-and-command&quot;&gt; Slack application and command&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#-source-code-overview&quot;&gt; Source code overview&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#-running-the-app-with-docker&quot;&gt; Running the app with Docker&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#-deploying-the-app-to-heroku&quot;&gt; Deploying the app to Heroku&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&quot;-so-what-are-we-going-to-build&quot;&gt;&lt;a name=&quot;intro&quot;&gt;&lt;/a&gt; So, what are we going to build?&lt;/h2&gt;
 
@@ -1315,13 +1256,13 @@ COWSAY_TOKEN: &amp;lt;your_verification_token&amp;gt;&lt;/code&gt;&lt;/pre&gt;&l
    <link href="https://guzalexander.com/2017/06/24/bedtime-brain-ideas.html"/>
    <updated>2017-06-24T21:20:00+02:00</updated>
    <id>https://guzalexander.com/2017/06/24/bedtime-brain-ideas</id>
-   <content type="html">&lt;!--more--&gt;
-
-&lt;p&gt;&lt;img src=&quot;/static/img/posts/bedtime-brain.jpg&quot; alt=&quot;Bedtime ideas&quot; align=&quot;left&quot; class=&quot;left-image&quot; /&gt;&lt;/p&gt;
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/static/img/posts/bedtime-brain.jpg&quot; alt=&quot;Bedtime ideas&quot; align=&quot;left&quot; class=&quot;left-image&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Ah, bedtime. It’s time to close Reddit and have some rest. But not for your brain. Have you ever wondered why you’re so damn.. ehh.. creative before sleep? Why does your brain start to produce this stream of crazy ideas? I have, so I made a small research on the topic.&lt;/p&gt;
 
 &lt;p&gt;It turns out, that it has nothing to do with the time of day (well, a bit), but rather with your energy cycles. Let’s break it down.&lt;/p&gt;
+
+&lt;!--more--&gt;
 
 &lt;p&gt;So you have all these pieces of information and relations between them in your brain, which we may call knowledge. How do you produce a new idea? Well, it’s easy - you somehow have to construct a new connection in your head between already existing facts. But during the day, when you’re rested and focused (OK, let’s pretend it’s true) on performing some task, your smartass brain is able to reject to accept your shiny new connections, because they just seem awful. A phone without buttons? Are you fucking crazy?!&lt;/p&gt;
 
@@ -1338,6 +1279,8 @@ COWSAY_TOKEN: &amp;lt;your_verification_token&amp;gt;&lt;/code&gt;&lt;/pre&gt;&l
    <updated>2017-05-31T18:26:00+02:00</updated>
    <id>https://guzalexander.com/2017/05/31/gracefully-exit-server-in-go</id>
    <content type="html">&lt;p&gt;This post is about gracefully terminating a program without breaking currently running process.&lt;/p&gt;
+
+&lt;!--more--&gt;
 
 &lt;p&gt;Let’s implement some dummy task to run.&lt;/p&gt;
 
@@ -1441,7 +1384,7 @@ COWSAY_TOKEN: &amp;lt;your_verification_token&amp;gt;&lt;/code&gt;&lt;/pre&gt;&l
 &lt;p&gt;If we receive a value from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;closed&lt;/code&gt; channel, then we simply exit from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Run()&lt;/code&gt; with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;return&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;To express the intention to terminate the task we need to send some value to the channel. But we can do 
-better. Since a receive from a closed channel returns the zero value immediately &lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;, we can just close the 
+better. Since a receive from a closed channel &lt;a href=&quot;https://dave.cheney.net/2014/03/19/channel-axioms&quot;&gt;returns the zero value immediately&lt;/a&gt;, we can just close the 
 channel.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span class=&quot;k&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Stop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -1588,15 +1531,6 @@ channel.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;&lt;strong&gt;Update&lt;/strong&gt;&lt;/em&gt;: &lt;a href=&quot;https://github.com/ahmetb&quot;&gt;Ahmet Alp Balkan&lt;/a&gt; pointed out, that the pattern used in this post is more error-prone and, probably, should not be used in favor of a pattern with &lt;a href=&quot;https://golang.org/pkg/context/&quot;&gt;context&lt;/a&gt; package. For details, read &lt;a href=&quot;https://medium.com/@matryer/make-ctrl-c-cancel-the-context-context-bd006a8ad6ff&quot;&gt;Make Ctrl+C cancel the context.Context&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&quot;notes&quot;&gt;Notes&lt;/h2&gt;
-
-&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://dave.cheney.net/2014/03/19/channel-axioms&quot;&gt;Channel Axioms&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;
 </content>
  </entry>
  
@@ -1605,7 +1539,7 @@ channel.&lt;/p&gt;
    <link href="https://guzalexander.com/2017/05/14/tie-breaking-rounding.html"/>
    <updated>2017-05-14T16:14:00+02:00</updated>
    <id>https://guzalexander.com/2017/05/14/tie-breaking-rounding</id>
-   <content type="html">&lt;p&gt;So I was reading an article about differences between Python 2 and Python 3 &lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;, and there was a statement:&lt;/p&gt;
+   <content type="html">&lt;p&gt;So I was reading an article about &lt;a href=&quot;http://sebastianraschka.com/Articles/2014_python_2_3_key_diff.html#bankers-rounding&quot;&gt;differences between Python 2 and Python 3&lt;/a&gt;, and there was a statement:&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Python 3 adopted the now standard way of rounding decimals when it results in a tie (.5) at the last significant digits. Now, in Python 3, decimals are rounded to the nearest even number.&lt;/p&gt;
@@ -1617,7 +1551,9 @@ channel.&lt;/p&gt;
 
 &lt;p&gt;There are actually six more or less normal ways and two not so normal, thus leaving us with eight (eight, Carl!) rules of rounding.&lt;/p&gt;
 
-&lt;p&gt;These are the &lt;em&gt;normal&lt;/em&gt; rules &lt;sup id=&quot;fnref:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;:&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;These are the &lt;em&gt;normal&lt;/em&gt; &lt;a href=&quot;https://en.wikipedia.org/wiki/Rounding#Tie-breaking&quot;&gt;rules&lt;/a&gt;:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Round half down (or towards negative infinity): 13.5 rounds to 13, -13.5 rounds to -14.&lt;/li&gt;
@@ -1661,28 +1597,13 @@ channel.&lt;/p&gt;
 
 &lt;span class=&quot;c1&quot;&gt;// output: 13.5 -&amp;gt; 14, 14.5 -&amp;gt; 15, -14.5 -&amp;gt; -14, -13.5 -&amp;gt; -13&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Go 1.8 doesn’t have built-in round function at all &lt;sup id=&quot;fnref:3&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;, you have to choose from &lt;a href=&quot;https://golang.
+&lt;p&gt;Go 1.8 doesn’t have built-in &lt;a href=&quot;https://github.com/golang/go/issues/4594&quot;&gt;round function&lt;/a&gt; at all, you have to choose from &lt;a href=&quot;https://golang.
 org/pkg/math/#Ceil&quot;&gt;math.Ceil&lt;/a&gt; or &lt;a href=&quot;https://golang.org/pkg/math/#Floor&quot;&gt;math.Floor&lt;/a&gt; yourself.&lt;/p&gt;
 
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;Well, beware of different rules in different programming languages!&lt;/p&gt;
 
-&lt;h2 id=&quot;notes&quot;&gt;Notes&lt;/h2&gt;
-
-&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;http://sebastianraschka.com/Articles/2014_python_2_3_key_diff.html#bankers-rounding&quot;&gt;The key differences between Python 2.7.x and Python 3.x with examples&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:2&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;On Wikipedia you can find &lt;a href=&quot;https://en.wikipedia.org/wiki/Rounding#Tie-breaking&quot;&gt;more information&lt;/a&gt; about the rules. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:3&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://github.com/golang/go/issues/4594&quot;&gt;Suggestion&lt;/a&gt; to add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Round&lt;/code&gt; function. &lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;
 </content>
  </entry>
  
@@ -1696,6 +1617,8 @@ org/pkg/math/#Ceil&quot;&gt;math.Ceil&lt;/a&gt; or &lt;a href=&quot;https://gola
 &lt;p&gt;But there is one way, that helps me overcome this feeling. The key point, though it might sound strange, lies in our insignificance. When the stress begins before some important occasion, I do an exercise.&lt;/p&gt;
 
 &lt;p&gt;First, I concentrate on myself, like: this is me, I’m standing here and feeling anxiety. At this point I can describe myself a bit, e.g. the clothes I’m wearing, etc. It usually helps to relax by changing the topic in your head.&lt;/p&gt;
+
+&lt;!--more--&gt;
 
 &lt;p&gt;Then I expand the area of my perception a bit - up to the room, where I’m standing. I try to understand, what’s happening inside that room, who is inside, what they are doing, and how this people refer to me.&lt;/p&gt;
 
@@ -1719,6 +1642,8 @@ org/pkg/math/#Ceil&quot;&gt;math.Ceil&lt;/a&gt; or &lt;a href=&quot;https://gola
    <updated>2016-07-23T20:30:00+02:00</updated>
    <id>https://guzalexander.com/2016/07/23/a-few-notes-on-php-exceptions</id>
    <content type="html">&lt;p&gt;There are several practices, that I found myself using over and over again while working with PHP exceptions. Here they are.&lt;/p&gt;
+
+&lt;!--more--&gt;
 
 &lt;h4 id=&quot;packagecomponent-level-exception-interface&quot;&gt;Package/component level exception interface&lt;/h4&gt;
 
@@ -1863,6 +1788,8 @@ org/pkg/math/#Ceil&quot;&gt;math.Ceil&lt;/a&gt; or &lt;a href=&quot;https://gola
 &lt;span class=&quot;k&quot;&gt;DROP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;INDEX&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;idx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;ADD&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;KEY&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;idx&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;column1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;column2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;column3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
+&lt;!--more--&gt;
+
 &lt;p&gt;I was wondering how &lt;em&gt;atomic&lt;/em&gt; this statement was, i.e. if internally it actually just executes &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DROP&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CREATE&lt;/code&gt;, thus making a time window, when there is no index, or uses some other technique to make this change not so painful. I made a test table with four fields (except &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;id&lt;/code&gt;), and populated it with 500K random records. The size of the table was 28Mb. Then created composite index on four columns (the size increased to 36Mb). A test query:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;EXPLAIN&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;atomic&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;field1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AND&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;field2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;69370&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -1900,6 +1827,8 @@ org/pkg/math/#Ceil&quot;&gt;math.Ceil&lt;/a&gt; or &lt;a href=&quot;https://gola
 &lt;span class=&quot;s2&quot;&gt;&quot;bbb&quot;&lt;/span&gt;,2,2
 &lt;span class=&quot;s2&quot;&gt;&quot;eee&quot;&lt;/span&gt;,3,1
 &lt;span class=&quot;s2&quot;&gt;&quot;eee&quot;&lt;/span&gt;,3,3&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;!--more--&gt;
 
 &lt;p&gt;There is a requirement: records with the same &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Id&lt;/code&gt; column must be processed together. Basically, that means, they cannot be in different chunks, even if we exceed the limit of a chunk a little, say, have 1003 records instead of 1000.&lt;/p&gt;
 
@@ -2014,6 +1943,8 @@ BEGIN &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
   &lt;p&gt;Consider a building with a few broken windows. If the windows are not repaired, the tendency is for vandals to break a few more windows. Eventually, they may even break into the building, and if it’s unoccupied, perhaps become squatters or light fires inside.&lt;/p&gt;
 &lt;/blockquote&gt;
 
+&lt;!--more--&gt;
+
 &lt;p&gt;The authors suggested to prevent vandalism by addressing the problems when they are small and easy to manage with.&lt;/p&gt;
 
 &lt;p&gt;I think the same theory can be applied to software development - writing “bad” code may be observed as a vandalism. We often find ourselves in situations in which we can accomplish some task in two ways: either program a clean, robust solution (often meaning complex and long) or make a quick dirty hack. By that time the code may be in two states:&lt;/p&gt;
@@ -2037,6 +1968,8 @@ BEGIN &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
    <content type="html">&lt;p&gt;I’ve just finished working on my &lt;a href=&quot;https://github.com/kalimatas/php-liquid&quot;&gt;fork&lt;/a&gt; of the Liquid template engine.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://liquidmarkup.org/&quot;&gt;Liquid&lt;/a&gt; is a templating library which was originally developed for usage with Ruby on Rails in &lt;a href=&quot;http://www.shopify.com/&quot;&gt;Shopify&lt;/a&gt;. It uses a combination of &lt;em&gt;tags&lt;/em&gt;, &lt;em&gt;objects&lt;/em&gt;, and &lt;em&gt;filters&lt;/em&gt; to load dynamic content. They are used inside Liquid &lt;em&gt;template files&lt;/em&gt;, which are a group of files that make up a theme.&lt;/p&gt;
+
+&lt;!--more--&gt;
 
 &lt;p&gt;Here is a simple example:&lt;/p&gt;
 
@@ -2081,6 +2014,8 @@ BEGIN &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
    <updated>2013-12-06T11:00:00+01:00</updated>
    <id>https://guzalexander.com/2013/12/06/golang-channels-tutorial</id>
    <content type="html">&lt;p&gt;&lt;a href=&quot;http://golang.org/&quot;&gt;Golang&lt;/a&gt; has built-in instruments for writing concurrent programs. Placing a &lt;a href=&quot;http://golang.org/ref/spec#Go_statements&quot;&gt;go&lt;/a&gt; statement before a function call starts the execution of that function as an independent concurrent thread in the same address space as the calling code. Such thread is called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;goroutine&lt;/code&gt; in Golang. Here I should mention that concurrently doesn’t always mean in parallel. Goroutines are means of creating concurrent architecture of a program which could possibly execute in parallel in case the hardware allows it. There is a great talk on that topic &lt;a href=&quot;http://blog.golang.org/concurrency-is-not-parallelism&quot;&gt;Concurrency is not parallelism&lt;/a&gt;.&lt;/p&gt;
+
+&lt;!--more--&gt;
 
 &lt;p&gt;Let’s start with an example of a goroutine:&lt;/p&gt;
 
@@ -2408,6 +2343,8 @@ first 3&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Though there was a small problem: only 3 days left to the event and I had neither idea nor team. The chances of wining under such circumstances are slightly less than nothing. When I say “no idea” I don’t mean I did not have ideas at lot, on the contrary I had a whole bunch of ideas which (to be honest) I would never implement by myself.&lt;/p&gt;
 
+&lt;!--more--&gt;
+
 &lt;p&gt;So I opened Skype and half-jokingly wrote to my friends something like “there is a hackathon this weekend. any ideas?”. Of course they had. We spent the whole evening trying to chose something we’d be able to develop and that seemed to suit the format of hackathon. But as we were babes and sucklings in this sphere and none of us could clearly define what on earth was “the format of hackathon”, we did not choose anything.&lt;/p&gt;
 
 &lt;div class=&quot;img-wrapper&quot;&gt;
@@ -2433,6 +2370,8 @@ first 3&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
    <updated>2013-03-27T13:00:00+01:00</updated>
    <id>https://guzalexander.com/2013/03/27/pinba-statistics-and-monitoring-server</id>
    <content type="html">&lt;p&gt;When it comes to performance developers are limited with a choice of a suitable tool for measuring it. For PHP programmers there is a good one - &lt;a href=&quot;http://pinba.org&quot;&gt;Pinba&lt;/a&gt;, and since there is no much articles about it in English I decided to write one.&lt;/p&gt;
+
+&lt;!--more--&gt;
 
 &lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;
 &lt;p&gt;Pinba is a MySQL &lt;a href=&quot;http://dev.mysql.com/doc/refman/5.1/en/pluggable-storage.html&quot;&gt;pluggable storage engine&lt;/a&gt; that acts as a realtime monitoring/statistics server for PHP using MySQL as a read-only interface. It collects data sent by PHP extension which generates a data packet on &lt;a href=&quot;http://devzone.zend.com/303/extension-writing-part-i-introduction-to-php-and-zend/#Heading3&quot;&gt;request shutdown&lt;/a&gt; and sends it over &lt;a href=&quot;http://en.wikipedia.org/wiki/User_Datagram_Protocol&quot;&gt;UDP&lt;/a&gt;. Using UDP protocol means there is no need to establish connection and allows not to affect performance of PHP scripts on production servers.&lt;/p&gt;
@@ -2604,6 +2543,8 @@ pinba.server &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 127.0.0.1:50002
    <id>https://guzalexander.com/2013/03/01/introduction-to-wsgi</id>
    <content type="html">&lt;p&gt;The &lt;strong&gt;Web Server Gateway Interface (WSGI)&lt;/strong&gt; is a universal interface between web servers and web applications for Python. &lt;em&gt;Universal&lt;/em&gt; means there is no more need to design your application for a specific API interface of a web server like CGI, FastCGI, mod_python, etc. - implementing WSGI support in your application gives you opportunity to use it with any web server which in it’s turn has WSGI support.&lt;/p&gt;
 
+&lt;!--more--&gt;
+
 &lt;p&gt;I highly recommend reading &lt;a href=&quot;http://www.python.org/dev/peps/pep-0333/&quot;&gt;PEP333&lt;/a&gt; with full specification, here is just a bare minimum:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -2699,6 +2640,8 @@ pinba.server &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 127.0.0.1:50002
 
 &lt;p&gt;When someone mentions addiction there is always something negative about it. But I think not every kind of addiction deserve to be censured, moreover possessing some particular psychological addiction is almost necessary for a programmer. I’m talking about &lt;em&gt;thinking&lt;/em&gt;.&lt;/p&gt;
 
+&lt;!--more--&gt;
+
 &lt;p&gt;Yes, it may sound strange because &lt;em&gt;thinking&lt;/em&gt; is the same part of out lives as, for example, breathing or eating. Though pay attention to the fact that almost in every programmer’s vacancy there is an item in requirements list “desire to learn new things, constant developing”, but no one mentions that you have to like to breathe or to eat. Or did I miss something?&lt;/p&gt;
 
 &lt;p&gt;This point (about desire) to my opinion is not necessary at all. Why not? Try to ask any programmer why he became “this weird silent guy”. May be he will tell you something like “I want a lot of money and a cool car”, but this is not surprising at all - we’re already considered to be a little strange, no need to make it worse and tell the truth. And the truth is simple: permanent process of thinking, solving difficult tasks, learning new things is the best remedy for boredom. We are addicted to &lt;em&gt;thinking&lt;/em&gt;. And I like it.&lt;/p&gt;
@@ -2713,6 +2656,8 @@ pinba.server &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 127.0.0.1:50002
    <content type="html">&lt;p&gt;Since I touched the keyboard for the first time when I was thirteen I never stop self-cultivating myself in the area. I even became a programmer and doomed myself on reading endless docs, tutorials and books. In one these books, called &lt;a href=&quot;http://www.amazon.com/The-Pragmatic-Programmer-Journeyman-Master/dp/020161622X&quot;&gt;The Pragmatic Programmer&lt;/a&gt;, there was a chapter about tools used by programmers where the opinion was told that &lt;em&gt;it is better to know one editor very well, and use it for all editing tasks&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;I agreed and decided to follow this advice. The only difficulty was to pick up the right editor, but since I wanted to be super/mega cool programmer the variants were obvious: &lt;a href=&quot;http://www.vim.org&quot;&gt;VIM&lt;/a&gt; or &lt;a href=&quot;http://www.gnu.org/software/emacs/&quot;&gt;Emacs&lt;/a&gt;. I chose VIM, to be honest, for one reason: because of horrible (in my opinion) Emacs key bindings.&lt;/p&gt;
+
+&lt;!--more--&gt;
 
 &lt;p&gt;I can almost hear you guys laughing and saying something like “Good luck, man!”. And taking into consideration &lt;a href=&quot;http://mrozekma.com/editor-learning-curve.png&quot;&gt;learning curves&lt;/a&gt; of these editors I can understand you. But I did my best and after a couple of months struggling through official/non-official documentation, dozens of dot-files I could finally exit that damn editor without breaking anything. My productivity increased noticeably. I liked that way I could edit text without even touching a mouse flitting across the text with every key stroke.&lt;/p&gt;
 
@@ -2737,6 +2682,8 @@ pinba.server &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 127.0.0.1:50002
    <updated>2012-08-17T00:00:00+02:00</updated>
    <id>https://guzalexander.com/2012/08/17/playing-a-sound-with-python</id>
    <content type="html">&lt;p&gt;Wand to play a sound in Python but don’t know how? &lt;strike&gt;It's your problem&lt;/strike&gt; No problems. I’ll show you some ways. Here is the list of popular Python libraries used to make noise with short descriptions and usage examples.&lt;/p&gt;
+
+&lt;!--more--&gt;
 
 &lt;h3 id=&quot;pyglet&quot;&gt;&lt;a href=&quot;http://www.pyglet.org/&quot;&gt;Pyglet&lt;/a&gt;&lt;/h3&gt;
 
@@ -2858,6 +2805,8 @@ pinba.server &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 127.0.0.1:50002
    <content type="html">&lt;p&gt;After playing with &lt;a href=&quot;http://en.wikipedia.org/wiki/Canvas_element&quot;&gt;canvas&lt;/a&gt; for some time I gave a birth to this small piece of… code. If you don’t have any idea what it is I’ll give you a hint. It’s a gradually appearing target created with the help of HTML5 canvas element. 5 elements actually.&lt;/p&gt;
 
 &lt;p&gt;The idea is simple: create several canvas elements with different radius values and absolutely position them at the same point. Step by step drawing is archived by repeatedly calling a &lt;em&gt;drawCircle&lt;/em&gt; function with different values of radius property until it reaches &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Math.PI * 2&lt;/code&gt;.&lt;/p&gt;
+
+&lt;!--more--&gt;
 
 &lt;div style=&quot;position: relative;&quot;&gt;
 &lt;div id=&quot;can_div&quot; style=&quot;width: 300px; height: 300px;&quot;&gt;&lt;/div&gt;
@@ -3017,6 +2966,8 @@ init();
 
 &lt;p&gt;For example, I wanted to create a small web app which will help me to send POST request (need for my current job project). I’ve chosen Python and &lt;a href=&quot;http://flask.pocoo.org&quot;&gt;Flask&lt;/a&gt; as technologies, mostly because I’m learning Python now. Ok, let’s read what Flask is. Hm, it’s based on Werkzeug and Jinja2. Well, let us a look at them. WSGI? What’s that?&lt;/p&gt;
 
+&lt;!--more--&gt;
+
 &lt;p&gt;After some time I found myself sitting in front of my computer with VIM opened and a few lines of code there:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;c1&quot;&gt;#!/usr/bin/env python
@@ -3046,6 +2997,8 @@ init();
    <updated>2012-05-18T22:45:00+02:00</updated>
    <id>https://guzalexander.com/2012/05/18/test-apocalyptic-dates-with-zf-and-phpunit</id>
    <content type="html">&lt;p&gt;Have you ever thought why there are so many apocalyptic dates but we are still alive? Because no one had ever tested these dates! Maybe some centuries ago people didn’t have any appropriate instrument for testing, but we have. Yep, it’s unit testing. Today we’re going to create a Zend Framework application which will list some apocalyptic dates and write some code to test its functionality.&lt;/p&gt;
+
+&lt;!--more--&gt;
 
 &lt;h2 id=&quot;the-application-and-testing-environment&quot;&gt;The application and testing environment&lt;/h2&gt;
 
