@@ -7,6 +7,8 @@ date: 2013-03-01
 
 The **Web Server Gateway Interface (WSGI)** is a universal interface between web servers and web applications for Python. _Universal_ means there is no more need to design your application for a specific API interface of a web server like CGI, FastCGI, mod_python, etc. - implementing WSGI support in your application gives you opportunity to use it with any web server which in it's turn has WSGI support.  
 
+<!--more-->
+
 I highly recommend reading [PEP333](http://www.python.org/dev/peps/pep-0333/) with full specification, here is just a bare minimum:
 
 * the WSGI interface has two sides: the server/gateway and the application side; beside this strict distinction there are so called "middleware" components which implement server and application sides at the same time;

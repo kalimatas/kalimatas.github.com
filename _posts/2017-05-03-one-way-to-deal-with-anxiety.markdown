@@ -11,6 +11,8 @@ But there is one way, that helps me overcome this feeling. The key point, though
 
 First, I concentrate on myself, like: this is me, I'm standing here and feeling anxiety. At this point I can describe myself a bit, e.g. the clothes I'm wearing, etc. It usually helps to relax by changing the topic in your head. 
 
+<!--more-->
+
 Then I expand the area of my perception a bit - up to the room, where I'm standing. I try to understand, what's happening inside that room, who is inside, what they are doing, and how this people refer to me. 
 
 Next step, expand further - up to the building. I imaging all the people inside, they are sitting in different rooms, talking to each other or keeping silent; they have their own concerns (maybe another examination, huh?). Most of the people in the building don't even know my existence. 

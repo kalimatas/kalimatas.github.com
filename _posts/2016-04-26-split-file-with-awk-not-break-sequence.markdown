@@ -21,6 +21,8 @@ Title,Id,Sequence
 "eee",3,3
 {% endhighlight %}
 
+<!--more-->
+
 There is a requirement: records with the same `Id` column must be processed together. Basically, that means, they cannot be in different chunks, even if we exceed the limit of a chunk a little, say, have 1003 records instead of 1000.
 
 The first step would be to sort the file by `Id` column. But it will be even easier for my loader to work, if the file is sorted secondary by the `Sequence` column. To simplify, let’s get rid of the header too.

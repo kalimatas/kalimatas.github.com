@@ -8,6 +8,8 @@ hhlink: http://news.ycombinator.com/item?id=3999428
 
 Have you ever thought why there are so many apocalyptic dates but we are still alive? Because no one had ever tested these dates! Maybe some centuries ago people didn't have any appropriate instrument for testing, but we have. Yep, it's unit testing. Today we're going to create a Zend Framework application which will list some apocalyptic dates and write some code to test its functionality.
 
+<!--more-->
+
 ## The application and testing environment
 
 You can download full source of our application at this [github page](https://github.com/kalimatas/apocalypticdates). Before you can actually run any tests you need to do something:

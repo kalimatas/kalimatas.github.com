@@ -12,11 +12,11 @@ typical hierarchical notes organization into notebooks and sub-notebooks, tags, 
 options, etc. I even had a paid version in order to have synchronization on more than two
 devices. And still, I have never felt that I have been using all its potential.
 
-{% include image.html url="/static/img/posts/notes_evernote.png" enlarge=true description="Evernote for macOS" %}
-
 Eventually, I realized that my notes were lying “dead“ there. Like a pile of useless crap.
 Basically, once something got into Evernote, I just forgot about it. And, probably, never
 open this note again, except for some edge cases. These notes were not helping me.
+
+<!--more-->
 
 Then I stumbled upon [Roam Research][roam] – the app on hype now. It had invitation system,
 so I could only check out the [demo page](https://roamresearch.com/#/app/help/page/k5RxbGuJN).

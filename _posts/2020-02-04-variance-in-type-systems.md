@@ -6,11 +6,11 @@ date: 2020-02-04 09:00
 ---
 
 Whenever I hear "covariant return type", I have to pause and engage my 
-System 2 [^1] thoroughly in order to understand what I have just heard. 
+[System 2][system-2] thoroughly in order to understand what I have just heard. 
 And even then, I cannot bet I will answer properly what it means. So this serves
- as a memo for me of the concept of variance [^2] in programming.
+ as a memo for me of the concept of [variance][cov-and-contra] in programming.
 
-The notion of variance is related to the topic of subtyping [^3] in 
+The notion of variance is related to the topic of [subtyping][subtyping] in 
 programming language theory. It deals with rules of what is allowed or not with 
 regards to function arguments and return types. 
 
@@ -20,6 +20,8 @@ Variance comes in four forms:
 * covariance
 * contravariance
 * bivariance (will skip that)
+
+<!--more-->
 
 Before we dive into explanations, let us agree on pseudo code that I am going 
 to use. The `>` operator shows subtyping. In the example
@@ -125,8 +127,6 @@ Though it looks counterintuitive, this is a perfectly valid case.
 `MotorVehicle` is a type of `Vehicle`, users of `drive` still can pass any 
 instance of `MotorVehicle`.
 
-## Notes
-
-[^1]: <a href="https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow#Two_systems">The concept of System 2 is from the book "Thinking, Fast and Slow"</a>
-[^2]: <a href="https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)">Covariance and contravariance</a>
-[^3]: <a href="https://en.wikipedia.org/wiki/Subtyping">Subtyping</a>
+[system-2]: https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow#Two_systems
+[cov-and-contra]: https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)
+[subtyping]: https://en.wikipedia.org/wiki/Subtyping

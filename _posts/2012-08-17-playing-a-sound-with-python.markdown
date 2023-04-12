@@ -8,6 +8,8 @@ hhlink: http://news.ycombinator.com/item?id=4398570
 
 Wand to play a sound in Python but don't know how? <strike>It's your problem</strike> No problems. I'll show you some ways. Here is the list of popular Python libraries used to make noise with short descriptions and usage examples.
 
+<!--more-->
+
 ### [Pyglet](http://www.pyglet.org/)
 
 A cross-platform windowing and multimedia library for Python. Among it's features: no external dependencies or installation requirements; can optionally use [AVbin](http://code.google.com/p/avbin/) to play back audio formats such as MP3, OGG/Vorbis and WMA. Distributed under BSD open-source license.

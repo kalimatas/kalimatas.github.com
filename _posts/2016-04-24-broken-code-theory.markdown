@@ -12,6 +12,8 @@ The theory was introduced in a 1982 article by social scientists James Q. Wilson
 
 > Consider a building with a few broken windows. If the windows are not repaired, the tendency is for vandals to break a few more windows. Eventually, they may even break into the building, and if it's unoccupied, perhaps become squatters or light fires inside.
 
+<!--more-->
+
 The authors suggested to prevent vandalism by addressing the problems when they are small and easy to manage with.
 
 I think the same theory can be applied to software development - writing “bad” code may be observed as a vandalism. We often find ourselves in situations in which we can accomplish some task in two ways: either program a clean, robust solution (often meaning complex and long) or make a quick dirty hack. By that time the code may be in two states:

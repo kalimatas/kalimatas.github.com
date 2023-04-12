@@ -9,6 +9,8 @@ I'd like to do something useful. No kidding. Something I or someone else could u
 
 For example, I wanted to create a small web app which will help me to send POST request (need for my current job project). I've chosen Python and [Flask](http://flask.pocoo.org) as technologies, mostly because I'm learning Python now. Ok, let's read what Flask is. Hm, it's based on Werkzeug and Jinja2. Well, let us a look at them. WSGI? What's that? 
 
+<!--more-->
+
 After some time I found myself sitting in front of my computer with VIM opened and a few lines of code there:
 
 {% highlight python %}

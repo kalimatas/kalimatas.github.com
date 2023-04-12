@@ -15,6 +15,8 @@ I took a scooter and had a 10-5 min drive to a subway station, where I wanted to
 
 For several minutes I was getting a Bluetooth connectivity error and could not stop the rent. And then my phone's battery just died. One second I had ~20% of a battery, and another - the screen is black.
 
+<!--more-->
+
 The scooter is still on me. It's half past nine in the evening, and here in Berlin it means that almost everything is closed, and there is no place to charge a phone. And I also did not have a power bank.
 
 I asked some guys to call the company's hotline. They did, but the phone number on there site... did not work. Ha-ha. It turned out they had some problems with the line this day.
@@ -23,13 +25,13 @@ I was pressing all the buttons on the scooter in hope there was some hidden comb
 
 It turned out that the guys was also a software engineer. Though, no surprise here: if you see a young guy 
 with a backpack in Berlin, chances are really high he is a developer. Though, I guess not as high as in 
-Bay Area, but we're getting there. Especially in rent prices [^1].
+Bay Area, but we're getting there. Especially in [rent prices][rent-prices].
 
 He also previously worked for the company which scooter I was using. Unfortunately, he did not know any special tricks, and we started to think logically together.
 
 He suggested to install an app on his phone, so I could sign in and end the rent.
 
-Very nice of him, but I did not know my password, because I am using 1Password [^2].
+Very nice of him, but I did not know my password, because I am using [1Password][one-password].
 
 He suggested to reset a password via e-mail. 
 
@@ -41,7 +43,5 @@ The company behaved well later: they charged me only the standard price and even
 
 The result of the evening? Next day I bought a power bank and printed out my one-time passwords for e-mail account. I do not want to experience this helplessness anymore.
 
-## Notes
-
-[^1]: <a href="https://www.theguardian.com/world/2018/apr/10/berlin-world-fastest-rising-property-prices">Berlin tops the world as city with the fastest rising property prices </a>
-[^2]: <a href="https://1password.com/">1Password password manager</a>
+[rent-prices]: https://www.theguardian.com/world/2018/apr/10/berlin-world-fastest-rising-property-prices
+[one-password]: https://1password.com/

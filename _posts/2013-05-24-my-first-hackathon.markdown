@@ -11,6 +11,8 @@ Last week I received an email with an invitation to a hackathon which was going 
 
 Though there was a small problem: only 3 days left to the event and I had neither idea nor team. The chances of wining under such circumstances are slightly less than nothing. When I say "no idea" I don't mean I did not have ideas at lot, on the contrary I had a whole bunch of ideas which (to be honest) I would never implement by myself.
 
+<!--more-->
+
 So I opened Skype and half-jokingly wrote to my friends something like "there is a hackathon this weekend. any ideas?". Of course they had. We spent the whole evening trying to chose something we'd be able to develop and that seemed to suit the format of hackathon. But as we were babes and sucklings in this sphere and none of us could clearly define what on earth was "the format of hackathon", we did not choose anything.
 
 {% include image.html url="/static/img/posts/no-idea-dog.jpg" %}

@@ -7,6 +7,8 @@ date: 2013-03-27 13:00
 
 When it comes to performance developers are limited with a choice of a suitable tool for measuring it. For PHP programmers there is a good one - [Pinba](http://pinba.org), and since there is no much articles about it in English I decided to write one.
 
+<!--more-->
+
 ## Overview
 Pinba is a MySQL [pluggable storage engine](http://dev.mysql.com/doc/refman/5.1/en/pluggable-storage.html) that acts as a realtime monitoring/statistics server for PHP using MySQL as a read-only interface. It collects data sent by PHP extension which generates a data packet on [request shutdown](http://devzone.zend.com/303/extension-writing-part-i-introduction-to-php-and-zend/#Heading3) and sends it over [UDP](http://en.wikipedia.org/wiki/User_Datagram_Protocol). Using UDP protocol means there is no need to establish connection and allows not to affect performance of PHP scripts on production servers. 
 

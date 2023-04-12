@@ -8,6 +8,8 @@ Recently I had some issues with Elasticsearch - all requests were failing with "
 
 This article is a short summary of how I've eventually managed to enable tracing with Logback. The patient under inspection is  Elasticsearch 6.3 with its [Java Low Level REST Client](https://www.elastic.co/guide/en/elasticsearch/client/java-rest/6.3/java-rest-low.html).
 
+<!--more-->
+
 According to the official documentation, we need to enable trace logging for the <code>tracer</code> package. If you are interested, you can check the source code for [org.elasticsearch.client.RequestLogger](https://github.com/elastic/elasticsearch/blob/v6.3/client/rest/src/main/java/org/elasticsearch/client/RequestLogger.java#L49) class, where the logger with this name is defined:
 
 {%highlight java%}
@@ -21,7 +23,7 @@ private static final Log tracer = LogFactory.getLog("tracer");
 
 As you can see, enabling this logger with <code>TRACE</code> level in Logback is not enough, because, again, the client uses Apache Commons Logging.
 
-Luckily, Logback was designed with this use case in mind, and provides a set of bridging modules [^1]. They 
+Luckily, Logback was designed with this use case in mind, and provides a set of [bridging modules][bridge-legachy-api]. They 
 allow us to use Logback even with other dependencies that rely on other logging API. In particular, we're looking for [jcl-over-slf4j.jar](https://www.slf4j.org/legacy.html#jclOverSLF4J).
 
 So, here are the steps.
@@ -70,6 +72,4 @@ dependencies {
 
 Voilà! Enjoy your debugging session!
 
-## Notes
-
-[^1]: <a href="https://www.slf4j.org/legacy.html">Bridging legacy APIs with Logback</a>
+[bridge-legachy-api]: https://www.slf4j.org/legacy.html

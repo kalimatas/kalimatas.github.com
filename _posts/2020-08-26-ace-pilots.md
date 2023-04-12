@@ -16,6 +16,8 @@ regular army. Regular pilots — work horses — serve as a basis for any unit. 
 without frills. Perhaps, they are not that good at air shows, but it doesn't make them less 
 important.
 
+<!--more-->
+
 We observe the same situation in software development. Ace pilots are programmers who 
 solve whiteboard puzzles. But are they a good fit for a regular job? Anyone who was hiring 
 at and conducting interviews knows that these whiteboard skills do not automatically mean

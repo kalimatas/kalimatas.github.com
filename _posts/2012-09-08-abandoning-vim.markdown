@@ -10,6 +10,8 @@ Since I touched the keyboard for the first time when I was thirteen I never stop
 
 I agreed and decided to follow this advice. The only difficulty was to pick up the right editor, but since I wanted to be super/mega cool programmer the variants were obvious: [VIM](http://www.vim.org) or [Emacs](http://www.gnu.org/software/emacs/). I chose VIM, to be honest, for one reason: because of horrible (in my opinion) Emacs key bindings.
 
+<!--more-->
+
 I can almost hear you guys laughing and saying something like "Good luck, man!". And taking into consideration [learning curves](http://mrozekma.com/editor-learning-curve.png) of these editors I can understand you. But I did my best and after a couple of months struggling through official/non-official documentation, dozens of dot-files I could finally exit that damn editor without breaking anything. My productivity increased noticeably. I liked that way I could edit text without even touching a mouse flitting across the text with every key stroke.
 
 I've been using Vim for about 4 years for now. And I still think I know only about 30% of it's possibilities, I still find new variants of configurations. Actually the recipe for successful working with Vim is quite simple:

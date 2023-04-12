@@ -6,6 +6,8 @@ date: 2016-07-23 20:30
 
 There are several practices, that I found myself using over and over again while working with PHP exceptions. Here they are.
 
+<!--more-->
+
 #### Package/component level exception interface
 
 Create an interface that represents the top level of exceptions hierarchy for your package/component/module. This interface is known as a [Marker interface](https://en.wikipedia.org/wiki/Marker_interface_pattern). This approach has several advantages. First, it allows clients of your code to distinguish these component specific exceptions from others. Second, as PHP doesn't support multiple inheritance, using an interface allows the exceptions to extends from other exceptions. e.g. [SPL exceptions](https://secure.php.net/manual/en/spl.exceptions.php).

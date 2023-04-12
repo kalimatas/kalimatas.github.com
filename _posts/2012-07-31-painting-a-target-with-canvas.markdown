@@ -10,6 +10,8 @@ After playing with [canvas](http://en.wikipedia.org/wiki/Canvas_element) for som
 
 The idea is simple: create several canvas elements with different radius values and absolutely position them at the same point. Step by step drawing is archived by repeatedly calling a *drawCircle* function with different values of radius property until it reaches `Math.PI * 2`.
 
+<!--more-->
+
 <div style="position: relative;">
 <div id="can_div" style="width: 300px; height: 300px;"></div>
 </div>

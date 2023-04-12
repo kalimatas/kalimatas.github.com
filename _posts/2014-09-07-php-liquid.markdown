@@ -9,6 +9,8 @@ I've just finished working on my [fork](https://github.com/kalimatas/php-liquid)
 
 [Liquid](http://liquidmarkup.org/) is a templating library which was originally developed for usage with Ruby on Rails in [Shopify](http://www.shopify.com/). It uses a combination of _tags_, _objects_, and _filters_ to load dynamic content. They are used inside Liquid _template files_, which are a group of files that make up a theme.
 
+<!--more-->
+
 Here is a simple example:
 
 {% highlight php %}

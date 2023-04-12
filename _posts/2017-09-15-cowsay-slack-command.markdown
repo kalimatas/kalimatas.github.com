@@ -7,13 +7,16 @@ date: 2017-09-15 17:06
 
 This post is a step by step tutorial on how to build a simple Slack command with Go.
 
-1. [So, what are we going to build?](#intro)
-1. [Anatomy of a Slack command](#overview)
-1. [Local development with ngrok](#local-dev)
-1. [Slack application and command](#slack-app)
-1. [Source code overview](#code)
-1. [Running the app with Docker](#docker)
-1. [Deploying the app to Heroku](#heroku)
+<!--more-->
+
+- [ So, what are we going to build?](#-so-what-are-we-going-to-build)
+- [ Anatomy of a Slack command](#-anatomy-of-a-slack-command)
+- [ Local development with ngrok](#-local-development-with-ngrok)
+- [HTTP Requests](#http-requests)
+- [ Slack application and command](#-slack-application-and-command)
+- [ Source code overview](#-source-code-overview)
+- [ Running the app with Docker](#-running-the-app-with-docker)
+- [ Deploying the app to Heroku](#-deploying-the-app-to-heroku)
 
 ## <a name="intro"></a> So, what are we going to build?
 

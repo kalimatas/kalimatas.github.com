@@ -19,6 +19,8 @@ DROP INDEX idx,
 ADD KEY idx (column1, column2, column3);
 {% endhighlight %}
 
+<!--more-->
+
 I was wondering how *atomic* this statement was, i.e. if internally it actually just executes `DROP` and `CREATE`, thus making a time window, when there is no index, or uses some other technique to make this change not so painful. I made a test table with four fields (except `id`), and populated it with 500K random records. The size of the table was 28Mb. Then created composite index on four columns (the size increased to 36Mb). A test query:
 
 {% highlight sql %}

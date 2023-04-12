@@ -13,13 +13,15 @@ That's why solutions like [MySQL Spatial Data Types](https://dev.mysql.com/doc/r
 
 So I decided to make a short description of some Java in-memory geospatial indices I've discovered during my research with code examples and benchmarks done with [jmh](http://openjdk.java.net/projects/code-tools/jmh/).
 
+<!--more-->
+
 Again, the task at hand: given a geo point, find the nearest to it object within a given radius using in-memory data structures. As an extra requirement, we would like to have arbitrary data attached to the objects stored in this data structures. The reason is that, in most cases, these objects are not merely geo points, they are rather some domain entities, and we would build our business logic based on them. In our case, the arbitrary data will be just an integer ID, and we pretend we can later fetch required entity from some repository by this ID.
 
 {% include image.html url="/static/img/posts/geo_circle.jpg" description="Figure 1. We need to find all green points within the radius of D km from the source point S." %}
 
 ## Lucene spatial extras
 
-I learned about Lucene while using Elasticsearch, because it's based on it [^1]. I thought: well, 
+I learned about Lucene while using [Elasticsearch][elasticsearch], because it's based on it. I thought: well, 
 Elasticsearch has Geo queries made with Lucene, which means Lucene has support for it, which, maybe, also has support for in-memory geospatial index. And I was right. Lucene project has [Spatial-Extras module](https://lucene.apache.org/core/7_4_0/spatial-extras/index.html), that *encapsulates an approach to indexing and searching based on shapes*.
 
 Using this module turned out to be a non-trivial task. Except JavaDocs and source code, I could only find an example of its usage in [Apache Solr + Lucene repository](https://github.com/apache/lucene-solr/blob/master/lucene/spatial-extras/src/test/org/apache/lucene/spatial/SpatialExample.java), and made my implementation based on it. Lucene provides generalised approach to indexing and searching different types of data, and geospatial index is just one of the flavours. 
@@ -137,14 +139,14 @@ More info can be found in the official [GitHub repository](https://github.com/jc
 ## The Java Spatial Index
 
 [The Java Spatial Index](https://github.com/aled/jsi) is a Java version of the R-tree spatial indexing 
-algorithm as described in the 1984 paper "R-trees: A Dynamic Index Structure for Spatial Searching" by 
-Antonin Guttman [^2]. 
+algorithm as described in the 1984 paper ["R-trees: A Dynamic Index Structure for Spatial Searching"][r-trees] by 
+Antonin Guttman. 
 
 {% include image.html url="/static/img/posts/560px-R-tree.svg.png" description="Figure 3. An example of an R-tree for 2D rectangles. Image courtesy of Wikipedia." %}
 
 The main element behind this data structure is a minimum bounding rectangle . The "R" in R-tree stands for 
 rectangle. Each rectangle describes a single object, and nearby rectangles are then grouped in another 
-rectangle on a higher level [^3]. That's a lot of rectangles in one sentence!
+rectangle on [a higher level][min-bounding-rectangle]. That's a lot of rectangles in one sentence!
 
 {% include image.html url="/static/img/posts/yo_dawg_rectangles.jpg" %}
 
@@ -209,8 +211,6 @@ And visual representation.
 
 To be honest, I was kind of surprised to find out, that Lucene  performed so badly. It could be because a) its RAMDirectory is just slow or b) I cannot cook it. My guess - some misconfiguration, though I could not figure out what was wrong. I asked a [question on StackOverflow](https://stackoverflow.com/questions/52302394/poor-lucene-in-memory-spatial-index-performance), but so far no answers.
 
-## Notes
-
-[^1]: <a href="https://en.wikipedia.org/wiki/Elasticsearch">Elasticsearch on Wikipedia.
-[^2]: <a href="https://dl.acm.org/citation.cfm?id=602266">"R-trees: A Dynamic Index Structure for Spatial Searching" by Antonin Guttman.
-[^3]: <a href="https://en.wikipedia.org/wiki/Minimum_bounding_rectangle">Minimum bounding rectangle on Wikipedia.
+[elasticsearch]: https://en.wikipedia.org/wiki/Elasticsearch
+[r-trees]: https://dl.acm.org/citation.cfm?id=602266
+[min-bounding-rectangle]: https://en.wikipedia.org/wiki/Minimum_bounding_rectangle
