@@ -9,14 +9,27 @@ pagination:
 {% for post in paginator.posts %}
 <div class="entry">
 	<div class="entry-content">
-		<h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-		<time class="post-date">{{ post.date | date: "%B %-d, %Y" }}</time>
+		{% if post.external_link %}
+			<h1 class="external-link">
+				<a href="{{ post.external_link }}" target="_blank">{{ post.title }}</a>
+			</h1>
+		{% else %}
+			<h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+		{% endif %}
+		<time class="post-date">
+			{{ post.date | date: "%B %-d, %Y" }}
+			{% if post.external_link %}
+				<a href="{{ post.url }}" title="Internal Link">◉</a>
+			{% endif %}
+		</time>
 		<div>
 			{{ post.excerpt }}
 		</div>
-		<section class="post-meta">
-			<span class="read-more"><a href="{{ post.url }}">Read more</a> ▶︎</span>
-		</section>
+		{% if post.content contains '<!--more-->' %}
+			<section class="post-meta">
+				<span class="read-more"><a href="{{ post.url }}">Read more</a> ▶︎</span>
+			</section>	
+		{% endif %}
 	</div>
 </div>
 {% endfor %}
