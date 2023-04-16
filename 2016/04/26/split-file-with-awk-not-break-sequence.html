@@ -86,7 +86,9 @@
 		<section class="main-wrapper">
 			<section class="main">
 				<article>
-	<h1><span>Split File in Chunks without Breaking the Sequence with GAWK</span></h1>
+	
+		<h1>Split File in Chunks without Breaking the Sequence with GAWK</h1>
+	
 	<time class="post-date">April 26, 2016</time>
 	<section id="article-content">
 		<p>Today I came up with a task for myself, mostly for fun, but it also has a useful application. I have a dump of some MySQL table in <code class="language-plaintext highlighter-rouge">csv</code>, it’s ~500K records. The data will be loaded into Neo4j, though I want to speed up the load and be able to parallelize the process. Of course, I can make it in any programming language, but I decided to practice with Linux shell commands and to use <a href="https://www.gnu.org/software/gawk/">gawk</a>.</p>

@@ -1,15 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Pragati+Narrow:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Georama:wght@300;400;500;600&display=swap');
 
 /* general */
 html {
     box-sizing: border-box;
-    /* font-kerning: none; */
-    /* font-feature-settings: "kern"; */
 }
 *, *::before, *::after {
     box-sizing: inherit;
@@ -46,8 +39,6 @@ a:hover {
 
 /* headings */
 h1, h2, h3, h4, h5, h6 {
-    /* font-family: 'Archivo Narrow', sans-serif; */
-    /* font-family: 'Dosis', sans-serif; */
     font-family: 'Georama', sans-serif;
 }
 h1:first-of-type, entry h1:first-of-type {
@@ -67,6 +58,17 @@ h1 > a:link, h1 > a:active, h1 > a:visited {
    -webkit-box-decoration-break: clone;
    color: white;
 }*/
+
+h1.external-link {
+    margin-left: -35px;
+}
+h1.external-link::before {
+    content:url('/static/img/external-link.svg');
+    position: relative;
+    left: -5px;
+    top: 3px;
+}
+
 h2, h3, h4 {
     margin-bottom: 15px;
     margin-top: 42px;
@@ -164,7 +166,7 @@ nav.menu h3:first-of-type a:link, nav.menu h3:first-of-type a:visited, nav.menu 
 /* index list */
 .entry {
     margin-bottom: 70px;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid #eaeaea;
 }
 /* .entry::after {
     content: "⊶⊷";
@@ -173,9 +175,10 @@ nav.menu h3:first-of-type a:link, nav.menu h3:first-of-type a:visited, nav.menu 
     display: block;
     color: #6c6c6a;
 }
-.entry:last-of-type::after {
-    content: "";
-} */
+*/
+.entry:last-of-type {
+    border-bottom: 0px;
+}
 .entry .thumbnail {
     margin-right: 20px;
     position: relative;

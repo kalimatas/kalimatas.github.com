@@ -4,13 +4,22 @@
  <title>Alexander Guz</title>
  <link href="https://guzalexander.com/atom.xml" rel="self"/>
  <link href="https://guzalexander.com/"/>
- <updated>2023-04-12T14:10:28+02:00</updated>
+ <updated>2023-04-16T14:49:21+02:00</updated>
  <id>https://guzalexander.com/</id>
  <author>
    <name>Alexander Guz</name>
    <email>guz@kalimatas.com</email>
  </author>
 
+ 
+ <entry>
+   <title>The age of average — Alex Murrell</title>
+   <link href="https://guzalexander.com/2023/04/12/link-to-average.html"/>
+   <updated>2023-04-12T14:10:00+02:00</updated>
+   <id>https://guzalexander.com/2023/04/12/link-to-average</id>
+   <content type="html">&lt;p&gt;People just want to have the same stuff.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>RemNote — Great Note-Taking App Nobody is Talking About</title>

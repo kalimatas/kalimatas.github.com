@@ -86,7 +86,9 @@
 		<section class="main-wrapper">
 			<section class="main">
 				<article>
-	<h1><span>Enabling Trace Logging for Elasticsearch REST Client with Logback</span></h1>
+	
+		<h1>Enabling Trace Logging for Elasticsearch REST Client with Logback</h1>
+	
 	<time class="post-date">September 30, 2018</time>
 	<section id="article-content">
 		<p>Recently I had some issues with Elasticsearch - all requests were failing with “bad request” error. In order to understand what was wrong with these requests, I, natually, decided to enable debug/trace logging of for ES REST Client, but couldn’t find out how. Partially, because the <a href="https://www.elastic.co/guide/en/elasticsearch/client/java-rest/6.3/java-rest-low-usage-logging.html">official documentation</a> on this topic could have been more informative, to be honest. But mainly, because my project uses <a href="https://logback.qos.ch/">Logback</a> and the REST Client package uses <a href="https://commons.apache.org/proper/commons-logging/">Apache Commons Logging</a>.</p>
