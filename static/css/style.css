@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Georama:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 /* general */
 html {
@@ -9,16 +10,16 @@ html {
 }
 body {
     font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;
-    font-size: 17px;
+    font-size: 19px;
     font-weight: normal;
-    line-height: 1.53em;
+    line-height: 32px;
     margin: 0;
     padding: 0;
-    /* color: rgb(51, 51, 51); */
+    color: black;
     background-color: white;
     text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    /* -webkit-font-smoothing: antialiased; */
+    /* -moz-osx-font-smoothing: grayscale; */
 }
 
 sup, sub {
@@ -39,12 +40,12 @@ a:hover {
 
 /* headings */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Georama', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 h1:first-of-type, entry h1:first-of-type {
     margin-bottom: 13px;
     margin-top: 13px;
-    font-size: 1.6em;
+    font-size: 1.8em;
     line-height: 1.35em;
 }
 h1 > a:link, h1 > a:active, h1 > a:visited {
@@ -66,7 +67,7 @@ h1.external-link::before {
     content:url('/static/img/external-link.svg');
     position: relative;
     left: -5px;
-    top: 3px;
+    top: 1px;
 }
 
 h2, h3, h4 {
@@ -74,7 +75,7 @@ h2, h3, h4 {
     margin-top: 42px;
 }
 h2 {
-    font-size: 1.2em;
+    font-size: 1.4em;
 }
 /*article h2 + p, article h3 + p, article h4 + p, article h5 + p {*/
 h2 + p, h3 + p, h4 + p, h5 + p {
@@ -86,7 +87,7 @@ section.container {
     /* min-width: 900px; */
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 33% minmax(400px, 700px);
+    grid-template-columns: 33% minmax(400px, 750px);
 }
 .center {
     text-align: center;
@@ -134,11 +135,12 @@ nav.menu {
 
 nav.menu h3 {
     text-transform: uppercase;
-    margin: 20px 0 10px 0;
+    margin: 10px 0 10px 0;
     padding: 0;
     font-size: 1em;
 }
 nav.menu h3:first-of-type {
+    margin-top: 20px;
     margin-bottom: 40px;
     /* font-size: 1.3em; */
     /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
@@ -202,11 +204,12 @@ nav.menu h3:first-of-type a:link, nav.menu h3:first-of-type a:visited, nav.menu 
 }
 
 time.post-date {
-    color: #494948;
-    font-size: 0.6em;
+    /* color: #494948; */
+    font-size: 0.85em;
     font-weight: 600;
-    text-transform: uppercase;
-    font-family: Consolas, Menlo, 'Lucida Console', monospace;
+    /* text-transform: uppercase; */
+    /* font-family: Consolas, Menlo, 'Lucida Console', monospace; */
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 /* Share button */
